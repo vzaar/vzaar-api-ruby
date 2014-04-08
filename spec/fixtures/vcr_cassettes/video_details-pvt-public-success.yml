@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vzaar.com/api/videos/1403914.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="6sN6yY5ZwLebScFgMA49nSaNEqIKRl9zKaSALsQIWKw", oauth_signature="6GqU5xYBFuAsoXwCHxBsvcjz85g%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385056455", oauth_version="1.0"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 17:54:15 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      X-Runtime:
+      - '16'
+      Content-Length:
+      - '117'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <error>\n
+        \   <type>Not Authorized</type>\n  </error>\n</vzaar-api>\n"
+    http_version: 
+  recorded_at: Thu, 21 Nov 2013 17:54:15 GMT
+recorded_with: VCR 2.7.0

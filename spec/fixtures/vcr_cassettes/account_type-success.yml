@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vzaar.com/api/accounts/100.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="KxFaAZLaJvyHCFjkyt0qqcB8a4U1wTcm1W8qUGAY", oauth_signature="27zq%2FEUWDgUxYZSFjXu9UN88vq8%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385033776", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 11:36:17 GMT
+      Etag:
+      - ! '"8eeb9425bcaac03d502ed8df5c41ec7e"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      X-Runtime:
+      - '11'
+      Content-Length:
+      - '334'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<account>\n <version>1.0</version>\n
+        <account_id>100</account_id>\n <title>Express</title>\n <cost>\n  <monthly>30</monthly>\n
+        \ <currency>$</currency>\n </cost>\n <bandwidth>107374182400</bandwidth>\n
+        <rights>\n  <borderless>true</borderless>\n  <searchEnhancer>true</searchEnhancer>\n
+        </rights>\n</account>\n"
+    http_version: 
+  recorded_at: Thu, 21 Nov 2013 11:36:17 GMT
+recorded_with: VCR 2.7.0

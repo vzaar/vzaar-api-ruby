@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vzaar.com/api/test/whoami
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="VHG2LAUEhHPe4Ou8dskIHjmV8W5ZPjM1qqxmgu4KXBg", oauth_signature="o1ewaocXbcDaM%2BTM8blkHc0Rt3w%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385028519", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 10:08:40 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      X-Runtime:
+      - '52'
+      Content-Length:
+      - '117'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <error>\n
+        \   <type>Not Authorized</type>\n  </error>\n</vzaar-api>\n"
+    http_version:
+  recorded_at: Thu, 21 Nov 2013 10:08:41 GMT
+recorded_with: VCR 2.7.0

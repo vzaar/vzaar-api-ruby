@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vzaar.com/api/users/api-test-user.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="RfZqUHfd42VnjdWeKhdKJQhOh7ZuZjFQJBQCGEBH0Q", oauth_signature="KHsTzqLAFMG2VlVkHmUlrxbsm%2F4%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385038536", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 12:55:36 GMT
+      Etag:
+      - ! '"311e49d5563eddea4684eaf1e60db814"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlYWQ3NTVlN2JjMTUzZjRkMGIzYTY5M2E1ZDExN2RmNDIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiZUaGlzIHBhZ2UgaGFzIGJlZW4gbWFya2VkIHByaXZhdGUGOgpAdXNlZHsGOwdG--ee8a5837f259b30738d5ac9698a79d1dd5695daf;
+        path=/; HttpOnly
+      X-Runtime:
+      - '35'
+      Content-Length:
+      - '460'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<user>\n <version>1.0</version>\n
+        <author_name>api-test-user</author_name>\n <author_id>93721</author_id>\n
+        <author_url>http://vzaar.com/users/api-test-user</author_url>\n <author_account>34</author_account>\n
+        <author_account_title>Staff</author_account_title>\n <created_at>2012-12-17T16:41:26+00:00</created_at>\n
+        <video_count>32</video_count>\n <play_count>1317</play_count>\n <max_file_size>10737418240</max_file_size>\n</user>\n"
+    http_version: 
+  recorded_at: Thu, 21 Nov 2013 12:55:36 GMT
+recorded_with: VCR 2.7.0

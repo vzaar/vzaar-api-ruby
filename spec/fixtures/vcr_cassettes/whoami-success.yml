@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vzaar.com/api/test/whoami
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="rimmoYouoNMKBsicRNGCL2YCQym4Ug91SZ7pY6Jn6Q0", oauth_signature="rrdHo39tap4Or4%2FAtEUywkTnKHY%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385043225", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 14:13:45 GMT
+      Etag:
+      - ! '"cd5a665d12713a279fe6bdd80cba1a4d"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlMDYzYjAwOTVjYWJjOTEzM2FlZmM1MjY5ODgxMTc4Mjg6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--c7e9a5135aa4f62aa721fdb1db4106553eb53d57;
+        path=/; HttpOnly
+      X-Runtime:
+      - '50'
+      Content-Length:
+      - '116'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <test>\n
+        \   <login>api-test-user</login>\n  </test>\n</vzaar-api>\n"
+    http_version: 
+  recorded_at: Thu, 21 Nov 2013 14:13:45 GMT
+recorded_with: VCR 2.7.0

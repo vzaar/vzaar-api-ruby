@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://vzaar.com/api/videos/-1.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="rPeyxNL5pFjYwnmmHTgBPqylKH9mduGnepDfkYZZNo", oauth_signature="Cwnbh9gScQ3yCteo5caOgyBgqdM%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385056452", oauth_version="1.0"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 21 Nov 2013 17:54:13 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      X-Runtime:
+      - '15'
+      Content-Length:
+      - '76'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n      <error>Object not
+        found</error>"
+    http_version: 
+  recorded_at: Thu, 21 Nov 2013 17:54:13 GMT
+recorded_with: VCR 2.7.0

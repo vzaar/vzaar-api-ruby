@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vzaar.com/api/videos/signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="RAr4tsXOpn3qbOjaE8OzIBbL2ebkxYSGg44ukEYhPAA", oauth_signature="EDH4qI8Wt46uSGLDxRDo27gK6y4%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385142702", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 17:51:50 GMT
+      Etag:
+      - ! '"8368e8fd73a672f1b87dcb44506a7e0e"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlY2MzZWIzZjQxNzRiNzU5MTdmZWU1NTc0ODNhOGQ4ZTE6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--79051f5dc8533bbec821026afd76517a86f4b449;
+        path=/; HttpOnly
+      X-Runtime:
+      - '163'
+      Content-Length:
+      - '854'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <https>false</https>\n
+        \ <signature>uv/Fj19uyskBT5vI+dOZnjPt/7o=</signature>\n  <expirationdate>2013-11-22T19:51:50.000Z</expirationdate>\n
+        \ <acl>private</acl>\n  <accesskeyid>AKIAI5FUPZCHG3Q2JLDA</accesskeyid>\n
+        \ <policy>ewogICAgICAgICdleHBpcmF0aW9uJzogJzIwMTMtMTEtMjJUMTk6NTE6NTAuMDAwWicsCiAgICAgICAgJ2NvbmRpdGlvbnMnOiBbCiAgICAgICAgICB7J2J1Y2tldCc6ICd2ejEnfSwKICAgICAgICAgIFsnc3RhcnRzLXdpdGgnLCAnJGtleScsICd2emFhci92ejkvNjVkL3NvdXJjZS92ejk2NWQ2MTcxMjhkMTRjZTI4ZTk3ZGU1ZjJkMThkNjk3LyddLAogICAgICAgICAgeydhY2wnOiAncHJpdmF0ZSd9LAogICAgICAgICAgWydlcScsICckc3VjY2Vzc19hY3Rpb25fc3RhdHVzJywgJzIwMSddCiAgICAgIAogICAgICAgIF19CiAgICAgIA==</policy>\n
+        \ <guid>vz965d617128d14ce28e97de5f2d18d697</guid>\n  <key>vzaar/vz9/65d/source/vz965d617128d14ce28e97de5f2d18d697/${filename}</key>\n
+        \ <bucket>vz1</bucket>\n</vzaar-api>\n"
+    http_version: 
+  recorded_at: Fri, 22 Nov 2013 17:51:43 GMT
+recorded_with: VCR 2.7.0

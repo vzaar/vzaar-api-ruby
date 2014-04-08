@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vzaar.com/api/api-test-user/videos.xml?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="MqQBli93Sw1CZFH7KlckkbhDU7paPjztJMEqZWfQSA", oauth_signature="%2BZfwnOLlQXh0G13iYa9jn7hcIzA%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385116918", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 10:42:01 GMT
+      Etag:
+      - ! '"e879bdd994dd75f92c0325a0f2d2acc1"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlM2NmODBiMDlmNTlhZjRkZjJmOTllMjM2YWU0OTlkYTM6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--38f9a0240d712a46118c6eed09802fea0d6677a7;
+        path=/; HttpOnly
+      X-Runtime:
+      - '129'
+      Content-Length:
+      - '1435'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<videos type=\"array\">\n
+        <video>\n  <version>1.0</version>\n  <id>1403915</id>\n  <status>Active</status>\n
+        \ <status_id>2</status_id>\n  <title>ej-xshiz-1.flv</title>\n  <description>A
+        very interesting description.</description>\n  <created_at>2013-11-21T10:12:49+00:00</created_at>\n
+        \ <url>http://view.vzaar.com/1403915/video</url>\n  <thumbnail_url>http://view.vzaar.com/1403915/thumb</thumbnail_url>\n
+        \ <play_count>0</play_count>\n  <user>\n   <author_name>api-test-user</author_name>\n
+        \  <author_url>http://vzaar.com/users/api-test-user</author_url>\n   <author_account>34</author_account>\n
+        \  <video_count>32</video_count>\n  </user>\n  <duration>16.92</duration>\n
+        \ <height>256</height>\n  <width>320</width>\n </video>\n <video>\n  <version>1.0</version>\n
+        \ <id>1403914</id>\n  <status>Active</status>\n  <status_id>2</status_id>\n
+        \ <title>ej-xshiz-0.flv</title>\n  <description>A very interesting description.</description>\n
+        \ <created_at>2013-11-21T10:12:45+00:00</created_at>\n  <url>http://view.vzaar.com/1403914/video</url>\n
+        \ <thumbnail_url>http://view.vzaar.com/1403914/thumb</thumbnail_url>\n  <play_count>0</play_count>\n
+        \ <user>\n   <author_name>api-test-user</author_name>\n   <author_url>http://vzaar.com/users/api-test-user</author_url>\n
+        \  <author_account>34</author_account>\n   <video_count>32</video_count>\n
+        \ </user>\n  <duration>16.92</duration>\n  <height>256</height>\n  <width>320</width>\n
+        </video>\n</videos>\n"
+    http_version: 
+  recorded_at: Fri, 22 Nov 2013 10:42:00 GMT
+recorded_with: VCR 2.7.0

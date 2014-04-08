@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://vzaar.com/api/videos/1405106.xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n        <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n        <vzaar-api>\n
+        \     \n          <video>\n            <title>new title</title>\n            <description>some
+        description</description >\n          </video>\n        </vzaar-api>\n      "
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '217'
+      Authorization:
+      - OAuth oauth_body_hash="EKM5xXo8GOGdljV3%2FA6TMQzzmnI%3D", oauth_nonce="3kfbVqVRnBNBxgV9sMHJ42l807FJTFLtW3QuSRPEDcM",
+        oauth_signature="NUs1hvRSM%2BAQUqK7RqxUx8kQMbs%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1385138435", oauth_token="api-test-user", oauth_version="1.0"
+  response:
+    status:
+      code: 302
+      message: Moved Temporarily
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 16:40:44 GMT
+      Location:
+      - https://vzaar.com/restricted
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7CDoPc2Vzc2lvbl9pZCIlYjBiZDRjNTExOTc5MTRlMGE3ZjY3Y2NlMTJjMWEwOWQ6Em9hdXRoX3VzZXJfaWRpAxluAToMdXNlcl9pZGkDGW4B--a364d0ca82c58a2ce7f8fbcc9dad0074cb116bd7;
+        path=/; HttpOnly
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: <html><body>You are being <a href="https://vzaar.com/restricted">redirected</a>.</body></html>
+    http_version:
+  recorded_at: Fri, 22 Nov 2013 16:40:38 GMT
+recorded_with: VCR 2.7.0

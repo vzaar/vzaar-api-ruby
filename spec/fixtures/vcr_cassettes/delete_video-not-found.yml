@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://vzaar.com/api/videos/-1.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="RroG1H1d8PdlwkMV7arnxbXarLA7x1Ji3wCG8Z3vs", oauth_signature="o6Nyzznge1QvUdPNadRBp%2FyYRiQ%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385137291", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 16:21:40 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlZDQ4NWM3MTNmOWY0MzEzYTNkNzU1MWM2NTA0OWY5MDA6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--5f4e4c568e2a59363f5676867e8bd0c96ee70de0;
+        path=/; HttpOnly
+      Content-Length:
+      - '6311'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n<head>\n\n\t<title>404 Error - Page Not
+        Found | vzaar.com</title>\n\t\n\t<link rel=\"stylesheet\" href=\"/stylesheets/reset.css\">\n\t<link
+        rel=\"stylesheet\" href=\"/stylesheets/404.css\">\n\n        <script src=\"/javascripts/jquery.js\"
+        type=\"text/javascript\"></script>\n        <script src=\"/javascripts/404.js\"
+        type=\"text/javascript\"></script>\n\n</head>\n<body>\n\n\t<div class=\"contentWrapper\">\n\t\t<h1>404
+        Error</h1>\n\t\t<h2>Page Not Found</h2>\n\t\t\n\t\t<div class=\"mainContentBlock\">\n\t\t\t<!--
+        ROTATING IMAGES -->\n\t\t\t<img class=\"rotatavatorMsg rotationImg\" id=\"rotationImg1\"
+        src=\"/images/error_pages/404_img1.png\">\n\t\t\t<img class=\"rotatavatorMsg
+        rotationImg\" id=\"rotationImg2\" src=\"/images/error_pages/404_img2.png\">\n\t\t\t<img
+        class=\"rotatavatorMsg rotationImg\" id=\"rotationImg3\" src=\"/images/error_pages/404_img3.png\">\n\t\t\t<img
+        class=\"rotatavatorMsg rotationImg\" id=\"rotationImg4\" src=\"/images/error_pages/404_img4.png\">\n\t\t\t<img
+        class=\"rotatavatorMsg rotationImg\" id=\"rotationImg5\" src=\"/images/error_pages/404_img5.png\">\n\t\t\t<img
+        class=\"rotatavatorMsg rotationImg\" id=\"rotationImg6\" src=\"/images/error_pages/404_img6.png\">\n\t\t\t<img
+        class=\"rotatavatorMsg rotationImg\" id=\"rotationImg7\" src=\"/images/error_pages/404_img7.png\">\n\t\t\t\t\n\t\t\t<!--
+        ROTATING MESSAGES -->\n\t\t\t<div class=\"mainContentBlockMessage\">\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText1\">the devil's in
+        the detail</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText2\">For
+        once, it's not IE's fault!</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText3\">Erm, this is awkward. Know any jokes?</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText4\">Well, I bet you
+        weren't expecting this</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText5\">developers, eh!</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText6\">know any good one liners?</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText7\">[this space intentionally
+        left blank]</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText8\">01110110
+        01111010 01100001 01100001 01110010</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText9\">video killed the radio star</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText10\">Justin Bieber
+        &hearts; vzaar</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText11\">Never
+        gonna give you up, Never gonna let you down</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText12\">42</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText13\">If you can read this you are too close</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText14\">Is today tuesday?</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText15\">You can lead a
+        horse to water, but if you can get him to float on his back you really have
+        something</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText16\">It's a small world, but I wouldn't want to paint it</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText17\">When I grow up
+        I want to be a 500 error</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText18\">Help, I'm trapped inside the screen.</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText19\">I for one welcome
+        our chalkboard overlords</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText20\">There are 10 kinds of people in the world. Those that
+        understand binary and those that don't</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText21\">The quick brown fox jumps over the lazy
+        dog</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText22\">Richard of York gave battle in vain</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText23\">I used to be conceited
+        but now I'm perfect</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText24\">I used to be indecisive, but now I'm just not sure</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText25\">Bring back the
+        space shuttle</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText26\">How
+        many surrealist's does it take change a light bulb? Fish!</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText27\">Yesterday, today
+        was tomorrow</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText28\">I used to be a medium, but I've put on some weight since
+        then.</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText29\">Houston
+        we have a problem</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText30\">Dymunaf hyn yn gweithio</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText31\">Do not argue with an idiot. He will drag
+        you down to his level and beat you with experience.</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText32\">When in doubt, mumble</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText33\">Nostalgia isn't
+        what it used to be</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\"
+        id=\"rotationText34\">I wondered why the Frisbee was getting bigger, and then
+        it hit me</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText35\">It's
+        not who you know, it's whom you know. </h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText36\">A clean desk is a sign of a cluttered
+        drawer</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg rotationText\" id=\"rotationText37\">Originality
+        is the art of concealing your sources</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText38\">I had amnesia once - maybe twice</h3>\t\t\t\t\t\t\t\t\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText39\">Money isn't everything
+        but it sure keeps the kids in touch</h3>\n\t\t\t\t<h3 class=\"rotatavatorMsg
+        rotationText\" id=\"rotationText40\">Well, paint me purple and call me Barney</h3>\n\t\t\t\t<h3
+        class=\"rotatavatorMsg rotationText\" id=\"rotationText41\">Am I ambivalent?
+        Well, yes and no</h3>\n\t\t\t\t\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t<!--
+        FOOTER -->\n\t\t<div class=\"errorFooter\">\n\t\t\t\n\t\t\t<p><a href=\"http://vzaar.com/\"
+        class=\"errorReturnLink\">Click here to return to vzaar</a></p>\n\t\t\n\t\t\t<img
+        src=\"/images/error_pages/404_vz_logo.png\">\n\t\t\t<p>vzaar Limited: 31 -
+        33 Bondway, London, SW8 1SJ. Company Registration No. 06176218</p>\n\t\t</div>\n\t\t\n\t</div>\n\n\n</body>\n</html>\n\n<script
+        type=\"text/javascript\">\n  NotFoundPage.initialize();\n</script>\n"
+    http_version: 
+  recorded_at: Fri, 22 Nov 2013 16:21:34 GMT
+recorded_with: VCR 2.7.0

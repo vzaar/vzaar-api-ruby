@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://vzaar.com/api/videos/1405081.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_nonce="TyLENbnKH1iuRQQwtUlhBDUrj2XEV497iR9E1TYd4", oauth_signature="LDEC78s3fEDyFGBA5BCLy7BNks4%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385121249", oauth_token="api-test-user",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 11:54:12 GMT
+      Etag:
+      - ! '"8c8a0ef312e9e362e75957336d0302d2"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlYWIzODlmYzlkOTBlOTY4OWNkNzUxYjQwMWY3MDVjNjY6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--ac1dc696310dae5477480fc607bcc1a48e855362;
+        path=/; HttpOnly
+      X-Runtime:
+      - '456'
+      Content-Length:
+      - '954'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<oembed>\n
+        <type>video</type>\n <version>1.0</version>\n <title>ej-xshiz-0.flv</title>\n
+        <author_name>api-test-user</author_name>\n <author_url>http://vzaar.com/users/api-test-user</author_url>\n
+        <author_account>34</author_account>\n <provider_name>vzaar</provider_name>\n
+        <provider_url>http://vzaar.com</provider_url>\n <video_url>http://view.vzaar.com/1405081/video</video_url>\n
+        <html>\n  <![CDATA[<iframe allowFullScreen allowTransparency=\"true\" class=\"vzaar-video-player\"
+        frameborder=\"0\" height=\"256\" id=\"vzvd-1405081\" mozallowfullscreen name=\"vzvd-1405081\"
+        src=\"//view.vzaar.com/1405081/player\" title=\"vzaar video player\" type=\"text/html\"
+        webkitAllowFullScreen width=\"320\"></iframe>]]>\n </html>\n <height>256</height>\n
+        <width>320</width>\n <duration>16.92</duration>\n <video_status_id>9</video_status_id>\n
+        <video_status_description>Deleted</video_status_description>\n <play_count>0</play_count>\n</oembed>\n"
+    http_version: 
+  recorded_at: Fri, 22 Nov 2013 11:54:10 GMT
+recorded_with: VCR 2.7.0

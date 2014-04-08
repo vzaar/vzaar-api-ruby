@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://vzaar.com/api/videos/1405081.xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n        <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n        <vzaar-api>\n
+        \     \n          <video>\n            <title>new title</title>\n            <description>some
+        description</description >\n          </video>\n        </vzaar-api>\n      "
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '233'
+      Authorization:
+      - OAuth oauth_body_hash="pSR5lK5GbV0eXjNUa9PJU5O2ETg%3D", oauth_nonce="XT3O1qNJ8hOMhtv4CTPGrUXfoEITNTJhHkiz3JlUBjs",
+        oauth_signature="kzlkSw%2FcDdCAgOHVAm2zmblvxI4%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1385138171", oauth_token="api-test-user", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Fri, 22 Nov 2013 16:36:20 GMT
+      Etag:
+      - ! '"ad93a8285b4dbbf57ba1f4390c10efb9"'
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx/0.7.65
+      Set-Cookie:
+      - _vzaar_session_id=BAh7CDoPc2Vzc2lvbl9pZCIlNzk3NDIzNWU2ZGZhNDA1NjgyMzczYThkN2VhMDM1NDc6Em9hdXRoX3VzZXJfaWRpAxluAToMdXNlcl9pZGkDGW4B--b541121af6bb58cc227f9301b5ff6485f1683727;
+        path=/; HttpOnly
+      X-Runtime:
+      - '122'
+      Content-Length:
+      - '1292'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<oembed>\n
+        <type>video</type>\n <version>1.0</version>\n <title>new title</title>\n <description>some
+        description</description>\n <author_name>api-test-user</author_name>\n <author_url>http://vzaar.com/users/api-test-user</author_url>\n
+        <author_account>34</author_account>\n <provider_name>vzaar</provider_name>\n
+        <provider_url>http://vzaar.com</provider_url>\n <video_url>http://view.vzaar.com/1405081/video</video_url>\n
+        <thumbnail_url>http://view.vzaar.com/1405081/thumb</thumbnail_url>\n <thumbnail_width>120</thumbnail_width>\n
+        <thumbnail_height>90</thumbnail_height>\n <framegrab_url>http://view.vzaar.com/1405081/image</framegrab_url>\n
+        <framegrab_width>320</framegrab_width>\n <framegrab_height>256</framegrab_height>\n
+        <html>\n  <![CDATA[<iframe allowFullScreen allowTransparency=\"true\" class=\"vzaar-video-player\"
+        frameborder=\"0\" height=\"256\" id=\"vzvd-1405081\" mozallowfullscreen name=\"vzvd-1405081\"
+        src=\"//view.vzaar.com/1405081/player\" title=\"vzaar video player\" type=\"text/html\"
+        webkitAllowFullScreen width=\"320\"></iframe>]]>\n </html>\n <height>256</height>\n
+        <width>320</width>\n <duration>16.92</duration>\n <video_status_id>2</video_status_id>\n
+        <video_status_description>Active</video_status_description>\n <play_count>0</play_count>\n</oembed>\n"
+    http_version: 
+  recorded_at: Fri, 22 Nov 2013 16:36:14 GMT
+recorded_with: VCR 2.7.0
