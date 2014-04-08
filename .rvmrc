@@ -1,2 +1,1 @@
-# rvm use 1.9.3-p194@vzaar --create
-rvm use ruby-2.0.0-p247@vzaar --create
+rvm use ruby-2.1.1-p76@vzaar --create
