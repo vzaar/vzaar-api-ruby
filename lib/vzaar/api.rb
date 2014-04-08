@@ -8,38 +8,24 @@ module Vzaar
     end
 
     def whoami(opts={})
-      url = '/api/test/whoami'
-      connection.using_authorised_connection(Http::GET, url) do |xml|
-        return WhoAmI.new(xml).login
-      end
+      Request::WhoAmI.new(connection, opts).execute
     end
 
     def account_type(account_type_id, opts={})
-      url = "/api/accounts/#{account_type_id}.xml"
-      connection.using_public_connection(Http::GET, url) do |xml|
-        return AccountType.new(xml)
-      end
+      _opts = opts.merge(account_type_id: account_type_id)
+      Request::AccountType.new(connection, _opts).execute
     end
 
     def user_details(login, opts={})
-      url = "/api/users/#{login}.xml"
-      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
-        return User.new(xml)
-      end
+      Request::UserDetails.new(connection, opts.merge(login: login)).execute
     end
 
     def video_details(video_id, opts={})
-      url = "/api/videos/#{video_id}.xml"
-      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
-        return VideoDetails.new(video_id, xml)
-      end
+      Request::VideoDetails.new(connection, opts.merge(video_id: video_id)).execute
     end
 
     def video_list(login, opts={})
-      url = "/api/#{login}/videos.xml?page=#{opts[:page] || 1}"
-      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
-        return VideoCollection.new(xml)
-      end
+      Request::VideoList.new(connection, opts.merge(login: login)).execute
     end
 
     def videos(opts={})
@@ -47,21 +33,15 @@ module Vzaar
     end
 
     def delete_video(video_id, opts={})
-      url = "/api/videos/#{video_id}.xml"
-      connection.using_authorised_connection Http::DELETE, url
+      Request::DeleteVideo.new(connection, opts.merge(video_id: video_id)).execute
     end
 
-    def edit_video(video_id, options = {})
-      url = "/api/videos/#{video_id}.xml"
-      request = Request::EditVideo.new(options)
-      connection.using_authorised_connection Http::PUT, url, request.xml
+    def edit_video(video_id, opts={})
+      Request::EditVideo.new(connection, opts.merge(video_id: video_id)).execute
     end
 
-    def signature(options = {})
-      request = Request::Signature.new('/api/videos/signature', options)
-      connection.using_authorised_connection Http::GET, request.url do |xml|
-        return Signature.new xml
-      end
+    def signature(opts={})
+      Request::Signature.new(connection, opts).execute
     end
 
     def upload_video(path, options = {})
@@ -73,12 +53,8 @@ module Vzaar
       end
     end
 
-    def process_video(options = {})
-      url = '/api/videos'
-      request = Request::ProcessVideo.new(options)
-      connection.using_authorised_connection Http::POST, url, request.xml do |xml|
-        return ProcessVideo.new(xml).video_id
-      end
+    def process_video(opts={})
+      Request::ProcessVideo.new(connection, opts).execute
     end
 
     private
@@ -89,6 +65,5 @@ module Vzaar
     rescue Exception => e
       VzaarError.generate :unknown, e.message
     end
-
   end
 end

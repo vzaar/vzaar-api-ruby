@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module Vzaar
-  describe User do
+module Vzaar::Response
+  describe UserDetails do
 
     subject { described_class.new xml }
 

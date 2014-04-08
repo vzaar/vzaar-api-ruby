@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module Vzaar
-  describe VideoCollection do
+module Vzaar::Response
+  describe VideoList do
 
     subject { described_class.new xml }
 

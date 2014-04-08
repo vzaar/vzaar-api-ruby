@@ -1,14 +1,22 @@
 module Vzaar
   module Request
-    class EditVideo
+    class EditVideo < Base
 
-      attr_reader :options
+      private
 
-      def initialize(options)
-        @options = options
+      def authenticated?
+        true
       end
 
-      def xml
+      def http_verb
+        Http::PUT
+      end
+
+      def base_url
+        "/api/videos/#{video_id}"
+      end
+
+      def data
         <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
           <vzaar-api>
@@ -20,6 +28,9 @@ module Vzaar
         XML
       end
 
+      def video_id
+        options[:video_id]
+      end
     end
   end
 end

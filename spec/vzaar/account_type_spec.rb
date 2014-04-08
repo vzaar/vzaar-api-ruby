@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Vzaar
+module Vzaar::Response
   describe AccountType do
 
     subject { described_class.new xml }

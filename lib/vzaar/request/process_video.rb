@@ -1,14 +1,27 @@
 module Vzaar
   module Request
-    class ProcessVideo
+    class ProcessVideo < Base
 
-      attr_reader :options
+      private
 
-      def initialize(options)
-        @options = options
+      def authenticated?
+        true
       end
 
-      def xml
+      def http_verb
+        Http::POST
+      end
+
+      def base_url
+        '/api/videos'
+      end
+
+      def format_suffix
+        nil
+      end
+
+
+      def data
         request_xml = %{
           <?xml version="1.0" encoding="UTF-8"?>
           <vzaar-api>

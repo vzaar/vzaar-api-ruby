@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Vzaar
+module Vzaar::Response
   describe VideoDetails do
 
     subject { described_class.new video_id, xml }

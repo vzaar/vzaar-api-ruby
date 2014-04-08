@@ -1,33 +1,35 @@
 module Vzaar
   module Request
-    class Signature
+    class Signature < Base
 
-      attr_reader :base_url, :options
+      private
 
-      def initialize(base_url, options)
-        @base_url = base_url
-        @options = options
+      def authenticated?
+        true
       end
 
-      def url
-        "#{base_url}#{querystring}"
+      def format_suffix
+        nil
       end
 
-      def querystring
-        params = []
+      def base_url
+        '/api/videos/signature'
+      end
+
+      def url_params
+        # JC: refactor it
+        _params = {}
         if options[:success_action_redirect]
-          params << "success_action_redirect=#{options[:success_action_redirect]}"
+          _params[:success_action_redirect] = options[:success_action_redirect]
         end
         if options[:include_metadata]
-          params << 'include_metadata=yes'
+          _params[:include_metadata] = 'yes'
         end
         if options[:flash_request]
-          params << 'flash_request=yes'
+          _params[:flash_request] = 'yes'
         end
-        return nil if params.empty?
-        "?#{params.join('&')}"
+        _params
       end
-
     end
   end
 end

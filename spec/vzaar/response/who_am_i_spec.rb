@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Vzaar
+module Vzaar::Response
   describe WhoAmI do
 
     subject { described_class.new xml }
@@ -19,13 +19,12 @@ module Vzaar
         XML
       end
 
-      its(:login) { should eq(login) }
+      its(:body) { should eq(login) }
     end
 
     context "when xml is nil" do
       let(:xml) { nil }
-
-      its(:login) { should be_empty }
+      its(:body) { should be_empty }
     end
 
   end

@@ -1,12 +1,16 @@
 module Vzaar
   module Response
-    class Base
+    class XML
 
       attr_reader :xml
 
       def initialize(xml)
         @xml = xml
         @doc = Nokogiri::XML(xml)
+      end
+
+      def body
+        self
       end
 
       private
