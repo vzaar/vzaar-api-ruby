@@ -49,6 +49,7 @@ module Vzaar
     private
 
     def sanitized_url
+      binding.pry
       @sanitized_url ||= options[:server].gsub(/(http|https)\:\/\//, "") if options[:server]
     end
 

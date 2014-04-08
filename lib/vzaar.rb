@@ -6,8 +6,19 @@ module Vzaar
       self.nil? or self == ""
     end
   end
-end
 
+  refine Hash do
+
+    def as_sym
+      h = {}
+      self.each_pair do |k,v|
+        h[k.to_sym] = v.is_a?(Hash) ? v.symbolize_keys : v
+      end
+      h
+    end
+  end
+end
+require 'pry'
 require 'httpclient'
 require 'nokogiri'
 require 'oauth'
