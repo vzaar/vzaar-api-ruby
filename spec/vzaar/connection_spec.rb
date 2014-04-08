@@ -6,7 +6,7 @@ module Vzaar
 
     subject { described_class.new params }
 
-    describe "#initialize" do
+    describe "#server" do
       context "when server params includes http protocol" do
         let(:server) { "http://example.com" }
         its(:server) { should eq "example.com" }
@@ -15,6 +15,11 @@ module Vzaar
       context "when server params includes https protocol" do
         let(:server) { "https://example.com" }
         its(:server) { should eq "example.com" }
+      end
+
+      context "when server param is blank" do
+        let(:server) { nil }
+        its(:server) { should eq described_class::SERVER }
       end
     end
   end

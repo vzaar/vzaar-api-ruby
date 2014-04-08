@@ -9,6 +9,7 @@ gemspec
 gem 'rake'
 
 group :development, :test do
+  gem 'pry'
   gem 'fuubar'
   gem 'growl'
   gem 'guard-rspec'

@@ -1,5 +1,13 @@
 $: << File.dirname(__FILE__)
 
+module Vzaar
+  refine Object do
+    def blank?
+      self.nil? or self == ""
+    end
+  end
+end
+
 require 'httpclient'
 require 'nokogiri'
 require 'oauth'

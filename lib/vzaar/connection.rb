@@ -1,14 +1,15 @@
 module Vzaar
   class Connection
-    SERVER = "vzaar.com".freeze
+    using Vzaar
 
-    attr_reader :application_token, :force_http, :login, :server
+    SERVER = "vzaar.com".freeze
+    attr_reader :application_token, :force_http, :login, :options, :server
 
     def initialize(options)
+      @options = options
       @application_token = options[:application_token]
       @force_http = options[:force_http]
       @login = options[:login]
-      @server = options[:server].gsub(/(http|https)\:\/\//, "")
     end
 
     def using_authorised_connection(http_verb, url, data = nil, &block)
@@ -41,7 +42,15 @@ module Vzaar
       response
     end
 
+    def server
+      @server ||= sanitized_url.blank? ? self.class::SERVER : sanitized_url
+    end
+
     private
+
+    def sanitized_url
+      @sanitized_url ||= options[:server].gsub(/(http|https)\:\/\//, "") if options[:server]
+    end
 
     def consumer(authorised = false)
       OAuth::Consumer.new '', '', { :site => "#{protocol(authorised)}://#{server}" }
