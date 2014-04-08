@@ -12,7 +12,7 @@ module Vzaar
     def as_sym
       h = {}
       self.each_pair do |k,v|
-        h[k.to_sym] = v.is_a?(Hash) ? v.symbolize_keys : v
+        h[k.to_sym] = v.is_a?(Hash) ? v.as_sym : v
       end
       h
     end
