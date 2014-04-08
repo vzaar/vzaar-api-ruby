@@ -1,5 +1,6 @@
 module Vzaar
   class Connection
+    SERVER = "vzaar.com".freeze
 
     attr_reader :application_token, :force_http, :login, :server
 
@@ -7,7 +8,7 @@ module Vzaar
       @application_token = options[:application_token]
       @force_http = options[:force_http]
       @login = options[:login]
-      @server = options[:server]
+      @server = options[:server].gsub(/(http|https)\:\/\//, "")
     end
 
     def using_authorised_connection(http_verb, url, data = nil, &block)
