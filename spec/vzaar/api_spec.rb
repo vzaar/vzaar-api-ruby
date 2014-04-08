@@ -69,7 +69,7 @@ module Vzaar
         context "with a valid login" do
           it "returns the user details" do
             VCR.use_cassette("#{vcr_cassette}-success") do
-              user = subject.user_details(login, authentication)
+              user = subject.user_details(login, authenticated: authentication)
               expect(user.name).to eq(login)
             end
           end
@@ -79,8 +79,8 @@ module Vzaar
           let(:login) { '0000000000000000' }
           it "raises an error" do
             VCR.use_cassette("#{vcr_cassette}-fail") do
-              expect { subject.user_details(login, authentication) }.to raise_error(
-                VzaarError, VzaarError::NOT_FOUND)
+              expect { subject.user_details(login, authenticated: authentication) }
+                .to raise_error(VzaarError, VzaarError::NOT_FOUND)
             end
           end
         end
@@ -103,7 +103,7 @@ module Vzaar
       shared_examples 'a successful video_details request' do
         it "returns the video details" do
           VCR.use_cassette("#{vcr_cassette}-success") do
-            video = subject.video_details(video_id, authentication)
+            video = subject.video_details(video_id, authenticated: authentication)
             expect(video.id).to eq(video_id)
           end
         end
@@ -112,7 +112,7 @@ module Vzaar
       shared_examples 'a video_details resource that cannot be found' do
         it "raises an error" do
           VCR.use_cassette("#{vcr_cassette}-fail") do
-            expect { subject.video_details(video_id, authentication) }.to raise_error(
+            expect { subject.video_details(video_id, authenticated: authentication) }.to raise_error(
               VzaarError, VzaarError::NOT_FOUND)
           end
         end
@@ -121,8 +121,8 @@ module Vzaar
       shared_examples 'a video_details resource that is protected' do
         it "raises an error" do
           VCR.use_cassette("#{vcr_cassette}-success") do
-            expect { subject.video_details(video_id, authentication) }.to raise_error(
-              VzaarError, VzaarError::PROTECTED_RESOURCE)
+            expect { subject.video_details(video_id, authenticated: authentication) }
+              .to raise_error(VzaarError, VzaarError::PROTECTED_RESOURCE)
           end
         end
       end
@@ -181,7 +181,7 @@ module Vzaar
         let(:authentication) { true }
         it "returns a collection of private and public videos" do
           VCR.use_cassette("video_list-pvt-success") do
-            videos = subject.video_list(login, authentication)
+            videos = subject.video_list(login, { authenticated: authentication })
             expect(videos.count).to eq(2)
           end
         end
@@ -191,7 +191,7 @@ module Vzaar
         let(:authentication) { false }
         it "returns a collection of public videos only" do
           VCR.use_cassette("video_list-pub-success") do
-            videos = subject.video_list(login, authentication)
+            videos = subject.video_list(login, { authenticated: authentication })
             expect(videos.count).to eq(1)
           end
         end

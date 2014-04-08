@@ -7,46 +7,46 @@ module Vzaar
       @connection = connection
     end
 
-    def whoami
+    def whoami(opts={})
       url = '/api/test/whoami'
       connection.using_authorised_connection(Http::GET, url) do |xml|
         return WhoAmI.new(xml).login
       end
     end
 
-    def account_type(account_type_id)
+    def account_type(account_type_id, opts={})
       url = "/api/accounts/#{account_type_id}.xml"
       connection.using_public_connection(Http::GET, url) do |xml|
         return AccountType.new(xml)
       end
     end
 
-    def user_details(login, authenticated)
+    def user_details(login, opts={})
       url = "/api/users/#{login}.xml"
-      connection.using_connection(authenticated, Http::GET, url) do |xml|
+      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
         return User.new(xml)
       end
     end
 
-    def video_details(video_id, authenticated)
+    def video_details(video_id, opts={})
       url = "/api/videos/#{video_id}.xml"
-      connection.using_connection(authenticated, Http::GET, url) do |xml|
+      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
         return VideoDetails.new(video_id, xml)
       end
     end
 
-    def video_list(login, authenticated = false, page = 1)
-      url = "/api/#{login}/videos.xml?page=#{page}"
-      connection.using_connection(authenticated, Http::GET, url) do |xml|
+    def video_list(login, opts={})
+      url = "/api/#{login}/videos.xml?page=#{opts[:page] || 1}"
+      connection.using_connection(opts[:authenticated], Http::GET, url) do |xml|
         return VideoCollection.new(xml)
       end
     end
 
-    def videos(page = 1)
-      video_list(connection.login, true, page)
+    def videos(opts={})
+      video_list(connection.login, { authenticated: true, page: opts[:page] })
     end
 
-    def delete_video(video_id)
+    def delete_video(video_id, opts={})
       url = "/api/videos/#{video_id}.xml"
       connection.using_authorised_connection Http::DELETE, url
     end
