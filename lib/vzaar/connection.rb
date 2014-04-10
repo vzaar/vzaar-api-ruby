@@ -14,25 +14,21 @@ module Vzaar
 
     def using_connection(url, opts={}, &block)
       connection = opts[:authenticated] ? authorised_connection : public_connection
-      response = nil
 
       case opts[:http_verb]
       when Http::GET
-        response = connection.get(url)
-        yield handle_response(response) if block_given?
+        yield handle_response(connection.get(url)) if block_given?
       when Http::DELETE
-        response = connection.delete(url)
-        handle_response(response)
+        yield handle_response(connection.delete(url)) if block_given?
       when Http::POST
         response = connection.post(url, opts[:data], content_type(opts[:format]))
         yield handle_response(response) if block_given?
       when Http::PUT
         response = connection.put(url, opts[:data], content_type(opts[:format]))
-        handle_response(response)
+        yield handle_response(response) if block_given?
       else
         handle_exception :invalid_http_verb
       end
-      response
     end
 
     def server

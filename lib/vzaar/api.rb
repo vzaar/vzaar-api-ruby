@@ -42,7 +42,6 @@ module Vzaar
 
     def signature(opts={})
       s = Request::Signature.new(connection, opts).execute
-
       # JC: temporary solution till json support in vzaar.com
       Signature.new(s)
     end

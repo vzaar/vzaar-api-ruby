@@ -1,6 +1,7 @@
 module Vzaar
   module Request
     class Base < Struct.new(:conn, :opts)
+      attr_reader :xml, :json
       include Vzaar::Helper
 
       def execute
@@ -20,7 +21,7 @@ module Vzaar
       end
 
       def format
-        @format ||= options[:format] || "xml"
+        @format ||= (options[:format] || :xml).to_sym
       end
 
       def format_suffix
@@ -43,10 +44,15 @@ module Vzaar
         }
       end
 
+      def xml?
+        format == :xml
+      end
+
       def http_verb; Http::GET end
       def url_params; {} end
-      def data; end
-
+      def data
+        xml? ? xml : json
+      end
     end
   end
 end

@@ -216,7 +216,7 @@ module Vzaar
           it "deletes the video" do
             VCR.use_cassette("delete_video-success") do
               response = subject.delete_video(video_id)
-              expect(response.code).to eq('200')
+              expect(response).to include("<oembed>")
             end
           end
         end
@@ -260,7 +260,8 @@ module Vzaar
         it "updates the title and description" do
           VCR.use_cassette("edit_video-success") do
             response = subject.edit_video(video_id, edit_options)
-            expect(response.code).to eq('200')
+            expect(response)
+              .to include("<title>#{edit_options[:title]}</title>")
           end
         end
       end
