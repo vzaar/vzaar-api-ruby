@@ -41,7 +41,10 @@ module Vzaar
     end
 
     def signature(opts={})
-      Request::Signature.new(connection, opts).execute
+      s = Request::Signature.new(connection, opts).execute
+
+      # JC: temporary solution till json support in vzaar.com
+      Signature.new(s)
     end
 
     def upload_video(path, options = {})

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Vzaar::Response
+module Vzaar
   describe Signature do
 
     subject { described_class.new xml }

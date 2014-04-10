@@ -5,9 +5,9 @@ module Vzaar
       def self.handle_response(response)
         case response.code
         when Http::OK
-          response.body
+          response
         when Http::CREATED
-          response.body
+          response
         when Http::NOT_AUTHORISED
           handle_exception :protected_resource
         when Http::NOT_FOUND

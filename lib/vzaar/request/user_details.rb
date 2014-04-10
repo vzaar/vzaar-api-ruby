@@ -1,11 +1,6 @@
 module Vzaar
   module Request
     class UserDetails < Base
-      def execute
-        conn.using_connection(url, user_options) do |xml|
-          return Response::UserDetails.new(xml)
-        end
-      end
 
       private
 
