@@ -3,7 +3,7 @@ module Vzaar
     include Vzaar::Helper
 
     SERVER = "vzaar.com".freeze
-    attr_reader :application_token, :force_http, :login, :options, :server
+    attr_reader :application_token, :force_http, :login, :options
 
     def initialize(options)
       @options = options
