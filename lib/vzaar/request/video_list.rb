@@ -1,12 +1,7 @@
 module Vzaar
   module Request
     class VideoList < Base
-
-      private
-
-      def base_url
-        "/api/#{login}/videos"
-      end
+      endpoint { |o| "/api/#{o.login}/videos" }
 
       def url_params
         { page: options[:page] || 1 }

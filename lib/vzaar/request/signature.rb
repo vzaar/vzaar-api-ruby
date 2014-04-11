@@ -1,16 +1,13 @@
 module Vzaar
   module Request
     class Signature < Base
+      endpoint "/api/videos/signature"
       authenticated true
 
       private
 
       def format_suffix
         nil
-      end
-
-      def base_url
-        '/api/videos/signature'
       end
 
       def url_params

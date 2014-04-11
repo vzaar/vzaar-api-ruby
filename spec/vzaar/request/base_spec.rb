@@ -38,4 +38,29 @@ describe Vzaar::Request::Base do
       end
     end
   end
+
+  describe "Object#endpoint" do
+    let(:opts) {{}}
+
+    context "when param is not a function" do
+      before do
+        class TestClass < Vzaar::Request::Base
+          endpoint "/api/endpoint"
+        end
+      end
+
+      specify { expect(subject.endpoint).to eq("/api/endpoint") }
+    end
+
+    context "when param is a function" do
+      before do
+        class TestClass < Vzaar::Request::Base
+          endpoint { |o| "/api/endpoint/#{o.param}" }
+          def param; "cfx" end
+        end
+      end
+
+      specify { expect(subject.endpoint).to eq("/api/endpoint/cfx") }
+    end
+  end
 end

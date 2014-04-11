@@ -1,12 +1,7 @@
 module Vzaar
   module Request
     class UserDetails < Base
-
-      private
-
-      def base_url
-        "/api/users/#{login}"
-      end
+      endpoint { |o| "/api/users/#{o.login}" }
 
       def login
         options[:login]

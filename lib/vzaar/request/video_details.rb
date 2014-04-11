@@ -1,12 +1,7 @@
 module Vzaar
   module Request
     class VideoDetails < Base
-
-      private
-
-      def base_url
-        "/api/videos/#{video_id}"
-      end
+      endpoint { |o| "/api/videos/#{o.video_id}" }
 
       def video_id
         options[:video_id]

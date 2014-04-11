@@ -1,14 +1,11 @@
 module Vzaar
   module Request
     class ProcessVideo < Base
+      endpoint '/api/videos'
       authenticated true
       http_verb Http::POST
 
       private
-
-      def base_url
-        '/api/videos'
-      end
 
       def format_suffix
         nil

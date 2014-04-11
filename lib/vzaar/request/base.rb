@@ -11,6 +11,10 @@ module Vzaar
             end
           end
         end
+
+        def endpoint(obj=nil, &fn)
+          define_method(:endpoint) { block_given? ? yield(self) : obj }
+        end
       end
 
       authenticated nil
@@ -43,7 +47,7 @@ module Vzaar
       end
 
       def url
-        Url.new(base_url, format_suffix, url_params).build
+        Url.new(endpoint, format_suffix, url_params).build
       end
 
       def user_options

@@ -1,13 +1,8 @@
 module Vzaar
   module Request
     class WhoAmI < Base
+      endpoint '/api/test/whoami'
       authenticated true
-
-      private
-
-      def base_url
-        '/api/test/whoami'
-      end
 
       def format_suffix
         nil

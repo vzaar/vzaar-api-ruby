@@ -1,14 +1,9 @@
 module Vzaar
   module Request
     class EditVideo < Base
+      endpoint { |o| "/api/videos/#{o.video_id}" }
       authenticated true
       http_verb Http::PUT
-
-      private
-
-      def base_url
-        "/api/videos/#{video_id}"
-      end
 
       def xml
         <<-XML
