@@ -1,6 +1,6 @@
 module Vzaar
   module Request
-    class VideoDetails < Base
+    class Video < Base
       endpoint { |o| "/api/videos/#{o.video_id}" }
 
       def video_id

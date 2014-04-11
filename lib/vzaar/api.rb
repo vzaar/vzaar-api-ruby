@@ -21,7 +21,7 @@ module Vzaar
     end
 
     def video_details(video_id, opts={})
-      Request::VideoDetails.new(connection, opts.merge(video_id: video_id)).execute
+      Request::Video.new(connection, opts.merge(video_id: video_id)).execute
     end
 
     def video_list(login, opts={})
