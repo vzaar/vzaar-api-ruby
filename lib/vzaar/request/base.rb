@@ -30,10 +30,6 @@ module Vzaar
 
       attr_reader :xml_body, :json_body
 
-      def base_url
-        raise "not implemented"
-      end
-
       def options
         @options ||= symb_keys(opts)
       end
