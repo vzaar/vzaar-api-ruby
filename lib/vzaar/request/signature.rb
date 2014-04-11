@@ -6,10 +6,6 @@ module Vzaar
 
       private
 
-      def format_suffix
-        nil
-      end
-
       def url_params
         # JC: refactor it
         _params = {}

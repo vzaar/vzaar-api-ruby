@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vzaar.com/api/videos/signature?include_metadata=yes&success_action_redirect=example.com
+    uri: https://vzaar.com/api/videos/signature.xml?include_metadata=yes&success_action_redirect=example.com
     body:
       encoding: US-ASCII
       string: ''
@@ -50,6 +50,6 @@ http_interactions:
         \ <policy>ewogICAgICAgICdleHBpcmF0aW9uJzogJzIwMTMtMTEtMjJUMTk6NTM6MTIuMDAwWicsCiAgICAgICAgJ2NvbmRpdGlvbnMnOiBbCiAgICAgICAgICB7J2J1Y2tldCc6ICd2ejEnfSwKICAgICAgICAgIFsnc3RhcnRzLXdpdGgnLCAnJGtleScsICd2emFhci92ejgvM2EyL3NvdXJjZS92ejgzYTIxNzE1ZjExMDQ4ZDg5YzBhNWNmNTFjMTRiNGRmLyddLAogICAgICAgICAgeydhY2wnOiAncHJpdmF0ZSd9LAogICAgICAgICAgWydlcScsICckc3VjY2Vzc19hY3Rpb25fc3RhdHVzJywgJzIwMSddCiAgICAgICwgWydzdGFydHMtd2l0aCcsICckc3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QnLCAnJ10sIFsnc3RhcnRzLXdpdGgnLCAnJHgtYW16LW1ldGEtdGl0bGUnLCAnJ10sIFsnc3RhcnRzLXdpdGgnLCAnJHgtYW16LW1ldGEtcHJvZmlsZScsICcnXQogICAgICAgIF19CiAgICAgIA==</policy>\n
         \ <title></title>\n  <guid>vz83a21715f11048d89c0a5cf51c14b4df</guid>\n  <key>vzaar/vz8/3a2/source/vz83a21715f11048d89c0a5cf51c14b4df/${filename}</key>\n
         \ <bucket>vz1</bucket>\n</vzaar-api>\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Nov 2013 17:53:04 GMT
 recorded_with: VCR 2.7.0

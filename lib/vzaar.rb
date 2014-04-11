@@ -27,7 +27,7 @@ require 'vzaar/connection'
 require 'vzaar/vzaar_error'
 require 'vzaar/http'
 
-require 'vzaar/signature'
+require 'vzaar/signature_extractor'
 require 'vzaar/s3_uploader'
 require 'vzaar/request/base'
 

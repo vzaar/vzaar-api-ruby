@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vzaar.com/api/videos/signature
+    uri: https://vzaar.com/api/videos/signature.xml
     body:
       encoding: US-ASCII
       string: ''
@@ -49,7 +49,7 @@ http_interactions:
         \ <policy>ewogICAgICAgICdleHBpcmF0aW9uJzogJzIwMTMtMTEtMjVUMjA6MTg6MzguMDAwWicsCiAgICAgICAgJ2NvbmRpdGlvbnMnOiBbCiAgICAgICAgICB7J2J1Y2tldCc6ICd2ejEnfSwKICAgICAgICAgIFsnc3RhcnRzLXdpdGgnLCAnJGtleScsICd2emFhci92ejkvYTNjL3NvdXJjZS92ejlhM2MyZWQ3YTI4MjQ3ODZhYjUxY2JiOWFhNjcyZmZjLyddLAogICAgICAgICAgeydhY2wnOiAncHJpdmF0ZSd9LAogICAgICAgICAgWydlcScsICckc3VjY2Vzc19hY3Rpb25fc3RhdHVzJywgJzIwMSddCiAgICAgIAogICAgICAgIF19CiAgICAgIA==</policy>\n
         \ <guid>vz9a3c2ed7a2824786ab51cbb9aa672ffc</guid>\n  <key>vzaar/vz9/a3c/source/vz9a3c2ed7a2824786ab51cbb9aa672ffc/${filename}</key>\n
         \ <bucket>vz1</bucket>\n</vzaar-api>\n"
-    http_version: 
+    http_version:
   recorded_at: Mon, 25 Nov 2013 18:18:39 GMT
 - request:
     method: post
@@ -5869,7 +5869,7 @@ http_interactions:
       string: ! '<?xml version="1.0" encoding="UTF-8"?>
 
         <PostResponse><Location>https://vz1.s3.amazonaws.com/vzaar%2Fvz9%2Fa3c%2Fsource%2Fvz9a3c2ed7a2824786ab51cbb9aa672ffc%2Fvideo.mp4</Location><Bucket>vz1</Bucket><Key>vzaar/vz9/a3c/source/vz9a3c2ed7a2824786ab51cbb9aa672ffc/video.mp4</Key><ETag>"2ef403f74921efbaa69181d99606e003"</ETag></PostResponse>'
-    http_version: 
+    http_version:
   recorded_at: Mon, 25 Nov 2013 18:18:42 GMT
 - request:
     method: post
@@ -5921,6 +5921,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <video>1407683</video>\n</vzaar-api>\n"
-    http_version: 
+    http_version:
   recorded_at: Mon, 25 Nov 2013 18:18:43 GMT
 recorded_with: VCR 2.7.0

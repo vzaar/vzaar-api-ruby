@@ -11,7 +11,7 @@ module Vzaar
     end
 
     def url
-      "https://#{signature.bucket}.s3.amazonaws.com/"
+      "https://#{signature[:bucket]}.s3.amazonaws.com/"
     end
 
     def upload
@@ -20,13 +20,13 @@ module Vzaar
       begin
         file = File.open file_path
         res = client.post url, [
-          ['acl', signature.acl],
-          ['bucket', signature.bucket],
+          ['acl', signature[:acl]],
+          ['bucket', signature[:bucket]],
           ['success_action_status', '201'],
-          ['policy', signature.policy],
-          ['AWSAccessKeyId', signature.aws_access_key],
-          ['signature', signature.signature],
-          ['key', signature.key],
+          ['policy', signature[:policy]],
+          ['AWSAccessKeyId', signature[:aws_access_key]],
+          ['signature', signature[:signature]],
+          ['key', signature[:key]],
           ['file', file]
         ]
       ensure

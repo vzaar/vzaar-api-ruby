@@ -41,16 +41,13 @@ module Vzaar
     end
 
     def signature(opts={})
-      s = Request::Signature.new(connection, opts)
-
-      # JC: temporary solution till json support in vzaar.com
-      Signature.new(s.execute)
+      Request::Signature.new(connection, opts).execute
     end
 
     def upload_video(path, options = {})
-      sig = signature
+      sig = SignatureExtractor.new(signature, options[:format]).extract
       if upload_to_s3(path, sig)
-        process_video :guid => sig.guid, :title => options[:title],
+        process_video :guid => sig[:guid], :title => options[:title],
           :description => options[:description], :profile => options[:profile],
           :transcoding => options[:transcoding]
       end

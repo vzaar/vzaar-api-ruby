@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vzaar.com/api/videos/signature
+    uri: https://vzaar.com/api/videos/signature.xml
     body:
       encoding: US-ASCII
       string: ''
@@ -49,6 +49,6 @@ http_interactions:
         \ <policy>ewogICAgICAgICdleHBpcmF0aW9uJzogJzIwMTMtMTEtMjJUMTk6NTE6NTAuMDAwWicsCiAgICAgICAgJ2NvbmRpdGlvbnMnOiBbCiAgICAgICAgICB7J2J1Y2tldCc6ICd2ejEnfSwKICAgICAgICAgIFsnc3RhcnRzLXdpdGgnLCAnJGtleScsICd2emFhci92ejkvNjVkL3NvdXJjZS92ejk2NWQ2MTcxMjhkMTRjZTI4ZTk3ZGU1ZjJkMThkNjk3LyddLAogICAgICAgICAgeydhY2wnOiAncHJpdmF0ZSd9LAogICAgICAgICAgWydlcScsICckc3VjY2Vzc19hY3Rpb25fc3RhdHVzJywgJzIwMSddCiAgICAgIAogICAgICAgIF19CiAgICAgIA==</policy>\n
         \ <guid>vz965d617128d14ce28e97de5f2d18d697</guid>\n  <key>vzaar/vz9/65d/source/vz965d617128d14ce28e97de5f2d18d697/${filename}</key>\n
         \ <bucket>vz1</bucket>\n</vzaar-api>\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Nov 2013 17:51:43 GMT
 recorded_with: VCR 2.7.0

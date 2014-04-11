@@ -293,7 +293,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-default") do
             signature = subject.signature
-            expect(signature.https).to eq('false')
+            expect(signature).to include("<https>false</https>")
           end
         end
       end
@@ -310,7 +310,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-with-options") do
             signature = subject.signature signature_options
-            expect(signature.https).to eq('false')
+            expect(signature).to include("<https>false</https>")
           end
         end
       end
