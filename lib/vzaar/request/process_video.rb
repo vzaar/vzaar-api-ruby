@@ -1,16 +1,10 @@
 module Vzaar
   module Request
     class ProcessVideo < Base
+      authenticated true
+      http_verb Http::POST
 
       private
-
-      def authenticated?
-        true
-      end
-
-      def http_verb
-        Http::POST
-      end
 
       def base_url
         '/api/videos'

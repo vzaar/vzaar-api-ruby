@@ -4,10 +4,6 @@ module Vzaar
 
       private
 
-      def user_options
-        super.merge authenticated: options[:authenticated]
-      end
-
       def base_url
         "/api/videos/#{video_id}"
       end

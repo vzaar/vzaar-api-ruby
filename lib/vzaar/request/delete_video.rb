@@ -1,16 +1,8 @@
 module Vzaar
   module Request
     class DeleteVideo < Base
-
-      private
-
-      def authenticated?
-        true
-      end
-
-      def http_verb
-        Http::DELETE
-      end
+      authenticated true
+      http_verb Http::DELETE
 
       def base_url
         "/api/videos/#{video_id}"

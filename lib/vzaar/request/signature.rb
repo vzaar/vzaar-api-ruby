@@ -1,12 +1,9 @@
 module Vzaar
   module Request
     class Signature < Base
+      authenticated true
 
       private
-
-      def authenticated?
-        true
-      end
 
       def format_suffix
         nil

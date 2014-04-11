@@ -1,12 +1,9 @@
 module Vzaar
   module Request
     class WhoAmI < Base
+      authenticated true
 
       private
-
-      def authenticated?
-        true
-      end
 
       def base_url
         '/api/test/whoami'

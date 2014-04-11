@@ -1,16 +1,10 @@
 module Vzaar
   module Request
     class EditVideo < Base
+      authenticated true
+      http_verb Http::PUT
 
       private
-
-      def authenticated?
-        true
-      end
-
-      def http_verb
-        Http::PUT
-      end
 
       def base_url
         "/api/videos/#{video_id}"

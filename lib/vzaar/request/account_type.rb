@@ -4,10 +4,6 @@ module Vzaar
 
       private
 
-      def authenticated?
-        false
-      end
-
       def base_url
         "/api/accounts/#{account_type_id}"
       end
