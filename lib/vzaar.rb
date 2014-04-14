@@ -22,13 +22,11 @@ require 'nokogiri'
 require 'oauth'
 require 'json'
 
-
 require 'vzaar/connection'
 require 'vzaar/vzaar_error'
 require 'vzaar/http'
 
 require 'vzaar/signature_extractor'
-require 'vzaar/s3_uploader'
 require 'vzaar/request/base'
 
 # request
@@ -38,15 +36,21 @@ require 'vzaar/request/account_type'
 require 'vzaar/request/user_details'
 require 'vzaar/request/video_list'
 require 'vzaar/request/delete_video'
+require 'vzaar/request/upload_status'
+require 'vzaar/request/link_upload'
+
+require 'vzaar/uploader'
+
 
 # response
 
 require 'vzaar/response/base'
 require 'vzaar/response/handler'
 
-require 'vzaar/api'
+
 require 'vzaar/request/edit_video'
 require 'vzaar/request/process_video'
 require 'vzaar/request/signature'
 require 'vzaar/request/url'
 require 'vzaar/response/handler'
+require 'vzaar/api'

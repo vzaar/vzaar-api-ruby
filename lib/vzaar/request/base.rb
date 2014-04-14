@@ -58,7 +58,15 @@ module Vzaar
         format == :xml
       end
 
-      def url_params; {} end
+      # JC: login params is used only for localhost testing
+      def url_params
+        unless blank?(options[:l])
+          { login: options[:l] }
+        else
+          {}
+        end
+      end
+
       def data
         xml? ? xml_body : json_body
       end

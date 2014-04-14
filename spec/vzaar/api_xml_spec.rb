@@ -20,7 +20,7 @@ module Vzaar
       }
     end
 
-    its(:connection) { should == connection }
+    its(:conn) { should == connection }
 
     describe "#whoami" do
       context "with valid credentials" do
@@ -318,14 +318,14 @@ module Vzaar
 
     describe "#upload_video" do
       let(:expected_video_id) { '1407683' }
-      let(:path_to_video) { './spec/support/video.mp4' }
+      let(:path) { './spec/support/video.mp4' }
       let(:upload_options) do
-        { title: 'title', description: 'desc', profile: '2' }
+        { title: 'title', description: 'desc', profile: '2', path: path }
       end
 
       it "uploads the video, starts processing and returns the video id" do
         VCR.use_cassette('upload_video-success') do
-          video = subject.upload_video(path_to_video, upload_options)
+          video = subject.upload_video(upload_options)
           expect(video).to include("<video>#{expected_video_id}</video>")
         end
       end
