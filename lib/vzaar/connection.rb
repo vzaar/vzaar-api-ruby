@@ -38,7 +38,7 @@ module Vzaar
     private
 
     def content_type(_type='xml')
-      { 'Content-Type' => 'application/#{_type}' }
+      { 'Content-Type' => "application/#{_type}" }
     end
 
     def sanitized_url

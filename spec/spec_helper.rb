@@ -30,4 +30,7 @@ RSpec.configure do |config|
     c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
     c.hook_into :webmock
   end
+
+  config.before(:all) { ENV["RUBY_ENV"] = 'test' }
+  config.after(:all) { ENV["RUBY_ENV"] = nil }
 end

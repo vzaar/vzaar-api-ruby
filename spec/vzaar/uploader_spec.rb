@@ -30,11 +30,6 @@ module Vzaar
         let(:url) { double }
 
         specify do
-
-
-          pending
-
-
           allow(Uploaders::Link).to receive(:new)
             .with(conn, signature_hash, opts) { uploader }
 

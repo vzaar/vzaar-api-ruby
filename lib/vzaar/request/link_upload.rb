@@ -1,14 +1,25 @@
 module Vzaar
   module Request
     class LinkUpload < Base
-      endpoint "/api/link_upload"
+      endpoint "/api/upload/link"
+      authenticated true
       http_verb Http::POST
+      resource "LinkUpload"
 
-      def json
-        #TODO
+      def json_body
+        h = {
+          vzaar_api: {
+            link_upload: {
+              key: options[:key],
+              guid: options[:guid],
+              url: options[:url]
+            }
+          }
+        }
+        JSON.generate(h)
       end
 
-      def xml
+      def xml_body
         <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
           <vzaar-api>

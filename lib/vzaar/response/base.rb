@@ -1,6 +1,7 @@
 module Vzaar
   module Response
     class Base < Struct.new(:res)
+      include Vzaar::Helper
 
       def body
         json? ? JSON.parse(res.body) : res.body

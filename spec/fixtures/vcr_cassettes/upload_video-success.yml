@@ -5873,7 +5873,7 @@ http_interactions:
   recorded_at: Mon, 25 Nov 2013 18:18:42 GMT
 - request:
     method: post
-    uri: https://vzaar.com/api/videos
+    uri: https://vzaar.com/api/videos.xml
     body:
       encoding: US-ASCII
       string: ! "\n        <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n        <vzaar-api>\n

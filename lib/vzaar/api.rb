@@ -43,11 +43,22 @@ module Vzaar
       Request::ProcessVideo.new(conn, opts).execute
     end
 
+    def upload_status(guid, opts={})
+      _opts = opts.merge(guid: guid, authenticated: true)
+      Request::UploadStatus.new(conn, _opts).execute
+    end
+
     def upload_video(opts={})
       uploader = Uploader.new(conn, signature, opts)
       uploader.upload do |u|
         process_video(u.processing_params)
       end
+    end
+
+    def link_upload(url, opts={})
+      sig = signature
+      _opts = opts.merge({ guid: sig.guid, key: sig.key, url: url })
+      Request::LinkUpload.new(conn, _opts).execute
     end
   end
 end

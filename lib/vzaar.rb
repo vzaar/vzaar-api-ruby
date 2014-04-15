@@ -31,6 +31,8 @@ require 'vzaar/request/base'
 
 require 'vzaar/resources/base'
 require 'vzaar/resources/account_type'
+
+
 require 'vzaar/resources/user'
 require 'vzaar/resources/video'
 require 'vzaar/resources/video_collection_item'
@@ -38,7 +40,7 @@ require 'vzaar/resources/video_collection'
 require 'vzaar/resources/signature'
 require 'vzaar/resources/processed_video'
 require 'vzaar/resources/who_am_i'
-
+require './lib/vzaar/resources/link_upload'
 
 # request
 require 'vzaar/request/video'

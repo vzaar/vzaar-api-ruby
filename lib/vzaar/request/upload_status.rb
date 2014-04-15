@@ -1,7 +1,8 @@
 module Vzaar
   module Request
     class UploadStatus < Base
-      endpoint { |o| "/api/link_upload/#{o.guid}" }
+      endpoint { |o| "/api/upload/link/#{o.guid}" }
+      resource "LinkUpload"
 
       def guid
         options[:guid]

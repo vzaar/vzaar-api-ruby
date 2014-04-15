@@ -8,12 +8,35 @@ module Vzaar
 
       private
 
-      def format_suffix
-        nil
+      def json_body
+        h = {
+          "vzaar_api" =>  {
+            "video" =>  {
+              "guid" =>  options[:guid],
+              "title" =>  options[:title],
+              "description" =>  options[:description],
+              "profile" =>  options[:profile],
+              "transcoding" =>  options[:transcoding],
+              "replace_id" => options[:replace_id]
+            }
+          }
+        }.delete_if { |k,v| v.nil? }
+
+        if include_encoding_options?
+          return h.merge({ "encoding" => {
+                             "width" => options[:width],
+                             "bitrate" => options[:bitrate]
+                           }
+                         })
+        end
+        h
       end
 
+      def include_encoding_options?
+        options[:profile] == 6 && options[:width] && options[:bitrate]
+      end
 
-      def data
+      def xml_body
         request_xml = %{
           <?xml version="1.0" encoding="UTF-8"?>
           <vzaar-api>
@@ -36,7 +59,7 @@ module Vzaar
           }
         end
 
-        if options[:profile] == 6 && options[:width] && options[:bitrate]
+        if include_encoding_options?
           request_xml += %{
               <encoding>
                 <width>#{options[:width]}</width>

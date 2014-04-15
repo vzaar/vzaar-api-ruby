@@ -7,8 +7,8 @@ module Vzaar
 
     def upload
       begin
-        (link_upload? ? link : s3).upload
-        yield(self) if block_given?
+        success = (link_upload? ? link : s3).upload
+        yield(self) if block_given? && success
       rescue Exception => e
         VzaarError.generate :unknown, e.message
       end
@@ -33,7 +33,7 @@ module Vzaar
     end
 
     def link
-      raise "not implemented"
+      Uploaders::Link.new(conn, signature, opts)
     end
   end
 end
