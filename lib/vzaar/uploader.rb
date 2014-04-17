@@ -33,7 +33,7 @@ module Vzaar
     end
 
     def link
-      Uploaders::Link.new(conn, signature_hash, opts)
+      raise "not implemented"
     end
   end
 end
