@@ -15,12 +15,7 @@ module Vzaar
     end
 
     def processing_params
-      { :guid => guid,
-        :title => opts[:title],
-        :description => opts[:description],
-        :profile => opts[:profile],
-        :transcoding => opts[:transcoding]
-      }
+      opts.merge guid: guid
     end
 
     private
