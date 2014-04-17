@@ -1,28 +1,96 @@
-# Work-in-progress!
-
-This gem is a work in progress and is __NOT__ ready for use. Proceed at your own risk.
-
 # vzaar  [![Build Status](https://secure.travis-ci.org/edjames/vzaar.png)](http://travis-ci.org/edjames/vzaar) [![Code Climate](https://codeclimate.com/github/edjames/vzaar.png)](https://codeclimate.com/github/edjames/vzaar)
 
 A Ruby gem for the vzaar API.
+
+Note: this is still beta version
 
 ### Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'vzaar'
+    gem 'vzaar', :git => "git@github.com:vzaar/vzaar-api-ruby.git", :tag => 'v0.3'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install vzaar
 
 ### Usage
 
-Usage instructions to follow...
+```ruby
+conn = Vzaar::Connection.new(:application_token => "API token", :login => "vzaar login")
+api = Vzaar::Api.new(conn)
+```
+
+If your login and API token are correct, you should be able to fetch you login by calling:
+```ruby
+api.whoami
+=> "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
+     <vzaar-api>\n
+       <test>\n
+         <login>YOUR LOGIN</login>\n
+       </test>\n
+     </vzaar-api>\n"
+```
+
+### Endpoints:
+
+Fetching account's type details:
+```ruby
+api.account_type(account_type_id, options)
+```
+
+Fetching user's details:
+```ruby
+api.user_details("user login", options)
+```
+
+Getting details from public video:
+```ruby
+api.video_details(video_id, options)
+```
+
+Getting details from private video (authentication required):
+```ruby
+api.video_details(video_id, authenticated: true)
+```
+
+Fetching videos for a given user:
+```ruby
+api.video_details("user login", options)
+```
+
+Fetching videos for authenticated user (authentication required):
+```ruby
+api.videos
+```
+
+Removing video from vzaar: (authentication required)
+```ruby
+api.delete(video_id)
+```
+
+Updating existing video (authentication required):
+```ruby
+api.edit_video(video_id, options)
+
+# options are: title, description, private and seo_url
+```
+
+Uploading new video to vzaar (authentication required):
+```ruby
+api.upload_video(options)
+
+# options are: path, title, description, profile, transcoding, replace_id,
+# width and bitrate
+#
+# e.g api.upload(path: "./path/to/video.mp4", title: "my video")
+```
+
+Getting guid and aws signature (authentication required):
+```ruby
+api.signature
+```
 
 ### Contributing
 
