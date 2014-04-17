@@ -42,19 +42,8 @@ module Vzaar
       SignatureExtractor.new(signature(opts), opts[:format]).extract
     end
 
-    def upload_status(guid, opts={})
-      Request::UploadStatus.new(conn, opts.merge(guid: guid)).execute
-    end
-
     def process_video(opts={})
       Request::ProcessVideo.new(conn, opts).execute
-    end
-
-    def link_upload(opts={})
-      _opts = signature_hash(opts).merge({
-        guid: sig_hash[:guid], key: sig_hash[:key]})
-
-      Request::LinkUpload.new(conn, _opts).execute
     end
 
     def upload_video(opts={})

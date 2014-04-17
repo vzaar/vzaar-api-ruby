@@ -4,7 +4,7 @@ module Vzaar
       authenticated true
       http_verb Http::PUT
 
-      def xml
+      def xml_body
         <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
           <vzaar-api>
