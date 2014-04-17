@@ -1,8 +1,8 @@
-# vzaar  [![Build Status](https://secure.travis-ci.org/edjames/vzaar.png)](http://travis-ci.org/edjames/vzaar) [![Code Climate](https://codeclimate.com/github/edjames/vzaar.png)](https://codeclimate.com/github/edjames/vzaar)
+# vzaar  [![Build Status](https://secure.travis-ci.org/vzaar/vzaar.png)](http://travis-ci.org/vzaar/vzaar) [![Code Climate](https://codeclimate.com/github/vzaar/vzaar-api-ruby.png)](https://codeclimate.com/github/vzaar/vzaar-api-ruby)
 
 A Ruby gem for the vzaar API.
 
-Note: this is still beta version
+Note: This version is a beta release.
 
 ### Installation
 
@@ -22,7 +22,7 @@ conn = Vzaar::Connection.new(:application_token => "API token", :login => "vzaar
 api = Vzaar::Api.new(conn)
 ```
 
-If your login and API token are correct, you should be able to fetch you login by calling:
+If your login and API token are correct, you should be able to fetch your login by calling:
 ```ruby
 api.whoami
 => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
@@ -94,8 +94,8 @@ api.signature
 
 ### Previous versions of vzaar gem
 
-This version is not compatible with any of the previous versions of vzaar gem (0.2.x series)
-0.2.x series is no more maintained
+This version is not backwards compatible with any of the previous versions of vzaar gem (0.2.x series)
+0.2.x series is no longer maintained.
 
 
 ### Contributing
