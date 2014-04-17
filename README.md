@@ -92,6 +92,12 @@ Getting guid and aws signature (authentication required):
 api.signature
 ```
 
+### Previous versions of vzaar gem
+
+This version is not compatible with any of the previous versions of vzaar gem (0.2.x series)
+0.2.x series is no more maintained
+
+
 ### Contributing
 
 1. Fork it
