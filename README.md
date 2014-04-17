@@ -8,7 +8,7 @@ Note: this is still beta version
 
 Add this line to your application's Gemfile:
 
-    gem 'vzaar', :git => "git@github.com:vzaar/vzaar-api-ruby.git", :tag => 'v0.3'
+    gem 'vzaar', :git => "git@github.com:vzaar/vzaar-api-ruby.git", :branch => 'master'
 
 And then execute:
 
