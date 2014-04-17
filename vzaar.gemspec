@@ -2,7 +2,7 @@
 require File.expand_path('../lib/vzaar/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name          = 'vzaar-api'
+  s.name          = 'vzaar'
   s.version       = Vzaar::VERSION
   s.authors       = ['Ed James', 'Jozef Chraplewski']
   s.email         = ['ed@vzaar.com', 'jozef@vzaar.com']
