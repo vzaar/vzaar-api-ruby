@@ -4,6 +4,7 @@ module Vzaar
       endpoint '/api/videos'
       authenticated true
       http_verb Http::POST
+      resource "ProcessedVideo"
 
       private
 

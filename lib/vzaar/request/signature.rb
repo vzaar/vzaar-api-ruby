@@ -3,6 +3,7 @@ module Vzaar
     class Signature < Base
       endpoint "/api/videos/signature"
       authenticated true
+      resource :signature
 
       private
 

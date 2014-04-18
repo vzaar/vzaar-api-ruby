@@ -26,7 +26,7 @@ module Vzaar
       context "with valid credentials" do
         it "returns the user login" do
           VCR.use_cassette('whoami-success') do
-            expect(subject.whoami).to include("<login>#{login}</login>")
+            expect(subject.whoami).to eq(login)
           end
         end
       end
@@ -48,8 +48,7 @@ module Vzaar
         it "returns the account type details" do
           VCR.use_cassette('account_type-success') do
             account_type = subject.account_type(account_type_id)
-            expect(account_type)
-              .to include("<account_id>#{account_type_id}</account_id>")
+            expect(account_type.id).to eq(account_type_id.to_i)
           end
         end
       end
@@ -71,7 +70,7 @@ module Vzaar
           it "returns the user details" do
             VCR.use_cassette("#{vcr_cassette}-success") do
               user = subject.user_details(login, authenticated: authentication)
-              expect(user).to include("<author_name>#{login}</author_name>")
+              expect(user.name).to eq(login)
             end
           end
         end
@@ -105,7 +104,7 @@ module Vzaar
         it "returns the video details" do
           VCR.use_cassette("#{vcr_cassette}-success") do
             video = subject.video_details(video_id, authenticated: authentication)
-            expect(video).to include("<oembed>")
+            expect(video.html).to include("#{video_id}")
           end
         end
       end
@@ -183,7 +182,7 @@ module Vzaar
         it "returns a collection of private and public videos" do
           VCR.use_cassette("video_list-pvt-success") do
             videos = subject.video_list(login, { authenticated: authentication })
-            expect(videos.scan(/\<video\>/).count).to eq(2)
+            expect(videos.count).to eq(2)
           end
         end
       end
@@ -193,7 +192,7 @@ module Vzaar
         it "returns a collection of public videos only" do
           VCR.use_cassette("video_list-pub-success") do
             videos = subject.video_list(login, { authenticated: authentication })
-            expect((videos.scan(/\<video\>/).count)).to eq(1)
+            expect(videos.count).to eq(1)
           end
         end
       end
@@ -203,7 +202,7 @@ module Vzaar
       it "returns a collection of private and public videos" do
         VCR.use_cassette("video_list-pvt-success") do
           videos = subject.videos
-          expect((videos.scan(/\<video\>/).count)).to eq(2)
+          expect((videos.count)).to eq(2)
         end
       end
     end
@@ -215,8 +214,8 @@ module Vzaar
         context "when the video can be deleted" do
           it "deletes the video" do
             VCR.use_cassette("delete_video-success") do
-              response = subject.delete_video(video_id)
-              expect(response).to include("<oembed>")
+              res = subject.delete_video(video_id)
+              expect(res.html).to include("#{video_id}")
             end
           end
         end
@@ -259,9 +258,8 @@ module Vzaar
         let(:video_id) { 1405081 }
         it "updates the title and description" do
           VCR.use_cassette("edit_video-success") do
-            response = subject.edit_video(video_id, edit_options)
-            expect(response)
-              .to include("<title>#{edit_options[:title]}</title>")
+            video = subject.edit_video(video_id, edit_options)
+            expect(video.title).to eq(edit_options[:title])
           end
         end
       end
@@ -293,7 +291,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-default") do
             signature = subject.signature
-            expect(signature).to include("<https>false</https>")
+            expect(signature.https).to be_false
           end
         end
       end
@@ -310,7 +308,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-with-options") do
             signature = subject.signature signature_options
-            expect(signature).to include("<https>false</https>")
+            expect(signature.https).to be_false
           end
         end
       end
@@ -326,7 +324,7 @@ module Vzaar
       it "uploads the video, starts processing and returns the video id" do
         VCR.use_cassette('upload_video-success') do
           video = subject.upload_video(upload_options)
-          expect(video).to include("<video>#{expected_video_id}</video>")
+          expect(video.id).to eq(expected_video_id.to_i)
         end
       end
     end
@@ -346,7 +344,7 @@ module Vzaar
       it "returns the video id" do
         VCR.use_cassette('process_video-default') do
           video = subject.process_video process_options
-          expect(video).to include("<video>#{expected_video_id}</video>")
+          expect(video.id).to eq(expected_video_id.to_i)
         end
       end
     end

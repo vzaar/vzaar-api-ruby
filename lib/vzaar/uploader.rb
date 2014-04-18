@@ -2,7 +2,7 @@ require_relative "uploaders/s3"
 require_relative "uploaders/link"
 
 module Vzaar
-  class Uploader < Struct.new(:conn, :signature_hash, :opts)
+  class Uploader < Struct.new(:conn, :signature, :opts)
     attr_reader :guid
 
     def upload
@@ -25,11 +25,11 @@ module Vzaar
     end
 
     def guid
-      signature_hash[:guid]
+      signature.guid
     end
 
     def s3
-      Uploaders::S3.new(opts[:path], signature_hash)
+      Uploaders::S3.new(opts[:path], signature)
     end
 
     def link

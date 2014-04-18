@@ -1,6 +1,6 @@
 module Vzaar
   module Uploaders
-    class S3 < Struct.new(:path, :signature_hash)
+    class S3 < Struct.new(:path, :signature)
       SEND_TIMEOUT = 1800
 
       def upload
@@ -9,13 +9,13 @@ module Vzaar
         begin
           file = File.open(path)
           res = client.post url, [
-            ['acl', signature_hash[:acl]],
-            ['bucket', signature_hash[:bucket]],
+            ['acl', signature.acl],
+            ['bucket', signature.bucket],
             ['success_action_status', '201'],
-            ['policy', signature_hash[:policy]],
-            ['AWSAccessKeyId', signature_hash[:aws_access_key]],
-            ['signature', signature_hash[:signature]],
-            ['key', signature_hash[:key]],
+            ['policy', signature.policy],
+            ['AWSAccessKeyId', signature.access_key_id],
+            ['signature', signature.signature],
+            ['key', signature.key],
             ['file', file]
           ]
         ensure
@@ -25,7 +25,7 @@ module Vzaar
       end
 
       def url
-        "https://#{signature_hash[:bucket]}.s3.amazonaws.com/"
+        "https://#{signature.bucket}.s3.amazonaws.com/"
       end
     end
   end

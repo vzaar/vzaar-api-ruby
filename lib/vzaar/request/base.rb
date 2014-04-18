@@ -15,6 +15,10 @@ module Vzaar
         def endpoint(obj=nil, &fn)
           define_method(:endpoint) { block_given? ? yield(self) : obj }
         end
+
+        def resource(name)
+          define_method(:resource) { name }
+        end
       end
 
       authenticated nil
@@ -22,13 +26,18 @@ module Vzaar
 
       def execute
         conn.using_connection(url, user_options) do |res|
-          return Response::Base.new(res).body
+          return resource_klass.new(Response::Base.new(res).body)
         end
       end
 
       protected
 
       attr_reader :xml_body, :json_body
+
+      def resource_klass
+        name = resource.is_a?(Symbol) ? resource.to_s.capitalize : resource
+        Resource.const_get(name)
+      end
 
       def options
         @options ||= symb_keys(opts)

@@ -2,7 +2,8 @@ module Vzaar
   class Api < Struct.new(:conn)
 
     def whoami(opts={})
-      Request::WhoAmI.new(conn, opts).execute
+      resource = Request::WhoAmI.new(conn, opts).execute
+      resource.login
     end
 
     def account_type(account_type_id, opts={})
@@ -38,16 +39,12 @@ module Vzaar
       Request::Signature.new(conn, opts).execute
     end
 
-    def signature_hash(opts)
-      SignatureExtractor.new(signature(opts), opts[:format]).extract
-    end
-
     def process_video(opts={})
       Request::ProcessVideo.new(conn, opts).execute
     end
 
     def upload_video(opts={})
-      uploader = Uploader.new(conn, signature_hash(opts), opts)
+      uploader = Uploader.new(conn, signature, opts)
       uploader.upload do |u|
         process_video(u.processing_params)
       end

@@ -25,12 +25,7 @@ api = Vzaar::Api.new(conn)
 If your login and API token are correct, you should be able to fetch your login by calling:
 ```ruby
 api.whoami
-=> "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
-     <vzaar-api>\n
-       <test>\n
-         <login>YOUR LOGIN</login>\n
-       </test>\n
-     </vzaar-api>\n"
+=> "VZAAR LOGIN"
 ```
 
 ### Endpoints:
