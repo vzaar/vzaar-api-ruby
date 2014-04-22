@@ -25,8 +25,6 @@ require 'json'
 require 'vzaar/connection'
 require 'vzaar/vzaar_error'
 require 'vzaar/http'
-
-require 'vzaar/signature_extractor'
 require 'vzaar/request/base'
 
 # resources

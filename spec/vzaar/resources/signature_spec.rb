@@ -1,14 +1,11 @@
 require 'spec_helper'
 
-module Vzaar
-  describe SignatureExtractor do
-
-    subject { described_class.new(xml, format) }
-
-    let(:format) { :xml }
+module Vzaar::Resource
+  describe Signature do
+    subject { described_class.new(xml) }
 
     context "when xml is returned" do
-      let(:https) { 'false' }
+      let(:https) { false }
       let(:signature) { '7BOi7ogK5EEacIwHX56NTUSFCVk=' }
       let(:expiration_date) { '2013-11-22T19:53:12.000Z' }
       let(:acl) { 'private' }
@@ -42,23 +39,18 @@ module Vzaar
         XML
       end
 
-      describe "#extract" do
-        before { @res = subject.extract }
-
-        specify { expect(@res[:https]).to eq(https) }
-        specify { expect(@res[:signature]).to eq(signature) }
-        specify { expect(@res[:expiration_date]).to eq(expiration_date) }
-        specify { expect(@res[:acl]).to eq(acl) }
-        specify { expect(@res[:success_action_redirect]).to eq(success_action_redirect) }
-        specify { expect(@res[:profile]).to eq(profile) }
-        specify { expect(@res[:access_key_id]).to eq(access_key_id) }
-        specify { expect(@res[:aws_access_key]).to eq(access_key_id) }
-        specify { expect(@res[:policy]).to eq(policy) }
-        specify { expect(@res[:title]).to eq(title) }
-        specify { expect(@res[:guid]).to eq(guid) }
-        specify { expect(@res[:key]).to eq(key) }
-        specify { expect(@res[:bucket]).to eq(bucket) }
-      end
+      specify { expect(subject.https).to eq(https) }
+      specify { expect(subject.signature).to eq(signature) }
+      specify { expect(subject.expiration_date).to eq(expiration_date) }
+      specify { expect(subject.acl).to eq(acl) }
+      specify { expect(subject.success_action_redirect).to eq(success_action_redirect) }
+      specify { expect(subject.profile).to eq(profile) }
+      specify { expect(subject.access_key_id).to eq(access_key_id) }
+      specify { expect(subject.policy).to eq(policy) }
+      specify { expect(subject.title).to eq(title) }
+      specify { expect(subject.guid).to eq(guid) }
+      specify { expect(subject.key).to eq(key) }
+      specify { expect(subject.bucket).to eq(bucket) }
     end
   end
 end
