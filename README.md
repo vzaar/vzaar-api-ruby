@@ -76,10 +76,13 @@ Uploading new video to vzaar (authentication required):
 ```ruby
 api.upload_video(options)
 
-# options are: path, title, description, profile, transcoding, replace_id,
+# options are: path, url, title, description, profile, transcoding, replace_id,
 # width and bitrate
 #
 # e.g api.upload(path: "./path/to/video.mp4", title: "my video")
+#
+# For link upload use url param:
+# api.upload(url: "http://example.com/video.mp4", title: "my video")
 ```
 
 Getting guid and aws signature (authentication required):
@@ -100,4 +103,3 @@ This version is not backwards compatible with any of the previous versions of vz
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
