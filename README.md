@@ -82,7 +82,7 @@ api.upload_video(options)
 # e.g api.upload(path: "./path/to/video.mp4", title: "my video")
 #
 # For link upload use url param:
-# api.upload(url: "http://example.com/video.mp4", title: "my video")
+# api.upload_video(url: "http://example.com/video.mp4", title: "my video")
 ```
 
 Getting guid and aws signature (authentication required):
