@@ -22,9 +22,10 @@ module Vzaar
             print_msg "upload completed"
             print_msg "sending video to processing queue..."
             break
-          when "failure"
+          when "failed"
             success = false
             print_msg "file upload failed :-("
+            print_msg "filesize: #{fsize}"
             break
           else
             if progress < 100
