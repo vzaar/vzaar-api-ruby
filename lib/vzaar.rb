@@ -35,6 +35,8 @@ require 'vzaar/resources/account_type'
 
 require 'vzaar/resources/user'
 require 'vzaar/resources/video'
+require 'vzaar/resources/video_status'
+require 'vzaar/resources/video_details'
 require 'vzaar/resources/video_collection_item'
 require 'vzaar/resources/video_collection'
 require 'vzaar/resources/signature'
@@ -44,6 +46,7 @@ require './lib/vzaar/resources/link_upload'
 
 # request
 require 'vzaar/request/video'
+require 'vzaar/request/video_details'
 require 'vzaar/request/who_am_i'
 require 'vzaar/request/account_type'
 require 'vzaar/request/user_details'

@@ -1,5 +1,4 @@
 require_relative "uploaders/s3"
-require_relative "uploaders/link"
 
 module Vzaar
   class Uploader < Struct.new(:conn, :signature, :opts)
@@ -7,8 +6,12 @@ module Vzaar
 
     def upload
       begin
-        success = (link_upload? ? link : s3).upload
-        yield(self) if block_given? && success
+        if link_upload?
+          link
+        else
+          success = s3.upload
+          yield(self) if block_given? && success
+        end
       rescue Exception => e
         VzaarError.generate :unknown, e.message
       end
@@ -33,7 +36,8 @@ module Vzaar
     end
 
     def link
-      Uploaders::Link.new(conn, signature, opts)
+      _opts = opts.merge({ guid: guid, key: signature.key })
+      Request::LinkUpload.new(conn, _opts).execute
     end
   end
 end

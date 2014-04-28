@@ -16,7 +16,7 @@ module Vzaar
     end
 
     def video_details(video_id, opts={})
-      Request::Video.new(conn, opts.merge(video_id: video_id)).execute
+      Request::VideoDetails.new(conn, opts.merge(video_id: video_id)).execute
     end
 
     def video_list(login, opts={})
@@ -41,11 +41,6 @@ module Vzaar
 
     def process_video(opts={})
       Request::ProcessVideo.new(conn, opts).execute
-    end
-
-    def upload_status(guid, opts={})
-      _opts = opts.merge(guid: guid, authenticated: true)
-      Request::UploadStatus.new(conn, _opts).execute
     end
 
     def upload_video(opts={})

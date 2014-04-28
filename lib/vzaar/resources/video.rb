@@ -26,6 +26,10 @@ module Vzaar
       attribute :total_size, type: Integer
       attribute :status_id, field: :video_status_id, type: Integer
       attribute :status_description, field: :video_status_description
+
+      def state
+        "Processing completed"
+      end
     end
   end
 end
