@@ -36,7 +36,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette('whoami-fail') do
             expect { subject.whoami }.to raise_error(
-              VzaarError, VzaarError::PROTECTED_RESOURCE)
+              Vzaar::Error, Vzaar::Error::PROTECTED_RESOURCE)
           end
         end
       end
@@ -58,7 +58,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette('account_type-fail') do
             expect { subject.account_type(account_type_id) }.to raise_error(
-              VzaarError, VzaarError::NOT_FOUND)
+              Vzaar::Error, Vzaar::Error::NOT_FOUND)
           end
         end
       end
@@ -80,7 +80,7 @@ module Vzaar
           it "raises an error" do
             VCR.use_cassette("#{vcr_cassette}-fail") do
               expect { subject.user_details(login, authenticated: authentication) }
-                .to raise_error(VzaarError, VzaarError::NOT_FOUND)
+                .to raise_error(Vzaar::Error, Vzaar::Error::NOT_FOUND)
             end
           end
         end
@@ -113,7 +113,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette("#{vcr_cassette}-fail") do
             expect { subject.video_details(video_id, authenticated: authentication) }.to raise_error(
-              VzaarError, VzaarError::NOT_FOUND)
+              Vzaar::Error, Vzaar::Error::NOT_FOUND)
           end
         end
       end
@@ -122,7 +122,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette("#{vcr_cassette}-success") do
             expect { subject.video_details(video_id, authenticated: authentication) }
-              .to raise_error(VzaarError, VzaarError::PROTECTED_RESOURCE)
+              .to raise_error(Vzaar::Error, Vzaar::Error::PROTECTED_RESOURCE)
           end
         end
       end
@@ -224,7 +224,7 @@ module Vzaar
           it "raises an error" do
             VCR.use_cassette("delete_video-retry-success") do
               expect { subject.delete_video(video_id) }.to raise_error(
-                VzaarError, VzaarError::NOT_FOUND)
+                Vzaar::Error, Vzaar::Error::NOT_FOUND)
             end
           end
         end
@@ -235,7 +235,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette("delete_video-fail") do
             expect { subject.delete_video(video_id) }.to raise_error(
-              VzaarError, VzaarError::UNKNOWN)
+              Vzaar::Error, Vzaar::Error::UNKNOWN)
           end
         end
       end
@@ -245,7 +245,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette("delete_video-not-found") do
             expect { subject.delete_video(video_id) }.to raise_error(
-              VzaarError, VzaarError::NOT_FOUND)
+              Vzaar::Error, Vzaar::Error::NOT_FOUND)
           end
         end
       end
@@ -269,7 +269,7 @@ module Vzaar
         it "raises an error" do
           VCR.use_cassette("edit_video-fail") do
             expect { subject.edit_video(video_id, edit_options) }.to raise_error(
-              VzaarError, VzaarError::UNKNOWN)
+              Vzaar::Error, Vzaar::Error::UNKNOWN)
           end
         end
       end
@@ -279,7 +279,7 @@ module Vzaar
         it "updates the title and description" do
           VCR.use_cassette("edit_video-not-found") do
             expect { subject.edit_video(video_id, edit_options) }.to raise_error(
-              VzaarError, VzaarError::NOT_FOUND)
+              Vzaar::Error, Vzaar::Error::NOT_FOUND)
           end
         end
       end

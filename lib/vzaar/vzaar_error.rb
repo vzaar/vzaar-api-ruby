@@ -1,5 +1,5 @@
 module Vzaar
-  class VzaarError < ::RuntimeError
+  class Error < ::RuntimeError
 
     NOT_AUTHORIZED = 'You have not been authorized on the server. Please check your login and application token.'
     AUTHORIZATION_INFO_NOT_PROVIDED = 'You need to provide login and application token to perform to perform this action.'
