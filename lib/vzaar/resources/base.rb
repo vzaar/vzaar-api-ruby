@@ -1,6 +1,7 @@
 module Vzaar
   module Resource
     class Base
+      include Helper
       attr_reader :api_version, :doc
 
       class << self
@@ -38,7 +39,8 @@ module Vzaar
 
       def set_value!(name, value, type=nil)
         val = case type.to_s
-              when 'Integer' then value.to_i
+              when 'Integer'
+                blank?(value) ? nil : value.to_i
               when 'Vzaar::Resource::Boolean'
                 value =~ /^true$/i ? true : false
               when 'Fixnum'

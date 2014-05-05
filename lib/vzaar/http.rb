@@ -12,6 +12,6 @@ module Vzaar
     FORBIDDEN = '403'
     NOT_FOUND = '404'
     BAD_GATEWAY = '502'
-
+    ERROR = "422"
   end
 end

@@ -6,6 +6,8 @@ module Vzaar
         case response.code
         when Http::OK
           response
+        when Http::ERROR
+          response
         when Http::CREATED
           response
         when Http::NOT_AUTHORISED
