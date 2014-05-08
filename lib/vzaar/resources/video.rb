@@ -30,6 +30,10 @@ module Vzaar
       def state
         "Processing completed"
       end
+
+      def error
+        ""
+      end
     end
   end
 end

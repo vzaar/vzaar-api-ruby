@@ -5,6 +5,7 @@ module Vzaar
 
       attribute :state
       attribute :type
+      attribute :error
       attribute :status_id, field: :video_status_id, type: Integer
     end
   end
