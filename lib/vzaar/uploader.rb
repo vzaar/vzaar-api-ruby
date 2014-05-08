@@ -13,7 +13,7 @@ module Vzaar
           yield(self) if block_given? && success
         end
       rescue Exception => e
-        VzaarError.generate :unknown, e.message
+        Vzaar::Error.generate :unknown, e.message
       end
     end
 
