@@ -1,7 +1,7 @@
 module Vzaar
   module Response
     class Handler
-
+      # JC: refactor this
       def self.handle_response(response)
         case response.code
         when Http::OK
@@ -9,6 +9,8 @@ module Vzaar
         when Http::ERROR
           response
         when Http::CREATED
+          response
+        when Http::FORBIDDEN
           response
         when Http::NOT_AUTHORISED
           handle_exception :protected_resource
