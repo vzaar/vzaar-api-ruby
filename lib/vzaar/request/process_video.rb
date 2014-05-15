@@ -3,7 +3,7 @@ module Vzaar
     class ProcessVideo < Base
       endpoint '/api/videos'
       authenticated true
-      http_verb Http::POST
+      http_verb :post
       resource "ProcessedVideo"
 
       private

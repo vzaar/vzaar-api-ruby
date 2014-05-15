@@ -21,7 +21,7 @@ module Vzaar
         ensure
           file.close if file
         end
-        res.status_code.to_s == Http::CREATED
+        res.status_code == 201
       end
 
       def url

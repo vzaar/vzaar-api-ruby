@@ -16,14 +16,14 @@ module Vzaar
       connection = opts[:authenticated] ? authorised_connection : public_connection
 
       case opts[:http_verb]
-      when Http::GET
+      when :get
         yield handle_response(connection.get(url)) if block_given?
-      when Http::DELETE
+      when :delete
         yield handle_response(connection.delete(url)) if block_given?
-      when Http::POST
+      when :post
         response = connection.post(url, opts[:data], content_type(opts[:format]))
         yield handle_response(response) if block_given?
-      when Http::PUT
+      when :put
         response = connection.put(url, opts[:data], content_type(opts[:format]))
         yield handle_response(response) if block_given?
       else
@@ -46,7 +46,9 @@ module Vzaar
     end
 
     def consumer(authorised = false)
-      OAuth::Consumer.new '', '', { :site => "#{protocol(authorised)}://#{server}" }
+      site = "#{protocol(authorised)}://#{server}"
+      c = OAuth::Consumer.new('', '', { :site => site })
+      c.extend(OAuthExt::Multipart)
     end
 
     def protocol(authorised)
@@ -63,7 +65,7 @@ module Vzaar
     end
 
     def handle_response(response)
-      Response::Handler.handle_response(response)
+      Response.handle_response(response)
     end
 
     def handle_exception(type, custom_message = '')

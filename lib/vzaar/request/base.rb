@@ -4,7 +4,7 @@ module Vzaar
       include Vzaar::Helper
 
       class << self
-        [:authenticated, :http_verb].each do |method_name|
+        [:authenticated, :http_verb, :format].each do |method_name|
           define_method(method_name) do |val|
             define_method(method_name) do
               val.nil? ? self.options[method_name] : val
@@ -22,11 +22,12 @@ module Vzaar
       end
 
       authenticated nil
-      http_verb Http::GET
+      http_verb :get
+      format :xml
 
       def execute
         conn.using_connection(url, user_options) do |res|
-          return resource_klass.new(Response::Base.new(res).body)
+          return resource_klass.new(Response::Base.new(res).body, res.code)
         end
       end
 
@@ -43,10 +44,6 @@ module Vzaar
         @options ||= symb_keys(opts)
       end
 
-      def format
-        @format ||= (options[:format] || :xml).to_sym
-      end
-
       def format_suffix
         format
       end
@@ -56,7 +53,7 @@ module Vzaar
       end
 
       def user_options
-        { format: format,
+        { format: format.to_sym,
           authenticated: authenticated,
           http_verb: http_verb,
           data: data

@@ -13,7 +13,7 @@ module Vzaar
           yield(self) if block_given? && success
         end
       rescue Exception => e
-        Vzaar::Error.generate :unknown, e.message
+        raise(Vzaar::Error, "Upload error: " + e.message)
       end
     end
 

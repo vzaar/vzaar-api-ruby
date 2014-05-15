@@ -1,8 +1,8 @@
 module Vzaar
   module Resource
-    class LinkUpload < Base
+    class UploadThumbnail < Base
       root_node "//vzaar-api"
-      attribute :id, type: Integer
+      attribute :status
     end
   end
 end

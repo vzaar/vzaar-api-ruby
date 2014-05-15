@@ -1,7 +1,11 @@
 module Vzaar
   module Resource
     class VideoCollection < Array
-      def initialize(xml_body)
+      attr_reader :http_status_code
+
+      def initialize(xml_body, status_code)
+        @http_status_code = status_code
+
         doc = Nokogiri::XML(xml_body)
         doc.xpath("//videos/video").each do |xml|
           push(VideoCollectionItem.new(xml.to_s))

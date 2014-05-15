@@ -2,16 +2,18 @@ module Vzaar
   module Resource
     class Base
       include Helper
-      attr_reader :api_version, :doc
+      attr_reader :api_version, :doc, :http_status_code
 
       class << self
         def root_node(node)
           define_method(:initialize) do |*args|
             xml_body = args[0]
-            _node = args[1] || node
+            status_code = args[1]
+            _node = node
 
             instance_variable_set(:@root_node, _node)
             instance_variable_set(:@doc, Nokogiri::XML(xml_body))
+            instance_variable_set(:@http_status_code, status_code.to_i)
             set_api_version!(_node)
           end
         end
@@ -32,6 +34,13 @@ module Vzaar
             end
             val
           end
+        end
+      end
+
+      def errors
+        doc.xpath("//vzaar-api/errors").map do |e|
+          node = e.children.first
+          { node.name => node.text }
         end
       end
 

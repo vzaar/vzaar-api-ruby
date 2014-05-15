@@ -3,7 +3,7 @@ module Vzaar
     class LinkUpload < Base
       endpoint "/api/upload/link"
       authenticated true
-      http_verb Http::POST
+      http_verb :post
       resource "LinkUpload"
 
       def xml_body
