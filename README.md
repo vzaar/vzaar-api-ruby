@@ -87,7 +87,7 @@ api.upload_video(options)
 
 Uploading new thumbnail for video (authentication required):
 ```ruby
-upload_thumbnail(video_id, opts={})
+api.upload_thumbnail(video_id, opts={})
 
 # e.g api.upload_thumbnail(123456, path: "/path/to/image.jpg")
 ```
