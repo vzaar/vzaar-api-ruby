@@ -85,6 +85,13 @@ api.upload_video(options)
 # api.upload_video(url: "http://example.com/video.mp4", title: "my video")
 ```
 
+Uploading new thumbnail for video (authentication required):
+```ruby
+upload_thumbnail(video_id, opts={})
+
+# e.g api.upload_thumbnail(123456, path: "/path/to/image.jpg")
+```
+
 Getting guid and aws signature (authentication required):
 ```ruby
 api.signature
