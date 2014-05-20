@@ -18,7 +18,6 @@ module Vzaar
   class Error < StandardError; end
 end
 
-require 'pry'
 require 'httpclient'
 require 'nokogiri'
 require 'oauth'
