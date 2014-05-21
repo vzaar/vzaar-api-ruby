@@ -349,5 +349,38 @@ module Vzaar
       end
     end
 
+    describe "#add_subtitle" do
+      context "when there are errors" do
+        specify do
+          VCR.use_cassette('add_subtitle-failure') do
+            res = subject.add_subtitle(1519682, body: "SRT api", language: "en")
+            expect(res.errors).to_not be_empty
+          end
+        end
+
+        specify do
+          VCR.use_cassette('add_subtitle-failure') do
+            res = subject.add_subtitle(1519682, body: "SRT api", language: "en")
+            expect(res.http_status_code).to eq(422)
+          end
+        end
+      end
+
+      context "when there are no errors" do
+        specify do
+          VCR.use_cassette('add_subtitle-success') do
+            res = subject.add_subtitle(1627985, body: "SRT api", language: "en")
+            expect(res.http_status_code).to eq(202)
+          end
+        end
+
+        specify do
+          VCR.use_cassette('add_subtitle-success') do
+            res = subject.add_subtitle(1627985, body: "SRT api", language: "en")
+            expect(res.status).to eq("Accepted")
+          end
+        end
+      end
+    end
   end
 end

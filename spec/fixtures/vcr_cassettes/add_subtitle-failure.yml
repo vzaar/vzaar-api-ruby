@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vzaar.com/api/subtitle/upload.xml
+    body:
+      encoding: UTF-8
+      string: |2
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <vzaar-api>
+                    <subtitle>
+                      <language>en</language>
+                      <video_id>1519682</video_id>
+                      <body>SRT api</body>
+                    </subtitle>
+                  </vzaar-api>
+    headers:
+      Content-Type:
+      - application/xml
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '257'
+      Authorization:
+      - OAuth oauth_body_hash="Pvzgbsdols7jqFA83XETMFVwCl8%3D", oauth_nonce="nijdnfgdkfIqWUvLO0mfin1wYUmBGo",
+        oauth_signature="tYeJpTJyivJnd2STkrejjIkysUoo%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1400685103", oauth_token="vz-test1", oauth_version="1.0"
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Wed, 21 May 2014 15:11:44 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx
+      Set-Cookie:
+      - _vzaar_session_id=UjeBzoPc2Vzc2lvbl9pZCIlYzJmNTksdfsdfsdfsNJWI3ZDQ6Em9hdXRoX3VzZXJfaWRpAzuhAQ%3D%3D--71c28246811126021653bd37a7416eed111613c3;
+        path=/; expires=Fri, 20-Jun-2014 15:11:44 GMT; HttpOnly
+      X-Runtime:
+      - '90'
+      Content-Length:
+      - '147'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="utf-8"?><vzaar-api><status>Failure</status><errors><user>Permission
+        Denied: 106811/101210</user></errors></vzaar-api>'
+    http_version:
+  recorded_at: Wed, 21 May 2014 15:11:44 GMT
+recorded_with: VCR 2.9.0

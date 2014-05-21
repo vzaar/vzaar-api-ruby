@@ -46,6 +46,7 @@ require 'vzaar/resources/processed_video'
 require 'vzaar/resources/who_am_i'
 require 'vzaar/resources/link_upload'
 require 'vzaar/resources/upload_thumbnail'
+require 'vzaar/resources/subtitle'
 
 # request
 
@@ -59,6 +60,7 @@ require 'vzaar/request/delete_video'
 require 'vzaar/request/upload_status'
 require 'vzaar/request/link_upload'
 require 'vzaar/request/upload_thumbnail'
+require 'vzaar/request/add_subtitle'
 
 require 'vzaar/uploader'
 

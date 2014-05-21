@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vzaar.com/api/subtitle/upload.xml
+    body:
+      encoding: UTF-8
+      string: |2
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <vzaar-api>
+                    <subtitle>
+                      <language>en</language>
+                      <video_id>1627985</video_id>
+                      <body>SRT api</body>
+                    </subtitle>
+                  </vzaar-api>
+    headers:
+      Content-Type:
+      - application/xml
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '257'
+      Authorization:
+      - OAuth oauth_body_hash="xibTQvtRg%2B8j%2BF2FAJY%2FwqIZJEI%3D", oauth_nonce="3FnOpJzb62vT6f4I4SVnhUtEWg20m95umYOb7mWt4M",
+        oauth_signature="OVGYQkYyvuy1TE7AYCtdiXTICmA%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1401105485", oauth_token="vz-test1", oauth_version="1.0"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Mon, 26 May 2014 11:58:08 GMT
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Server:
+      - nginx
+      Set-Cookie:
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlMmFiMjdkZjRhODY0MDIyOGZlMTI4YzVlNjY3ZWU4OTg6Em9hdXRoX3VzZXJfaWRpAzuhAQ%3D%3D--17626bf1f7f06456ef5ea0a7574f9b484b2da83f;
+        path=/; expires=Wed, 25-Jun-2014 11:58:07 GMT; HttpOnly
+      X-Runtime:
+      - '1715'
+      Content-Length:
+      - '86'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><vzaar-api><status>Accepted</status></vzaar-api>
+    http_version: 
+  recorded_at: Mon, 26 May 2014 11:58:08 GMT
+recorded_with: VCR 2.9.0

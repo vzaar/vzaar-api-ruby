@@ -50,6 +50,10 @@ module Vzaar
       end
     end
 
+    def add_subtitle(video_id, opts={})
+      Request::AddSubtitle.new(conn, opts.merge(video_id: video_id)).execute
+    end
+
     def upload_thumbnail(video_id, opts={})
       Request::UploadThumbnail.new(conn, opts.merge(video_id: video_id)).execute
     end

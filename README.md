@@ -79,7 +79,7 @@ api.upload_video(options)
 # options are: path, url, title, description, profile, transcoding, replace_id,
 # width and bitrate
 #
-# e.g api.upload(path: "./path/to/video.mp4", title: "my video")
+# api.upload(path: "./path/to/video.mp4", title: "my video")
 #
 # For link upload use url param:
 # api.upload_video(url: "http://example.com/video.mp4", title: "my video")
@@ -87,9 +87,16 @@ api.upload_video(options)
 
 Uploading new thumbnail for video (authentication required):
 ```ruby
-api.upload_thumbnail(video_id, opts={})
+api.upload_thumbnail(video_id, options)
 
-# e.g api.upload_thumbnail(123456, path: "/path/to/image.jpg")
+# api.upload_thumbnail(123456, path: "/path/to/image.jpg")
+```
+
+Adding subtitle to the video (authentication required):
+```ruby
+api.add_subtitle(video_id, options)
+
+# api.add_subtitle(123456, body: "1\n00:00:17,440 --> 00:01:20,375\n ......", language: "en")
 ```
 
 Getting guid and aws signature (authentication required):
