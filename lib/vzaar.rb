@@ -13,6 +13,13 @@ module Vzaar
       end
       h
     end
+
+    def hash_to_xml(h)
+      h.map do |k, v|
+        text = Hash === v ? hash_to_xml(v) : v
+        "<%s>%s</%s>" % [k, text, k]
+      end.join
+    end
   end
 
   class Error < StandardError; end
