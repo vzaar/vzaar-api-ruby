@@ -2,17 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vzaar.com/api/subtitle/upload.xml
+    uri: https://vzaar.com/api/videos/1627985/generate_thumb.xml
     body:
       encoding: UTF-8
       string: |2
                   <?xml version="1.0" encoding="UTF-8"?>
                   <vzaar-api>
-                    <subtitle>
-                      <language>en</language>
-                      <video_id>1627985</video_id>
-                      <body>SRT api</body>
-                    </subtitle>
+                    <video>
+                      <thumb_time>3</thumb_time>
+                    </video>
                   </vzaar-api>
     headers:
       Content-Type:
@@ -24,11 +22,11 @@ http_interactions:
       User-Agent:
       - OAuth gem v0.4.7
       Content-Length:
-      - '257'
+      - '176'
       Authorization:
-      - OAuth oauth_body_hash="xibTQvtRg%2B8j%2BF2FAJY%2FwqIZJEI%3D", oauth_nonce="G5JHy8yyYnAOY7PBA7iBAFhdAIjX7v1uQqVwDQt2R4",
-        oauth_signature="pH2Gy%2B3o8ofpL46s30YbEsHuz7s%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1401110291", oauth_token="vz-test1", oauth_version="1.0"
+      - OAuth oauth_body_hash="G%2FOl0Dp0PLu5u9b9YdmYz4d2ZBs%3D", oauth_nonce="75j3IWVpsmNRDYBRk47nuWh6xs1rWH1dEPOxoSWtzbY",
+        oauth_signature="S90WxRByGMNc6qnVzB5Ql93ZcOw%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1401110622", oauth_token="vz-test1", oauth_version="1.0"
   response:
     status:
       code: 202
@@ -39,16 +37,16 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Mon, 26 May 2014 13:18:14 GMT
+      - Mon, 26 May 2014 13:23:42 GMT
       P3p:
       - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
       Server:
       - nginx
       Set-Cookie:
-      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlYmE1MjhiNTgzN2NlMjM3ZTliNjkyYzI3M2M1NGE1Y2U6Em9hdXRoX3VzZXJfaWRpAzuhAQ%3D%3D--fe3ceef10677aef3fb8fcae522472b26f4c4e5f4;
-        path=/; expires=Wed, 25-Jun-2014 13:18:13 GMT; HttpOnly
+      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlNTg1ZDBkMzFhMzhhNGE1NjQ0MzdjMTg2NjU3MzRiMTE6Em9hdXRoX3VzZXJfaWRpAzuhAQ%3D%3D--719eb2427a45a0fa7fdf87c0880663b8d0595643;
+        path=/; expires=Wed, 25-Jun-2014 13:23:42 GMT; HttpOnly
       X-Runtime:
-      - '1980'
+      - '103'
       Content-Length:
       - '86'
       Connection:
@@ -57,5 +55,5 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="utf-8"?><vzaar-api><status>Accepted</status></vzaar-api>
     http_version: 
-  recorded_at: Mon, 26 May 2014 13:18:14 GMT
+  recorded_at: Mon, 26 May 2014 13:23:43 GMT
 recorded_with: VCR 2.9.0

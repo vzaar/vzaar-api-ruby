@@ -2,7 +2,7 @@ module Vzaar
   module Request
     class AddSubtitle < Base
       endpoint "/api/subtitle/upload"
-      resource "Subtitle"
+      resource "Status"
       http_verb :post
       authenticated true
 

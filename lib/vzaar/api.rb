@@ -58,6 +58,10 @@ module Vzaar
       Request::UploadThumbnail.new(conn, opts.merge(video_id: video_id)).execute
     end
 
+    def generate_thumbnail(video_id, opts={})
+      Request::GenerateThumbnail.new(conn, opts.merge(video_id: video_id)).execute
+    end
+
     def link_upload(url, opts={})
       sig = signature
       _opts = opts.merge({ guid: sig.guid, key: sig.key, url: url })

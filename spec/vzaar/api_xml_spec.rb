@@ -355,12 +355,6 @@ module Vzaar
           VCR.use_cassette('add_subtitle-failure') do
             res = subject.add_subtitle(1519682, body: "SRT api", language: "en")
             expect(res.errors).to_not be_empty
-          end
-        end
-
-        specify do
-          VCR.use_cassette('add_subtitle-failure') do
-            res = subject.add_subtitle(1519682, body: "SRT api", language: "en")
             expect(res.http_status_code).to eq(422)
           end
         end
@@ -371,16 +365,36 @@ module Vzaar
           VCR.use_cassette('add_subtitle-success') do
             res = subject.add_subtitle(1627985, body: "SRT api", language: "en")
             expect(res.http_status_code).to eq(202)
-          end
-        end
-
-        specify do
-          VCR.use_cassette('add_subtitle-success') do
-            res = subject.add_subtitle(1627985, body: "SRT api", language: "en")
             expect(res.status).to eq("Accepted")
           end
         end
       end
     end
+
+    describe "#generate_thumbnail" do
+      let(:application_token) { 'km9h3rdM8CjPgASZrSdNmRuzUdxq1UsCHSgi8WJWk' }
+      let(:login) { 'vz-test1' }
+
+      context "when there are errors" do
+        specify do
+          VCR.use_cassette('generate_thumbnail-failure') do
+            res = subject.generate_thumbnail(1519682, time: 3)
+            expect(res.errors).to_not be_empty
+            expect(res.http_status_code).to eq(422)
+          end
+        end
+      end
+
+      context "when there are no errors" do
+        specify do
+          VCR.use_cassette('generate_thumbnail-success') do
+            res = subject.generate_thumbnail(1627985, time: 3)
+            expect(res.http_status_code).to eq(202)
+            expect(res.status).to eq("Accepted")
+          end
+        end
+      end
+    end
+
   end
 end

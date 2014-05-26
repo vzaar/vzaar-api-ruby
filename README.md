@@ -92,6 +92,13 @@ api.upload_thumbnail(video_id, options)
 # api.upload_thumbnail(123456, path: "/path/to/image.jpg")
 ```
 
+Generating new thumbnail based on given time value (authentication required):
+```ruby
+api.generate_thumbnail(video_id, options)
+
+# api.generate_thumbnail(123456, time: 3)
+```
+
 Adding subtitle to the video (authentication required):
 ```ruby
 api.add_subtitle(video_id, options)
