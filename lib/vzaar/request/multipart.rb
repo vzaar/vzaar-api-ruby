@@ -1,7 +1,7 @@
 module Vzaar
   module Request
     class Multipart < Struct.new(:path, :file)
-      CRLF = "\r\n".freeze
+      CRLF = "\r\n"
 
       def request
         req = Net::HTTP::Post.new(path)

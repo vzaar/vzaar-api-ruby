@@ -8,15 +8,13 @@ module Vzaar
 
       def xml_body
         <<-XML
-          <?xml version="1.0" encoding="UTF-8"?>
-          <vzaar-api>
-            <video>
-              <thumb_time>#{options[:time]}</thumb_time>
-            </video>
-          </vzaar-api>
+          <?xml version="1.0" encoding="UTF-8"?>#{hash_to_xml(json_body)}
         XML
       end
 
+      def json_body
+        { "vzaar-api" => { "video" => { "thumb_time" => options[:time] }}}
+      end
     end
   end
 end

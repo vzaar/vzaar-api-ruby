@@ -4,7 +4,7 @@ module Vzaar
       include Vzaar::Helper
 
       class << self
-        [:authenticated, :http_verb, :format].each do |method_name|
+        [:authenticated, :http_verb].each do |method_name|
           define_method(method_name) do |val|
             define_method(method_name) do
               val.nil? ? self.options[method_name] : val
@@ -19,6 +19,13 @@ module Vzaar
         def resource(name)
           define_method(:resource) { name }
         end
+
+        def format(f)
+          define_method(:format) do
+            # JC: options should always overwrite format param
+            self.options[:format] ? self.options[:format] : f
+          end
+        end
       end
 
       authenticated nil
@@ -27,7 +34,12 @@ module Vzaar
 
       def execute
         conn.using_connection(url, user_options) do |res|
-          return resource_klass.new(Response::Base.new(res).body, res.code)
+          _res = Response::Base.new(res)
+          if _res.json?
+            return _res.body
+          else
+            return resource_klass.new(_res.body, res.code)
+          end
         end
       end
 

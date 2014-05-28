@@ -2,7 +2,7 @@ module Vzaar
   class Connection
     include Vzaar::Helper
 
-    SERVER = "vzaar.com".freeze
+    SERVER = "vzaar.com"
     attr_reader :application_token, :force_http, :login, :options
 
     def initialize(options)
