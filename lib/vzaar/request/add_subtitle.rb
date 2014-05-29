@@ -8,15 +8,19 @@ module Vzaar
 
       def xml_body
         <<-XML
-          <?xml version="1.0" encoding="UTF-8"?>
-          <vzaar-api>
-            <subtitle>
-              <language>#{options[:language]}</language>
-              <video_id>#{options[:video_id]}</video_id>
-              <body>#{options[:body]}</body>
-            </subtitle>
-          </vzaar-api>
+          <?xml version="1.0" encoding="UTF-8"?>#{hash_to_xml(json_body)}
         XML
+      end
+
+      def json_body
+        { "vzaar-api" => {
+            "subtitle" => {
+              "language" => options[:language],
+              "video_id" => options[:video_id],
+              "body" => options[:body]
+            }
+          }
+        }
       end
     end
   end
