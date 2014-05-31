@@ -14,7 +14,7 @@ module Vzaar
       end
 
       def json_body
-        { vzaar_api: {
+        { "vzaar-api" => {
             link_upload: {
               key: options[:key],
               guid: options[:guid],
@@ -22,7 +22,7 @@ module Vzaar
               encoding_params: {
                 title: options[:title],
                 description: options[:description],
-                profile: options[:profile],
+                size_id: options[:profile],
                 bitrate: options[:bitrate],
                 width: options[:width],
                 replace_id: options[:replace_id],
