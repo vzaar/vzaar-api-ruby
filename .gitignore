@@ -22,3 +22,5 @@ load.rb
 *\#
 *.mp4
 test.rb
+.tags
+.gemtags
