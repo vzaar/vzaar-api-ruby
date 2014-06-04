@@ -10,10 +10,10 @@ gem 'rake'
 
 group :development, :test do
   gem 'pry'
-  gem 'fuubar'
+  gem 'fuubar', '2.0.0.rc1'
   gem 'growl'
   gem 'guard-rspec'
-  gem 'rspec'
+  gem 'rspec', '3.0.0'
   gem 'vcr'
   gem 'webmock'
 end

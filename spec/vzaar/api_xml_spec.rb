@@ -20,7 +20,7 @@ module Vzaar
       }
     end
 
-    its(:conn) { should == connection }
+    specify { expect(subject.conn).to eq(connection) }
 
     describe "#whoami" do
       context "with valid credentials" do
@@ -291,7 +291,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-default") do
             signature = subject.signature
-            expect(signature.https).to be_false
+            expect(signature.https).to be_falsey
           end
         end
       end
@@ -308,7 +308,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-with-options") do
             signature = subject.signature signature_options
-            expect(signature.https).to be_false
+            expect(signature.https).to be_falsey
           end
         end
       end

@@ -34,7 +34,7 @@ describe Vzaar::Request::Base do
       end
 
       specify do
-        expect(subject.authenticated).to be_true
+        expect(subject.authenticated).to be_truthy
       end
     end
   end

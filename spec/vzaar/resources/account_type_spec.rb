@@ -17,13 +17,13 @@ module Vzaar::Resource
 
     subject { described_class.new(xml) }
 
-    its(:api_version) { should eq(version) }
-    its(:id) { should eq(account_id) }
-    its(:title) { should eq(title) }
-    its(:monthly) { should eq(monthly) }
-    its(:currency) { should eq(currency) }
-    its(:bandwidth) { should eq(bandwidth) }
-    its(:search_enhancer) { should eq(search_enhancer) }
-    its(:borderless) { should eq(borderless) }
+    specify { expect(subject.api_version).to eq(version) }
+    specify { expect(subject.id).to eq(account_id) }
+    specify { expect(subject.title).to eq(title) }
+    specify { expect(subject.monthly).to eq(monthly) }
+    specify { expect(subject.currency).to eq(currency) }
+    specify { expect(subject.bandwidth).to eq(bandwidth) }
+    specify { expect(subject.search_enhancer).to eq(search_enhancer) }
+    specify { expect(subject.borderless).to eq(borderless) }
   end
 end

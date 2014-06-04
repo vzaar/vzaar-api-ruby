@@ -9,17 +9,17 @@ module Vzaar
     describe "#server" do
       context "when server params includes http protocol" do
         let(:server) { "http://example.com" }
-        its(:server) { should eq "example.com" }
+        specify { expect(subject.server).to eq("example.com") }
       end
 
       context "when server params includes https protocol" do
         let(:server) { "https://example.com" }
-        its(:server) { should eq "example.com" }
+        specify { expect(subject.server).to eq("example.com") }
       end
 
       context "when server param is blank" do
         let(:server) { nil }
-        its(:server) { should eq described_class::SERVER }
+        specify { expect(subject.server).to eq(described_class::SERVER) }
       end
     end
   end
