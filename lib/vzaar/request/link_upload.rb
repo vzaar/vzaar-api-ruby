@@ -1,4 +1,3 @@
-require "pry"
 module Vzaar
   module Request
     class LinkUpload < Base
