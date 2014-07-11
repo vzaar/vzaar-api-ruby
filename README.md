@@ -79,7 +79,7 @@ api.upload_video(options)
 # options are: path, url, title, description, profile, transcoding, replace_id,
 # width and bitrate
 #
-# api.upload(path: "./path/to/video.mp4", title: "my video")
+# api.upload_video(path: "./path/to/video.mp4", title: "my video")
 #
 # For link upload use url param:
 # api.upload_video(url: "http://example.com/video.mp4", title: "my video")
