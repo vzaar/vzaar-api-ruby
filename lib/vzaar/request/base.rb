@@ -76,13 +76,8 @@ module Vzaar
         format == :xml
       end
 
-      # JC: vzaar_dev_login param is used only for localhost testing
       def url_params
-        unless ENV["RUBY_ENV"] == "test"
-          { vzaar_dev_login: options[:l] || ENV["VZAAR_DEV_LOGIN"] }
-        else
-          {}
-        end
+        options[:params] || {}
       end
 
       def data
