@@ -1,0 +1,10 @@
+development:
+  user1:
+    login: vz-account1
+    rw_token: cyCFbqQ4YTkrQhjFu7OZ2yoO3ol2avg79jRqWhKCpo
+    test_video_id: 1465464
+
+  user2:
+    login: vz-account2
+    rw_token: tnDyOtR0YPx6nKPdgw9MM35Cicm5y4ZZGNCglOtI
+    test_video_id: 1465488
