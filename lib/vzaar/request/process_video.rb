@@ -9,73 +9,39 @@ module Vzaar
       private
 
       def json_body
-        h = {
-          "vzaar_api" =>  {
-            "video" =>  {
-              "guid" =>  options[:guid],
-              "title" =>  options[:title],
-              "description" =>  options[:description],
-              "profile" =>  options[:profile],
-              "transcoding" =>  options[:transcoding],
-              "replace_id" => options[:replace_id]
-            }
-          }
-        }.delete_if { |k,v| v.nil? }
-
-        if include_encoding_options?
-          return h.merge({ "encoding" => {
-                             "width" => options[:width],
-                             "bitrate" => options[:bitrate]
-                           }
-                         })
-        end
-        h
-      end
-
-      def include_encoding_options?
-        options[:profile] == 6 && options[:width] && options[:bitrate]
+        get_opts.to_json
       end
 
       def xml_body
         request_xml = %{
           <?xml version="1.0" encoding="UTF-8"?>
-          <vzaar-api>
-            <video>
-              <guid>#{options[:guid]}</guid>
-              <title>#{options[:title]}</title>
-              <description>#{options[:description]}</description>
-              <profile>#{options[:profile]}</profile>
-        }
-
-        if !options[:transcoding].nil?
-          request_xml += %{
-              <transcoding>#{options[:transcoding]}</transcoding>
-          }
-        end
-
-        if options[:replace_id]
-          request_xml += %{
-              <replace_id>#{options[:replace_id]}</replace_id>
-          }
-        end
-
-        if include_encoding_options?
-          request_xml += %{
-              <encoding>
-                <width>#{options[:width]}</width>
-                <bitrate>#{options[:bitrate]}</bitrate>
-              </encoding>
-          }
-        end
-
-        request_xml += %{
-            </video>
-          </vzaar-api>
+          #{hash_to_xml(get_opts)}
         }
 
         request_xml
       end
 
+      def get_opts
+        raise Vzaar::Error, "Guid required to process video." unless options[:guid]
+
+        h = options.dup.delete_if { |k,v| v.nil? }
+
+        if include_encoding_options?
+          width = h.delete(:width)
+          bitrate = h.delete(:bitrate)
+
+          h[:encoding] = {width: width, bitrate: bitrate}
+        end
+
+        { vzaar_api: {
+            video: h
+          } 
+        }
+      end
+
+      def include_encoding_options?
+        options[:profile] == 6 && options[:width] && options[:bitrate]
+      end
     end
   end
 end
