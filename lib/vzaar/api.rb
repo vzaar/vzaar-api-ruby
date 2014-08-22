@@ -1,5 +1,8 @@
 module Vzaar
-  class Api < Struct.new(:conn)
+  class Api < Struct.new(:options)
+    def conn
+      @conn ||= Connection.new(options)
+    end
 
     def whoami(opts={})
       resource = Request::WhoAmI.new(conn, opts).execute

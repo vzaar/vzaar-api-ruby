@@ -2,9 +2,7 @@ require 'spec_helper'
 
 module Vzaar
   describe Api do
-
-    subject { described_class.new connection }
-    let(:connection) { Connection.new options }
+    subject { described_class.new(options) }
 
     let(:application_token) { 'b0v8p14Ugpx5zMgDf6leUOxSt8pkcGCFyBcsh0ugHg' }
     let(:force_http) { false }
@@ -19,8 +17,6 @@ module Vzaar
         server: server
       }
     end
-
-    specify { expect(subject.conn).to eq(connection) }
 
     describe "#whoami" do
       context "with valid credentials" do

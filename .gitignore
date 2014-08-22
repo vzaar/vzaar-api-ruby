@@ -24,3 +24,4 @@ load.rb
 test.rb
 .tags
 .gemtags
+api_envs.yml

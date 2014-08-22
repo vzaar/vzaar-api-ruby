@@ -5,7 +5,7 @@ module Vzaar
     SERVER = "vzaar.com"
     attr_reader :application_token, :force_http, :login, :options
 
-    def initialize(options)
+    def initialize(options={})
       @options = options
       @application_token = options[:application_token]
       @force_http = options[:force_http]

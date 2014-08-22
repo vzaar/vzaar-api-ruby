@@ -18,8 +18,7 @@ And then execute:
 ### Usage
 
 ```ruby
-conn = Vzaar::Connection.new(:application_token => "API token", :login => "vzaar login")
-api = Vzaar::Api.new(conn)
+api = Vzaar::Api.new(application_token: "API token", login: "vzaar login")
 ```
 
 If your login and API token are correct, you should be able to fetch your login by calling:
