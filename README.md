@@ -61,7 +61,7 @@ api.videos
 
 Removing video from vzaar: (authentication required)
 ```ruby
-api.delete(video_id)
+api.delete_video(video_id)
 ```
 
 Updating existing video (authentication required):
