@@ -2,7 +2,11 @@
 
 A Ruby gem for the vzaar API.
 
-Note: This version is a beta release.
+---
+
+>vzaar is the go to video hosting platform for business. Affordable, customizable and secure. Leverage the power of online video and enable commerce with vzaar. For more details and signup please visit [http://vzaar.com](http://vzaar.com)
+
+----
 
 ### Installation
 
