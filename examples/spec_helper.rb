@@ -3,6 +3,9 @@ require 'vzaar'
 require 'yaml'
 require 'pry'
 
+RSpec.configure do |config|
+  config.order = 'defined'
+end
 
 RSpec.shared_examples("RO only") do |login, token, fn|
   specify do
