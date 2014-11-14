@@ -1,6 +1,6 @@
 require_relative './spec_helper'
 
-describe "Upload Thumbnail" do
+describe "Edit Video" do
   context "when user is unauthenticated" do
     it_behaves_like "Unauthenticated", -> (api) do
       api.edit_video(test_video_id("user1"), title: "foo")
@@ -8,6 +8,17 @@ describe "Upload Thumbnail" do
   end
 
   context "Authenticated User" do
+    context "different account" do
+      specify do
+        api = _api(login: user2["login"],
+                   application_token: user2["rw_token"])
+
+        expect do
+          api.delete_video(test_video_id("user1"))
+        end.to raise_error(Vzaar::Error, "Moved Temporarily")
+      end
+    end
+
     context "RW token" do
       before(:all) do
         @api = _api(login: user1["login"],

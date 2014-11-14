@@ -22,11 +22,12 @@ describe "Delete Video" do
   end
 
   context "Authenticated User" do
-    context "From another account" do
+    context "different account" do
       specify do
         api = _api(login: user2["login"],
                    application_token: user2["rw_token"])
 
+        # JC: should be 401, will be fixed in v1
         expect do
           api.delete_video(vid_id)
         end.to raise_error(Vzaar::Error, "Moved Temporarily")
