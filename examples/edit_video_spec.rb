@@ -14,7 +14,7 @@ describe "Edit Video" do
                    application_token: user2["rw_token"])
 
         expect do
-          api.delete_video(test_video_id("user1"))
+          api.edit_video(test_video_id("user1"))
         end.to raise_error(Vzaar::Error, "Moved Temporarily")
       end
     end
