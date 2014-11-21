@@ -8,16 +8,30 @@ describe "Upload Video" do
 
     context "Authenticated User" do
       context "RW token" do
-        before(:all) do
-          api = _api(login: user1["login"],
-                     application_token: user1["rw_token"])
+        describe "xml" do
+          before(:all) do
+            api = _api(login: user1["login"],
+                       application_token: user1["rw_token"])
 
-          title = "api-test-#{rand_str}"
-          @res = api.upload_video(path: file_path, title: title, description: desc)
+            title = "api-test-#{rand_str}"
+            @res = api.upload_video(path: file_path, title: title, description: desc)
+          end
+
+          specify { expect(@res.http_status_code).to eq 201 }
+          specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
         end
 
-        specify { expect(@res.http_status_code).to eq 201 }
-        specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
+        describe "json" do
+          before(:all) do
+            api = _api(login: user1["login"],
+                       application_token: user1["rw_token"])
+
+            title = "api-test-#{rand_str}"
+            @res = api.upload_video(path: file_path, title: title, description: desc, format: :json)
+          end
+
+          specify { expect(@res["id"].to_s).to match(/^[0-9]+$/) }
+        end
       end
 
       context "RO token" do

@@ -27,7 +27,7 @@ module Vzaar
     end
 
     def videos(opts={})
-      video_list(conn.login, { authenticated: true, page: opts[:page] })
+      video_list(conn.login, opts.merge({ authenticated: true }))
     end
 
     def delete_video(video_id, opts={})
@@ -44,6 +44,17 @@ module Vzaar
 
     def process_video(opts={})
       Request::ProcessVideo.new(conn, opts).execute
+    end
+
+    def process_audio(opts={})
+      Request::ProcessAudio.new(conn, opts).execute
+    end
+
+    def upload_audio(opts={})
+      uploader = Uploader.new(conn, signature, opts)
+      uploader.upload do |u|
+        process_audio(u.processing_params)
+      end
     end
 
     def upload_video(opts={})

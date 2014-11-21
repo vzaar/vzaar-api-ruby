@@ -81,6 +81,7 @@ require 'vzaar/response/base'
 
 require 'vzaar/request/edit_video'
 require 'vzaar/request/process_video'
+require 'vzaar/request/process_audio'
 require 'vzaar/request/signature'
 require 'vzaar/request/url'
 require 'vzaar/api'

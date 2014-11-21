@@ -30,7 +30,6 @@ end
 
 RSpec.shared_examples("422 Failure") do
   specify { expect(@res.http_status_code).to eq(422) }
-  specify { expect(@res.status).to eq("Failure") }
 end
 
 RSpec.shared_examples("202 Accepted") do
