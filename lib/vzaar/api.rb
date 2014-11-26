@@ -81,5 +81,11 @@ module Vzaar
       _opts = opts.merge({ guid: sig.guid, key: sig.key, url: url })
       Request::LinkUpload.new(conn, _opts).execute
     end
+
+    def s3_upload(file_path)
+      uploader = Uploader.new(conn, signature, path: file_path)
+      uploader.upload
+      uploader.processing_params
+    end
   end
 end
