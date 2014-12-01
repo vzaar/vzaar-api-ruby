@@ -1,7 +1,20 @@
 require_relative './spec_helper'
 
 describe "Video List" do
-  context "when user is unauthenticated" do
+  describe "authenticated" do
+    describe "labels" do
+      before do
+        api = _api(login: user1["login"],
+                   application_token: user1["rw_token"])
+        
+        @res = api.video_list(user1["login"], authenticated: true, params: { labels: "api,api2" })
+      end
+
+      specify { expect(@res.count).to eq(1) }
+    end
+  end
+  
+  describe "Unauthenticated" do
     context "when Public API Feeds is enabled" do
       describe "params" do
         before(:all) do
