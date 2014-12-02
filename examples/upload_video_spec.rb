@@ -15,10 +15,17 @@ describe "Upload Video" do
 
             title = "api-test-#{rand_str}"
             @res = api.upload_video(path: file_path, title: title, description: desc)
+
+            # cleanup
+            api.delete_video(@res.id)
           end
 
           specify { expect(@res.http_status_code).to eq 201 }
           specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
+
+          after(:all) do
+
+          end
         end
 
         describe "json" do
@@ -28,6 +35,9 @@ describe "Upload Video" do
 
             title = "api-test-#{rand_str}"
             @res = api.upload_video(path: file_path, title: title, description: desc, format: :json)
+
+            # cleanup
+            api.delete_video(@res["id"])
           end
 
           specify { expect(@res["id"].to_s).to match(/^[0-9]+$/) }
@@ -61,6 +71,9 @@ describe "Upload Video" do
 
         title = "api-test-#{rand_str}"
         @res = api.upload_video(url: file_url, title: title, description: desc)
+
+        # cleanup
+        api.delete_video(@res.id)
       end
 
       specify { expect(@res.http_status_code).to eq 200 }
