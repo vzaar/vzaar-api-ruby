@@ -35,7 +35,7 @@ module Vzaar
 
         { vzaar_api: {
             video: h
-          } 
+          }
         }
       end
 

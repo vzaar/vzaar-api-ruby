@@ -5,16 +5,28 @@ module Vzaar
       http_verb :put
       resource "Video"
 
+      # JC: duplicated, refactor
+      def json_body
+        get_opts.to_json
+      end
+
       def xml_body
-        <<-XML
+        request_xml = %{
           <?xml version="1.0" encoding="UTF-8"?>
-          <vzaar-api>
-            <video>
-              <title>#{options[:title]}</title>
-              <description>#{options[:description]}</description >
-            </video>
-          </vzaar-api>
-        XML
+          #{hash_to_xml(get_opts)}
+        }
+
+        request_xml
+      end
+
+      def get_opts
+        { "vzaar-api" => {
+            "video" => {
+              "title" => options[:title],
+              "description" => options[:description]
+            }
+          }
+        }
       end
     end
   end
