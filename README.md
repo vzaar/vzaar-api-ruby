@@ -55,7 +55,7 @@ api.video_details(video_id, authenticated: true)
 
 Fetching videos for a given user:
 ```ruby
-api.video_details("user login", options)
+api.video_list("user login", options)
 ```
 
 Fetching videos for authenticated user (authentication required):
