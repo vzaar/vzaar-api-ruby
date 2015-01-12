@@ -7,7 +7,8 @@ module Vzaar
         [:authenticated, :http_verb].each do |method_name|
           define_method(method_name) do |val|
             define_method(method_name) do
-              val.nil? ? self.options[method_name] : val
+              param = self.options[method_name]
+              blank?(param) ? val : param
             end
           end
         end

@@ -16,16 +16,18 @@ describe Vzaar::Request::Base do
       let(:authenticated?) { true }
 
       before do
-        class TestClass < Vzaar::Request::Base; end
+        class TestClass < Vzaar::Request::Base
+          authenticated false
+        end
       end
 
       it "overwites setting with param from options" do
-        expect(subject.authenticated).to eq(opts[:authenticated])
+        expect(subject.authenticated).to eq(authenticated?)
       end
     end
 
     context "when setting is defined within the class" do
-      let(:authenticated?) { false }
+      let(:opts) { {} }
 
       before do
         class TestClass < Vzaar::Request::Base
