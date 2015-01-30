@@ -14,7 +14,7 @@ describe "Upload Video" do
                        application_token: user1["rw_token"])
 
             title = "api-test-#{rand_str}"
-            @res = api.upload_video(path: file_path, title: title, description: desc)
+            @res = api.upload_video(path: file_path, title: title, description: desc, profile: "boom")
 
             # cleanup
             api.delete_video(@res.id)
