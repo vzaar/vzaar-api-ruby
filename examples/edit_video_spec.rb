@@ -63,14 +63,17 @@ describe "Edit Video" do
 
             expect do
               api.edit_video(test_video_id("user1"))
-            end.to raise_error(Vzaar::Error, "Moved Temporarily")
+            end.to raise_error(Vzaar::Error, "Protected Resource")
           end
         end
 
         describe "json" do
           specify do
+            api = _api(login: user2["login"],
+                       application_token: user2["rw_token"])
+
             expect do
-              @api.edit_video(test_video_id("user1"), format: "json")
+              api.edit_video(test_video_id("user1"), format: "json")
             end.to raise_error(Vzaar::Error, "Protected Resource")
           end
         end
@@ -109,10 +112,8 @@ describe "Edit Video" do
                                    format: "json")
           end
 
-          it_behaves_like "200 OK"
-          specify { expect(@res.title).to eq(@title) }
-          specify { expect(@res.description).to eq(@desc) }
-        end
+          specify { expect(@res["oembed"]["title"]).to eq(@title) }
+          specify { expect(@res["oembed"]["description"]).to eq(@desc) }
         end
       end
 
