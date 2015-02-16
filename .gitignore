@@ -26,3 +26,4 @@ test.rb
 .gemtags
 api_envs.yml
 .DS_Store
+spec/support/vid2.mov

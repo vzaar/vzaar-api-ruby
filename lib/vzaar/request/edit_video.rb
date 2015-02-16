@@ -23,7 +23,9 @@ module Vzaar
         { "vzaar-api" => {
             "video" => {
               "title" => options[:title],
-              "description" => options[:description]
+              "seo_url" => options[:seo_url],
+              "description" => options[:description],
+              "private" => options[:private]
             }
           }
         }
