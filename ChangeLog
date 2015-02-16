@@ -1,8 +1,12 @@
+2015-02-16 JC <jozef@vzaar.com>
+
+  * private and seo_url params added to api#edit_video
+  * API specs improved for edit_video/json
+
 2015-01-21 JC <jozef@vzaar.com>
 
   * API specs added for edit/delete http verbs
 
 2015-01-14 JC <jozef@vzaar.com>
-	
-	* changelog added
 
+	* changelog added
