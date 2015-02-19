@@ -1,6 +1,15 @@
 module Vzaar
   module Resource
     class Video < Base
+
+      class Rendition < Base
+        root_node "//rendition"
+
+        attribute :type
+        attribute :status
+        attribute :status_id, type: Integer
+      end
+
       root_node "//oembed"
 
       attribute :type
@@ -33,6 +42,12 @@ module Vzaar
 
       def error
         ""
+      end
+
+      def renditions
+        @renditions ||= doc.at_xpath("//oembed/renditions").elements.map do |xml|
+          Rendition.new(xml.to_s, http_status_code)
+        end
       end
     end
   end

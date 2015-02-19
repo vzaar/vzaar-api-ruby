@@ -1,3 +1,7 @@
+2015-02-19 JC <jozef@vzaar.com>
+
+  * renditions added to Vzaar::Resource::Video
+
 2015-02-16 JC <jozef@vzaar.com>
 
   * private and seo_url params added to api#edit_video
