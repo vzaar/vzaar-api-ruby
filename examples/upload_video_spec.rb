@@ -17,11 +17,11 @@ describe "Upload Video" do
             @res = api.upload_video(path: file_path, title: title, description: desc, profile: "boom")
 
             # cleanup
-            api.delete_video(@res.id)
+            api.delete_video(@res.resource.id)
           end
 
-          specify { expect(@res.http_status_code).to eq 201 }
-          specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
+          specify { expect(@res.status_code).to eq 201 }
+          specify { expect(@res.resource.id.to_s).to match(/^[0-9]+$/) }
 
           after(:all) do
 
@@ -37,10 +37,10 @@ describe "Upload Video" do
             @res = api.upload_video(path: file_path, title: title, description: desc, format: :json)
 
             # cleanup
-            api.delete_video(@res["id"])
+            api.delete_video(@res.resource["id"])
           end
 
-          specify { expect(@res["id"].to_s).to match(/^[0-9]+$/) }
+          specify { expect(@res.resource["id"].to_s).to match(/^[0-9]+$/) }
         end
       end
 
@@ -73,11 +73,11 @@ describe "Upload Video" do
         @res = api.upload_video(url: file_url, title: title, description: desc)
 
         # cleanup
-        api.delete_video(@res.id)
+        api.delete_video(@res.resource.id)
       end
 
-      specify { expect(@res.http_status_code).to eq 200 }
-      specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
+      specify { expect(@res.status_code).to eq 200 }
+      specify { expect(@res.resource.id.to_s).to match(/^[0-9]+$/) }
     end
 
     context "when user is unauthenticated" do

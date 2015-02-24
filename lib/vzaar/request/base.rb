@@ -35,23 +35,13 @@ module Vzaar
 
       def execute
         conn.using_connection(url, user_options) do |res|
-          _res = Response::Base.new(res)
-          if _res.json?
-            return _res.body
-          else
-            return resource_klass.new(_res.body, res.code)
-          end
+          Response::Base.new(res, resource)
         end
       end
 
       protected
 
       attr_reader :xml_body, :json_body
-
-      def resource_klass
-        name = resource.is_a?(Symbol) ? resource.to_s.capitalize : resource
-        Resource.const_get(name)
-      end
 
       def options
         @options ||= symb_keys(opts)

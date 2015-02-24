@@ -1,6 +1,28 @@
 module Vzaar
   module Resource
     class User < Base
+      class Bandwidth
+        attr_reader :year, :month, :value
+        def initialize(year, month, value)
+          @year = year.to_i
+          @month = month.to_i
+          @value = value.to_i
+        end
+      end
+
+      class BandwidthCollection < Vzaar::Resource::Base::Collection
+        def build
+          xml_doc.xpath(node).map do |xml|
+            xml_attrs = xml.attributes
+            year = xml_attrs["year"].text
+            month = xml_attrs["month"].text
+            val =  xml.text.to_i
+
+            Bandwidth.new(year, month, val)
+          end
+        end
+      end
+
       root_node "//user"
 
       attribute :created_at, type: Time
@@ -15,12 +37,10 @@ module Vzaar
       attribute :videos_total_size, type: Integer
       attribute :bandwidth_this_month, type: Integer
 
-      def bandwidth
-        @bandwidth ||= doc.xpath("//bandwidth/period").map do |e|
-          attrs = e.attributes
-          { year: attrs["year"].text, month: attrs["month"].text, value: e.text.to_i }
-        end
-      end
+      attribute :bandwidth,
+                type: BandwidthCollection,
+                node: "bandwidth/period",
+                class: Bandwidth
     end
   end
 end

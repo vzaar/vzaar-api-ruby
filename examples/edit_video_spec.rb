@@ -17,13 +17,16 @@ describe "Edit Video" do
         @vid_id = test_video_id("user1")
       end
 
+      before do
+        opts = { video_id: @vid_id, http_verb: :post }
+        @req = Vzaar::Request::EditVideo.new(@api.conn, opts)
+      end
+
       context "when there is no method=put param" do
         describe "xml" do
           specify do
-            opts = { video_id: @vid_id, http_verb: :post }
-            req = Vzaar::Request::EditVideo.new(@api.conn, opts)
-
-            expect { req.execute }.to raise_error(Vzaar::Error)
+            res = @req.execute
+            expect(res.status_code).to eq(404)
           end
         end
       end
@@ -31,10 +34,8 @@ describe "Edit Video" do
       context "when method=put exists in post body" do
         describe "xml" do
           specify do
-            opts = { video_id: @vid_id, http_verb: :post}
-            req = Vzaar::Request::EditVideo.new(@api.conn, opts)
 
-            def req.xml_body
+            def @req.xml_body
               <<-XML
                 <?xml version="1.0" encoding="UTF-8"?>
                   <vzaar-api>
@@ -45,9 +46,8 @@ describe "Edit Video" do
                   </vzaar-api>
                 XML
             end
-
-            res = req.execute
-            expect(res.http_status_code).to eq(200)
+            res = @req.execute
+            expect(res.status_code).to eq(200)
           end
         end
       end
@@ -56,26 +56,20 @@ describe "Edit Video" do
     describe "PUT verb" do
       context "different account" do
 
-        describe "xml" do
-          specify do
-            api = _api(login: user2["login"],
-                       application_token: user2["rw_token"])
+        before do
+          api = _api(login: user2["login"],
+                     application_token: user2["rw_token"])
+          @res =  api.edit_video(test_video_id("user1"), format: format)
+        end
 
-            expect do
-              api.edit_video(test_video_id("user1"))
-            end.to raise_error(Vzaar::Error, "Protected Resource")
-          end
+        describe "xml" do
+          let(:format) { :xml }
+          it_behaves_like("401 Unauthorized")
         end
 
         describe "json" do
-          specify do
-            api = _api(login: user2["login"],
-                       application_token: user2["rw_token"])
-
-            expect do
-              api.edit_video(test_video_id("user1"), format: "json")
-            end.to raise_error(Vzaar::Error, "Protected Resource")
-          end
+          let(:format) { :json }
+          it_behaves_like("401 Unauthorized")
         end
       end
 
@@ -97,8 +91,8 @@ describe "Edit Video" do
             end
 
             it_behaves_like "200 OK"
-            specify { expect(@res.title).to eq(@title) }
-            specify { expect(@res.description).to eq(@desc) }
+            specify { expect(@res.resource.title).to eq(@title) }
+            specify { expect(@res.resource.description).to eq(@desc) }
           end
         end
 
@@ -112,8 +106,9 @@ describe "Edit Video" do
                                    format: "json")
           end
 
-          specify { expect(@res["oembed"]["title"]).to eq(@title) }
-          specify { expect(@res["oembed"]["description"]).to eq(@desc) }
+          it_behaves_like "200 OK"
+          specify { expect(@res.resource["oembed"]["title"]).to eq(@title) }
+          specify { expect(@res.resource["oembed"]["description"]).to eq(@desc) }
         end
       end
 

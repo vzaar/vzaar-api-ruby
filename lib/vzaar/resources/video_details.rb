@@ -1,11 +1,11 @@
 module Vzaar
   module Resource
     module VideoDetails
-      def self.new(body, status_code)
-        if body =~ /\/vzaar-api/
-          Vzaar::Resource::VideoStatus.new(body, status_code)
+      def self.new(xml_doc)
+        if xml_doc.xpath("//oembed").empty?
+          Vzaar::Resource::VideoStatus.new(xml_doc)
         else
-          Vzaar::Resource::Video.new(body, status_code)
+          Vzaar::Resource::Video.new(xml_doc)
         end
       end
     end

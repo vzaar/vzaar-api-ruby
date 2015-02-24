@@ -22,17 +22,22 @@ module Vzaar
       context "with valid credentials" do
         it "returns the user login" do
           VCR.use_cassette('whoami-success') do
-            expect(subject.whoami).to eq(login)
+            expect(subject.whoami.resource.login).to eq(login)
           end
         end
       end
 
       context "with invalid credentials" do
         let(:application_token) { 'invalid' }
-        it "raises an error" do
+        specify do
           VCR.use_cassette('whoami-fail') do
-            expect { subject.whoami }.to raise_error(
-              Vzaar::Error, "Protected Resource")
+            expect(subject.whoami.status_code).to eq(401)
+          end
+        end
+
+        specify do
+          VCR.use_cassette('whoami-fail') do
+            expect(subject.whoami.resource.login).to eq("")
           end
         end
       end
@@ -44,17 +49,17 @@ module Vzaar
         it "returns the account type details" do
           VCR.use_cassette('account_type-success') do
             account_type = subject.account_type(account_type_id)
-            expect(account_type.id).to eq(account_type_id.to_i)
+            expect(account_type.resource.id).to eq(account_type_id.to_i)
           end
         end
       end
 
-      context "with an invalid id" do
+      context "with an non-existing id" do
         let(:account_type_id) { '-1' }
         it "raises an error" do
           VCR.use_cassette('account_type-fail') do
-            expect { subject.account_type(account_type_id) }.to raise_error(
-              Vzaar::Error, "Not Found")
+            res = subject.account_type(account_type_id)
+            expect(res.status_code).to eq(404)
           end
         end
       end
@@ -66,17 +71,17 @@ module Vzaar
           it "returns the user details" do
             VCR.use_cassette("#{vcr_cassette}-success") do
               user = subject.user_details(login, authenticated: authentication)
-              expect(user.name).to eq(login)
+              expect(user.resource.name).to eq(login)
             end
           end
         end
 
-        context "with an invalid login" do
+        context "with an non-existing login" do
           let(:login) { '0000000000000000' }
-          it "raises an error" do
+          it "returns 404" do
             VCR.use_cassette("#{vcr_cassette}-fail") do
-              expect { subject.user_details(login, authenticated: authentication) }
-                .to raise_error(Vzaar::Error, "Not Found")
+              res = subject.user_details(login, authenticated: authentication)
+              expect(res.status_code).to eq(404)
             end
           end
         end
@@ -99,17 +104,17 @@ module Vzaar
       shared_examples 'a successful video_details request' do
         it "returns the video details" do
           VCR.use_cassette("#{vcr_cassette}-success") do
-            video = subject.video_details(video_id, authenticated: authentication)
-            expect(video.html).to include("#{video_id}")
+            res = subject.video_details(video_id, authenticated: authentication)
+            expect(res.resource.html).to include("#{video_id}")
           end
         end
       end
 
       shared_examples 'a video_details resource that cannot be found' do
-        it "raises an error" do
+        it "returns 404" do
           VCR.use_cassette("#{vcr_cassette}-fail") do
-            expect { subject.video_details(video_id, authenticated: authentication) }.to raise_error(
-              Vzaar::Error, "Not Found")
+            res = subject.video_details(video_id, authenticated: authentication)
+            expect(res.status_code).to eq(404)
           end
         end
       end
@@ -117,8 +122,8 @@ module Vzaar
       shared_examples 'a video_details resource that is protected' do
         it "raises an error" do
           VCR.use_cassette("#{vcr_cassette}-success") do
-            expect { subject.video_details(video_id, authenticated: authentication) }
-              .to raise_error(Vzaar::Error, "Protected Resource")
+            res = subject.video_details(video_id, authenticated: authentication)
+            expect(res.status_code).to eq(401)
           end
         end
       end
@@ -177,8 +182,8 @@ module Vzaar
         let(:authentication) { true }
         it "returns a collection of private and public videos" do
           VCR.use_cassette("video_list-pvt-success") do
-            videos = subject.video_list(login, { authenticated: authentication })
-            expect(videos.count).to eq(2)
+            res = subject.video_list(login, { authenticated: authentication })
+            expect(res.resource.count).to eq(2)
           end
         end
       end
@@ -187,8 +192,8 @@ module Vzaar
         let(:authentication) { false }
         it "returns a collection of public videos only" do
           VCR.use_cassette("video_list-pub-success") do
-            videos = subject.video_list(login, { authenticated: authentication })
-            expect(videos.count).to eq(1)
+            res = subject.video_list(login, { authenticated: authentication })
+            expect(res.resource.count).to eq(1)
           end
         end
       end
@@ -197,8 +202,8 @@ module Vzaar
     describe "#videos" do
       it "returns a collection of private and public videos" do
         VCR.use_cassette("video_list-pvt-success") do
-          videos = subject.videos
-          expect((videos.count)).to eq(2)
+          res = subject.videos
+          expect(res.resource.count).to eq(2)
         end
       end
     end
@@ -211,16 +216,16 @@ module Vzaar
           it "deletes the video" do
             VCR.use_cassette("delete_video-success") do
               res = subject.delete_video(video_id)
-              expect(res.html).to include("#{video_id}")
+              expect(res.resource.html).to include("#{video_id}")
             end
           end
         end
 
         context "when the video is already deleted" do
-          it "raises an error" do
+          it "returns 404" do
             VCR.use_cassette("delete_video-retry-success") do
-              expect { subject.delete_video(video_id) }.to raise_error(
-                Vzaar::Error, "Not Found")
+              res = subject.delete_video(video_id)
+              expect(res.status_code).to eq(404)
             end
           end
         end
@@ -228,20 +233,20 @@ module Vzaar
 
       context "for a video that belongs to another user" do
         let(:video_id) { 1405106 }
-        it "raises an error" do
+        it "returns 404" do
           VCR.use_cassette("delete_video-fail") do
-            expect { subject.delete_video(video_id) }.to raise_error(
-              Vzaar::Error, "Moved Temporarily")
+            res = subject.delete_video(video_id)
+            expect(res.status_code).to eq(404)
           end
         end
       end
 
       context "for an invalid video id" do
         let(:video_id) { -1 }
-        it "raises an error" do
+        it "returns 404" do
           VCR.use_cassette("delete_video-not-found") do
-            expect { subject.delete_video(video_id) }.to raise_error(
-              Vzaar::Error, "Not Found")
+            res = subject.delete_video(video_id)
+            expect(res.status_code).to eq(404)
           end
         end
       end
@@ -254,8 +259,8 @@ module Vzaar
         let(:video_id) { 1405081 }
         it "updates the title and description" do
           VCR.use_cassette("edit_video-success") do
-            video = subject.edit_video(video_id, edit_options)
-            expect(video.title).to eq(edit_options[:title])
+            res = subject.edit_video(video_id, edit_options)
+            expect(res.resource.title).to eq(edit_options[:title])
           end
         end
       end
@@ -274,8 +279,8 @@ module Vzaar
         let(:video_id) { -1 }
         it "updates the title and description" do
           VCR.use_cassette("edit_video-not-found") do
-            expect { subject.edit_video(video_id, edit_options) }.to raise_error(
-              Vzaar::Error, "Not Found")
+            res = subject.edit_video(video_id)
+            expect(res.status_code).to eq(404)
           end
         end
       end
@@ -287,7 +292,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-default") do
             signature = subject.signature
-            expect(signature.https).to be_falsey
+            expect(signature.resource.https).to be_falsey
           end
         end
       end
@@ -304,7 +309,7 @@ module Vzaar
         it "returns a signature" do
           VCR.use_cassette("signature-with-options") do
             signature = subject.signature signature_options
-            expect(signature.https).to be_falsey
+            expect(signature.resource.https).to be_falsey
           end
         end
       end
@@ -319,8 +324,8 @@ module Vzaar
 
       it "uploads the video, starts processing and returns the video id" do
         VCR.use_cassette('upload_video-success') do
-          video = subject.upload_video(upload_options)
-          expect(video.id).to eq(expected_video_id.to_i)
+          res = subject.upload_video(upload_options)
+          expect(res.resource.id).to eq(expected_video_id.to_i)
         end
       end
     end
@@ -339,8 +344,8 @@ module Vzaar
 
       it "returns the video id" do
         VCR.use_cassette('process_video-default') do
-          video = subject.process_video process_options
-          expect(video.id).to eq(expected_video_id.to_i)
+          res = subject.process_video process_options
+          expect(res.resource.id).to eq(expected_video_id.to_i)
         end
       end
     end
@@ -351,7 +356,7 @@ module Vzaar
           VCR.use_cassette('add_subtitle-failure') do
             res = subject.add_subtitle(1519682, body: "SRT api", language: "en")
             expect(res.errors).to_not be_empty
-            expect(res.http_status_code).to eq(422)
+            expect(res.status_code).to eq(422)
           end
         end
       end
@@ -360,8 +365,7 @@ module Vzaar
         specify do
           VCR.use_cassette('add_subtitle-success') do
             res = subject.add_subtitle(1627985, body: "SRT api", language: "en")
-            expect(res.http_status_code).to eq(202)
-            expect(res.status).to eq("Accepted")
+            expect(res.status_code).to eq(202)
           end
         end
       end
@@ -376,7 +380,7 @@ module Vzaar
           VCR.use_cassette('generate_thumbnail-failure') do
             res = subject.generate_thumbnail(1519682, time: 3)
             expect(res.errors).to_not be_empty
-            expect(res.http_status_code).to eq(422)
+            expect(res.status_code).to eq(422)
           end
         end
       end
@@ -385,8 +389,7 @@ module Vzaar
         specify do
           VCR.use_cassette('generate_thumbnail-success') do
             res = subject.generate_thumbnail(1627985, time: 3)
-            expect(res.http_status_code).to eq(202)
-            expect(res.status).to eq("Accepted")
+            expect(res.status_code).to eq(202)
           end
         end
       end

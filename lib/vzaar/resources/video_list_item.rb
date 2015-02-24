@@ -1,6 +1,6 @@
 module Vzaar
   module Resource
-    class VideoCollectionItem < Base
+    class VideoListItem < Base
       root_node "//video"
 
       attribute :id, type: Integer
@@ -13,7 +13,9 @@ module Vzaar
       attribute :play_count, type: Integer
       attribute :user_name, field: :author_name, node: :user
       attribute :user_url, field: :author_url, node: :user
-      attribute :user_account_type_id, field: :author_account, node: :user, type: Integer
+      attribute :user_account_type_id,
+                field: :author_account, node: :user, type: Integer
+
       attribute :video_count, node: :user, type: Integer
       attribute :duration, type: Integer
       attribute :height, type: Integer

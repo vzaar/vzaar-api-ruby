@@ -16,8 +16,8 @@ describe "Upload Audio" do
           @res = api.upload_audio(path: file_path, title: title, description: desc, bitrate: 192)
         end
 
-        specify { expect(@res.http_status_code).to eq 201 }
-        specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
+        specify { expect(@res.status_code).to eq 201 }
+        specify { expect(@res.resource.id.to_s).to match(/^[0-9]+$/) }
       end
 
       context "RO token" do
