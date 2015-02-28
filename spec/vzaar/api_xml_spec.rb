@@ -269,8 +269,9 @@ module Vzaar
         let(:video_id) { 1405106 }
         it "raises an error" do
           VCR.use_cassette("edit_video-fail") do
-            expect { subject.edit_video(video_id, edit_options) }.to raise_error(
-              Vzaar::Error, "Moved Temporarily")
+            res = subject.edit_video(video_id, edit_options)
+            expect(res.status_code).to eq(302)
+            expect(res.resource.title).to be_nil
           end
         end
       end

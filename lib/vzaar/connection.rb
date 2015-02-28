@@ -17,15 +17,15 @@ module Vzaar
 
       case opts[:http_verb]
       when :get
-        yield handle_response(connection.get(url)) if block_given?
+        yield connection.get(url) if block_given?
       when :delete
-        yield handle_response(connection.delete(url)) if block_given?
+        yield connection.delete(url) if block_given?
       when :post
         response = connection.post(url, opts[:data], content_type(opts[:format]))
-        yield handle_response(response) if block_given?
+        yield response if block_given?
       when :put
         response = connection.put(url, opts[:data], content_type(opts[:format]))
-        yield handle_response(response) if block_given?
+        yield response if block_given?
       else
         handle_exception :invalid_http_verb
       end

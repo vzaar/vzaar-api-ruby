@@ -4,10 +4,13 @@ module Vzaar
       include Vzaar::Helper
 
       def resource
-        @resource ||= if xml?
+        @resource ||= case content_type
+                      when "application/xml"
                         resource_klass.new(xml_doc)
-                      else
+                      when "application/json"
                         JSON.parse(res.body)
+                      else
+                        resource_klass.new
                       end
       end
 
@@ -55,21 +58,6 @@ module Vzaar
           _resource_name
         end
       end
-    end
-
-    def self.handle_response(response)
-      case response.code.to_i
-      when 302
-        error("Moved Temporarily")
-      when 502
-        error("Bad Gateway")
-      else
-        response
-      end
-    end
-
-    def self.error(msg)
-      raise(Vzaar::Error, msg)
     end
   end
 end

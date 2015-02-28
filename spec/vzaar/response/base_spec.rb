@@ -18,7 +18,7 @@ describe Vzaar::Response::Base do
   describe "#resource" do
     context "when xml" do
       specify do
-        allow(subject).to receive(:xml?) { true }
+        allow(subject).to receive(:content_type) { "application/xml" }
         allow(Foo).to receive(:new).with(subject.xml_doc)
         subject.resource
       end
@@ -28,8 +28,16 @@ describe Vzaar::Response::Base do
       let(:body) { "{}" }
 
       specify do
-        allow(subject).to receive(:xml?) { false }
+        allow(subject).to receive(:content_type) { "application/json" }
         allow(JSON).to receive(:parse).with(body)
+        subject.resource
+      end
+    end
+
+    context "otherwise" do
+      specify do
+        allow(subject).to receive(:content_type) { "text/html" }
+        allow(Foo).to receive(:new).with(no_args)
         subject.resource
       end
     end
