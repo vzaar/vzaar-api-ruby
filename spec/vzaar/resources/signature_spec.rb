@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Vzaar::Resource
   describe Signature do
-    subject { described_class.new(xml) }
+    subject { described_class.new(Nokogiri::XML(xml)) }
 
     context "when xml is returned" do
       let(:https) { false }

@@ -5,8 +5,7 @@ module Vzaar
     end
 
     def whoami(opts={})
-      resource = Request::WhoAmI.new(conn, opts).execute
-      resource.login
+      Request::WhoAmI.new(conn, opts).execute
     end
 
     def account_type(account_type_id, opts={})
@@ -51,16 +50,20 @@ module Vzaar
     end
 
     def upload_audio(opts={})
-      uploader = Uploader.new(conn, signature, opts)
-      uploader.upload do |u|
-        process_audio(u.processing_params)
+      upload_resource do |signature|
+        uploader = Uploader.new(conn, signature.resource, opts)
+        uploader.upload do |u|
+          process_audio(u.processing_params)
+        end
       end
     end
 
     def upload_video(opts={})
-      uploader = Uploader.new(conn, signature, opts)
-      uploader.upload do |u|
-        process_video(u.processing_params)
+      upload_resource do |signature|
+        uploader = Uploader.new(conn, signature.resource, opts)
+        uploader.upload do |u|
+          process_video(u.processing_params)
+        end
       end
     end
 
@@ -77,15 +80,25 @@ module Vzaar
     end
 
     def link_upload(url, opts={})
-      sig = signature
-      _opts = opts.merge({ guid: sig.guid, key: sig.key, url: url })
-      Request::LinkUpload.new(conn, _opts).execute
+      upload_resource do |signature|
+        _opts = opts.merge(guid: signature.guid, key: sig.key, url: url)
+        Request::LinkUpload.new(conn, _opts).execute
+      end
     end
 
     def s3_upload(file_path)
-      uploader = Uploader.new(conn, signature, path: file_path)
-      uploader.upload
-      uploader.processing_params
+      upload_resource do |signature|
+        uploader = Uploader.new(conn, signature, path: file_path)
+        uploader.upload
+        uploader.processing_params
+      end
+    end
+
+    private
+
+    def upload_resource(&fn)
+      sig = signature
+      sig.status_code == 200 ? yield(sig) : sig
     end
   end
 end

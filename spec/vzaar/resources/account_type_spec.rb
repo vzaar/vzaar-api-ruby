@@ -15,9 +15,8 @@ module Vzaar::Resource
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<account>\n <version>#{version}</version>\n <account_id>#{account_id}</account_id>\n <title>#{title}</title>\n <cost>\n  <monthly>#{monthly}</monthly>\n  <currency>#{currency}</currency>\n </cost>\n <bandwidth>#{bandwidth}</bandwidth>\n <rights>\n  <borderless>#{borderless}</borderless>\n  <searchEnhancer>#{search_enhancer}</searchEnhancer>\n </rights>\n</account>\n"
     end
 
-    subject { described_class.new(xml) }
+    subject { described_class.new(Nokogiri::XML(xml)) }
 
-    specify { expect(subject.api_version).to eq(version) }
     specify { expect(subject.id).to eq(account_id) }
     specify { expect(subject.title).to eq(title) }
     specify { expect(subject.monthly).to eq(monthly) }

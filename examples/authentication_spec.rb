@@ -10,8 +10,7 @@ describe "Authentication" do
       specify do
         api = _api(login: user1["login"],
                    application_token: user1["rw_token"])
-
-        expect(api.whoami).to eq(user1["login"])
+        expect(api.whoami.resource.login).to eq(user1["login"])
       end
     end
   end

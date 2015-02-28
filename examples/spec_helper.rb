@@ -10,39 +10,33 @@ end
 RSpec.shared_examples("RO only") do |login, token, fn|
   specify do
     api = _api(login: login, application_token: token)
-
-    expect do
-      fn.call(api)
-    end.to raise_error(Vzaar::Error, "Protected Resource")
+    res = fn.call(api)
+    expect(res.status_code).to eq(401)
   end
 end
 
 
 RSpec.shared_examples("Unauthenticated") do |fn|
   specify do
-    api = unauthenticated_api()
-    expect do
-      fn.call(api)
-    end.to raise_error(Vzaar::Error, "Protected Resource")
+    res = fn.call(unauthenticated_api())
+    expect(res.status_code).to eq(401)
   end
 end
 
-
 RSpec.shared_examples("422 Failure") do
-  specify { expect(@res.http_status_code).to eq(422) }
+  specify { expect(@res.status_code).to eq(422) }
 end
 
 RSpec.shared_examples("202 Accepted") do
-  specify { expect(@res.http_status_code).to eq 202 }
-  specify { expect(@res.status).to eq("Accepted") }
+  specify { expect(@res.status_code).to eq 202 }
 end
 
 RSpec.shared_examples("200 OK") do
-  specify { expect(@res.http_status_code).to eq 200 }
+  specify { expect(@res.status_code).to eq 200 }
 end
 
 RSpec.shared_examples("401 Unauthorized") do
-  specify { expect(@res.http_status_code).to eq 401 }
+  specify { expect(@res.status_code).to eq 401 }
 end
 
 def env

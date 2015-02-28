@@ -6,6 +6,7 @@ module Vzaar
       def upload
         client = HTTPClient.new
         client.send_timeout = SEND_TIMEOUT
+
         begin
           file = File.open(path)
           res = client.post url, [

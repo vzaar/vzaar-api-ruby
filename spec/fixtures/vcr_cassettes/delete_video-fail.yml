@@ -7,41 +7,52 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - OAuth gem v0.4.7
       Authorization:
-      - OAuth oauth_nonce="KwqtwhPmA8wuK9RNOCaKlvDn22DNecfPfDD3KaAC0", oauth_signature="TcF0T3McE%2B3frn5k04WLAmWsEtQ%3D",
-        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1385137002", oauth_token="api-test-user",
+      - OAuth oauth_nonce="yJ7zSkXdZYwsD6sYChGX6oy4F7mPcRUwPsOhbijm8vQ", oauth_signature="%2B1t5JEuhB7N7%2FQtnSQhKlYHXr0U%3D",
+        oauth_signature_method="HMAC-SHA1", oauth_timestamp="1424886142", oauth_token="api-test-user",
         oauth_version="1.0"
   response:
     status:
-      code: 302
-      message: Moved Temporarily
+      code: 404
+      message: Not Found
     headers:
       Cache-Control:
       - no-cache
       Content-Type:
-      - text/html; charset=utf-8
+      - application/xml; charset=utf-8
       Date:
-      - Fri, 22 Nov 2013 16:16:50 GMT
-      Location:
-      - https://vzaar.com/restricted
+      - Wed, 25 Feb 2015 17:42:23 GMT
       P3p:
       - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
       Server:
-      - nginx/0.7.65
+      - nginx
       Set-Cookie:
-      - _vzaar_session_id=BAh7CDoPc2Vzc2lvbl9pZCIlNmRiNWVlOGIyODBlYTI4YzEzZmZjYzYyYzBiM2ZlZWQ6Em9hdXRoX3VzZXJfaWRpAxluAToMdXNlcl9pZGkDGW4B--ff13974856c73b843bd122519be57cfd8cbeea87;
-        path=/; HttpOnly
+      - _vzaar_session_id=VHk3Y0x4OEhPeVVVa1FiZjBSUVlDQ2R6WW1sdzlEL1FRSWZCYWV3bDUzOHZCNGxrazRCOE0vbTY1aklNbjZwUFYwa2lGb3hOay9lSi9GeVRXSmpLS2FwTFBaYlZwZXcwQzRPUkVhZjMzS05sV0lEdSt2cVJOQm5kdngxVGUvcmwtLWdJdVNZTW0zZ3RUNVZrQU9LYll6Umc9PQ%3D%3D--3a192bdeb3f98db84426a2d8c7ecb2f8f5e325e4;
+        path=/; expires=Fri, 27 Mar 2015 17:42:23 -0000; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - b12d1071-5cc8-4bf8-ae12-d157e40c61aa
+      X-Runtime:
+      - '0.093676'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
       Content-Length:
-      - '94'
+      - '125'
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: <html><body>You are being <a href="https://vzaar.com/restricted">redirected</a>.</body></html>
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><vzaar-api><status>Failure</status><errors><video>Resource
+        not found</video></errors></vzaar-api>
     http_version: 
-  recorded_at: Fri, 22 Nov 2013 16:16:44 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Wed, 25 Feb 2015 17:42:23 GMT
+recorded_with: VCR 2.9.0

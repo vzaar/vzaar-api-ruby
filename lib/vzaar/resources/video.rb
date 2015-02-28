@@ -1,7 +1,6 @@
 module Vzaar
   module Resource
     class Video < Base
-
       class Rendition < Base
         root_node "//rendition"
 
@@ -36,19 +35,10 @@ module Vzaar
       attribute :status_id, field: :video_status_id, type: Integer
       attribute :status_description, field: :video_status_description
 
-      def state
-        "Processing completed"
-      end
-
-      def error
-        ""
-      end
-
-      def renditions
-        @renditions ||= doc.at_xpath("//oembed/renditions").elements.map do |xml|
-          Rendition.new(xml.to_s, http_status_code)
-        end
-      end
+      attribute :renditions,
+                type: Collection,
+                node: "renditions",
+                class: Rendition
     end
   end
 end

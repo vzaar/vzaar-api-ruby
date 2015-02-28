@@ -27,7 +27,8 @@ api = Vzaar::Api.new(application_token: "API token", login: "vzaar login")
 
 If your login and API token are correct, you should be able to fetch your login by calling:
 ```ruby
-api.whoami
+res = api.whoami
+res.resource.login
 => "VZAAR LOGIN"
 ```
 
@@ -35,37 +36,49 @@ api.whoami
 
 Fetching account's type details:
 ```ruby
-api.account_type(account_type_id, options)
+account_type = api.account_type(1, options).resource
+account_type.title
+=> "Free"
 ```
 
 Fetching user's details:
 ```ruby
-api.user_details("user login", options)
+user = api.user_details("user_login", options).resource
+user.name
+=> "user_login"
 ```
 
 Getting details from public video:
 ```ruby
-api.video_details(video_id, options)
+video = api.video_details(video_id, options).resource
+video.title
+=> "My video"
 ```
 
 Getting details from private video (authentication required):
 ```ruby
-api.video_details(video_id, authenticated: true)
+video = api.video_details(video_id, authenticated: true).resource
+video.title
+=> "My video"
 ```
 
 Fetching videos for a given user:
 ```ruby
-api.video_list("user login", options)
+videos = api.video_list("user login", options).resource
+videos.last.title
+=> "My video"
 ```
 
 Fetching videos for authenticated user (authentication required):
 ```ruby
-api.videos
+videos = api.videos.resource
+videos.last.title
+=> "My video"
 ```
 
 Removing video from vzaar: (authentication required)
 ```ruby
-api.delete_video(video_id)
+deleted_video = api.delete_video(video_id).resource
 ```
 
 Updating existing video (authentication required):
@@ -82,10 +95,14 @@ api.upload_video(options)
 # options are: path, url, title, description, profile, transcoding, replace_id,
 # width and bitrate
 #
-# api.upload_video(path: "./path/to/video.mp4", title: "my video")
+# video = api.upload_video(path: "./path/to/video.mp4", title: "my video").resource
+# video.resource.status
+# => "Processing not complete"
 #
 # For link upload use url param:
-# api.upload_video(url: "http://example.com/video.mp4", title: "my video")
+# video = api.upload_video(url: "http://example.com/video.mp4", title: "my video").resource
+# video.id
+# => 12345
 ```
 
 Uploading new thumbnail for video (authentication required):
@@ -111,7 +128,9 @@ api.add_subtitle(video_id, options)
 
 Getting guid and aws signature (authentication required):
 ```ruby
-api.signature
+sig = api.signature.resource
+sig.guid
+=> "vz944cd744a63748f3868b2766e5e9c3ab"
 ```
 
 ### Previous versions of vzaar gem

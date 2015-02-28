@@ -11,7 +11,7 @@ describe "Signature" do
         api = _api(login: user1["login"],
                    application_token: user1["rw_token"])
 
-        expect(api.signature.http_status_code).to eq(200)
+        expect(api.signature.status_code).to eq(200)
       end
     end
 
@@ -22,7 +22,7 @@ describe "Signature" do
         expect(
           api.signature(
             :success_action_redirect => "http://test.com"
-          ).http_status_code
+          ).status_code
         ).to eq(200)
       end
     end
@@ -34,7 +34,7 @@ describe "Signature" do
         expect(
           api.signature(
             :success_action_redirect => CGI.escape("http://test.com")
-          ).http_status_code
+          ).status_code
         ).to eq(200)
       end
     end
@@ -46,7 +46,7 @@ describe "Signature" do
         expect(
           api.signature(
             :success_action_redirect => CGI.escape("http://test.com?x=y")
-          ).http_status_code
+          ).status_code
         ).to eq(200)
       end
     end
@@ -58,7 +58,7 @@ describe "Signature" do
         expect(
           api.signature(
             :success_action_redirect => "http://test.com?x"
-          ).http_status_code
+          ).status_code
         ).to eq(200)
       end
     end

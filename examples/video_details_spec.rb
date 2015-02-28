@@ -5,13 +5,14 @@ describe "Video Details" do
     before do
       api = _api(login: user1["login"],
                  application_token: user1["rw_token"])
-      
+
       @res = api.video_details(test_video_id("user1"), authenticated: true)
+      @res.resource
     end
 
     it_behaves_like "200 OK"
   end
-  
+
   describe "Unauthenticated" do
     context "Fully Protected API" do
       it_behaves_like "Unauthenticated", -> (api) do

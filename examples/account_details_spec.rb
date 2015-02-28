@@ -8,6 +8,6 @@ describe "Account Details" do
     end
 
     it_behaves_like "200 OK"
-    specify { expect(@res.title).to eq("Staff") }
+    specify { expect(@res.resource.title).to eq("Staff") }
   end
 end

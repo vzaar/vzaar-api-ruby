@@ -9,7 +9,11 @@ module Vzaar
       attribute :currency, node: "cost"
       attribute :borderless, node: "rights", type: Boolean
       attribute :bandwidth, type: Integer
-      attribute :search_enhancer, node: "rights", field: :searchEnhancer, type: Boolean
+
+      attribute :search_enhancer,
+                node: "rights",
+                field: :searchEnhancer,
+                type: Boolean
 
     end
   end

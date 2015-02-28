@@ -53,7 +53,8 @@ http_interactions:
         src=\"//view.vzaar.com/1405081/player\" title=\"vzaar video player\" type=\"text/html\"
         webkitAllowFullScreen width=\"320\"></iframe>]]>\n </html>\n <height>256</height>\n
         <width>320</width>\n <duration>16.92</duration>\n <video_status_id>9</video_status_id>\n
-        <video_status_description>Deleted</video_status_description>\n <play_count>0</play_count>\n</oembed>\n"
-    http_version: 
+        <video_status_description>Deleted</video_status_description>\n <play_count>0</play_count>\n
+        <renditions>\n  <rendition>\n   <type>sd</type>\n   <status_id>3</status_id>\n   <status>finished</status>\n  </rendition>\n  <rendition>\n   <type>hls</type>\n   <status_id>3</status_id>\n   <status>finished</status>\n  </rendition>\n </renditions>\n</oembed>\n"
+    http_version:
   recorded_at: Fri, 22 Nov 2013 11:54:10 GMT
 recorded_with: VCR 2.7.0

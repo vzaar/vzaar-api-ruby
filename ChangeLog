@@ -1,4 +1,16 @@
-2015-02-19 JC <jozef@vzaar.com>
+[2.0] 2015-02-28 JC <jozef@vzaar.com>
+
+  * Vzaar::Response::Base#resource added
+  * Vzaar::Response::Base#status_code added
+  * removed Vzaar::Response.handle_response - gem doesn't throw any exceptions based on API http response
+  * removed all http-related properties from Vzaar::Resource::Base
+  * added Collector for Vzaar::Resource::Video#renditions
+  * added Collector for Vzaar::Resource::User#bandwidth
+  * improved specs coverage
+  * refactoring
+
+
+[1.5] 2015-02-19 JC <jozef@vzaar.com>
 
   * renditions added to Vzaar::Resource::Video
 
