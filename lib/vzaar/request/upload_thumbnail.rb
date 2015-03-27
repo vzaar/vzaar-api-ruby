@@ -4,7 +4,7 @@ module Vzaar
       endpoint { |o| "/api/videos/#{o.video_id}/upload_thumb" }
 
       def data
-        { file: File.open(options[:path]) }
+        { file: File.open(sanitize_str(options[:path])) }
       end
     end
   end

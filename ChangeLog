@@ -1,3 +1,7 @@
+2015-03-27 JC <jozef@vzaar.com>	
+
+  * escaping special chars from xml added	
+	
 2015-02-19 JC <jozef@vzaar.com>
 
   * renditions added to Vzaar::Resource::Video

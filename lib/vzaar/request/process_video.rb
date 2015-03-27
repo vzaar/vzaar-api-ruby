@@ -25,6 +25,10 @@ module Vzaar
         raise Vzaar::Error, "Guid required to process video." unless options[:guid]
 
         h = options.dup.delete_if { |k,v| v.nil? }
+        [:description, :title, :labels].each do|k|
+          sanitized_val = sanitize_str(h[k])
+          h[k] = sanitized_val unless blank?(sanitized_val)
+        end
 
         if include_encoding_options?
           width = h.delete(:width)

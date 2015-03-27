@@ -22,9 +22,9 @@ module Vzaar
       def get_opts
         { "vzaar-api" => {
             "video" => {
-              "title" => options[:title],
-              "seo_url" => options[:seo_url],
-              "description" => options[:description],
+              "title" => sanitize_str(options[:title]),
+              "seo_url" => sanitize_str(options[:seo_url]),
+              "description" => sanitize_str(options[:description]),
               "private" => options[:private]
             }
           }

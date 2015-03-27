@@ -17,7 +17,7 @@ module Vzaar
             "subtitle" => {
               "language" => options[:language],
               "video_id" => options[:video_id],
-              "body" => options[:body]
+              "body" => sanitize_str(options[:body])
             }
           }
         }

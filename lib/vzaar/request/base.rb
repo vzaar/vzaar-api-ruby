@@ -84,6 +84,10 @@ module Vzaar
       def data
         xml? ? xml_body : json_body
       end
+
+      def sanitize_str(str)
+        (str || "").encode(xml: :text)
+      end
     end
   end
 end

@@ -17,10 +17,10 @@ module Vzaar
             link_upload: {
               key: options[:key],
               guid: options[:guid],
-              url: options[:url],
+              url: sanitize_str(options[:url]),
               encoding_params: {
-                title: options[:title],
-                description: options[:description],
+                title: sanitize_str(options[:title]),
+                description: sanitize_str(options[:description]),
                 size_id: options[:profile],
                 bitrate: options[:bitrate],
                 width: options[:width],
