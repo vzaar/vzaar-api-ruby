@@ -23,7 +23,7 @@ module Vzaar
         { "vzaar-api" => {
             "video" => {
               "title" => sanitize_str(options[:title]),
-              "seo_url" => sanitize_str(options[:seo_url]),
+              "seo_url" => CGI.escape(options.fetch(:seo_url, "")),
               "description" => sanitize_str(options[:description]),
               "private" => options[:private]
             }

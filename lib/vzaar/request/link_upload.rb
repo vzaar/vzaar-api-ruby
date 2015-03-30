@@ -17,7 +17,7 @@ module Vzaar
             link_upload: {
               key: options[:key],
               guid: options[:guid],
-              url: sanitize_str(options[:url]),
+              url: CGI.escape(options.fetch(:url, "")),
               encoding_params: {
                 title: sanitize_str(options[:title]),
                 description: sanitize_str(options[:description]),

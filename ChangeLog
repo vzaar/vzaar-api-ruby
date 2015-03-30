@@ -1,4 +1,8 @@
-2015-03-27 JC <jozef@vzaar.com>	
+[1.5.2] 2015-03-30 JC <jozef@vzaar.com>	
+
+  * call CGI.escape against link_upload/url and video/seo_url params
+
+[1.5.1] 2015-03-27 JC <jozef@vzaar.com>	
 
   * escaping special chars from xml added	
 	
