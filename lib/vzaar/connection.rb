@@ -10,6 +10,8 @@ module Vzaar
       @application_token = options[:application_token]
       @force_http = options[:force_http]
       @login = options[:login]
+      @timeout = options[:timeout]
+      @open_timeout = options[:open_timeout]
     end
 
     def using_connection(url, opts={}, &block)
@@ -47,7 +49,7 @@ module Vzaar
 
     def consumer(authorised = false)
       site = "#{protocol(authorised)}://#{server}"
-      c = OAuth::Consumer.new('', '', { :site => site })
+      c = OAuth::Consumer.new('', '', { :site => site, :timeout => @timeout, :open_timeout => @open_timeout })
       c.extend(OAuthExt::Multipart)
     end
 
