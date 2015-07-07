@@ -35,7 +35,7 @@ describe "Generate Thumbnail" do
         it_behaves_like "422 Failure"
 
         specify do
-          expect(@res.errors.first["thumb_time"]).to eq("invalid integer")
+          expect(@res.errors.first["thumb_time"]).to eq("invalid decimal")
         end
       end
     end
