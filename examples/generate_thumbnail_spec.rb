@@ -7,7 +7,7 @@ describe "Generate Thumbnail" do
   end
 
   context "when user is unauthenticated" do
-    it_behaves_like "Unauthenticated", -> (api) do
+    it_behaves_like "Unauthenticated", ->(api) do
       api.generate_thumbnail(test_video_id("user1"), time: 3)
     end
   end
@@ -42,7 +42,7 @@ describe "Generate Thumbnail" do
 
 
     context "RO token" do
-      it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+      it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
         api.generate_thumbnail(test_video_id("user1"), time: 3)
       end
     end

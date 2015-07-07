@@ -3,7 +3,7 @@ require_relative './spec_helper'
 describe "Authentication" do
   describe "whoami" do
     context "when user is unauthenticated" do
-      it_behaves_like "Unauthenticated", -> (api) { api.whoami }
+      it_behaves_like "Unauthenticated", ->(api) { api.whoami }
     end
 
     context "when auth success" do

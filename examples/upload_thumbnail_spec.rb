@@ -4,7 +4,7 @@ describe "Upload Thumbnail" do
   file_path = "./spec/support/pic.jpg"
 
   context "when user is unauthenticated" do
-    it_behaves_like "Unauthenticated", -> (api) do
+    it_behaves_like "Unauthenticated", ->(api) do
       api.upload_thumbnail(test_video_id("user1"), path: file_path)
     end
   end
@@ -26,7 +26,7 @@ describe "Upload Thumbnail" do
     end
 
     context "RO token" do
-      it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+      it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
         api.upload_thumbnail(test_video_id("user1"), path: file_path)
       end
     end

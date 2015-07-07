@@ -3,7 +3,7 @@ require_relative './spec_helper'
 describe "Signature" do
   describe "signature" do
     context "when user is unauthenticated" do
-      it_behaves_like "Unauthenticated", -> (api) { api.signature }
+      it_behaves_like "Unauthenticated", ->(api) { api.signature }
     end
 
     context "with no :sucess_action_redirect" do
