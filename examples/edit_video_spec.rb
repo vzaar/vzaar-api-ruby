@@ -4,7 +4,7 @@ describe "Edit Video" do
   file_path = "./spec/support/video.mov"
 
   context "when user is unauthenticated" do
-    it_behaves_like "Unauthenticated", -> (api) do
+    it_behaves_like "Unauthenticated", ->(api) do
       api.edit_video(test_video_id("user1"), title: "foo")
     end
   end
@@ -118,7 +118,7 @@ describe "Edit Video" do
       end
 
       context "RO token" do
-        it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+        it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
           api.edit_video(test_video_id("user1"), title: "woof")
         end
       end

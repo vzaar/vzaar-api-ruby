@@ -45,14 +45,14 @@ describe "Upload Video" do
       end
 
       context "RO token" do
-        it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+        it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
           api.upload_video(path: file_path, description: desc)
         end
       end
     end
 
     context "when user is unauthenticated" do
-      it_behaves_like "Unauthenticated", -> (api) do
+      it_behaves_like "Unauthenticated", ->(api) do
         api.upload_video(path: file_path, title: "woof", description: desc)
       end
     end
@@ -81,7 +81,7 @@ describe "Upload Video" do
     end
 
     context "when user is unauthenticated" do
-      it_behaves_like "Unauthenticated", -> (api) do
+      it_behaves_like "Unauthenticated", ->(api) do
         api.upload_video(url: file_url, title: "woof", description: desc)
       end
     end

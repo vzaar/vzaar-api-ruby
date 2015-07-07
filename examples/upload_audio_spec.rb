@@ -21,14 +21,14 @@ describe "Upload Audio" do
       end
 
       context "RO token" do
-        it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+        it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
           api.upload_audio(path: file_path, description: desc, bitrate: 192)
         end
       end
     end
 
     context "when user is unauthenticated" do
-      it_behaves_like "Unauthenticated", -> (api) do
+      it_behaves_like "Unauthenticated", ->(api) do
         api.upload_audio(path: file_path, title: "woof", description: desc, bitrate: 192)
       end
     end

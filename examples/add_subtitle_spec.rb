@@ -2,7 +2,7 @@ require_relative './spec_helper'
 
 describe "Add Subtitle" do
   context "when user is unauthenticated" do
-    it_behaves_like "Unauthenticated", -> (api) do
+    it_behaves_like "Unauthenticated", ->(api) do
       api.add_subtitle(test_video_id("user1"), body: "x", language: "en")
     end
   end
@@ -35,7 +35,7 @@ describe "Add Subtitle" do
 
 
     context "RO token" do
-      it_behaves_like "RO only", user1["login"], user1["ro_token"], -> (api) do
+      it_behaves_like "RO only", user1["login"], user1["ro_token"], ->(api) do
         api.add_subtitle(test_video_id("user1"), body: "SRT", language: "en")
       end
     end

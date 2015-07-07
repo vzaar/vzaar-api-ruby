@@ -6,14 +6,14 @@ describe "Video List" do
       before do
         api = _api(login: user1["login"],
                    application_token: user1["rw_token"])
-        
+
         @res = api.video_list(user1["login"], authenticated: true, params: { labels: "api,api2" })
       end
 
       specify { expect(@res.count).to eq(1) }
     end
   end
-  
+
   describe "Unauthenticated" do
     context "when Public API Feeds is enabled" do
       describe "params" do
@@ -47,7 +47,7 @@ describe "Video List" do
     end
 
     context "when Public API Feeds is disabled" do
-      it_behaves_like "Unauthenticated", -> (api) do
+      it_behaves_like "Unauthenticated", ->(api) do
         api.video_list(user1["login"])
       end
     end
