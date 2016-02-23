@@ -51,14 +51,15 @@ module Vzaar
     end
 
     def upload_audio(opts={})
-      uploader = Uploader.new(conn, signature, opts)
+      uploader = Uploader.new(conn, signature(opts), opts)
       uploader.upload do |u|
         process_audio(u.processing_params)
       end
     end
 
     def upload_video(opts={})
-      uploader = Uploader.new(conn, signature, opts)
+      sig = signature(opts)
+      uploader = Uploader.new(conn, sig, opts)
       uploader.upload do |u|
         process_video(u.processing_params)
       end
@@ -76,12 +77,14 @@ module Vzaar
       Request::GenerateThumbnail.new(conn, opts.merge(video_id: video_id)).execute
     end
 
+    # TODO: remove
     def link_upload(url, opts={})
       sig = signature
       _opts = opts.merge({ guid: sig.guid, key: sig.key, url: url })
       Request::LinkUpload.new(conn, _opts).execute
     end
 
+    # TODO: remove
     def s3_upload(file_path)
       uploader = Uploader.new(conn, signature, path: file_path)
       uploader.upload

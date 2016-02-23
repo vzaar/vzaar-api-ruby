@@ -283,10 +283,11 @@ module Vzaar
 
     describe "#signature" do
       context "with default options" do
-        let(:signature_options) { {} }
+        let(:signature_options) { { path: 'spec/support/video.mp4' } }
+
         it "returns a signature" do
           VCR.use_cassette("signature-default") do
-            signature = subject.signature
+            signature = subject.signature signature_options
             expect(signature.https).to be_falsey
           end
         end
@@ -295,6 +296,7 @@ module Vzaar
       context "with custom options" do
         let(:signature_options) do
           {
+            path: 'spec/support/video.mp4',
             success_action_redirect: 'example.com',
             include_metadata: true,
             flash: false
@@ -308,32 +310,56 @@ module Vzaar
           end
         end
       end
+
+      context "with no options" do
+        it "raises an error" do
+          expect{ subject.signature }.
+            to raise_error(Vzaar::Error,
+            'Path or url parameter required to generate signature.')
+        end
+      end
     end
 
     describe "#upload_video" do
-      let(:expected_video_id) { '1407683' }
-      let(:path) { './spec/support/video.mp4' }
       let(:upload_options) do
         { title: 'title', description: 'desc', profile: '2', path: path }
       end
 
-      it "uploads the video, starts processing and returns the video id" do
-        VCR.use_cassette('upload_video-success') do
-          video = subject.upload_video(upload_options)
-          expect(video.id).to eq(expected_video_id.to_i)
+      context 'when video is too small for multipart upload' do
+        let(:expected_video_id) { '6337328' }
+        let(:path) { './spec/support/video.mp4' }
+
+        it "uploads the video, starts processing and returns the video id" do
+          VCR.use_cassette('upload_video-success') do
+            video = subject.upload_video(upload_options)
+            expect(video.id).to eq(expected_video_id.to_i)
+          end
+        end
+      end
+
+      context 'when video is big enough for multipart upload' do
+        let(:expected_video_id) { '6337327' }
+        let(:path) { './spec/support/video-6mb.mp4' }
+
+        it "uploads the video, starts processing and returns the video id" do
+          VCR.use_cassette('upload_video-multipart-success') do
+            video = subject.upload_video(upload_options)
+            expect(video.id).to eq(expected_video_id.to_i)
+          end
         end
       end
     end
 
     describe "#process_video" do
-      let(:expected_video_id) { '1407672' }
+      let(:expected_video_id) { '6337329' }
 
       let(:process_options) do
         {
-          guid: 'vze7355b904a904737ab0e9582045c78ff',
+          guid: 'vz37d1756fd5df47b4a10f0a622c282aed',
           title: 'new video',
           description: 'a very long description',
-          profile: '2'
+          profile: '2',
+          chunks: 2
         }
       end
 

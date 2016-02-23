@@ -2,14 +2,12 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vzaar.com/api/videos.xml
+    uri: https://vzaar.com/api/v1.1/videos.xml
     body:
       encoding: US-ASCII
-      string: ! "\n        <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n        <vzaar-api>\n
-        \         <video>\n            <guid>vze7355b904a904737ab0e9582045c78ff</guid>\n
-        \           <title>new video</title>\n            <description>a very long
-        description</description>\n            <profile>2</profile>\n      \n          </video>\n
-        \       </vzaar-api>\n      "
+      string: ! "\n          <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n          <vzaar_api><video><guid>vz37d1756fd5df47b4a10f0a622c282aed</guid><title>new
+        video</title><description>a very long description</description><profile>2</profile><chunks>2</chunks></video></vzaar_api>\n
+        \       "
     headers:
       Content-Type:
       - application/xml
@@ -18,38 +16,48 @@ http_interactions:
       User-Agent:
       - OAuth gem v0.4.7
       Content-Length:
-      - '332'
+      - '266'
       Authorization:
-      - OAuth oauth_body_hash="ooQCCT7npUHzfkH%2BLVUXYmyN0OQ%3D", oauth_nonce="iRi4ahKqCjXIpHEkDoZRA9jreHqlabEokf0d06MA",
-        oauth_signature="7zH4DFt9oLo5u5Dgm9NHBe7RNwM%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1385402287", oauth_token="api-test-user", oauth_version="1.0"
+      - OAuth oauth_body_hash="6mCvFZ6n%2BPVyBqMBemdiJ7%2Bqpjs%3D", oauth_nonce="COGtH6B1qLBIpd5VaYsi7sjIUI4btJVl0PRpyoEHMM",
+        oauth_signature="9U7wF43Zygsabm21331xHRvG%2FWc%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1456483464", oauth_token="api-test-user", oauth_version="1.0"
   response:
     status:
       code: 201
       message: Created
     headers:
-      Cache-Control:
-      - no-cache
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Fri, 26 Feb 2016 10:44:28 GMT
       Content-Type:
       - application/xml; charset=utf-8
-      Date:
-      - Mon, 25 Nov 2013 17:58:09 GMT
-      P3p:
-      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
-      Server:
-      - nginx/0.7.65
-      Set-Cookie:
-      - _vzaar_session_id=BAh7BzoPc2Vzc2lvbl9pZCIlZDk2YzRkM2Q5OTVlYzc4ZjQzYzEwNjIyMTFkNGQ4NzM6Em9hdXRoX3VzZXJfaWRpAxluAQ%3D%3D--d03e154b208006bbe0211d67d5f8a7b5fa2bf9da;
-        path=/; HttpOnly
-      X-Runtime:
-      - '212'
-      Content-Length:
-      - '89'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Etag:
+      - ! '"865d7155b57909a92c8b68d1a17d2c93"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _vzaar_session_id=eXNIalVoOWZzM3pBNWtoOWpPQk5QdWwwUXg1NkVPUG9EMyt4U2tQRlRxMWd0VGRKSVN1N2VCVXJsVTY4dEVmQ0s3Y01uem5OR0djU2wrb0hpejAzM1lwanJjQ3ZPY2FYaHg1RW1xSkU2QnpYTUwxcUdPdjhrajFrV1BDRG8xTnEtLW90ZFo3bVkrNHRvWE9uaVNzZVNkSUE9PQ%3D%3D--abcc96950607c48b8c975dbe275632606ad7a6f8;
+        path=/; expires=Sun, 27 Mar 2016 10:44:28 -0000; HttpOnly
+      X-Request-Id:
+      - ee7ee92f-27c3-4bd8-871c-b7911fdf3453
+      X-Runtime:
+      - '3.243090'
     body:
       encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <video>1407672</video>\n</vzaar-api>\n"
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <video>6337329</video>\n</vzaar-api>\n"
     http_version:
-  recorded_at: Mon, 25 Nov 2013 17:58:10 GMT
-recorded_with: VCR 2.7.0
+  recorded_at: Fri, 26 Feb 2016 10:44:28 GMT
+recorded_with: VCR 2.9.2

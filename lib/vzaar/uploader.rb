@@ -9,8 +9,11 @@ module Vzaar
         if link_upload?
           link
         else
-          success = s3.upload
-          yield(self) if block_given? && success
+          result = s3.upload
+          if result[:success]
+            opts[:chunks] = result[:total_chunks]
+            yield(self) if block_given?
+          end
         end
       rescue Exception => e
         raise(Vzaar::Error, "Upload error: " + e.message)

@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'nokogiri', '~> 1.6'
-  s.add_dependency 'httpclient', '~> 2.3'
+  s.add_dependency 'httpclient', '~> 2.7'
   s.add_dependency 'oauth', '~> 0.4'
 
   s.add_development_dependency 'bundler', '~> 1.3'
