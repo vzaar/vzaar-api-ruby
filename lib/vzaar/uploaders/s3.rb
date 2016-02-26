@@ -21,34 +21,46 @@ module Vzaar
 
       private
 
+      def single_part_upload
+        File.open(path, "r") do |file|
+          _headers = headers.dup
+          _headers['chunk'] = '0'
+          _headers['chunks'] = '0'
+          _headers['key'] = signature.key
+          _headers['file'] = file
+          res = http_client.post url, _headers
+          { success: res.status_code == 201 }
+        end
+      end
+
+      def file_size
+        @file_size ||= File.stat(path).size
+      end
+
+      def chunk_size_bytes
+        @chunk_size_bytes ||= signature.chunk_size.to_i * (1024 ** 2)
+      end
+
+      def total_chunks
+        @total_chunks ||= begin
+          val = file_size / chunk_size_bytes
+          val += 1 if (file_size % chunk_size_bytes) > 0
+          val
+        end
+      end
+
       def multipart_upload
-        client = HTTPClient.new
-        client.send_timeout = SEND_TIMEOUT
-
-        file_size = File.stat(path).size
-        chunk_size_bytes = signature.chunk_size.to_i * (1024 ** 2)
-
-        total_chunks = file_size / chunk_size_bytes
-        total_chunks += 1 if (file_size % chunk_size_bytes) > 0
-
-        headers = {
-          'acl' => signature.acl,
-          'bucket' => signature.bucket,
-          'success_action_status' => '201',
-          'policy' => signature.policy,
-          'AWSAccessKeyId' => signature.access_key_id,
-          'signature' => signature.signature,
-          'chunks' => total_chunks
-        }
+        _headers = headers.dup
+        _headers['chunks'] = total_chunks
 
         chunk = 0
         File.open(path, "r") do |file|
           until file.eof?
-            headers['chunk'] = chunk
-            headers['key'] = "#{signature.key}.#{chunk}"
-            headers['file'] = VirtualFile.new(file, chunk_size_bytes)
+            _headers['chunk'] = chunk
+            _headers['key'] = "#{signature.key}.#{chunk}"
+            _headers['file'] = VirtualFile.new(file, chunk_size_bytes)
 
-            res = client.post url, headers
+            res = http_client.post url, _headers
             unless res.status_code == 201
               return { success: false }
             end
@@ -58,27 +70,21 @@ module Vzaar
         { success: true, total_chunks: total_chunks }
       end
 
-      def single_part_upload
-        client = HTTPClient.new
-        client.send_timeout = SEND_TIMEOUT
-        begin
-          file = File.open(path)
-          res = client.post url, [
-            ['acl', signature.acl],
-            ['bucket', signature.bucket],
-            ['success_action_status', '201'],
-            ['policy', signature.policy],
-            ['AWSAccessKeyId', signature.access_key_id],
-            ['signature', signature.signature],
-            ['key', signature.key],
-            ['chunk', '0'],
-            ['chunks', '0'],
-            ['file', file]
-          ]
-        ensure
-          file.close if file
+      def headers
+        @headers ||= {
+          'acl' => signature.acl,
+          'bucket' => signature.bucket,
+          'success_action_status' => '201',
+          'policy' => signature.policy,
+          'AWSAccessKeyId' => signature.access_key_id,
+          'signature' => signature.signature
+        }
+      end
+
+      def http_client
+        @http_client ||= begin
+          HTTPClient.new.tap { |c| c.send_timeout = SEND_TIMEOUT }
         end
-        { success: res.status_code == 201 }
       end
 
       def url
