@@ -10,6 +10,7 @@ gem 'rake'
 
 group :development, :test do
   gem 'pry'
+  gem 'pry-nav'
   gem 'fuubar', '2.0.0.rc1'
   gem 'growl'
   gem 'guard-rspec'

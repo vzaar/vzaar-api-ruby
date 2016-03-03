@@ -1,7 +1,7 @@
 module Vzaar
   module Request
     class ProcessVideo < Base
-      endpoint '/api/videos'
+      endpoint '/api/v1.1/videos'
       authenticated true
       http_verb :post
       resource "ProcessedVideo"

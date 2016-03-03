@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vzaar.com/api/videos/signature.xml?include_metadata=yes&success_action_redirect=example.com
+    uri: https://vzaar.com/api/v1.1/videos/signature.xml?filename=video.mp4&filesize=258430&include_metadata=yes&multipart=true&success_action_redirect=example.com
     body:
       encoding: US-ASCII
       string: ''
@@ -42,14 +42,24 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vzaar-api>\n  <https>false</https>\n
-        \ <signature>7BOi7ogK5EEacIwHX56NTUSFCVk=</signature>\n  <expirationdate>2013-11-22T19:53:12.000Z</expirationdate>\n
-        \ <acl>private</acl>\n  <success_action_redirect>example.com?guid=vz83a21715f11048d89c0a5cf51c14b4df</success_action_redirect>\n
-        \ <profile></profile>\n  <accesskeyid>AKIAI5FUPZCHG3Q2JLDA</accesskeyid>\n
-        \ <policy>ewogICAgICAgICdleHBpcmF0aW9uJzogJzIwMTMtMTEtMjJUMTk6NTM6MTIuMDAwWicsCiAgICAgICAgJ2NvbmRpdGlvbnMnOiBbCiAgICAgICAgICB7J2J1Y2tldCc6ICd2ejEnfSwKICAgICAgICAgIFsnc3RhcnRzLXdpdGgnLCAnJGtleScsICd2emFhci92ejgvM2EyL3NvdXJjZS92ejgzYTIxNzE1ZjExMDQ4ZDg5YzBhNWNmNTFjMTRiNGRmLyddLAogICAgICAgICAgeydhY2wnOiAncHJpdmF0ZSd9LAogICAgICAgICAgWydlcScsICckc3VjY2Vzc19hY3Rpb25fc3RhdHVzJywgJzIwMSddCiAgICAgICwgWydzdGFydHMtd2l0aCcsICckc3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QnLCAnJ10sIFsnc3RhcnRzLXdpdGgnLCAnJHgtYW16LW1ldGEtdGl0bGUnLCAnJ10sIFsnc3RhcnRzLXdpdGgnLCAnJHgtYW16LW1ldGEtcHJvZmlsZScsICcnXQogICAgICAgIF19CiAgICAgIA==</policy>\n
-        \ <title></title>\n  <guid>vz83a21715f11048d89c0a5cf51c14b4df</guid>\n  <key>vzaar/vz8/3a2/source/vz83a21715f11048d89c0a5cf51c14b4df/${filename}</key>\n
-        \ <bucket>vz1</bucket>\n</vzaar-api>\n"
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <vzaar-api>
+          <policy>eyJleHBpcmF0aW9uIjoiMjAxNi0wMi0yNlQwNjoxNTozMS4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoidnphYXItdXBsb2FkIn0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJ2emFhci92ejIvYzE4L3NvdXJjZS92ejJjMTgxODY0NmNjYjRiOGViMGU3MGIzYWNiNWRkNzdkLyJdLHsiYWNsIjoicHJpdmF0ZSJ9LFsiZXEiLCIkc3VjY2Vzc19hY3Rpb25fc3RhdHVzIiwiMjAxIl0sWyJzdGFydHMtd2l0aCIsIiRzdWNjZXNzX2FjdGlvbl9yZWRpcmVjdCIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aXRsZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS1wcm9maWxlIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRjaHVuayIsIiJdLFsic3RhcnRzLXdpdGgiLCIkY2h1bmtzIiwiIl1dfQ==</policy>
+          <signature>HycpRfcQXZMfn5OAUfgn3MMwaD8=</signature>
+          <bucket>vzaar-upload</bucket>
+          <accesskeyid>AKIAJ74MFWNVAFH6P7FQ</accesskeyid>
+          <key>vzaar/vz2/c18/source/vz2c1818646ccb4b8eb0e70b3acb5dd77d/${filename}</key>
+          <guid>vz2c1818646ccb4b8eb0e70b3acb5dd77d</guid>
+          <acl>private</acl>
+          <expirationdate>2016-02-26T06:15:31.000Z</expirationdate>
+          <https>false</https>
+          <success_action_redirect>example.com?guid=vz2c1818646ccb4b8eb0e70b3acb5dd77d</success_action_redirect>
+          <title></title>
+          <profile></profile>
+          <upload_hostname>https://upload.vzaar.com</upload_hostname>
+        </vzaar-api>
     http_version:
   recorded_at: Fri, 22 Nov 2013 17:53:04 GMT
 recorded_with: VCR 2.7.0

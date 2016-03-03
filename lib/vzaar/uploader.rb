@@ -5,16 +5,17 @@ module Vzaar
     attr_reader :guid
 
     def upload
-      begin
-        if link_upload?
-          link
-        else
-          success = s3.upload
-          yield(self) if block_given? && success
+      if link_upload?
+        link
+      else
+        result = s3.upload
+        if result[:success]
+          opts[:chunks] = result[:total_chunks]
+          yield(self) if block_given?
         end
-      rescue Exception => e
-        raise(Vzaar::Error, "Upload error: " + e.message)
       end
+    rescue Exception => e
+      raise(Vzaar::Error, "Upload error: " + e.message)
     end
 
     def processing_params

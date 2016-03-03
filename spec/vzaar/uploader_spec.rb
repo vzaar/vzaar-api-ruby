@@ -14,7 +14,8 @@ module Vzaar
     subject { described_class.new(conn, signature, opts) }
 
     describe "#upload" do
-      let(:uploader) { double }
+      let(:uploader) { double upload: result }
+      let(:result) { { success: true } }
 
       describe "standard upload directly to s3" do
         let(:url) { nil }
@@ -22,8 +23,6 @@ module Vzaar
         specify do
           allow(Uploaders::S3).to receive(:new)
             .with(opts[:path], signature) { uploader }
-
-          allow(uploader).to receive(:upload)
           subject.upload
         end
       end

@@ -15,6 +15,8 @@ module Vzaar
       attribute :guid
       attribute :key
       attribute :bucket
+      attribute :upload_hostname
+      attribute :chunk_size
 
     end
   end
