@@ -1,11 +1,19 @@
-[1.5.2] 2015-03-30 JC <jozef@vzaar.com>	
+[1.6.0] 2015-07-07 EJ <ed@vzaar.com>
+
+  * support for chunked uploads
+
+[1.5.3] 2015-07-07 Raz Itzhakian <raz.itzhakian@fiverr.com>
+
+  * timeout option added for API calls
+
+[1.5.2] 2015-03-30 JC <jozef@vzaar.com>
 
   * call CGI.escape against link_upload/url and video/seo_url params
 
-[1.5.1] 2015-03-27 JC <jozef@vzaar.com>	
+[1.5.1] 2015-03-27 JC <jozef@vzaar.com>
 
-  * escaping special chars from xml added	
-	
+  * escaping special chars from xml added
+
 2015-02-19 JC <jozef@vzaar.com>
 
   * renditions added to Vzaar::Resource::Video
