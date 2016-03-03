@@ -8,40 +8,18 @@ describe "Upload Video" do
 
     context "Authenticated User" do
       context "RW token" do
-        describe "xml" do
-          before(:all) do
-            api = _api(login: user1["login"],
-                       application_token: user1["rw_token"])
+        before(:all) do
+          api = _api(login: user1["login"], application_token: user1["rw_token"])
 
-            title = "api-test-#{rand_str}"
-            @res = api.upload_video(path: file_path, title: title, description: desc, profile: "boom")
+          title = "api-test-#{rand_str}"
+          @res = api.upload_video(path: file_path, title: title, description: desc, profile: "boom")
 
-            # cleanup
-            api.delete_video(@res.id)
-          end
-
-          specify { expect(@res.http_status_code).to eq 201 }
-          specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
-
-          after(:all) do
-
-          end
+          # cleanup
+          api.delete_video(@res.id)
         end
 
-        describe "json" do
-          before(:all) do
-            api = _api(login: user1["login"],
-                       application_token: user1["rw_token"])
-
-            title = "api-test-#{rand_str}"
-            @res = api.upload_video(path: file_path, title: title, description: desc, format: :json)
-
-            # cleanup
-            api.delete_video(@res["id"])
-          end
-
-          specify { expect(@res["id"].to_s).to match(/^[0-9]+$/) }
-        end
+        specify { expect(@res.http_status_code).to eq 201 }
+        specify { expect(@res.id.to_s).to match(/^[0-9]+$/) }
       end
 
       context "RO token" do
@@ -58,16 +36,13 @@ describe "Upload Video" do
     end
   end
 
-
-
   context "Link uploads" do
     desc = "Upload Video/Link Uploads"
     file_url = "http://samples.mplayerhq.hu/MPEG-4/turn-on-off.mp4"
 
     context "Authenticated User" do
       before(:all) do
-        api = _api(login: user1["login"],
-                   application_token: user1["rw_token"])
+        api = _api(login: user1["login"], application_token: user1["rw_token"])
 
         title = "api-test-#{rand_str}"
         @res = api.upload_video(url: file_url, title: title, description: desc)

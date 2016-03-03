@@ -39,6 +39,7 @@ module Vzaar
     end
 
     def signature(opts={})
+      opts.delete(:format)
       Request::Signature.new(conn, opts).execute
     end
 

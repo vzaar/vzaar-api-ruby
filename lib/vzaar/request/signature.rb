@@ -30,6 +30,7 @@ module Vzaar
         if options[:flash_request]
           _params[:flash_request] = 'yes'
         end
+
         super.merge(_params)
       end
     end
