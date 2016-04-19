@@ -15,8 +15,8 @@ module Vzaar
       end
 
       def build_params
-        _params = params ? (params.delete_if {|k,v| v.nil?}) : {}
-        URI.escape(_params.collect { |k,v| "#{k}=#{v}" }.join('&'))
+        _params = params ? (params.delete_if { |k,v| v.nil? }) : {}
+        URI.encode_www_form(_params)
       end
 
     end
