@@ -1,4 +1,8 @@
-[1.6.0] 2015-07-07 EJ <ed@vzaar.com>
+[1.6.1] 2016-04-21 EJ <ed@vzaar.com>
+
+  * escape ampersands in filename when sending signature request
+
+[1.6.0] 2016-03-03 EJ <ed@vzaar.com>
 
   * support for chunked uploads
 
