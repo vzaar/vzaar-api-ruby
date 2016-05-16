@@ -20,6 +20,7 @@ module Vzaar
         if options[:path]
           _params[:filename] = File.basename(options[:path])
           _params[:filesize] = File::Stat.new(options[:path]).size
+          _params[:uploader] = "Ruby #{VERSION}"
         end
         if options[:success_action_redirect]
           _params[:success_action_redirect] = options[:success_action_redirect]

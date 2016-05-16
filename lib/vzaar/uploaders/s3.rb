@@ -57,6 +57,7 @@ module Vzaar
         File.open(path, "r") do |file|
           until file.eof?
             _headers['chunk'] = chunk
+            _headers['x-amz-meta-uploader'] = "Ruby #{VERSION}"
             _headers['key'] = "#{signature.key}.#{chunk}"
             _headers['file'] = VirtualFile.new(file, chunk_size_bytes)
 

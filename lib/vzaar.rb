@@ -30,7 +30,7 @@ require 'nokogiri'
 require 'oauth'
 require 'json'
 
-
+require 'vzaar/version'
 require 'vzaar/request/multipart'
 require 'vzaar/ext/oauth'
 require 'vzaar/connection'
@@ -40,8 +40,6 @@ require 'vzaar/request/base'
 
 require 'vzaar/resources/base'
 require 'vzaar/resources/account_type'
-
-
 require 'vzaar/resources/user'
 require 'vzaar/resources/video'
 require 'vzaar/resources/video_status'
@@ -69,16 +67,11 @@ require 'vzaar/request/link_upload'
 require 'vzaar/request/generate_thumbnail'
 require 'vzaar/request/upload_thumbnail'
 require 'vzaar/request/add_subtitle'
-
-
 require 'vzaar/uploader'
-
 
 # response
 
 require 'vzaar/response/base'
-
-
 require 'vzaar/request/edit_video'
 require 'vzaar/request/process_video'
 require 'vzaar/request/process_audio'
