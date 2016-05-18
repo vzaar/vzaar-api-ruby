@@ -57,7 +57,6 @@ module Vzaar
         File.open(path, "r") do |file|
           until file.eof?
             _headers['chunk'] = chunk
-            _headers['x-amz-meta-uploader'] = "Ruby #{VERSION}"
             _headers['key'] = "#{signature.key}.#{chunk}"
             _headers['file'] = VirtualFile.new(file, chunk_size_bytes)
 
@@ -78,7 +77,8 @@ module Vzaar
           'success_action_status' => '201',
           'policy' => signature.policy,
           'AWSAccessKeyId' => signature.access_key_id,
-          'signature' => signature.signature
+          'signature' => signature.signature,
+          'x-amz-meta-uploader' => "Ruby #{VERSION}"
         }
       end
 
