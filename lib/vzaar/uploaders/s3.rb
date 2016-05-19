@@ -77,7 +77,8 @@ module Vzaar
           'success_action_status' => '201',
           'policy' => signature.policy,
           'AWSAccessKeyId' => signature.access_key_id,
-          'signature' => signature.signature
+          'signature' => signature.signature,
+          'x-amz-meta-uploader' => "Ruby #{VERSION}"
         }
       end
 
