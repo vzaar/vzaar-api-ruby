@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vzaar.com/api/v1.1/videos/signature.xml?filename=video.mp4&filesize=258430&multipart=true&uploader=Ruby%201.6.1
+    uri: https://vzaar.com/api/v1.1/videos/signature.xml?filename=video.mp4&filesize=258430&multipart=true&uploader=Ruby%201.6.2
     body:
       encoding: US-ASCII
       string: ''

@@ -1,3 +1,7 @@
+[1.6.2] 2016-05-19 EJ <ed@vzaar.com>
+
+  * add metadata to signature API call and S3 uploads
+
 [1.6.1] 2016-04-21 EJ <ed@vzaar.com>
 
   * escape ampersands in filename when sending signature request
