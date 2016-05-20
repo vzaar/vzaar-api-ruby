@@ -111,7 +111,7 @@ api.add_subtitle(video_id, options)
 
 Getting guid and aws signature (authentication required):
 ```ruby
-api.signature
+api.signature(path: '/path/to/file/video.mp4')
 ```
 
 ### Previous versions of vzaar gem
