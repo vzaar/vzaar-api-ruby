@@ -1,12 +1,9 @@
-# vzaar  [![Build Status](https://secure.travis-ci.org/vzaar/vzaar-api-ruby.png)](http://travis-ci.org/vzaar/vzaar-api-ruby) [![Code Climate](https://codeclimate.com/github/vzaar/vzaar-api-ruby.png)](https://codeclimate.com/github/vzaar/vzaar-api-ruby)
+## vzaar API Ruby client 
+##### vzaar API client for Ruby developers.
 
-A Ruby gem for the vzaar API.
-
----
+[![Build Status](https://secure.travis-ci.org/vzaar/vzaar-api-ruby.png)](http://travis-ci.org/vzaar/vzaar-api-ruby) [![Code Climate](https://codeclimate.com/github/vzaar/vzaar-api-ruby.png)](https://codeclimate.com/github/vzaar/vzaar-api-ruby)
 
 >vzaar is the go to video hosting platform for business. Affordable, customizable and secure. Leverage the power of online video and enable commerce with vzaar. For more details and signup please visit [http://vzaar.com](http://vzaar.com)
-
-----
 
 ### Installation
 
@@ -26,6 +23,7 @@ api = Vzaar::Api.new(application_token: "API token", login: "vzaar login")
 ```
 
 If your login and API token are correct, you should be able to fetch your login by calling:
+
 ```ruby
 api.whoami
 => "VZAAR LOGIN"
@@ -34,68 +32,77 @@ api.whoami
 ### Endpoints:
 
 Fetching account's type details:
+
 ```ruby
 api.account_type(account_type_id, options)
 ```
 
 Fetching user's details:
+
 ```ruby
 api.user_details("user login", options)
 ```
 
 Getting details from public video:
+
 ```ruby
 api.video_details(video_id, options)
 ```
 
 Getting details from private video (authentication required):
+
 ```ruby
 api.video_details(video_id, authenticated: true)
 ```
 
 Fetching videos for a given user:
+
 ```ruby
 api.video_list("user login", options)
 ```
 
 Fetching videos for authenticated user (authentication required):
+
 ```ruby
 api.videos
 ```
 
 Removing video from vzaar: (authentication required)
+
 ```ruby
 api.delete_video(video_id)
 ```
 
 Updating existing video (authentication required):
+
 ```ruby
 api.edit_video(video_id, options)
 
-# options are: title, description, private and seo_url
+# Options are: title, description, private and seo_url
 ```
 
 Uploading new video to vzaar (authentication required):
+
 ```ruby
 api.upload_video(options)
 
-# options are: path, url, title, description, profile, transcoding, replace_id,
-# width and bitrate
-#
+# Options are: path, url, title, description, profile, transcoding, replace_id, width and bitrate.
+# 
 # api.upload_video(path: "./path/to/video.mp4", title: "my video")
 #
-# For link upload use url param:
+# For link upload use `url` param:
 # api.upload_video(url: "http://example.com/video.mp4", title: "my video")
 ```
 
 Uploading new thumbnail for video (authentication required):
+
 ```ruby
 api.upload_thumbnail(video_id, options)
-
 # api.upload_thumbnail(123456, path: "/path/to/image.jpg")
 ```
 
 Generating new thumbnail based on given time value (authentication required):
+
 ```ruby
 api.generate_thumbnail(video_id, options)
 
@@ -103,21 +110,47 @@ api.generate_thumbnail(video_id, options)
 ```
 
 Adding subtitle to the video (authentication required):
+
 ```ruby
 api.add_subtitle(video_id, options)
 
 # api.add_subtitle(123456, body: "1\n00:00:17,440 --> 00:01:20,375\n ......", language: "en")
 ```
 
-Getting guid and aws signature (authentication required):
+
+#### Upload Signature
+
+Getting guid and AWS signature (authentication required):
+
 ```ruby
-api.signature(path: '/path/to/file/video.mp4')
+api.signature(path: '/path/to/file/movie.mp4')
 ```
+
+When performing a link upload, specify the `url` instead of the `path`:
+
+```ruby
+api.signature(url: 'http://example.com/movie.mp4')
+```
+
+
+#### Special characters in filenames
+
+As per the AWS S3 documentation, only a small number of special characters in filenames are supported: http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html
+
+The following special characters are supported by the vzaar API:
+
+- a-z
+- A-Z
+- 0-9
+- Space
+- - (dash)
+- . (dot)
+- ! (exclamation)
+- () (braces)
 
 ### Previous versions of vzaar gem
 
-This version is not backwards compatible with any of the previous versions of vzaar gem (0.2.x series)
-0.2.x series is no longer maintained.
+This version is not backwards compatible with any of the previous versions of vzaar gem (0.2.x series). 0.2.x series is no longer maintained.
 
 
 ### Contributing
