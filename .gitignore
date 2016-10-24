@@ -1,0 +1,9 @@
+.DS_Store
+*.gem
+.bundle
+.gemtags
+.tags
+Gemfile.lock
+pkg/*
+tmp
+test*.rb
