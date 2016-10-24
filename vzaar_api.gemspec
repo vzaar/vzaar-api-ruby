@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.platform              = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.0'
-  s.rubygems_version      = ">= 2.0"
+  s.rubygems_version      = ">= 2.5"
 
   s.files         = `git ls-files`.split($/)
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
