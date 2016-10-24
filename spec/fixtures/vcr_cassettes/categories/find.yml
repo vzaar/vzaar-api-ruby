@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories/331
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Mon, 24 Oct 2016 14:43:47 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Mon, 24 Oct 2016 14:43:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '296'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1477320287'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f08e8f5c-a99d-4f4c-a9e2-fea74ef7f3d6
+      X-Runtime:
+      - '0.165923'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["ahas7up88mghr9r15xdk","zypt4kc9blqvnlgcvnd6","kd8xl65746x5mb25itf3","tyiqhxwi0sxupiulbiav","eajcumvw1284s19o0ti7","582nabk1lsn76zg1akz5","qysl8e2nx2u8vgsncngc","u7hn4h20jnvowk6sdp69","2e4hafsdtwlmrtd8yodg","g1ngti184g4gfno0nv3z"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"}}'
+    http_version: 
+  recorded_at: Mon, 24 Oct 2016 14:43:47 GMT
+recorded_with: VCR 3.0.3
