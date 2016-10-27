@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories?page=2&per_page=2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 28 Oct 2016 09:31:36 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 28 Oct 2016 09:31:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '197'
+      X-Ratelimit-Reset:
+      - '1477647157'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a24302f0-7a83-4907-af44-cb031410c528
+      X-Runtime:
+      - '0.889906'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["s0nsvmaub2ipxvdoopy0","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":333,"account_id":79357,"user_id":79357,"name":"Outdoors","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2015-04-07T09:38:55.000Z","updated_at":"2016-08-08T12:54:05.000Z"},{"id":334,"account_id":79357,"user_id":79357,"name":"Indoors","description":"All
+        indoor videos","parent_id":331,"depth":1,"node_children_count":2,"tree_children_count":2,"node_video_count":2,"tree_video_count":3,"created_at":"2015-04-07T09:39:06.000Z","updated_at":"2016-10-18T16:29:11.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=3&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories?page=1&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Fri, 28 Oct 2016 09:31:37 GMT
+recorded_with: VCR 3.0.3

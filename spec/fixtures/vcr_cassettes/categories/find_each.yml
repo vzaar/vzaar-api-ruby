@@ -1,0 +1,351 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories?per_page=2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:44 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '828'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1477584164'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 557299a2-a956-4a12-af03-64f729054dc2
+      X-Runtime:
+      - '0.195070'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["x1s0lsdbzde6kyg9pt5j","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":332,"account_id":79357,"user_id":79357,"name":"Kids","description":null,"parent_id":null,"depth":0,"node_children_count":0,"tree_children_count":0,"node_video_count":2,"tree_video_count":2,"created_at":"2015-04-07T09:38:46.000Z","updated_at":"2016-10-18T16:30:02.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=2&per_page=2","previous":null,"last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:45 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:46 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '198'
+      X-Ratelimit-Reset:
+      - '1477584166'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 0089a31b-f75f-41eb-8440-1b29cf32b5c1
+      X-Runtime:
+      - '0.095554'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["8nv1cf6jvhxyvpvyroew","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":333,"account_id":79357,"user_id":79357,"name":"Outdoors","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2015-04-07T09:38:55.000Z","updated_at":"2016-08-08T12:54:05.000Z"},{"id":334,"account_id":79357,"user_id":79357,"name":"Indoors","description":"All
+        indoor videos","parent_id":331,"depth":1,"node_children_count":2,"tree_children_count":2,"node_video_count":2,"tree_video_count":3,"created_at":"2015-04-07T09:39:06.000Z","updated_at":"2016-10-18T16:29:11.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=3&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories?page=1&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:46 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:47 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '887'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '197'
+      X-Ratelimit-Reset:
+      - '1477584167'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ba4b994a-4ab4-469a-a6c6-d9f70c395ac7
+      X-Runtime:
+      - '0.105823'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["8o8l6zsnrv6tfwo1n2o9","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":335,"account_id":79357,"user_id":79357,"name":"Test
+        shizzle","description":null,"parent_id":null,"depth":0,"node_children_count":0,"tree_children_count":0,"node_video_count":2,"tree_video_count":2,"created_at":"2015-04-07T09:39:21.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":336,"account_id":79357,"user_id":79357,"name":"Travel","description":null,"parent_id":null,"depth":0,"node_children_count":0,"tree_children_count":0,"node_video_count":4,"tree_video_count":4,"created_at":"2015-04-07T09:47:38.000Z","updated_at":"2016-10-18T16:30:02.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=4&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories?page=2&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:47 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:48 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '879'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '196'
+      X-Ratelimit-Reset:
+      - '1477584168'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - f66e3f47-ce5c-40f8-8b1c-94ea6bd723d1
+      X-Runtime:
+      - '0.107835'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["zdf1kzno5x7387n5aa63","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":2232,"account_id":79357,"user_id":94482,"name":"PT","description":null,"parent_id":null,"depth":0,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-08-08T12:46:50.000Z","updated_at":"2016-08-08T12:46:50.000Z"},{"id":2233,"account_id":79357,"user_id":79357,"name":"My
+        room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":1,"tree_video_count":1,"created_at":"2016-10-18T16:29:04.000Z","updated_at":"2016-10-18T16:29:05.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=5&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories?page=3&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:48 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:49 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '889'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '195'
+      X-Ratelimit-Reset:
+      - '1477584169'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 325df226-40e3-4313-a055-1d055cf9ec52
+      X-Runtime:
+      - '0.115341'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["ik6p9z1id3hixuddu4wg","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":2234,"account_id":79357,"user_id":79357,"name":"Your
+        room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:29:10.000Z","updated_at":"2016-10-18T16:29:11.000Z"},{"id":2235,"account_id":79357,"user_id":79357,"name":"Outer
+        space","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:30:01.000Z","updated_at":"2016-10-18T16:30:02.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories?page=4&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:49 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 27 Oct 2016 16:01:50 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 27 Oct 2016 16:01:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '821'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '194'
+      X-Ratelimit-Reset:
+      - '1477584170'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 7fb4d1ab-9226-406c-b0e8-9d54c11f2f1e
+      X-Runtime:
+      - '0.101703'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["kuq79mz6pwiudp403qjz","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":2236,"account_id":79357,"user_id":79357,"name":"Ziggy","description":null,"parent_id":null,"depth":0,"node_children_count":1,"tree_children_count":1,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-19T10:39:07.000Z","updated_at":"2016-10-19T10:40:23.000Z"},{"id":2237,"account_id":79357,"user_id":79357,"name":"Boogie","description":null,"parent_id":2236,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-19T10:40:23.000Z","updated_at":"2016-10-19T10:40:23.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":null,"previous":"https://app.vzaar.localhost/api/v2/categories?page=5&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories?page=6&per_page=2"}}}'
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 16:01:50 GMT
+recorded_with: VCR 3.0.3

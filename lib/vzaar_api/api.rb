@@ -1,25 +1,17 @@
 module VzaarApi
   class Api
 
-    def get(path, query = {})
-      handle_response http_client.get(url(path), query, headers)
+    def get(url, query = {})
+      handle_response http_client.get(url, query, headers)
     end
 
     def handle_response(response)
-      json = jsonify(response)
-      return_data_or_raise(json)
-    end
-
-    def jsonify(response)
-      JSON.parse response.body
-    end
-
-    def return_data_or_raise(json)
-      return json['data'] if json['data']
-      err = [
-        json['errors'].first['message'],
-        json['errors'].first['detail']].join(': ')
-      raise Error.new(err)
+      api_response = ApiResponse.new(response)
+      if api_response.ok?
+        api_response
+      else
+        raise Error.new(api_response.error)
+      end
     end
 
     def http_client
