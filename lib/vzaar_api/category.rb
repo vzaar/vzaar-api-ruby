@@ -27,10 +27,6 @@ module VzaarApi
       new response.data
     end
 
-    def self.paginate(query = {})
-      PagedResource.new(query)
-    end
-
     def self.find_each(query = {}, &block)
       paginate(query).find_each(&block)
     end
@@ -39,51 +35,13 @@ module VzaarApi
       paginate(query).each.to_a
     end
 
-    def self.resource_url(path = nil)
-      ["https://#{VzaarApi.hostname}/api/v2/categories", path].compact.join('/')
+    def self.paginate(query = {})
+      args = query.merge({ resource_url: resource_url, resource_class: self })
+      PagedResource.new(args)
     end
 
-    class PagedResource
-      attr_reader :query
-
-      def initialize(query = {})
-        @query = query
-      end
-
-      def find_each
-        return enum_for :find_each unless block_given?
-        begin
-          each { |record| yield record }
-        end while self.next
-      end
-
-      def each
-        return enum_for :each unless block_given?
-        load! unless @collection
-        @collection.each { |record| yield record }
-      end
-
-      def next
-        return nil unless @collection.meta
-        url = @collection.meta[:links][:next]
-        if url
-          @collection = begin
-            response = Api.new.get(url)
-            CategoryCollection.new response
-          end
-        end
-      end
-
-      def load!
-        @collection = begin
-          response = Api.new.get(resource_url, query)
-          CategoryCollection.new response
-        end
-      end
-
-      def resource_url(path = nil)
-        ["https://#{VzaarApi.hostname}/api/v2/categories", path].compact.join('/')
-      end
+    def self.resource_url(path = nil)
+      Api.resource_url 'categories', path
     end
 
   end

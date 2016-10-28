@@ -73,5 +73,46 @@ module VzaarApi
       end
     end
 
+    describe '.paginate' do
+      it 'loads the category collection' do
+        VCR.use_cassette('categories/paginate_first') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [331, 332, 333]
+        end
+      end
+
+      it 'loads the category collection' do
+        VCR.use_cassette('categories/paginate_next') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          pager.next
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [334, 335, 336]
+        end
+      end
+
+      it 'loads the category collection' do
+        VCR.use_cassette('categories/paginate_last') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          pager.last
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [2235, 2236, 2237]
+        end
+      end
+
+      it 'loads the category collection' do
+        VCR.use_cassette('categories/paginate_previous') do
+          pager = described_class.paginate(page: 4, per_page: 3)
+          pager.load!
+          pager.previous
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [2232, 2233, 2234]
+        end
+      end
+    end
+
   end
 end

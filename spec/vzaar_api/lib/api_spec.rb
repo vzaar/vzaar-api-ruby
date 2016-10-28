@@ -11,12 +11,6 @@ module VzaarApi
     let(:client_id) { 'client-id' }
     let(:hostname) { 'app.vzaar.localhost' }
 
-    describe '#url' do
-      let(:expected_result) { 'https://app.vzaar.localhost/api/v2/users/42' }
-      let(:result) { subject.url('users/42') }
-      specify { expect(result).to eq expected_result }
-    end
-
     describe '#headers' do
       let(:expected_result) do
         {
