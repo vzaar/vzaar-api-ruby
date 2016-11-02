@@ -9,6 +9,8 @@ require 'vzaar_api/api_response'
 require 'vzaar_api/paged_resource'
 
 require 'vzaar_api/category'
+require 'vzaar_api/rendition'
+require 'vzaar_api/video'
 
 require 'vzaar_api/signature/multipart'
 require 'vzaar_api/signature/single'
