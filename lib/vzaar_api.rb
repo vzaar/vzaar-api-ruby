@@ -10,6 +10,9 @@ require 'vzaar_api/paged_resource'
 
 require 'vzaar_api/category'
 
+require 'vzaar_api/signature/multipart'
+require 'vzaar_api/signature/single'
+
 
 module VzaarApi
   class Error < StandardError ; end
