@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.vzaar.localhost/api/v2/signature/multipart
+    body:
+      encoding: UTF-8
+      string: '{"filename":"video.mp4","filesize":25165824,"uploader":"Ruby-2.0.0-alpha"}'
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 03 Nov 2016 17:12:08 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Thu, 03 Nov 2016 17:12:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1018'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1478193188'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - a63fc572-b759-4a88-a6e3-6a2311612cb1
+      X-Runtime:
+      - '1.670516'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["1yxtukjg4moaigyh1xsu","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"access_key_id":"access_key_id","key":"vzaar/t8d/ec9/source/t8dec9434bcc64622b68d1dc16f3ddffap/${filename}","acl":"private","policy":"policy","signature":"signature","success_action_status":"201","content_type":"binary/octet-stream","guid":"guid","bucket":"vzaar-upload-development","upload_hostname":"https://vzaar-upload-development.s3.amazonaws.com","part_size":"5MB","part_size_in_bytes":5242880,"parts":5}}'
+    http_version:
+  recorded_at: Thu, 03 Nov 2016 17:12:10 GMT
+recorded_with: VCR 3.0.3
