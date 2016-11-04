@@ -24,6 +24,10 @@ module VzaarApi
         @parts = attrs[:parts]
       end
 
+      def multipart?
+        true
+      end
+
       def self.create(attrs = {})
         url = Api.resource_url ENDPOINT
         new Api.new.post(url, attrs).data

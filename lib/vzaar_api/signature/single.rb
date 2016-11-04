@@ -21,6 +21,10 @@ module VzaarApi
         @upload_hostname = attrs[:upload_hostname]
       end
 
+      def multipart?
+        false
+      end
+
       def self.create(attrs = {})
         url = Api.resource_url ENDPOINT
         new Api.new.post(url, attrs).data
