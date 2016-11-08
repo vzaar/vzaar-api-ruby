@@ -24,20 +24,7 @@ module VzaarApi
     end
 
     def self.create(attrs = {})
-      # Strategy::Video::Create.new(attrs).execute
-      case
-      when attrs.has_key?(:guid)
-        url = Api.resource_url ENDPOINT
-        new Api.new.post(url, attrs).data
-      when attrs.has_key?(:path)
-        signature = Signature::Factory.create(attrs)
-        upload_attrs = Upload::S3.new(attrs, signature).execute
-        create upload_attrs
-      when attrs.has_key?(:url)
-        LinkUpload.create(attrs)
-      else
-        raise Error.new('Invalid parameters: Expected one of :guid, :path, :url')
-      end
+      Strategy::Video::Create.new(attrs, self).execute
     end
 
   end
