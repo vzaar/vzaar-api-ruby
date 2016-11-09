@@ -19,5 +19,7 @@ guard :rspec, cmd: "bundle exec rspec", all_on_start: true do
   watch(%r{^lib/vzaar_api.rb$})       { "spec" }
   watch(%r{^lib/vzaar_api/(.+)\.rb$}) { "spec" }
   watch(%r{^spec/support/(.+)\.rb$})  { 'spec' }
+
+  watch('spec/vzaar_api_helper.rb')   { "spec" }
   watch('spec/spec_helper.rb')        { "spec" }
 end

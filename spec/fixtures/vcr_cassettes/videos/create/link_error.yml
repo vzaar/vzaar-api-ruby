@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.vzaar.localhost/api/v2/link_uploads
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://example.com/video.mp4"}'
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 04 Nov 2016 10:53:58 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 04 Nov 2016 10:53:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '76'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 194aeb58-7c7c-4cf3-a1b7-650ddecf1c60
+      X-Runtime:
+      - '0.036464'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"message":"Invalid parameters","detail":"uploader is missing"}]}'
+    http_version: 
+  recorded_at: Fri, 04 Nov 2016 10:53:58 GMT
+recorded_with: VCR 3.0.3

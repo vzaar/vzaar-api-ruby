@@ -15,7 +15,8 @@ module VzaarApi
       let(:expected_result) do
         {
           'X-Auth-Token' => auth_token,
-          'X-Client-Id'  => client_id
+          'X-Client-Id'  => client_id,
+          'Content-Type' => 'application/json'
         }
       end
       specify { expect(subject.headers).to eq expected_result }
