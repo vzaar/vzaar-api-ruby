@@ -2,7 +2,7 @@ module VzaarApi
   class Api
 
     def self.api_root_url
-      "https://#{VzaarApi.hostname}/api/v2"
+      "#{VzaarApi.protocol}://#{VzaarApi.hostname}/api/v2"
     end
 
     def self.resource_url(resource, path = nil)

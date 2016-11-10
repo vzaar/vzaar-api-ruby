@@ -24,10 +24,27 @@ require 'vzaar_api/upload/virtual_file'
 
 module VzaarApi
   class Error < StandardError ; end
+
+  DEFAULT_HOSTNAME = 'api.vzaar.com'
+  DEFAULT_PROTOCOL = 'https'
+
   class << self
-    # Global config for Vzaar API
     attr_accessor :auth_token
     attr_accessor :client_id
     attr_accessor :hostname
+    attr_accessor :protocol
+
+    def hostname
+      @hostname || DEFAULT_HOSTNAME
+    end
+
+    def protocol
+      @protocol || DEFAULT_PROTOCOL
+    end
+
+    def protocol=(value)
+      @protocol = value.downcase == 'https' ? 'https' : 'http'
+    end
   end
+
 end

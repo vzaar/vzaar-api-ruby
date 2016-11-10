@@ -13,5 +13,6 @@ describe VzaarApi do
   specify { expect(VzaarApi.auth_token).to eq auth_token }
   specify { expect(VzaarApi.client_id).to eq client_id }
   specify { expect(VzaarApi.hostname).to eq hostname }
+  specify { expect(VzaarApi.protocol).to eq 'https' }
 
 end
