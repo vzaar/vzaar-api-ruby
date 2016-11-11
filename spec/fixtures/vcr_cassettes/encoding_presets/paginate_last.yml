@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/encoding_presets?per_page=1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 14:52:30 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 14:52:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '677'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '189'
+      X-Ratelimit-Reset:
+      - '1478876010'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3dd096cf-f2a5-4854-a417-ec2d4137373d
+      X-Runtime:
+      - '0.062853'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["4f0aqsybgre1t0c3du24","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":4,"name":"SD","description":"540p","output_format":"mp4","bitrate_kbps":1944,"long_dimension":960,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"meta":{"total_count":4,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=1","next":"https://app.vzaar.localhost/api/v2/encoding_presets?page=2&per_page=1","previous":null,"last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=4&per_page=1"}}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 14:52:30 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/encoding_presets
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 14:52:30 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 14:52:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '676'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '188'
+      X-Ratelimit-Reset:
+      - '1478876010'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4604adbf-3a4f-4f9e-b269-4555c118498c
+      X-Runtime:
+      - '0.063835'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["780ke4unmfj57t3y5ocl","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"meta":{"total_count":4,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=1","next":null,"previous":"https://app.vzaar.localhost/api/v2/encoding_presets?page=3&per_page=1","last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=4&per_page=1"}}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 14:52:30 GMT
+recorded_with: VCR 3.0.3

@@ -10,6 +10,7 @@ require 'vzaar_api/api_response'
 require 'vzaar_api/paged_resource'
 
 require 'vzaar_api/category'
+require 'vzaar_api/encoding_preset'
 require 'vzaar_api/link_upload'
 require 'vzaar_api/rendition'
 require 'vzaar_api/strategy/video/create'
