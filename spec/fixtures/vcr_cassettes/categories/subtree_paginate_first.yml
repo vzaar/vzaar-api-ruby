@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories/331
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 13:24:59 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 13:24:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '296'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1478870759'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 6f8a6161-85ea-4f90-9806-b2b9896dda5f
+      X-Runtime:
+      - '0.071564'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["z02jaryzf5rgqz6820s5","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 13:24:59 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories/331/subtree?per_page=2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 13:24:59 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 13:24:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '905'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1478870759'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 6aea2d24-92a6-46a9-b37f-9efcd3144c44
+      X-Runtime:
+      - '0.080506'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["pqlvhavqyuleyftzbbp6","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":333,"account_id":79357,"user_id":79357,"name":"Outdoors","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2015-04-07T09:38:55.000Z","updated_at":"2016-08-08T12:54:05.000Z"}],"meta":{"total_count":6,"links":{"first":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=2&per_page=2","previous":null,"last":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=3&per_page=2"}}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 13:24:59 GMT
+recorded_with: VCR 3.0.3

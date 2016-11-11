@@ -21,6 +21,13 @@ module VzaarApi
       @updated_at = attrs[:updated_at]
     end
 
+    def subtree(query = {})
+      args = query.merge({
+        resource_url: self.class.resource_url("#{id}/subtree"),
+        resource_class: self.class })
+      PagedResource.new(args)
+    end
+
     def self.find(category_id)
       url = resource_url(category_id)
       response = Api.new.get(url)

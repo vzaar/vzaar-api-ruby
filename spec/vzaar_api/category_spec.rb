@@ -88,5 +88,60 @@ module VzaarApi
       end
     end
 
+    describe '#subtree' do
+      it 'loads the category subtree' do
+        VCR.use_cassette('categories/subtree') do
+          category = described_class.find(331)
+          pager = category.subtree
+          pager.load!
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [331, 333, 334, 2233, 2234, 2235]
+        end
+      end
+
+      it 'loads the category subtree' do
+        VCR.use_cassette('categories/subtree_paginate_first') do
+          category = described_class.find(331)
+          pager = category.subtree(per_page: 2)
+          pager.load!
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [331, 333]
+        end
+      end
+
+      it 'loads the category subtree' do
+        VCR.use_cassette('categories/subtree_paginate_next') do
+          category = described_class.find(331)
+          pager = category.subtree(per_page: 2)
+          pager.load!
+          pager.next
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [334, 2233]
+        end
+      end
+
+      it 'loads the category subtree' do
+        VCR.use_cassette('categories/subtree_paginate_previous') do
+          category = described_class.find(331)
+          pager = category.subtree(per_page: 2, page: 2)
+          pager.load!
+          pager.previous
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [331, 333]
+        end
+      end
+
+      it 'loads the category subtree' do
+        VCR.use_cassette('categories/subtree_paginate_last') do
+          category = described_class.find(331)
+          pager = category.subtree(per_page: 2, page: 2)
+          pager.load!
+          pager.last
+          ids = pager.collection.map { |category| category.id }
+          expect(ids).to match_array [2234, 2235]
+        end
+      end
+    end
+
   end
 end
