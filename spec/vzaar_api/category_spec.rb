@@ -37,38 +37,12 @@ module VzaarApi
       end
     end
 
-    describe '.find_each' do
+    describe '.each' do
       it 'loads the category collection' do
-        VCR.use_cassette('categories/find_each') do
-          enum = described_class.find_each(per_page: 2)
+        VCR.use_cassette('categories/each') do
+          enum = described_class.each(per_page: 2)
           ids = enum.map { |category| category.id }
           expect(ids).to match_array [331, 332, 333, 334, 335, 336, 2232, 2233, 2234, 2235, 2236, 2237]
-        end
-      end
-    end
-
-    describe '.all' do
-      it 'loads the category collection' do
-        VCR.use_cassette('categories/all_page_1') do
-          arr = described_class.all(per_page: 2)
-          ids = arr.map { |category| category.id }
-          expect(ids).to match_array [331, 332]
-        end
-      end
-
-      it 'loads the category collection' do
-        VCR.use_cassette('categories/all_page_2') do
-          arr = described_class.all(page: 2, per_page: 2)
-          ids = arr.map { |category| category.id }
-          expect(ids).to match_array [333, 334]
-        end
-      end
-
-      it 'loads the category collection' do
-        VCR.use_cassette('categories/all_page_3') do
-          arr = described_class.all(page: 3, per_page: 3)
-          ids = arr.map { |category| category.id }
-          expect(ids).to match_array [2232, 2233, 2234]
         end
       end
     end

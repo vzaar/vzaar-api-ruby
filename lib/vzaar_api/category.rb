@@ -27,12 +27,8 @@ module VzaarApi
       new response.data
     end
 
-    def self.find_each(query = {}, &block)
-      paginate(query).find_each(&block)
-    end
-
-    def self.all(query = {})
-      paginate(query).each.to_a
+    def self.each(query = {}, &block)
+      paginate(query).each(&block)
     end
 
     def self.paginate(query = {})
