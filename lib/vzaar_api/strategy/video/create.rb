@@ -26,8 +26,8 @@ module VzaarApi
         private
 
         def create_from_guid
-          url = Api.resource_url video_class::ENDPOINT
-          video_class.new Api.new.post(url, attrs).data
+          url = Lib::Api.resource_url video_class::ENDPOINT
+          video_class.new Lib::Api.new.post(url, attrs).data
         end
 
         def create_from_path

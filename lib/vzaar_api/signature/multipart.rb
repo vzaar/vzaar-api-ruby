@@ -31,7 +31,7 @@ module VzaarApi
       end
 
       def self.create(attrs = {})
-        new Api.new.post(resource_url, attrs).data
+        new Lib::Api.new.post(resource_url, attrs).data
       end
 
     end

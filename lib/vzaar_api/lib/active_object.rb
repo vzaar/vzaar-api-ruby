@@ -9,7 +9,7 @@ module VzaarApi
 
         module ClassMethods
           def find(id)
-            response = Api.new.get(resource_url(id))
+            response = Lib::Api.new.get(resource_url(id))
             new response.data
           end
         end
@@ -22,7 +22,7 @@ module VzaarApi
 
         module ClassMethods
           def create(attrs)
-            response = Api.new.post(resource_url, attrs)
+            response = Lib::Api.new.post(resource_url, attrs)
             new response.data
           end
         end
@@ -35,7 +35,7 @@ module VzaarApi
 
         module InstanceMethods
           def save
-            response = Api.new.patch(resource_url(id), to_hash)
+            response = Lib::Api.new.patch(resource_url(id), to_hash)
             update_from_attributes response.data
             true
           end
@@ -49,7 +49,7 @@ module VzaarApi
 
         module InstanceMethods
           def delete
-            Api.new.delete(resource_url(id))
+            Lib::Api.new.delete(resource_url(id))
             true
           end
         end

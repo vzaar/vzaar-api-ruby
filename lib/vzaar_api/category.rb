@@ -30,7 +30,7 @@ module VzaarApi
       args = query.merge({
         resource_url: self.class.resource_url("#{id}/subtree"),
         resource_class: self.class })
-      PagedResource.new(args)
+      Lib::PagedResource.new(args)
     end
 
     def self.each(query = {}, &block)
@@ -39,7 +39,7 @@ module VzaarApi
 
     def self.paginate(query = {})
       args = query.merge({ resource_url: resource_url, resource_class: self })
-      PagedResource.new(args)
+      Lib::PagedResource.new(args)
     end
 
   end

@@ -38,7 +38,7 @@ module VzaarApi
 
     def self.paginate(query = {})
       args = query.merge({ resource_url: resource_url, resource_class: self })
-      PagedResource.new(args)
+      Lib::PagedResource.new(args)
     end
 
   end
