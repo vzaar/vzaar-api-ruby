@@ -11,22 +11,7 @@ module VzaarApi
       :send_to_youtube, :encoding_presets
 
     def initialize(attrs = {})
-      @id = attrs[:id]
-      @name = attrs[:name]
-      @recipe_type = attrs[:recipe_type]
-      @description = attrs[:description]
-      @account_id = attrs[:account_id]
-      @user_id = attrs[:user_id]
-      @default = attrs[:default]
-      @multipass = attrs[:multipass]
-      @frame_grab_time = attrs[:frame_grab_time]
-      @generate_animated_thumb = attrs[:generate_animated_thumb]
-      @generate_sprite = attrs[:generate_sprite]
-      @use_watermark = attrs[:use_watermark]
-      @send_to_youtube = attrs[:send_to_youtube]
-      @encoding_presets = EncodingPreset.build(attrs[:encoding_presets])
-      @created_at = attrs[:created_at]
-      @updated_at = attrs[:updated_at]
+      update_from_attributes(attrs)
     end
 
     def self.find(recipe_id)
@@ -66,6 +51,27 @@ module VzaarApi
       PagedResource.new(args)
     end
 
+    private
+
+    def update_from_attributes(attrs = {})
+      @id = attrs[:id]
+      @name = attrs[:name]
+      @recipe_type = attrs[:recipe_type]
+      @description = attrs[:description]
+      @account_id = attrs[:account_id]
+      @user_id = attrs[:user_id]
+      @default = attrs[:default]
+      @multipass = attrs[:multipass]
+      @frame_grab_time = attrs[:frame_grab_time]
+      @generate_animated_thumb = attrs[:generate_animated_thumb]
+      @generate_sprite = attrs[:generate_sprite]
+      @use_watermark = attrs[:use_watermark]
+      @send_to_youtube = attrs[:send_to_youtube]
+      @encoding_presets = EncodingPreset.build(attrs[:encoding_presets])
+      @created_at = attrs[:created_at]
+      @updated_at = attrs[:updated_at]
+    end
+
     def to_hash
       {
         id: self.id,
@@ -85,25 +91,6 @@ module VzaarApi
         created_at: self.created_at,
         updated_at: self.updated_at
       }
-    end
-
-    def update_from_attributes(attrs = {})
-      @id = attrs[:id]
-      @name = attrs[:name]
-      @recipe_type = attrs[:recipe_type]
-      @description = attrs[:description]
-      @account_id = attrs[:account_id]
-      @user_id = attrs[:user_id]
-      @default = attrs[:default]
-      @multipass = attrs[:multipass]
-      @frame_grab_time = attrs[:frame_grab_time]
-      @generate_animated_thumb = attrs[:generate_animated_thumb]
-      @generate_sprite = attrs[:generate_sprite]
-      @use_watermark = attrs[:use_watermark]
-      @send_to_youtube = attrs[:send_to_youtube]
-      @encoding_presets = EncodingPreset.build(attrs[:encoding_presets])
-      @created_at = attrs[:created_at]
-      @updated_at = attrs[:updated_at]
     end
 
   end
