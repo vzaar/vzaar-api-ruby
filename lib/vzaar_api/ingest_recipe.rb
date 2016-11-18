@@ -2,6 +2,10 @@ module VzaarApi
   class IngestRecipe
 
     include Lib::HasResourceUrl
+    include Lib::ActiveObject::Find
+    include Lib::ActiveObject::Create
+    include Lib::ActiveObject::Save
+    include Lib::ActiveObject::Delete
 
     ENDPOINT = 'ingest_recipes'
 
@@ -12,30 +16,6 @@ module VzaarApi
 
     def initialize(attrs = {})
       update_from_attributes(attrs)
-    end
-
-    def self.find(recipe_id)
-      url = resource_url(recipe_id)
-      response = Api.new.get(url)
-      new response.data
-    end
-
-    def self.create(attrs)
-      response = Api.new.post(resource_url, attrs)
-      new response.data
-    end
-
-    def save
-      url = self.class.resource_url(id)
-      response = Api.new.patch(url, to_hash)
-      update_from_attributes response.data
-      true
-    end
-
-    def delete
-      url = self.class.resource_url(id)
-      response = Api.new.delete(url)
-      true
     end
 
     def encoding_presets

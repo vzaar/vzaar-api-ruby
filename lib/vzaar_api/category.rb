@@ -2,6 +2,7 @@ module VzaarApi
   class Category
 
     include Lib::HasResourceUrl
+    include Lib::ActiveObject::Find
 
     ENDPOINT = 'categories'
 
@@ -30,12 +31,6 @@ module VzaarApi
         resource_url: self.class.resource_url("#{id}/subtree"),
         resource_class: self.class })
       PagedResource.new(args)
-    end
-
-    def self.find(category_id)
-      url = resource_url(category_id)
-      response = Api.new.get(url)
-      new response.data
     end
 
     def self.each(query = {}, &block)

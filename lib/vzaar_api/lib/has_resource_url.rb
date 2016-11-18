@@ -3,7 +3,14 @@ module VzaarApi
     module HasResourceUrl
 
       def self.included(base)
+        base.include(InstanceMethods)
         base.extend(ClassMethods)
+      end
+
+      module InstanceMethods
+        def resource_url(path = nil)
+          self.class.resource_url(id)
+        end
       end
 
       module ClassMethods

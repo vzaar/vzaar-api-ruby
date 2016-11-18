@@ -2,6 +2,7 @@ module VzaarApi
   class EncodingPreset
 
     include Lib::HasResourceUrl
+    include Lib::ActiveObject::Find
 
     ENDPOINT = 'encoding_presets'
 
@@ -32,12 +33,6 @@ module VzaarApi
 
     def self.build(data = [])
       Array(data).map { |attrs| new attrs }
-    end
-
-    def self.find(encoding_preset_id)
-      url = resource_url(encoding_preset_id)
-      response = Api.new.get(url)
-      new response.data
     end
 
     def self.each(query = {}, &block)

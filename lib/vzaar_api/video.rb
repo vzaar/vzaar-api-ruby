@@ -2,6 +2,7 @@ module VzaarApi
   class Video
 
     include Lib::HasResourceUrl
+    include Lib::ActiveObject::Find
 
     ENDPOINT = 'videos'
 
@@ -24,12 +25,6 @@ module VzaarApi
       @state = attrs[:state]
       @created_at = attrs[:created_at]
       @updated_at = attrs[:updated_at]
-    end
-
-    def self.find(video_id)
-      url = resource_url(video_id)
-      response = Api.new.get(url)
-      new response.data
     end
 
     def self.create(attrs = {})
