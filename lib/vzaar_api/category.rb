@@ -34,9 +34,5 @@ module VzaarApi
       Lib::PagedResource.new(args)
     end
 
-    def self.each(query = {}, &block)
-      paginate(query).each(&block)
-    end
-
   end
 end
