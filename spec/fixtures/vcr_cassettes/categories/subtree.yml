@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories/331
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 13:22:11 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 13:22:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '296'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '198'
+      X-Ratelimit-Reset:
+      - '1478870591'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - ff3adf39-ac74-48c1-983c-b70cb24a6d46
+      X-Runtime:
+      - '0.080607'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["gjmtpxomlxmsjqqqknd5","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 13:22:11 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/categories/331/subtree
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 11 Nov 2016 13:22:11 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 11 Nov 2016 13:22:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1801'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '198'
+      X-Ratelimit-Reset:
+      - '1478870591'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 37dcb8ee-70d7-4271-bae8-500aa8460dca
+      X-Runtime:
+      - '0.163683'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["yy86z6ju8zu86009527m","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
+        Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":333,"account_id":79357,"user_id":79357,"name":"Outdoors","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2015-04-07T09:38:55.000Z","updated_at":"2016-08-08T12:54:05.000Z"},{"id":334,"account_id":79357,"user_id":79357,"name":"Indoors","description":"All
+        indoor videos","parent_id":331,"depth":1,"node_children_count":2,"tree_children_count":2,"node_video_count":2,"tree_video_count":3,"created_at":"2015-04-07T09:39:06.000Z","updated_at":"2016-10-18T16:29:11.000Z"},{"id":2233,"account_id":79357,"user_id":79357,"name":"My
+        room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":1,"tree_video_count":1,"created_at":"2016-10-18T16:29:04.000Z","updated_at":"2016-10-18T16:29:05.000Z"},{"id":2234,"account_id":79357,"user_id":79357,"name":"Your
+        room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:29:10.000Z","updated_at":"2016-10-18T16:29:11.000Z"},{"id":2235,"account_id":79357,"user_id":79357,"name":"Outer
+        space","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:30:01.000Z","updated_at":"2016-10-18T16:30:02.000Z"}],"meta":{"total_count":6,"links":{"first":null,"next":null,"previous":null,"last":null}}}'
+    http_version: 
+  recorded_at: Fri, 11 Nov 2016 13:22:11 GMT
+recorded_with: VCR 3.0.3

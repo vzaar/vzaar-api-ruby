@@ -9,8 +9,16 @@ module VzaarApi
       [api_root_url, resource, path].compact.join('/')
     end
 
+    def delete(url)
+      handle_response http_client.delete(url, {}, headers)
+    end
+
     def get(url, query = {})
       handle_response http_client.get(url, query, headers)
+    end
+
+    def patch(url, body = {})
+      handle_response http_client.patch(url, body.to_json, headers)
     end
 
     def post(url, body = {})
