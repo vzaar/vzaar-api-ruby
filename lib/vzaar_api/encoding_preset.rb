@@ -1,6 +1,13 @@
 module VzaarApi
   class EncodingPreset
 
+    include Lib::HasCollectionBuilder
+    include Lib::HasResourceUrl
+    include Lib::ActiveObject::Find
+    include Lib::WillPaginate
+
+    ENDPOINT = 'encoding_presets'
+
     attr_reader :id, :name, :description, :output_format, :bitrate_kbps,
       :long_dimension, :video_codec, :profile, :frame_rate, :keyframe, :audio_bitrate_kbps,
       :audio_channels, :audio_sample_rate, :max_bitrate_kbps, :keyframe_period,
@@ -24,29 +31,6 @@ module VzaarApi
       @keyframe_period = attrs[:keyframe_period]
       @created_at = attrs[:created_at]
       @updated_at = attrs[:updated_at]
-    end
-
-    def self.build(data = [])
-      Array(data).map { |attrs| new attrs }
-    end
-
-    def self.find(encoding_preset_id)
-      url = resource_url(encoding_preset_id)
-      response = Api.new.get(url)
-      new response.data
-    end
-
-    def self.each(query = {}, &block)
-      paginate(query).each(&block)
-    end
-
-    def self.paginate(query = {})
-      args = query.merge({ resource_url: resource_url, resource_class: self })
-      PagedResource.new(args)
-    end
-
-    def self.resource_url(path = nil)
-      Api.resource_url 'encoding_presets', path
     end
 
   end

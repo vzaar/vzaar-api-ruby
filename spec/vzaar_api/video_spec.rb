@@ -45,6 +45,39 @@ module VzaarApi
       specify { expect(subject.updated_at).to eq 'updated_at' }
     end
 
+    describe '.find' do
+      context 'when the video can be found' do
+        it 'finds the video' do
+          VCR.use_cassette('videos/find') do
+            video = described_class.find(7574825)
+            expect(video.id).to eq 7574825
+            expect(video.title).to eq 'video-mp4'
+            expect(video.user_id).to eq 79357
+            expect(video.account_id).to eq 79357
+            expect(video.description).to eq 'description'
+            expect(video.private).to eq false
+            expect(video.seo_url).to eq 'seo-url'
+            expect(video.url).to eq 'video-url'
+            expect(video.thumbnail_url).to eq 'https://view.vzaar.localhost/7574825/thumb'
+            expect(video.state).to be_nil
+            expect(video.renditions.count).to eq 0
+            expect(video.legacy_renditions.count).to eq 0
+            expect(video.created_at).to eq '2016-11-04T10:34:12.000Z'
+            expect(video.updated_at).to eq '2016-11-04T10:34:12.000Z'
+          end
+        end
+      end
+
+      context 'when the video cannot be found' do
+        it 'raises an error' do
+          VCR.use_cassette('videos/find_404') do
+            expect { described_class.find(-1) }.
+              to raise_error(Error, 'Not found: Resource cannot be found')
+          end
+        end
+      end
+    end
+
     describe '.create' do
       context 'when we already have the guid' do
         let(:attrs) do
@@ -114,6 +147,47 @@ module VzaarApi
         it 'raises an error' do
           expect { described_class.create }.to raise_error(
             Error, 'Invalid parameters: Expected one of :guid, :path, :url')
+        end
+      end
+    end
+
+    describe '.paginate' do
+      it 'loads the video collection' do
+        VCR.use_cassette('videos/paginate_first') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          ids = pager.collection.map { |video| video.id }
+          expect(ids).to match_array [7574851, 7574852, 7574853]
+        end
+      end
+
+      it 'loads the video collection' do
+        VCR.use_cassette('videos/paginate_next') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          pager.next
+          ids = pager.collection.map { |video| video.id }
+          expect(ids).to match_array [7574848, 7574849, 7574850]
+        end
+      end
+
+      it 'loads the video collection' do
+        VCR.use_cassette('videos/paginate_last') do
+          pager = described_class.paginate(per_page: 3)
+          pager.load!
+          pager.last
+          ids = pager.collection.map { |video| video.id }
+          expect(ids).to match_array [927938, 935900]
+        end
+      end
+
+      it 'loads the video collection' do
+        VCR.use_cassette('videos/paginate_previous') do
+          pager = described_class.paginate(page: 4, per_page: 3)
+          pager.load!
+          pager.previous
+          ids = pager.collection.map { |video| video.id }
+          expect(ids).to match_array [7574844, 7574845, 7574847]
         end
       end
     end

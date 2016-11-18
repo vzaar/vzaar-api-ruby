@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/encoding_presets/-1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 13:35:59 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 13:35:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '72'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 12075d57-2fdd-46d6-95d3-76257f4232d7
+      X-Runtime:
+      - '0.059741'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"message":"Not found","detail":"Resource cannot be found"}]}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 13:35:59 GMT
+recorded_with: VCR 3.0.3

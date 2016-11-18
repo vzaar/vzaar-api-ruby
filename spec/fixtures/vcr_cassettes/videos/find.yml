@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/videos/7574825
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 14:04:38 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 14:04:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '593'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1479477938'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - e29a582d-5b42-461a-ba6e-a2699bdd184e
+      X-Runtime:
+      - '0.348055'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["dvx2kdhsc2p8qq4x8lxp","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":7574825,"title":"video-mp4","user_id":79357,"account_id":79357,"description":"description","duration":45.5,"created_at":"2016-11-04T10:34:12.000Z","updated_at":"2016-11-04T10:34:12.000Z","private":false,"seo_url":"seo-url","url":"video-url","thumbnail_url":"https://view.vzaar.localhost/7574825/thumb","embed_code":"<iframe
+        id=\"vzvd-7574825\" name=\"vzvd-7574825\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574825/player\"></iframe>","renditions":[]}}'
+    http_version:
+  recorded_at: Fri, 18 Nov 2016 14:04:38 GMT
+recorded_with: VCR 3.0.3

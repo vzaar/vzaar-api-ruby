@@ -1,11 +1,12 @@
 module VzaarApi
   module LinkUpload
 
+    include Lib::HasResourceUrl
+
     ENDPOINT = 'link_uploads'
 
     def self.create(attrs = {})
-      url = Api.resource_url ENDPOINT
-      Video.new Api.new.post(url, attrs).data
+      Video.new Lib::Api.new.post(resource_url, attrs).data
     end
 
   end
