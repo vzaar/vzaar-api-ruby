@@ -50,7 +50,7 @@ module VzaarApi
     end
 
     def encoding_presets
-      Array(@encoding_presets)
+      @encoding_presets = Array(@encoding_presets)
     end
 
     def self.each(query = {}, &block)

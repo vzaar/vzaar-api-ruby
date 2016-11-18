@@ -96,15 +96,16 @@ module VzaarApi
       context 'when recipe is updated successfully' do
         it 'returns the ingest recipe object' do
           VCR.use_cassette('ingest_reipces/update_200') do
-            presets = EncodingPreset.paginate(per_page: 3).load!.collection
             recipe = described_class.find(8)
+            recipe.encoding_presets = nil
+            recipe.encoding_presets << EncodingPreset.find(1)
+            recipe.encoding_presets << EncodingPreset.find(2)
             recipe.name = 'updated'
-            recipe.encoding_presets = presets
             expect(recipe.save).to eq true
             expect(recipe.name).to eq 'updated'
-            expect(recipe.encoding_presets.count).to eq 3
+            expect(recipe.encoding_presets.count).to eq 2
             expect(recipe.created_at).to eq '2016-11-18T10:25:47.000Z'
-            expect(recipe.updated_at).to eq '2016-11-18T11:20:06.490Z'
+            expect(recipe.updated_at).to eq '2016-11-18T11:20:06.000Z'
           end
         end
       end
