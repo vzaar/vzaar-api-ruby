@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/videos?per_page=3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 16:12:29 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 16:12:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3533'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '197'
+      X-Ratelimit-Reset:
+      - '1479485609'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 3ea32133-6228-4c15-a818-2044f3af7bac
+      X-Runtime:
+      - '0.088067'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["jk77ebdisxft5yhfpwv3","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":7574853,"title":"multipart","user_id":79357,"account_id":79357,"description":null,"duration":66.7,"created_at":"2016-11-11T11:36:26.000Z","updated_at":"2016-11-11T11:37:36.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574853/thumb","embed_code":"<iframe
+        id=\"vzvd-7574853\" name=\"vzvd-7574853\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" width=\"448\" height=\"278\" frameborder=\"0\" allowfullscreen
+        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574853/player\"></iframe>","renditions":[{"id":66,"width":416,"height":258,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":67,"width":480,"height":297,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":68,"width":448,"height":278,"bitrate":900,"framerate":"25.0","status":"finished"},{"id":69,"width":1920,"height":1191,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":70,"width":640,"height":397,"bitrate":800,"framerate":"29.97","status":"finished"}]},{"id":7574852,"title":"multipart","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-10T12:56:31.000Z","updated_at":"2016-11-10T16:58:34.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574852/thumb","embed_code":"<iframe
+        id=\"vzvd-7574852\" name=\"vzvd-7574852\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" width=\"448\" height=\"278\" frameborder=\"0\" allowfullscreen
+        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574852/player\"></iframe>","renditions":[{"id":61,"width":480,"height":297,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":62,"width":416,"height":258,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":63,"width":640,"height":397,"bitrate":800,"framerate":"29.97","status":"finished"},{"id":64,"width":448,"height":278,"bitrate":900,"framerate":"25.0","status":"finished"},{"id":65,"width":1920,"height":1191,"bitrate":5442,"framerate":"29.97","status":"skipped"}]},{"id":7574851,"title":"multipart","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T17:16:06.000Z","updated_at":"2016-11-09T17:17:06.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574851/thumb","embed_code":"<iframe
+        id=\"vzvd-7574851\" name=\"vzvd-7574851\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" width=\"448\" height=\"278\" frameborder=\"0\" allowfullscreen
+        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574851/player\"></iframe>","renditions":[{"id":56,"width":416,"height":258,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":57,"width":480,"height":297,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":58,"width":640,"height":397,"bitrate":800,"framerate":"29.97","status":"finished"},{"id":59,"width":1920,"height":1191,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":60,"width":448,"height":278,"bitrate":900,"framerate":"25.0","status":"finished"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=2&per_page=3&state=ready","previous":null,"last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 16:12:29 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/videos
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 16:12:29 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 16:12:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1829'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '196'
+      X-Ratelimit-Reset:
+      - '1479485610'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4a460dd6-3ee4-445d-b214-2c77d071e201
+      X-Runtime:
+      - '0.107763'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["ow31rd1wdmah208f809o","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":935900,"title":"Seb & Riley - Close call","user_id":79357,"account_id":79357,"description":null,"duration":53.93,"created_at":"2012-03-11T22:59:18.000Z","updated_at":"2013-11-24T16:16:08.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/935900/thumb","embed_code":"<iframe
+        id=\"vzvd-935900\" name=\"vzvd-935900\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" width=\"448\" height=\"798\" frameborder=\"0\" allowfullscreen
+        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/935900/player\"></iframe>","renditions":[],"legacy_renditions":[{"id":1176422,"type":"standard","width":null,"height":null,"bitrate":768,"status":"Finished"}]},{"id":927938,"title":"Copenhagen
+        is scary!!","user_id":79357,"account_id":79357,"description":"","duration":6.46,"created_at":"2012-02-28T15:32:47.000Z","updated_at":"2015-03-12T15:39:28.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/927938/thumb","embed_code":"<iframe
+        id=\"vzvd-927938\" name=\"vzvd-927938\" title=\"video player\" class=\"video-player\"
+        type=\"text/html\" width=\"320\" height=\"570\" frameborder=\"0\" allowfullscreen
+        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/927938/player\"></iframe>","renditions":[],"legacy_renditions":[{"id":1161988,"type":"standard","width":null,"height":null,"bitrate":460,"status":"Finished"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":null,"previous":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=70&per_page=3&state=ready","last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 16:12:30 GMT
+recorded_with: VCR 3.0.3
