@@ -26,8 +26,12 @@ module VzaarApi
       @updated_at = attrs[:updated_at]
     end
 
-    def self.find(category_id)
-      url = resource_url(category_id)
+    def self.build(data = [])
+      Array(data).map { |attrs| new attrs }
+    end
+
+    def self.find(encoding_preset_id)
+      url = resource_url(encoding_preset_id)
       response = Api.new.get(url)
       new response.data
     end

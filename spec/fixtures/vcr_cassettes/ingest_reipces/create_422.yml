@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.vzaar.localhost/api/v2/ingest_recipes
+    body:
+      encoding: UTF-8
+      string: '{"junk":"yard"}'
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 10:15:55 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 10:15:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 39e86a99-f0f9-4bc3-9914-3f0a0a3bd027
+      X-Runtime:
+      - '0.068217'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"message":"Invalid parameters","detail":"name is missing,
+        encoding_preset_ids is missing, encoding_preset_ids is invalid"}]}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 10:15:55 GMT
+recorded_with: VCR 3.0.3

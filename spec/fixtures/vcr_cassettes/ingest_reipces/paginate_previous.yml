@@ -1,0 +1,122 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/ingest_recipes?page=4&per_page=1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 10:06:38 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 10:06:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2263'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '194'
+      X-Ratelimit-Reset:
+      - '1479463658'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 4c935763-f462-44ef-b409-da9a94e48915
+      X-Runtime:
+      - '0.066403'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["49etj4qdf3i5ieurwn36","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":5,"name":"Test updated!","recipe_type":"new_video","description":"Test
+        is now something else","account_id":79357,"user_id":79357,"default":false,"multipass":true,"frame_grab_time":"1.0","generate_animated_thumb":true,"generate_sprite":true,"use_watermark":true,"send_to_youtube":true,"encoding_presets":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":2,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":400,"long_dimension":480,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":5,"name":"HD","description":"720p","output_format":"mp4","bitrate_kbps":3942,"long_dimension":1280,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":6,"name":"HD","description":"1080p","output_format":"mp4","bitrate_kbps":5442,"long_dimension":1920,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"created_at":"2016-11-16T10:57:36.000Z","updated_at":"2016-11-16T11:02:32.000Z"}],"meta":{"total_count":5,"links":{"first":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=1&per_page=1","next":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=5&per_page=1","previous":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=3&per_page=1","last":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=5&per_page=1"}}}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 10:06:38 GMT
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/ingest_recipes
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Fri, 18 Nov 2016 10:06:38 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.1
+      Date:
+      - Fri, 18 Nov 2016 10:06:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2234'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '193'
+      X-Ratelimit-Reset:
+      - '1479463658'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 642c7702-c67a-4d21-ab2b-b6aae1dab1e7
+      X-Runtime:
+      - '0.065927'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["wzrmfrvd4b9f9b3u4w9v","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":3,"name":"test-2","recipe_type":"test","description":null,"account_id":79357,"user_id":79357,"default":false,"multipass":false,"frame_grab_time":"3.5","generate_animated_thumb":false,"generate_sprite":false,"use_watermark":false,"send_to_youtube":false,"encoding_presets":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":2,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":400,"long_dimension":480,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":6,"name":"HD","description":"1080p","output_format":"mp4","bitrate_kbps":5442,"long_dimension":1920,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":8,"name":"XHD","description":"10kp","output_format":"mp4","bitrate_kbps":99999,"long_dimension":3840,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"meta":{"total_count":5,"links":{"first":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=1&per_page=1","next":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=4&per_page=1","previous":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=2&per_page=1","last":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=5&per_page=1"}}}'
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 10:06:39 GMT
+recorded_with: VCR 3.0.3
