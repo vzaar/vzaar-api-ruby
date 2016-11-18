@@ -1,6 +1,10 @@
 module VzaarApi
   class IngestRecipe
 
+    include Lib::HasResourceUrl
+
+    ENDPOINT = 'ingest_recipes'
+
     attr_reader :id, :recipe_type, :account_id, :user_id, :created_at, :updated_at
     attr_accessor :name, :description, :default, :multipass, :frame_grab_time,
       :generate_animated_thumb, :generate_sprite, :use_watermark,
@@ -60,10 +64,6 @@ module VzaarApi
     def self.paginate(query = {})
       args = query.merge({ resource_url: resource_url, resource_class: self })
       PagedResource.new(args)
-    end
-
-    def self.resource_url(path = nil)
-      Api.resource_url 'ingest_recipes', path
     end
 
     def to_hash

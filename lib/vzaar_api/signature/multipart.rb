@@ -2,6 +2,8 @@ module VzaarApi
   module Signature
     class Multipart
 
+      include Lib::HasResourceUrl
+
       ENDPOINT = 'signature/multipart'
 
       attr_reader :access_key_id, :acl, :bucket, :content_type,
@@ -29,8 +31,7 @@ module VzaarApi
       end
 
       def self.create(attrs = {})
-        url = Api.resource_url ENDPOINT
-        new Api.new.post(url, attrs).data
+        new Api.new.post(resource_url, attrs).data
       end
 
     end

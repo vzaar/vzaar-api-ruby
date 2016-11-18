@@ -1,6 +1,10 @@
 module VzaarApi
   class EncodingPreset
 
+    include Lib::HasResourceUrl
+
+    ENDPOINT = 'encoding_presets'
+
     attr_reader :id, :name, :description, :output_format, :bitrate_kbps,
       :long_dimension, :video_codec, :profile, :frame_rate, :keyframe, :audio_bitrate_kbps,
       :audio_channels, :audio_sample_rate, :max_bitrate_kbps, :keyframe_period,
@@ -43,10 +47,6 @@ module VzaarApi
     def self.paginate(query = {})
       args = query.merge({ resource_url: resource_url, resource_class: self })
       PagedResource.new(args)
-    end
-
-    def self.resource_url(path = nil)
-      Api.resource_url 'encoding_presets', path
     end
 
   end

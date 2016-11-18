@@ -9,6 +9,8 @@ require 'vzaar_api/api'
 require 'vzaar_api/api_response'
 require 'vzaar_api/paged_resource'
 
+require 'vzaar_api/lib/has_resource_url'
+
 require 'vzaar_api/category'
 require 'vzaar_api/encoding_preset'
 require 'vzaar_api/ingest_recipe'

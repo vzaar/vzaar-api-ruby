@@ -1,6 +1,8 @@
 module VzaarApi
   class Video
 
+    include Lib::HasResourceUrl
+
     ENDPOINT = 'videos'
 
     attr_reader :id, :title, :user_id, :account_id, :description,
@@ -32,10 +34,6 @@ module VzaarApi
 
     def self.create(attrs = {})
       Strategy::Video::Create.new(attrs, self).execute
-    end
-
-    def self.resource_url(path = nil)
-      Api.resource_url ENDPOINT, path
     end
 
   end

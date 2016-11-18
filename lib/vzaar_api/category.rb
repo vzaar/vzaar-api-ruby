@@ -1,6 +1,10 @@
 module VzaarApi
   class Category
 
+    include Lib::HasResourceUrl
+
+    ENDPOINT = 'categories'
+
     attr_reader :id, :account_id, :user_id, :name, :description,
       :parent_id, :depth, :node_children_count, :tree_children_count,
       :node_video_count, :tree_video_count, :created_at, :updated_at
@@ -41,10 +45,6 @@ module VzaarApi
     def self.paginate(query = {})
       args = query.merge({ resource_url: resource_url, resource_class: self })
       PagedResource.new(args)
-    end
-
-    def self.resource_url(path = nil)
-      Api.resource_url 'categories', path
     end
 
   end
