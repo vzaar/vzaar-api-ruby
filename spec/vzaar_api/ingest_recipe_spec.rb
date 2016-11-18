@@ -145,6 +145,16 @@ module VzaarApi
       end
     end
 
+    describe '.each_item' do
+      it 'loads the category collection' do
+        VCR.use_cassette('ingest_reipces/each_item') do
+          enum = described_class.each_item(per_page: 2)
+          ids = enum.map { |recipe| recipe.id }
+          expect(ids).to match_array [1, 2, 3, 5, 8]
+        end
+      end
+    end
+
     describe '.paginate' do
       it 'loads the recipe collection' do
         VCR.use_cassette('ingest_reipces/paginate_first') do

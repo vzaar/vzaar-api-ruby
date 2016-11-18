@@ -10,10 +10,10 @@ module VzaarApi
         @resource_url = @query.delete(:resource_url)
       end
 
-      def each
-        return enum_for :each unless block_given?
+      def each_item
+        return enum_for :each_item unless block_given?
         begin
-          _each { |record| yield record }
+          each { |record| yield record }
         end while self.next
       end
 
@@ -48,8 +48,8 @@ module VzaarApi
 
       private
 
-      def _each
-        return enum_for :_each unless block_given?
+      def each
+        return enum_for :each unless block_given?
         load! unless collection
         collection.each { |record| yield record }
       end

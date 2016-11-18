@@ -37,6 +37,16 @@ module VzaarApi
       end
     end
 
+    describe '.each_item' do
+      it 'loads the category collection' do
+        VCR.use_cassette('categories/each_item') do
+          enum = described_class.each_item(per_page: 2)
+          ids = enum.map { |category| category.id }
+          expect(ids).to match_array [331, 332, 333, 334, 335, 336, 2232, 2233, 2234, 2235, 2236, 2237]
+        end
+      end
+    end
+
     describe '.paginate' do
       it 'loads the category collection' do
         VCR.use_cassette('categories/paginate_first') do
