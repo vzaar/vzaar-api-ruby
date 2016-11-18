@@ -1,6 +1,7 @@
 module VzaarApi
   class EncodingPreset
 
+    include Lib::HasCollectionBuilder
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
 
@@ -29,10 +30,6 @@ module VzaarApi
       @keyframe_period = attrs[:keyframe_period]
       @created_at = attrs[:created_at]
       @updated_at = attrs[:updated_at]
-    end
-
-    def self.build(data = [])
-      Array(data).map { |attrs| new attrs }
     end
 
     def self.each(query = {}, &block)

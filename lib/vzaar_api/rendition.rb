@@ -1,6 +1,8 @@
 module VzaarApi
   class Rendition
 
+    include Lib::HasCollectionBuilder
+
     attr_reader :audio_bitrate_kbps, :audio_channels, :audio_sample_rate,
       :bitrate_kbps, :encoding_preset_id, :error_message, :frame_rate,
       :height, :id, :keyframe, :name, :output_format, :profile, :size_in_bytes,
@@ -28,10 +30,6 @@ module VzaarApi
       @error_message = attrs[:error_message]
       @created_at = attrs[:created_at]
       @updated_at = attrs[:updated_at]
-    end
-
-    def self.build(data = [])
-      Array(data).map { |attrs| new attrs }
     end
 
   end

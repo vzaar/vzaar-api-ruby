@@ -10,6 +10,7 @@ require 'vzaar_api/api_response'
 require 'vzaar_api/paged_resource'
 
 require 'vzaar_api/lib/active_object'
+require 'vzaar_api/lib/has_collection_builder'
 require 'vzaar_api/lib/has_resource_url'
 
 require 'vzaar_api/category'
