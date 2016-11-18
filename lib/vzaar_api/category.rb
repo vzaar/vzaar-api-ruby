@@ -29,7 +29,7 @@ module VzaarApi
 
     def subtree(query = {})
       args = query.merge({
-        resource_url: self.class.resource_url("#{id}/subtree"),
+        resource_url: resource_url("#{id}/subtree"),
         resource_class: self.class })
       Lib::PagedResource.new(args)
     end

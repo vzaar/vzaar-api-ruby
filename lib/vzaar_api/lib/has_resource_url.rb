@@ -9,7 +9,7 @@ module VzaarApi
 
       module InstanceMethods
         def resource_url(path = nil)
-          self.class.resource_url(id)
+          self.class.resource_url(path)
         end
       end
 
