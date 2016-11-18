@@ -6,6 +6,7 @@ module VzaarApi
     include Lib::ActiveObject::Create
     include Lib::ActiveObject::Save
     include Lib::ActiveObject::Delete
+    include Lib::WillPaginate
 
     ENDPOINT = 'ingest_recipes'
 
@@ -20,15 +21,6 @@ module VzaarApi
 
     def encoding_presets
       @encoding_presets = Array(@encoding_presets)
-    end
-
-    def self.each(query = {}, &block)
-      paginate(query).each(&block)
-    end
-
-    def self.paginate(query = {})
-      args = query.merge({ resource_url: resource_url, resource_class: self })
-      Lib::PagedResource.new(args)
     end
 
     private

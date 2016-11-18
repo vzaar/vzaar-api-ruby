@@ -4,6 +4,7 @@ module VzaarApi
     include Lib::HasCollectionBuilder
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
+    include Lib::WillPaginate
 
     ENDPOINT = 'encoding_presets'
 
@@ -30,15 +31,6 @@ module VzaarApi
       @keyframe_period = attrs[:keyframe_period]
       @created_at = attrs[:created_at]
       @updated_at = attrs[:updated_at]
-    end
-
-    def self.each(query = {}, &block)
-      paginate(query).each(&block)
-    end
-
-    def self.paginate(query = {})
-      args = query.merge({ resource_url: resource_url, resource_class: self })
-      Lib::PagedResource.new(args)
     end
 
   end

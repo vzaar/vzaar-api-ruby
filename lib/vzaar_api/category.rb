@@ -3,6 +3,7 @@ module VzaarApi
 
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
+    include Lib::WillPaginate
 
     ENDPOINT = 'categories'
 
@@ -35,11 +36,6 @@ module VzaarApi
 
     def self.each(query = {}, &block)
       paginate(query).each(&block)
-    end
-
-    def self.paginate(query = {})
-      args = query.merge({ resource_url: resource_url, resource_class: self })
-      Lib::PagedResource.new(args)
     end
 
   end

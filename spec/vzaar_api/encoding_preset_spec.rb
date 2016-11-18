@@ -41,16 +41,6 @@ module VzaarApi
       end
     end
 
-    describe '.each' do
-      it 'loads the encoding-presets collection' do
-        VCR.use_cassette('encoding_presets/each') do
-          enum = described_class.each(per_page: 2)
-          ids = enum.map { |preset| preset.id }
-          expect(ids).to match_array [1, 2, 3, 4]
-        end
-      end
-    end
-
     describe '.paginate' do
       it 'loads the preset collection' do
         VCR.use_cassette('encoding_presets/paginate_first') do

@@ -3,6 +3,7 @@ module VzaarApi
 
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
+    include Lib::WillPaginate
 
     ENDPOINT = 'videos'
 
@@ -29,11 +30,6 @@ module VzaarApi
 
     def self.create(attrs = {})
       Strategy::Video::Create.new(attrs, self).execute
-    end
-
-    def self.paginate(query = {})
-      args = query.merge({ resource_url: resource_url, resource_class: self })
-      Lib::PagedResource.new(args)
     end
 
   end
