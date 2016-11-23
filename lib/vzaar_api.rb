@@ -23,6 +23,7 @@ require 'vzaar_api/rendition'
 require 'vzaar_api/strategy/video/create'
 require 'vzaar_api/video'
 
+require 'vzaar_api/signature/abstract'
 require 'vzaar_api/signature/factory'
 require 'vzaar_api/signature/multipart'
 require 'vzaar_api/signature/single'

@@ -28,8 +28,7 @@ module VzaarApi
         let(:multipart_attrs) do
           {
             filesize: 5242880,
-            filename: 'video-5.0MB.mp4',
-            uploader: UPLOADER
+            filename: 'video-5.0MB.mp4'
           }
         end
 

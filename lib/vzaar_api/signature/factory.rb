@@ -5,10 +5,11 @@ module VzaarApi
       # 5MB is min size required for multipart upload
       MIN_S3_MULTIPART_FILE_SIZE = 5 * (1024 ** 2)
 
-      attr_reader :attrs
+      attr_reader :attrs, :path
 
       def initialize(attrs)
         @attrs = attrs
+        @path = attrs.fetch(:path)
       end
 
       def self.create(attrs)
@@ -26,9 +27,8 @@ module VzaarApi
 
       def multipart_attrs
         {
-          filesize: File::Stat.new(attrs[:path]).size,
-          filename: File.basename(attrs[:path]),
-          uploader: UPLOADER
+          filesize: File::Stat.new(path).size,
+          filename: File.basename(path)
         }
       rescue Errno::ENOENT
         raise Error.new 'Invalid parameters: path is invalid'
