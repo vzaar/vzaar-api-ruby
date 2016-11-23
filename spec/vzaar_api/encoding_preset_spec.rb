@@ -55,7 +55,7 @@ module VzaarApi
       it 'loads the preset collection' do
         VCR.use_cassette('encoding_presets/paginate_first') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
+          pager.first
           ids = pager.collection.map { |preset| preset.id }
           expect(ids).to match_array [4]
         end
@@ -64,7 +64,6 @@ module VzaarApi
       it 'loads the preset collection' do
         VCR.use_cassette('encoding_presets/paginate_next') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
           pager.next
           ids = pager.collection.map { |preset| preset.id }
           expect(ids).to match_array [3]
@@ -74,7 +73,6 @@ module VzaarApi
       it 'loads the preset collection' do
         VCR.use_cassette('encoding_presets/paginate_last') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
           pager.last
           ids = pager.collection.map { |preset| preset.id }
           expect(ids).to match_array [1]
@@ -84,7 +82,6 @@ module VzaarApi
       it 'loads the preset collection' do
         VCR.use_cassette('encoding_presets/paginate_previous') do
           pager = described_class.paginate(page: 4, per_page: 1)
-          pager.load!
           pager.previous
           ids = pager.collection.map { |preset| preset.id }
           expect(ids).to match_array [2]

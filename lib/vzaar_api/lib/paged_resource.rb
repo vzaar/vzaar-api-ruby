@@ -8,6 +8,11 @@ module VzaarApi
         @query = query.dup
         @resource_class = @query.delete(:resource_class)
         @resource_url = @query.delete(:resource_url)
+        @loaded = false
+      end
+
+      def loaded?
+        @loaded
       end
 
       def each_item
@@ -18,35 +23,41 @@ module VzaarApi
       end
 
       def first
-        return nil unless meta
-        url = meta[:links][:first]
-        load_from_url(url) if url
+        if loaded?
+          load_page_url :first
+        else
+          load!
+        end
       end
 
       def next
-        return nil unless meta
-        url = meta[:links][:next]
-        load_from_url(url) if url
+        load! unless loaded?
+        load_page_url :next
       end
 
       def previous
-        return nil unless meta
-        url = meta[:links][:previous]
-        load_from_url(url) if url
+        load! unless loaded?
+        load_page_url :previous
       end
 
       def last
-        return nil unless meta
-        url = meta[:links][:last]
-        load_from_url(url) if url
-      end
-
-      def load!
-        load_from_url resource_url, query
-        self
+        load! unless loaded?
+        load_page_url :last
       end
 
       private
+
+      def load!
+        load_from_url resource_url, query
+        @loaded = true
+        self
+      end
+
+      def load_page_url(page)
+        return nil unless meta
+        url = meta[:links][page]
+        load_from_url(url) if url
+      end
 
       def each
         return enum_for :each unless block_given?

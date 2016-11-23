@@ -155,7 +155,7 @@ module VzaarApi
       it 'loads the video collection' do
         VCR.use_cassette('videos/paginate_first') do
           pager = described_class.paginate(per_page: 3)
-          pager.load!
+          pager.first
           ids = pager.collection.map { |video| video.id }
           expect(ids).to match_array [7574851, 7574852, 7574853]
         end
@@ -164,7 +164,6 @@ module VzaarApi
       it 'loads the video collection' do
         VCR.use_cassette('videos/paginate_next') do
           pager = described_class.paginate(per_page: 3)
-          pager.load!
           pager.next
           ids = pager.collection.map { |video| video.id }
           expect(ids).to match_array [7574848, 7574849, 7574850]
@@ -174,7 +173,6 @@ module VzaarApi
       it 'loads the video collection' do
         VCR.use_cassette('videos/paginate_last') do
           pager = described_class.paginate(per_page: 3)
-          pager.load!
           pager.last
           ids = pager.collection.map { |video| video.id }
           expect(ids).to match_array [927938, 935900]
@@ -184,7 +182,6 @@ module VzaarApi
       it 'loads the video collection' do
         VCR.use_cassette('videos/paginate_previous') do
           pager = described_class.paginate(page: 4, per_page: 3)
-          pager.load!
           pager.previous
           ids = pager.collection.map { |video| video.id }
           expect(ids).to match_array [7574844, 7574845, 7574847]

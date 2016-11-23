@@ -159,7 +159,7 @@ module VzaarApi
       it 'loads the recipe collection' do
         VCR.use_cassette('ingest_reipces/paginate_first') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
+          pager.first
           ids = pager.collection.map { |recipe| recipe.id }
           expect(ids).to match_array [1]
         end
@@ -168,7 +168,6 @@ module VzaarApi
       it 'loads the recipe collection' do
         VCR.use_cassette('ingest_reipces/paginate_next') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
           pager.next
           ids = pager.collection.map { |recipe| recipe.id }
           expect(ids).to match_array [2]
@@ -178,7 +177,6 @@ module VzaarApi
       it 'loads the recipe collection' do
         VCR.use_cassette('ingest_reipces/paginate_last') do
           pager = described_class.paginate(per_page: 1)
-          pager.load!
           pager.last
           ids = pager.collection.map { |recipe| recipe.id }
           expect(ids).to match_array [7]
@@ -188,7 +186,6 @@ module VzaarApi
       it 'loads the recipe collection' do
         VCR.use_cassette('ingest_reipces/paginate_previous') do
           pager = described_class.paginate(page: 4, per_page: 1)
-          pager.load!
           pager.previous
           ids = pager.collection.map { |recipe| recipe.id }
           expect(ids).to match_array [3]
