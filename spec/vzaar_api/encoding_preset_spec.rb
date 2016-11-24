@@ -5,6 +5,31 @@ module VzaarApi
       setup_auth!
     end
 
+    describe '#to_hash' do
+      it 'represents the instance as a hash' do
+        VCR.use_cassette('encoding_presets/find') do
+          preset = described_class.find(4).to_hash
+          expect(preset[:id]).to eq 4
+          expect(preset[:name]).to eq "SD"
+          expect(preset[:description]).to eq "540p"
+          expect(preset[:output_format]).to eq "mp4"
+          expect(preset[:bitrate_kbps]).to eq 1944
+          expect(preset[:long_dimension]).to eq 960
+          expect(preset[:video_codec]).to eq "libx264"
+          expect(preset[:profile]).to eq "main"
+          expect(preset[:frame_rate]).to eq "29.97"
+          expect(preset[:keyframe]).to eq 60
+          expect(preset[:audio_bitrate_kbps]).to eq 128
+          expect(preset[:audio_channels]).to eq 2
+          expect(preset[:audio_sample_rate]).to eq 44100
+          expect(preset[:max_bitrate_kbps]).to eq nil
+          expect(preset[:keyframe_period]).to eq nil
+          expect(preset[:created_at]).to eq "2016-11-09T11:01:38.000Z"
+          expect(preset[:updated_at]).to eq "2016-11-09T11:01:38.000Z"
+        end
+      end
+    end
+
     describe '.find' do
       context 'when the encoding preset can be found' do
         it 'finds the encoding preset' do

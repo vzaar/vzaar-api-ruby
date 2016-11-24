@@ -19,44 +19,44 @@ module VzaarApi
         return enum_for :each_item unless block_given?
         begin
           each { |record| yield record }
-        end while self.next
+        end while !self.next.empty?
       end
 
       def first
-        if loaded?
-          load_page_url :first
-        else
-          load!
-        end
+        loaded? ? load_page_url(:first) : load!
       end
 
       def next
-        load! unless loaded?
         load_page_url :next
       end
 
       def previous
-        load! unless loaded?
         load_page_url :previous
       end
 
       def last
-        load! unless loaded?
         load_page_url :last
       end
 
       private
 
       def load!
-        load_from_url resource_url, query
         @loaded = true
-        self
+        load_from_url resource_url, query
       end
 
       def load_page_url(page)
-        return nil unless meta
-        url = meta[:links][page]
-        load_from_url(url) if url
+        load! unless loaded?
+        if url = meta_link(page)
+          load_from_url meta[:links][page]
+        else
+          []
+        end
+      end
+
+      def meta_link(page)
+        return unless meta
+        meta[:links][page]
       end
 
       def each

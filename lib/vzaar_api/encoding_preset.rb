@@ -33,5 +33,27 @@ module VzaarApi
       @updated_at = attrs[:updated_at]
     end
 
+    def to_hash
+      {
+        id: self.id,
+        name: self.name,
+        description: self.description,
+        output_format: self.output_format,
+        bitrate_kbps: self.bitrate_kbps,
+        long_dimension: self.long_dimension,
+        video_codec: self.video_codec,
+        profile: self.profile,
+        frame_rate: self.frame_rate,
+        keyframe: self.keyframe,
+        audio_bitrate_kbps: self.audio_bitrate_kbps,
+        audio_channels: self.audio_channels,
+        audio_sample_rate: self.audio_sample_rate,
+        max_bitrate_kbps: self.max_bitrate_kbps,
+        keyframe_period: self.keyframe_period,
+        created_at: self.created_at,
+        updated_at: self.updated_at
+      }
+    end
+
   end
 end
