@@ -8,7 +8,7 @@ module Helpers
   end
 
   def setup_for(user)
-    VzaarApi.hostname   = api_envs['hostname']
+    VzaarApi.hostname   = api_envs['hostname'] if api_envs['hostname']
     VzaarApi.auth_token = api_envs[user.to_s]['auth_token']
     VzaarApi.client_id  = api_envs[user.to_s]['client_id']
   end

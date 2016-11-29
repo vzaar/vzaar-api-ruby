@@ -1,7 +1,7 @@
 require_relative './../spec_helper'
 
 module VzaarApi
-  describe 'Encoding presets: List' do
+  describe 'Encoding preset: List' do
 
     let(:described_class) { EncodingPreset }
 
