@@ -3,6 +3,7 @@
 .bundle
 .gemtags
 .tags
+api_envs.yml
 Gemfile.lock
 pkg/*
 tmp
