@@ -1,22 +1,38 @@
 require_relative './../spec_helper'
 
-describe 'Encoding presets: List' do
-  context 'when user is authenticated' do
-    before { setup_for :account_owner }
+module VzaarApi
+  describe 'Encoding presets: List' do
 
-    it 'retrieves the resource list' do
-      pager = VzaarApi::EncodingPreset.paginate(per_page: 3)
-      expect(pager.first.count).to eq 3
+    let(:described_class) { EncodingPreset }
+
+    context 'when user is authenticated' do
+      before { setup_for :account_owner }
+
+      describe '#each_item' do
+        it 'retrieves the resource list' do
+          ids = described_class.each_item.map(&:id)
+          expect(ids).not_to be_empty
+        end
+      end
+
+      describe '#paginate' do
+        let(:pager) { described_class.paginate(page: 2, per_page: 1) }
+        specify { expect(pager.first.count).to eq 1 }
+        specify { expect(pager.next.count).to eq 1 }
+        specify { expect(pager.previous.count).to eq 1 }
+        specify { expect(pager.last.count).to eq 1 }
+      end
     end
-  end
 
-  context 'when user is no authenticated' do
-    before { setup_for :intruder }
+    context 'when user is no authenticated' do
+      before { setup_for :intruder }
 
-    it 'raises an error' do
-      pager = VzaarApi::EncodingPreset.paginate
-      expect{ pager.first }.to raise_error(
-        VzaarApi::Error, 'Authentication failed: Invalid credentials')
+      it 'raises an error' do
+        pager = described_class.paginate
+        expect{ pager.first }.to raise_error(
+          Error, 'Authentication failed: Invalid credentials')
+      end
     end
+
   end
 end
