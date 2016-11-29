@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Fri, 18 Nov 2016 13:35:58 GMT
+      - Tue, 29 Nov 2016 12:49:23 GMT
       X-Auth-Token:
       - TUGXzNL17ypaougMYpR3
       X-Client-Id:
@@ -27,11 +27,11 @@ http_interactions:
       Server:
       - nginx/1.10.1
       Date:
-      - Fri, 18 Nov 2016 13:35:59 GMT
+      - Tue, 29 Nov 2016 12:49:24 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '386'
+      - '397'
       Connection:
       - keep-alive
       X-Ratelimit-Limit:
@@ -39,24 +39,24 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '199'
       X-Ratelimit-Reset:
-      - '1479476219'
+      - '1480423824'
       X-Ratelimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
       X-Request-Id:
-      - d4246d8f-2bd9-493f-af73-231f4f4fc08a
+      - b5974bb1-b5cc-42be-95f6-b06b85fd9690
       X-Runtime:
-      - '0.063381'
+      - '0.737241'
       Set-Cookie:
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       X-Miniprofiler-Ids:
-      - '["kd1gjjzpbm91v8bso3yo","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
+      - '["xl96180xradalr09sndi","i2tpnyrwhgkxbjqufub6","d915a38kjxdh0er1pp2o","lasu0jk0xumxtls2wozm","r7hyarvi9ulu86olh4yl","tjz7lwof2rroauok49b","oq57z4vll5hfxq548thx","4btsivncw9hss3vfpynk","5l14cevyny3muo8iyuhk","sb8t1ddfhoyeea9dd2wo"]'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":4,"name":"SD","description":"540p","output_format":"mp4","bitrate_kbps":1944,"long_dimension":960,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}}'
+      string: '{"data":{"id":4,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":365,"max_bitrate_kbps":500,"long_dimension":480,"video_codec":"libx264","profile":"baseline","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"}}'
     http_version: 
-  recorded_at: Fri, 18 Nov 2016 13:35:59 GMT
+  recorded_at: Tue, 29 Nov 2016 12:49:24 GMT
 recorded_with: VCR 3.0.3
