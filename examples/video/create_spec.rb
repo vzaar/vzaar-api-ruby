@@ -10,7 +10,7 @@ module VzaarApi
 
       context 'when doing a single-part upload' do
         it 'creates the video' do
-          attrs = { title: "single: #{Time.now.utc}", path: 'tmp/videos/small.mp4' }
+          attrs = { title: "single: #{Time.now.utc}", path: 'examples/support/videos/small.mp4' }
           video = described_class.create(attrs)
           expect(video.title).to eq attrs[:title]
         end
@@ -18,7 +18,7 @@ module VzaarApi
 
       context 'when doing a multi-part upload' do
         it 'creates the video' do
-          attrs = { title: "multi-part: #{Time.now.utc}", path: 'tmp/videos/medium.mp4' }
+          attrs = { title: "multi-part: #{Time.now.utc}", path: 'examples/support/videos/medium.mp4' }
           video = described_class.create(attrs)
           expect(video.title).to eq attrs[:title]
         end
@@ -28,7 +28,7 @@ module VzaarApi
         it 'creates the video' do
           attrs = { title: "custom-recipe: #{Time.now.utc}",
             ingest_recipe_id: api_envs['ingest_recipe']['other'],
-            path: 'tmp/videos/medium.mp4' }
+            path: 'examples/support/videos/medium.mp4' }
           video = described_class.create(attrs)
           expect(video.title).to eq attrs[:title]
         end
@@ -47,7 +47,7 @@ module VzaarApi
       before { setup_for :intruder }
 
       it 'raises an error' do
-        attrs = { path: 'tmp/videos/small.mp4' }
+        attrs = { path: 'examples/support/videos/small.mp4' }
         expect{ described_class.create(attrs) }.to raise_error(
           Error, 'Authentication failed: Invalid credentials')
       end
