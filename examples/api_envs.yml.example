@@ -1,0 +1,10 @@
+development:
+  hostname: app.vzaar.localhost
+
+  account_owner:
+    auth_token: <your-auth-token>
+    client_id: <your-client-id>
+
+  intruder:
+    auth_token: some-secret
+    client_id: naughty

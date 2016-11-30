@@ -77,7 +77,7 @@ module VzaarApi
             generate_sprite: true,
             use_watermark: true,
             send_to_youtube: true,
-            encoding_preset_ids: '1,2,3,4'
+            encoding_preset_ids: [1,2,3,4]
           }
         end
 
