@@ -1,9 +1,9 @@
 require_relative './../spec_helper'
 
 module VzaarApi
-  describe 'Encoding preset: List' do
+  describe 'Ingest recipe: List' do
 
-    let(:described_class) { EncodingPreset }
+    let(:described_class) { IngestRecipe }
 
     context 'when user is authenticated' do
       before { setup_for :account_owner }

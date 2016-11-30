@@ -4,7 +4,7 @@ module VzaarApi
   describe 'Encoding preset: Lookup' do
 
     let(:described_class) { EncodingPreset }
-    let(:id) { 3 }
+    let(:id) { api_envs['encoding_preset_id'] }
 
     context 'when user is authenticated' do
       before { setup_for :account_owner }
@@ -22,7 +22,7 @@ module VzaarApi
       end
     end
 
-    context 'when user is no authenticated' do
+    context 'when user is not authenticated' do
       before { setup_for :intruder }
 
       it 'raises an error' do

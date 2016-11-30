@@ -6,7 +6,7 @@ module VzaarApi
     let(:described_class) { Category }
 
     let(:category) { described_class.find(id) }
-    let(:id) { 3196 }
+    let(:id) { api_envs['category_id'] }
 
     context 'when user is authenticated' do
       before { setup_for :account_owner }
@@ -27,7 +27,7 @@ module VzaarApi
       end
     end
 
-    context 'when user is no authenticated' do
+    context 'when user is not authenticated' do
       before { setup_for :intruder }
 
       it 'raises an error' do

@@ -24,7 +24,7 @@ module VzaarApi
       end
     end
 
-    context 'when user is no authenticated' do
+    context 'when user is not authenticated' do
       before { setup_for :intruder }
 
       it 'raises an error' do

@@ -1,10 +1,10 @@
 require_relative './../spec_helper'
 
 module VzaarApi
-  describe 'Category: Lookup' do
+  describe 'Ingest recipe: Lookup' do
 
-    let(:described_class) { Category }
-    let(:id) { api_envs['category_id'] }
+    let(:described_class) { IngestRecipe }
+    let(:id) { api_envs['ingest_recipe']['default'] }
 
     context 'when user is authenticated' do
       before { setup_for :account_owner }
