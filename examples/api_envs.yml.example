@@ -1,9 +1,29 @@
 development:
   hostname: app.vzaar.localhost
+  category_id:
+  encoding_preset_id:
+  ingest_recipe:
+    default:
+    other:
 
   account_owner:
-    auth_token: <your-auth-token>
-    client_id: <your-client-id>
+    auth_token:
+    client_id:
+
+  intruder:
+    auth_token: some-secret
+    client_id: naughty
+
+production:
+  category_id:
+  encoding_preset_id:
+  ingest_recipe:
+    default:
+    other:
+
+  account_owner:
+    auth_token:
+    client_id:
 
   intruder:
     auth_token: some-secret
