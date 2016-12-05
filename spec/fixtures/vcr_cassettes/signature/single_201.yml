@@ -34,13 +34,13 @@ http_interactions:
       - '961'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '199'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1478194938'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0

@@ -34,13 +34,13 @@ http_interactions:
       - '577'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '199'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1478255712'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -60,6 +60,6 @@ http_interactions:
         id=\"vzvd-7574825\" name=\"vzvd-7574825\" title=\"video player\" class=\"video-player\"
         type=\"text/html\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
         mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574825/player\"></iframe>","renditions":[]}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 04 Nov 2016 10:34:12 GMT
 recorded_with: VCR 3.0.3

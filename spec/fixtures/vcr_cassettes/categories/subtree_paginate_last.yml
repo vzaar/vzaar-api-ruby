@@ -34,13 +34,13 @@ http_interactions:
       - '296'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '196'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1478870903'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -58,7 +58,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
         Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 11 Nov 2016 13:27:23 GMT
 - request:
     method: get
@@ -94,13 +94,13 @@ http_interactions:
       - '990'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '194'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1478870903'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -119,7 +119,7 @@ http_interactions:
       string: '{"data":[{"id":334,"account_id":79357,"user_id":79357,"name":"Indoors","description":"All
         indoor videos","parent_id":331,"depth":1,"node_children_count":2,"tree_children_count":2,"node_video_count":2,"tree_video_count":3,"created_at":"2015-04-07T09:39:06.000Z","updated_at":"2016-10-18T16:29:11.000Z"},{"id":2233,"account_id":79357,"user_id":79357,"name":"My
         room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":1,"tree_video_count":1,"created_at":"2016-10-18T16:29:04.000Z","updated_at":"2016-10-18T16:29:05.000Z"}],"meta":{"total_count":6,"links":{"first":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=3&per_page=2","previous":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=1&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=3&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 11 Nov 2016 13:27:23 GMT
 - request:
     method: get
@@ -155,13 +155,13 @@ http_interactions:
       - '902'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '193'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1478870903'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -180,6 +180,6 @@ http_interactions:
       string: '{"data":[{"id":2234,"account_id":79357,"user_id":79357,"name":"Your
         room","description":null,"parent_id":334,"depth":2,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:29:10.000Z","updated_at":"2016-10-18T16:29:11.000Z"},{"id":2235,"account_id":79357,"user_id":79357,"name":"Outer
         space","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2016-10-18T16:30:01.000Z","updated_at":"2016-10-18T16:30:02.000Z"}],"meta":{"total_count":6,"links":{"first":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=1&per_page=2","next":null,"previous":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=2&per_page=2","last":"https://app.vzaar.localhost/api/v2/categories/331/subtree?id=331&page=3&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 11 Nov 2016 13:27:24 GMT
 recorded_with: VCR 3.0.3

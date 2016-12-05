@@ -38,10 +38,8 @@ module VzaarApi
   DEFAULT_PROTOCOL = 'https'
 
   class << self
-    attr_accessor :auth_token
-    attr_accessor :client_id
-    attr_accessor :hostname
-    attr_accessor :protocol
+    attr_accessor :auth_token, :client_id, :hostname,
+      :rate_limit, :rate_limit_remaining, :rate_limit_reset
 
     def hostname
       @hostname || DEFAULT_HOSTNAME

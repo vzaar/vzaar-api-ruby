@@ -34,13 +34,13 @@ http_interactions:
       - '1894'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '199'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1479465724'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -58,7 +58,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":8,"name":"new-recipe","recipe_type":"new_video","description":"the
         new recipe","account_id":79357,"user_id":79357,"default":true,"multipass":false,"frame_grab_time":"5.5","generate_animated_thumb":true,"generate_sprite":true,"use_watermark":true,"send_to_youtube":true,"encoding_presets":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":2,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":400,"long_dimension":480,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":3,"name":"SD","description":"360p","output_format":"mp4","bitrate_kbps":800,"long_dimension":640,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":4,"name":"SD","description":"540p","output_format":"mp4","bitrate_kbps":1944,"long_dimension":960,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"created_at":"2016-11-18T10:25:47.000Z","updated_at":"2016-11-18T10:25:47.000Z"}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 10:41:04 GMT
 - request:
     method: patch
@@ -108,6 +108,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":[{"message":"Invalid parameters","detail":"encoding_preset_ids
         is invalid"}]}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 10:41:05 GMT
 recorded_with: VCR 3.0.3

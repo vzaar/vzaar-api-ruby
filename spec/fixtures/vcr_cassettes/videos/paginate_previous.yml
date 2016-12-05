@@ -34,13 +34,13 @@ http_interactions:
       - '3371'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '195'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1479485628'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -66,7 +66,7 @@ http_interactions:
         id=\"vzvd-7574840\" name=\"vzvd-7574840\" title=\"video player\" class=\"video-player\"
         type=\"text/html\" width=\"448\" height=\"276\" frameborder=\"0\" allowfullscreen
         allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574840/player\"></iframe>","renditions":[],"legacy_renditions":[{"id":10567124,"type":"standard","width":448,"height":278,"bitrate":512,"status":"Finished"},{"id":10567125,"type":"hd","width":null,"height":null,"bitrate":768,"status":"Error"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=5&per_page=3&state=ready","previous":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=3&per_page=3&state=ready","last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 16:12:48 GMT
 - request:
     method: get
@@ -102,13 +102,13 @@ http_interactions:
       - '3610'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '194'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1479485628'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -134,6 +134,6 @@ http_interactions:
         id=\"vzvd-7574844\" name=\"vzvd-7574844\" title=\"video player\" class=\"video-player\"
         type=\"text/html\" width=\"1280\" height=\"720\" frameborder=\"0\" allowfullscreen
         allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574844/player\"></iframe>","renditions":[{"id":26,"width":1920,"height":1080,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":27,"width":480,"height":270,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":28,"width":416,"height":234,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":29,"width":640,"height":360,"bitrate":800,"framerate":"29.97","status":"finished"},{"id":30,"width":1280,"height":720,"bitrate":1709,"framerate":"30.0","status":"finished"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=4&per_page=3&state=ready","previous":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=2&per_page=3&state=ready","last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 16:12:48 GMT
 recorded_with: VCR 3.0.3

@@ -34,13 +34,13 @@ http_interactions:
       - '2547'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '196'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1479463658'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -57,7 +57,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":1,"name":"new-video","recipe_type":"new_video","description":null,"account_id":79357,"user_id":79357,"default":false,"multipass":false,"frame_grab_time":"3.5","generate_animated_thumb":true,"generate_sprite":true,"use_watermark":true,"send_to_youtube":false,"encoding_presets":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":2,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":400,"long_dimension":480,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":3,"name":"SD","description":"360p","output_format":"mp4","bitrate_kbps":800,"long_dimension":640,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":6,"name":"HD","description":"1080p","output_format":"mp4","bitrate_kbps":5442,"long_dimension":1920,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":9,"name":"DNE","description":"Source","output_format":"mp4","bitrate_kbps":null,"long_dimension":null,"video_codec":null,"profile":null,"frame_rate":null,"keyframe":null,"audio_bitrate_kbps":null,"audio_channels":null,"audio_sample_rate":null,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-16T12:46:28.000Z"}],"meta":{"total_count":5,"links":{"first":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=1&per_page=1","next":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=2&per_page=1","previous":null,"last":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=5&per_page=1"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 10:06:38 GMT
 - request:
     method: get
@@ -93,13 +93,13 @@ http_interactions:
       - '2588'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '195'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1479463658'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -117,6 +117,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":7,"name":"Test updated!","recipe_type":"new_video","description":"Test
         is now something else entirely!","account_id":79357,"user_id":79357,"default":true,"multipass":true,"frame_grab_time":"1.0","generate_animated_thumb":true,"generate_sprite":true,"use_watermark":true,"send_to_youtube":true,"encoding_presets":[{"id":1,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"main","frame_rate":"12.0","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":2,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":400,"long_dimension":480,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":5,"name":"HD","description":"720p","output_format":"mp4","bitrate_kbps":3942,"long_dimension":1280,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":6,"name":"HD","description":"1080p","output_format":"mp4","bitrate_kbps":5442,"long_dimension":1920,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"},{"id":8,"name":"XHD","description":"10kp","output_format":"mp4","bitrate_kbps":99999,"long_dimension":3840,"video_codec":"libx264","profile":"main","frame_rate":"29.97","keyframe":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"max_bitrate_kbps":null,"keyframe_period":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"created_at":"2016-11-16T11:03:50.000Z","updated_at":"2016-11-16T12:47:02.000Z"}],"meta":{"total_count":5,"links":{"first":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=1&per_page=1","next":null,"previous":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=4&per_page=1","last":"https://app.vzaar.localhost/api/v2/ingest_recipes?page=5&per_page=1"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 18 Nov 2016 10:06:38 GMT
 recorded_with: VCR 3.0.3

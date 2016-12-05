@@ -28,6 +28,9 @@ module VzaarApi
 
       def handle_response(response)
         api_response = ApiResponse.new(response)
+        VzaarApi.rate_limit = api_response.rate_limit
+        VzaarApi.rate_limit_remaining = api_response.rate_limit_remaining
+        VzaarApi.rate_limit_reset = api_response.rate_limit_reset
         return api_response if api_response.ok?
         raise Error.new(api_response.error)
       end

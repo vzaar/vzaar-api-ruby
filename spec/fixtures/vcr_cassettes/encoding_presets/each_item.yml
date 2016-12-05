@@ -34,13 +34,13 @@ http_interactions:
       - '1082'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '199'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1480423943'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -57,7 +57,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":9,"name":"2.5K UHD","description":"1440p","output_format":"mp4","bitrate_kbps":8000,"max_bitrate_kbps":11000,"long_dimension":2560,"video_codec":"libx264","profile":"high","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-11-24T14:45:00.000Z","updated_at":"2016-11-24T14:45:00.000Z"},{"id":2,"name":"DNE","description":"Source","output_format":"mp4","bitrate_kbps":null,"max_bitrate_kbps":null,"long_dimension":null,"video_codec":null,"profile":null,"frame_rate_upper_threshold":null,"keyframe_upper_threshold":null,"audio_bitrate_kbps":null,"audio_channels":null,"audio_sample_rate":null,"created_at":"2016-11-09T11:01:38.000Z","updated_at":"2016-11-09T11:01:38.000Z"}],"meta":{"total_count":10,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/encoding_presets?page=2&per_page=2","previous":null,"last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Nov 2016 12:51:23 GMT
 - request:
     method: get
@@ -93,13 +93,13 @@ http_interactions:
       - '1145'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '198'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1480423943'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -116,7 +116,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":3,"name":"ULD","description":"234p","output_format":"mp4","bitrate_kbps":145,"max_bitrate_kbps":200,"long_dimension":416,"video_codec":"libx264","profile":"baseline","frame_rate_upper_threshold":"12.0","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"},{"id":4,"name":"LD","description":"270p","output_format":"mp4","bitrate_kbps":365,"max_bitrate_kbps":500,"long_dimension":480,"video_codec":"libx264","profile":"baseline","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"}],"meta":{"total_count":10,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/encoding_presets?page=3&per_page=2","previous":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Nov 2016 12:51:23 GMT
 - request:
     method: get
@@ -152,13 +152,13 @@ http_interactions:
       - '1139'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '197'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1480423943'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -175,7 +175,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":5,"name":"SD","description":"360p","output_format":"mp4","bitrate_kbps":730,"max_bitrate_kbps":900,"long_dimension":640,"video_codec":"libx264","profile":"main","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"},{"id":6,"name":"SD","description":"540p","output_format":"mp4","bitrate_kbps":1200,"max_bitrate_kbps":1500,"long_dimension":960,"video_codec":"libx264","profile":"main","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"}],"meta":{"total_count":10,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/encoding_presets?page=4&per_page=2","previous":"https://app.vzaar.localhost/api/v2/encoding_presets?page=2&per_page=2","last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Nov 2016 12:51:23 GMT
 - request:
     method: get
@@ -211,13 +211,13 @@ http_interactions:
       - '1144'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '196'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1480423943'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -234,7 +234,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":7,"name":"HD","description":"720p","output_format":"mp4","bitrate_kbps":2500,"max_bitrate_kbps":3500,"long_dimension":1280,"video_codec":"libx264","profile":"high","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-11-25T10:20:12.000Z"},{"id":8,"name":"HD","description":"1080p","output_format":"mp4","bitrate_kbps":3500,"max_bitrate_kbps":5000,"long_dimension":1920,"video_codec":"libx264","profile":"high","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"}],"meta":{"total_count":10,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","next":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2","previous":"https://app.vzaar.localhost/api/v2/encoding_presets?page=3&per_page=2","last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Nov 2016 12:51:23 GMT
 - request:
     method: get
@@ -270,13 +270,13 @@ http_interactions:
       - '1092'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '195'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1480423944'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -294,6 +294,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":10,"name":"4k UHD","description":"2160p","output_format":"mp4","bitrate_kbps":11000,"max_bitrate_kbps":17200,"long_dimension":3840,"video_codec":"libx264","profile":"high","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"},{"id":11,"name":"8K
         UHD","description":"4320p","output_format":"mp4","bitrate_kbps":35000,"max_bitrate_kbps":50000,"long_dimension":7680,"video_codec":"libx264","profile":"high","frame_rate_upper_threshold":"29.97","keyframe_upper_threshold":60,"audio_bitrate_kbps":128,"audio_channels":2,"audio_sample_rate":44100,"created_at":"2016-10-24T12:36:47.000Z","updated_at":"2016-10-24T12:36:47.000Z"}],"meta":{"total_count":10,"links":{"first":"https://app.vzaar.localhost/api/v2/encoding_presets?page=1&per_page=2","next":null,"previous":"https://app.vzaar.localhost/api/v2/encoding_presets?page=4&per_page=2","last":"https://app.vzaar.localhost/api/v2/encoding_presets?page=5&per_page=2"}}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 29 Nov 2016 12:51:24 GMT
 recorded_with: VCR 3.0.3

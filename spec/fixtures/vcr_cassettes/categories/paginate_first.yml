@@ -32,13 +32,13 @@ http_interactions:
       - '1107'
       Connection:
       - keep-alive
-      X-Ratelimit-Limit:
+      X-RateLimit-Limit:
       - '200'
-      X-Ratelimit-Remaining:
+      X-RateLimit-Remaining:
       - '199'
-      X-Ratelimit-Reset:
+      X-RateLimit-Reset:
       - '1477664892'
-      X-Ratelimit-Reset-In:
+      X-RateLimit-Reset-In:
       - 60 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
@@ -56,6 +56,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":331,"account_id":79357,"user_id":79357,"name":"Overload
         Fitness","description":null,"parent_id":null,"depth":0,"node_children_count":3,"tree_children_count":5,"node_video_count":3,"tree_video_count":6,"created_at":"2015-04-07T09:38:28.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":332,"account_id":79357,"user_id":79357,"name":"Kids","description":null,"parent_id":null,"depth":0,"node_children_count":0,"tree_children_count":0,"node_video_count":2,"tree_video_count":2,"created_at":"2015-04-07T09:38:46.000Z","updated_at":"2016-10-18T16:30:02.000Z"},{"id":333,"account_id":79357,"user_id":79357,"name":"Outdoors","description":null,"parent_id":331,"depth":1,"node_children_count":0,"tree_children_count":0,"node_video_count":0,"tree_video_count":0,"created_at":"2015-04-07T09:38:55.000Z","updated_at":"2016-08-08T12:54:05.000Z"}],"meta":{"total_count":12,"links":{"first":"https://app.vzaar.localhost/api/v2/categories","next":"https://app.vzaar.localhost/api/v2/categories?page=2&per_page=3","previous":null,"last":"https://app.vzaar.localhost/api/v2/categories?page=4&per_page=3"}}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 28 Oct 2016 14:27:12 GMT
 recorded_with: VCR 3.0.3
