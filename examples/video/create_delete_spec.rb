@@ -9,10 +9,18 @@ module VzaarApi
       before { setup_for :account_owner }
 
       context 'when doing a single-part upload' do
-        it 'creates the video' do
+        it 'creates and deletes the video' do
           attrs = { title: "single: #{Time.now.utc}", path: 'examples/support/videos/small.mp4' }
           video = described_class.create(attrs)
           expect(video.title).to eq attrs[:title]
+
+          # reload the video
+          video = described_class.find(video.id)
+
+          # delete the video
+          video.delete
+          expect{ described_class.find(video.id) }.to raise_error(
+            Error, 'Not found: Resource cannot be found')
         end
       end
 

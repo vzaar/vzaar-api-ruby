@@ -3,6 +3,7 @@ module VzaarApi
 
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
+    include Lib::ActiveObject::Delete
     include Lib::WillPaginate
 
     ENDPOINT = 'videos'

@@ -173,6 +173,19 @@ module VzaarApi
       end
     end
 
+    describe '#delete' do
+      context 'when video is deleted successfully' do
+        it 'returns true' do
+          VCR.use_cassette('videos/delete_201') do
+            video = described_class.find(7574985)
+            expect(video.delete).to eq true
+            expect { described_class.find(7574985) }.
+              to raise_error(Error, 'Not found: Resource cannot be found')
+          end
+        end
+      end
+    end
+
     describe '.paginate' do
       it 'loads the video collection' do
         VCR.use_cassette('videos/paginate_first') do
