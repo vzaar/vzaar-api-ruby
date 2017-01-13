@@ -45,25 +45,38 @@ module VzaarApi
       specify { expect(subject.updated_at).to eq 'updated_at' }
     end
 
-    describe '#to_hash' do
-      it 'represents the instance as a hash' do
+    describe 'description' do
+      let(:video) do
         VCR.use_cassette('videos/find') do
-          video = described_class.find(7574825).to_hash
-          expect(video[:id]).to eq 7574825
-          expect(video[:title]).to eq 'video-mp4'
-          expect(video[:user_id]).to eq 79357
-          expect(video[:account_id]).to eq 79357
-          expect(video[:description]).to eq 'description'
-          expect(video[:private]).to eq false
-          expect(video[:seo_url]).to eq 'seo-url'
-          expect(video[:url]).to eq 'video-url'
-          expect(video[:thumbnail_url]).to eq 'https://view.vzaar.localhost/7574825/thumb'
-          expect(video[:state]).to be_nil
-          expect(video[:renditions].count).to eq 0
-          expect(video[:legacy_renditions].count).to eq 0
-          expect(video[:created_at]).to eq '2016-11-04T10:34:12.000Z'
-          expect(video[:updated_at]).to eq '2016-11-04T10:34:12.000Z'
+          described_class.find(7574825)
         end
+      end
+
+      context 'when nothing has changed' do
+        let(:changed) { [] }
+        let(:changed_attributes) { {} }
+        let(:changes) { {} }
+
+        specify { expect(video).not_to be_changed }
+        specify { expect(video.changed).to match_array changed }
+        specify { expect(video.changed_attributes).to eq changed_attributes }
+        specify { expect(video.changes).to eq changes }
+      end
+
+      context 'when attributes have changed' do
+        before do
+          video.title = 'new-title'
+          video.description = 'new-desc'
+        end
+
+        let(:changed) { [:title, :description] }
+        let(:changed_attributes) { { title: 'new-title', description: 'new-desc'} }
+        let(:changes) { { title: %w(video-mp4 new-title), description: %w(description new-desc)} }
+
+        specify { expect(video).to be_changed }
+        specify { expect(video.changed).to match_array changed }
+        specify { expect(video.changed_attributes).to eq changed_attributes }
+        specify { expect(video.changes).to eq changes }
       end
     end
 
@@ -169,6 +182,19 @@ module VzaarApi
         it 'raises an error' do
           expect { described_class.create }.to raise_error(
             Error, 'Invalid parameters: Expected one of :guid, :path, :url')
+        end
+      end
+    end
+
+    describe '#delete' do
+      context 'when video is deleted successfully' do
+        it 'returns true' do
+          VCR.use_cassette('videos/delete_204') do
+            video = described_class.find(7574985)
+            expect(video.delete).to eq true
+            expect { described_class.find(7574985) }.
+              to raise_error(Error, 'Not found: Resource cannot be found')
+          end
         end
       end
     end
