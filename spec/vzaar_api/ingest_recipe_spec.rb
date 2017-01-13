@@ -8,7 +8,7 @@ module VzaarApi
     describe '.find' do
       context 'when the recipe can be found' do
         it 'finds the recipe' do
-          VCR.use_cassette('ingest_reipces/find') do
+          VCR.use_cassette('ingest_recipes/find') do
             recipe = described_class.find(1)
             expect(recipe.id).to eq 1
             expect(recipe.name).to eq "new-video"
@@ -32,7 +32,7 @@ module VzaarApi
 
       context 'when the recipe cannot be found' do
         it 'raises an error' do
-          VCR.use_cassette('ingest_reipces/find_404') do
+          VCR.use_cassette('ingest_recipes/find_404') do
             expect { described_class.find(-1) }.
               to raise_error(Error, 'Not found: Resource cannot be found')
           end
@@ -58,7 +58,7 @@ module VzaarApi
         end
 
         it 'returns the ingest recipe object' do
-          VCR.use_cassette('ingest_reipces/create_200') do
+          VCR.use_cassette('ingest_recipes/create_200') do
             recipe = described_class.create(attrs)
             expect(recipe.id).to eq 8
             expect(recipe.name).to eq "new-recipe"
@@ -83,7 +83,7 @@ module VzaarApi
       context 'when an error is returned' do
         let(:attrs) { { junk: 'yard' } }
         it 'raises the error returned form the API' do
-          VCR.use_cassette('ingest_reipces/create_422') do
+          VCR.use_cassette('ingest_recipes/create_422') do
             expect { described_class.create(attrs) }.
               to raise_error(Error, 'Invalid parameters: name is missing, ' \
                 'encoding_preset_ids is missing, encoding_preset_ids is invalid')
@@ -95,7 +95,7 @@ module VzaarApi
     describe '#save' do
       context 'when recipe is updated successfully' do
         it 'returns the ingest recipe object' do
-          VCR.use_cassette('ingest_reipces/update_200') do
+          VCR.use_cassette('ingest_recipes/update_200') do
             recipe = described_class.find(8)
             recipe.encoding_presets = nil
             recipe.encoding_presets << EncodingPreset.find(1)
@@ -112,7 +112,7 @@ module VzaarApi
 
       context 'when an error is returned' do
         it 'raises the error returned form the API' do
-          VCR.use_cassette('ingest_reipces/update_422') do
+          VCR.use_cassette('ingest_recipes/update_422') do
             recipe = described_class.find(8)
             recipe.encoding_presets = nil
             expect { recipe.save }.to raise_error(
@@ -125,7 +125,7 @@ module VzaarApi
     describe '#delete' do
       context 'when recipe is deleted successfully' do
         it 'returns true' do
-          VCR.use_cassette('ingest_reipces/delete_201') do
+          VCR.use_cassette('ingest_recipes/delete_204') do
             recipe = described_class.find(7)
             expect(recipe.delete).to eq true
             expect { described_class.find(7) }.
@@ -136,7 +136,7 @@ module VzaarApi
 
       context 'when an error is returned' do
         it 'raises the error returned form the API' do
-          VCR.use_cassette('ingest_reipces/delete_422') do
+          VCR.use_cassette('ingest_recipes/delete_422') do
             recipe = described_class.find(8)
             expect { recipe.delete }.to raise_error(
               Error, 'Invalid parameters: You cannot delete your default ingest recipe')
@@ -147,7 +147,7 @@ module VzaarApi
 
     describe '.each_item' do
       it 'loads the category collection' do
-        VCR.use_cassette('ingest_reipces/each_item') do
+        VCR.use_cassette('ingest_recipes/each_item') do
           enum = described_class.each_item(per_page: 2)
           ids = enum.map { |recipe| recipe.id }
           expect(ids).to match_array [1, 2, 3, 5, 8]
@@ -157,7 +157,7 @@ module VzaarApi
 
     describe '.paginate' do
       it 'loads the recipe collection' do
-        VCR.use_cassette('ingest_reipces/paginate_first') do
+        VCR.use_cassette('ingest_recipes/paginate_first') do
           pager = described_class.paginate(per_page: 1)
           pager.first
           ids = pager.collection.map { |recipe| recipe.id }
@@ -166,7 +166,7 @@ module VzaarApi
       end
 
       it 'loads the recipe collection' do
-        VCR.use_cassette('ingest_reipces/paginate_next') do
+        VCR.use_cassette('ingest_recipes/paginate_next') do
           pager = described_class.paginate(per_page: 1)
           pager.next
           ids = pager.collection.map { |recipe| recipe.id }
@@ -175,7 +175,7 @@ module VzaarApi
       end
 
       it 'loads the recipe collection' do
-        VCR.use_cassette('ingest_reipces/paginate_last') do
+        VCR.use_cassette('ingest_recipes/paginate_last') do
           pager = described_class.paginate(per_page: 1)
           pager.last
           ids = pager.collection.map { |recipe| recipe.id }
@@ -184,7 +184,7 @@ module VzaarApi
       end
 
       it 'loads the recipe collection' do
-        VCR.use_cassette('ingest_reipces/paginate_previous') do
+        VCR.use_cassette('ingest_recipes/paginate_previous') do
           pager = described_class.paginate(page: 4, per_page: 1)
           pager.previous
           ids = pager.collection.map { |recipe| recipe.id }

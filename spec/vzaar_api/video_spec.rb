@@ -189,7 +189,7 @@ module VzaarApi
     describe '#delete' do
       context 'when video is deleted successfully' do
         it 'returns true' do
-          VCR.use_cassette('videos/delete_201') do
+          VCR.use_cassette('videos/delete_204') do
             video = described_class.find(7574985)
             expect(video.delete).to eq true
             expect { described_class.find(7574985) }.
