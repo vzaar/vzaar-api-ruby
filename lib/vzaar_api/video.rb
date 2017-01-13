@@ -1,5 +1,5 @@
 module VzaarApi
-  class Video
+  class Video < Abstract
 
     ENDPOINT = 'videos'
 

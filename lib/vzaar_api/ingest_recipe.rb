@@ -1,5 +1,5 @@
 module VzaarApi
-  class IngestRecipe
+  class IngestRecipe < Abstract
 
     ENDPOINT = 'ingest_recipes'
 

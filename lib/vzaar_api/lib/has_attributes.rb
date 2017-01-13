@@ -7,6 +7,10 @@ module VzaarApi
           klass.send :attr_reader, attr
         end
 
+        unless defined? klass::ATTR_ACCESSORS
+          klass.const_set 'ATTR_ACCESSORS', [].freeze
+        end
+
         klass::ATTR_ACCESSORS.each do |attr|
           klass.send :attr_accessor, attr
 

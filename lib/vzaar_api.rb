@@ -15,6 +15,7 @@ require 'vzaar_api/lib/has_resource_url'
 require 'vzaar_api/lib/paged_resource'
 require 'vzaar_api/lib/will_paginate'
 
+require 'vzaar_api/abstract'
 require 'vzaar_api/category'
 require 'vzaar_api/encoding_preset'
 require 'vzaar_api/ingest_recipe'
