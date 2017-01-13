@@ -35,9 +35,33 @@ module VzaarApi
 
         module InstanceMethods
           def save
-            response = Lib::Api.new.patch(resource_url(id), to_hash)
+            response = Lib::Api.new.patch(resource_url(id), changed_attributes)
             update_from_attributes response.data
             true
+          end
+
+          def changed?
+            !changes.empty?
+          end
+
+          def changed
+            changes.keys
+          end
+
+          def changed_attributes
+            {}.tap do |result|
+              changes.each do |attr, vals|
+                result[attr] = vals[1]
+              end
+            end
+          end
+
+          def changes
+            @changes ||= {}
+          end
+
+          def has_changed?(attr)
+            changed.include? attr.to_sym
           end
         end
       end

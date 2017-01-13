@@ -45,6 +45,41 @@ module VzaarApi
       specify { expect(subject.updated_at).to eq 'updated_at' }
     end
 
+    describe 'description' do
+      let(:video) do
+        VCR.use_cassette('videos/find') do
+          described_class.find(7574825)
+        end
+      end
+
+      context 'when nothing has changed' do
+        let(:changed) { [] }
+        let(:changed_attributes) { {} }
+        let(:changes) { {} }
+
+        specify { expect(video).not_to be_changed }
+        specify { expect(video.changed).to match_array changed }
+        specify { expect(video.changed_attributes).to eq changed_attributes }
+        specify { expect(video.changes).to eq changes }
+      end
+
+      context 'when attributes have changed' do
+        before do
+          video.title = 'new-title'
+          video.description = 'new-desc'
+        end
+
+        let(:changed) { [:title, :description] }
+        let(:changed_attributes) { { title: 'new-title', description: 'new-desc'} }
+        let(:changes) { { title: %w(video-mp4 new-title), description: %w(description new-desc)} }
+
+        specify { expect(video).to be_changed }
+        specify { expect(video.changed).to match_array changed }
+        specify { expect(video.changed_attributes).to eq changed_attributes }
+        specify { expect(video.changes).to eq changes }
+      end
+    end
+
     describe '#to_hash' do
       it 'represents the instance as a hash' do
         VCR.use_cassette('videos/find') do
