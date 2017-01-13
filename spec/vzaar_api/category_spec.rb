@@ -5,27 +5,6 @@ module VzaarApi
       setup_auth!
     end
 
-    describe '#to_hash' do
-      it 'represents the instance as a hash' do
-        VCR.use_cassette('categories/find') do
-          category = described_class.find(334).to_hash
-          expect(category[:id]).to eq 334
-          expect(category[:account_id]).to eq 79357
-          expect(category[:user_id]).to eq 79357
-          expect(category[:name]).to eq 'Indoors'
-          expect(category[:description]).to eq 'All indoor videos'
-          expect(category[:parent_id]).to eq 331
-          expect(category[:depth]).to eq 1
-          expect(category[:node_children_count]).to eq 2
-          expect(category[:tree_children_count]).to eq 2
-          expect(category[:node_video_count]).to eq 2
-          expect(category[:tree_video_count]).to eq 3
-          expect(category[:created_at]).to eq '2015-04-07T09:39:06.000Z'
-          expect(category[:updated_at]).to eq '2016-10-18T16:29:11.000Z'
-        end
-      end
-    end
-
     describe '.find' do
       context 'when the category can be found' do
         it 'finds the category' do

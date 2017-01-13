@@ -80,28 +80,6 @@ module VzaarApi
       end
     end
 
-    describe '#to_hash' do
-      it 'represents the instance as a hash' do
-        VCR.use_cassette('videos/find') do
-          video = described_class.find(7574825).to_hash
-          expect(video[:id]).to eq 7574825
-          expect(video[:title]).to eq 'video-mp4'
-          expect(video[:user_id]).to eq 79357
-          expect(video[:account_id]).to eq 79357
-          expect(video[:description]).to eq 'description'
-          expect(video[:private]).to eq false
-          expect(video[:seo_url]).to eq 'seo-url'
-          expect(video[:url]).to eq 'video-url'
-          expect(video[:thumbnail_url]).to eq 'https://view.vzaar.localhost/7574825/thumb'
-          expect(video[:state]).to be_nil
-          expect(video[:renditions].count).to eq 0
-          expect(video[:legacy_renditions].count).to eq 0
-          expect(video[:created_at]).to eq '2016-11-04T10:34:12.000Z'
-          expect(video[:updated_at]).to eq '2016-11-04T10:34:12.000Z'
-        end
-      end
-    end
-
     describe '.find' do
       context 'when the video can be found' do
         it 'finds the video' do

@@ -16,18 +16,5 @@ module VzaarApi
       @updated_at = attrs[:updated_at]
     end
 
-    def to_hash
-      {
-        id: self.id,
-        type: self.type,
-        width: self.width,
-        height: self.height,
-        bitrate: self.bitrate,
-        status: self.status,
-        created_at: self.created_at,
-        updated_at: self.updated_at
-      }
-    end
-
   end
 end

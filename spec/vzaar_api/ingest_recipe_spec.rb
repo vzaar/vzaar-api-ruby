@@ -5,30 +5,6 @@ module VzaarApi
       setup_auth!
     end
 
-    describe '#to_hash' do
-      it 'represents the instance as a hash' do
-        VCR.use_cassette('ingest_reipces/find') do
-          recipe = described_class.find(1).to_hash
-          expect(recipe[:id]).to eq 1
-          expect(recipe[:name]).to eq "new-video"
-          expect(recipe[:recipe_type]).to eq "new_video"
-          expect(recipe[:description]).to be_nil
-          expect(recipe[:account_id]).to eq 79357
-          expect(recipe[:user_id]).to eq 79357
-          expect(recipe[:default]).to eq true
-          expect(recipe[:multipass]).to eq false
-          expect(recipe[:frame_grab_time]).to eq "3.5"
-          expect(recipe[:generate_animated_thumb]).to eq true
-          expect(recipe[:generate_sprite]).to eq true
-          expect(recipe[:use_watermark]).to eq true
-          expect(recipe[:send_to_youtube]).to eq false
-          expect(recipe[:encoding_preset_ids]).to match_array [1, 2, 3, 6, 9]
-          expect(recipe[:created_at]).to eq '2016-11-09T11:01:38.000Z'
-          expect(recipe[:updated_at]).to eq '2016-11-09T11:01:38.000Z'
-        end
-      end
-    end
-
     describe '.find' do
       context 'when the recipe can be found' do
         it 'finds the recipe' do

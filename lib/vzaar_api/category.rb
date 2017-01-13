@@ -27,24 +27,6 @@ module VzaarApi
       @updated_at = attrs[:updated_at]
     end
 
-    def to_hash
-      {
-        id: self.id,
-        account_id: self.account_id,
-        user_id: self.user_id,
-        name: self.name,
-        description: self.description,
-        parent_id: self.parent_id,
-        depth: self.depth,
-        node_children_count: self.node_children_count,
-        tree_children_count: self.tree_children_count,
-        node_video_count: self.node_video_count,
-        tree_video_count: self.tree_video_count,
-        created_at: self.created_at,
-        updated_at: self.updated_at
-      }
-    end
-
     def subtree(query = {})
       args = query.merge({
         resource_url: resource_url("#{id}/subtree"),
