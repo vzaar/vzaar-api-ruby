@@ -31,6 +31,15 @@ module VzaarApi
         super
       end
 
+      private
+
+      def update_from_attributes(attrs = {})
+        attrs.each do |attr, val|
+          instance_variable_set("@#{attr}", attrs[attr])
+        end
+        super
+      end
+
     end
   end
 end

@@ -17,8 +17,7 @@ module VzaarApi
     include Lib::WillPaginate
 
     def initialize(attrs = {})
-      @renditions = Rendition.build(attrs[:renditions])
-      @legacy_renditions = LegacyRendition.build(attrs[:renditions])
+      update_from_attributes attrs
     end
 
     def to_hash
@@ -42,6 +41,13 @@ module VzaarApi
 
     def self.create(attrs = {})
       Strategy::Video::Create.new(attrs, self).execute
+    end
+
+    private
+
+    def update_from_attributes(attrs)
+      @renditions = Rendition.build(attrs[:renditions])
+      @legacy_renditions = LegacyRendition.build(attrs[:renditions])
     end
 
   end

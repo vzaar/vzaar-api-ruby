@@ -37,6 +37,7 @@ module VzaarApi
           def save
             response = Lib::Api.new.patch(resource_url(id), changed_attributes)
             update_from_attributes response.data
+            saved!
             true
           end
 
@@ -63,6 +64,11 @@ module VzaarApi
           def has_changed?(attr)
             changed.include? attr.to_sym
           end
+
+          def saved!
+            @changes = nil
+          end
+          private :saved!
         end
       end
 
