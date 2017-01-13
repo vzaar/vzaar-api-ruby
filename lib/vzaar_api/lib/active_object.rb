@@ -35,9 +35,11 @@ module VzaarApi
 
         module InstanceMethods
           def save
-            response = Lib::Api.new.patch(resource_url(id), changed_attributes)
-            update_from_attributes response.data
-            saved!
+            if changed?
+              response = Lib::Api.new.patch(resource_url(id), changed_attributes)
+              update_from_attributes response.data
+              saved!
+            end
             true
           end
 
