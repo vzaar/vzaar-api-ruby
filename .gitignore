@@ -8,3 +8,5 @@ Gemfile.lock
 pkg/*
 tmp
 test*.rb
+.ruby-gemset
+.ruby-version
