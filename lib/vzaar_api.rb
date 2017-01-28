@@ -22,6 +22,7 @@ require 'vzaar_api/ingest_recipe'
 require 'vzaar_api/legacy_rendition'
 require 'vzaar_api/link_upload'
 require 'vzaar_api/rendition'
+require 'vzaar_api/strategy/category/create'
 require 'vzaar_api/strategy/video/create'
 require 'vzaar_api/video'
 
