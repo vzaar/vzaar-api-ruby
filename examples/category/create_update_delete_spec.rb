@@ -13,7 +13,7 @@ module VzaarApi
       it 'creates, updates and deletes a resource' do
         # name is required
         expect{described_class.create}.to raise_error(
-          Error, "Invalid parameters: :name must be supplied"
+          Error, "Invalid parameters: name is missing"
         )
 
         # create new category tree

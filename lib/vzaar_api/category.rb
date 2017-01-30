@@ -23,7 +23,8 @@ module VzaarApi
     end
 
     def self.create(attrs = {})
-      Strategy::Category::Create.new(attrs, self).execute
+      url = Lib::Api.resource_url(ENDPOINT)
+      new Lib::Api.new.post(url, attrs).data
     end
 
     def subtree(query = {})
@@ -32,7 +33,5 @@ module VzaarApi
         resource_class: self.class })
       Lib::PagedResource.new(args)
     end
-
-    def update_from_attributes(attrs); end
   end
 end
