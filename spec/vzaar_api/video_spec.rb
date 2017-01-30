@@ -20,10 +20,15 @@ module VzaarApi
           url: 'url',
           thumbnail_url: 'thumbnail_url',
           state: 'state',
+          categories: categories,
           renditions: renditions,
           created_at: 'created_at',
           updated_at: 'updated_at',
         }
+      end
+
+      let(:categories) do
+        [ { id: 'category-id' } ]
       end
 
       let(:renditions) do
@@ -40,6 +45,7 @@ module VzaarApi
       specify { expect(subject.url).to eq 'url' }
       specify { expect(subject.thumbnail_url).to eq 'thumbnail_url' }
       specify { expect(subject.state).to eq 'state' }
+      specify { expect(subject.categories.first.id).to eq 'category-id' }
       specify { expect(subject.renditions.first.id).to eq 'rendition-id' }
       specify { expect(subject.created_at).to eq 'created_at' }
       specify { expect(subject.updated_at).to eq 'updated_at' }
@@ -48,7 +54,7 @@ module VzaarApi
     describe 'description' do
       let(:video) do
         VCR.use_cassette('videos/find') do
-          described_class.find(7574825)
+          described_class.find(7574982)
         end
       end
 
@@ -84,8 +90,8 @@ module VzaarApi
       context 'when the video can be found' do
         it 'finds the video' do
           VCR.use_cassette('videos/find') do
-            video = described_class.find(7574825)
-            expect(video.id).to eq 7574825
+            video = described_class.find(7574982)
+            expect(video.id).to eq 7574982
             expect(video.title).to eq 'video-mp4'
             expect(video.user_id).to eq 79357
             expect(video.account_id).to eq 79357
@@ -93,12 +99,13 @@ module VzaarApi
             expect(video.private).to eq false
             expect(video.seo_url).to eq 'seo-url'
             expect(video.url).to eq 'video-url'
-            expect(video.thumbnail_url).to eq 'https://view.vzaar.localhost/7574825/thumb'
-            expect(video.state).to be_nil
-            expect(video.renditions.count).to eq 0
-            expect(video.legacy_renditions.count).to eq 0
-            expect(video.created_at).to eq '2016-11-04T10:34:12.000Z'
-            expect(video.updated_at).to eq '2016-11-04T10:34:12.000Z'
+            expect(video.thumbnail_url).to eq 'https://view.vzaar.localhost/7574982/thumb'
+            expect(video.state).to eq 'ready'
+            expect(video.categories.count).to eq 2
+            expect(video.renditions.count).to eq 8
+            expect(video.legacy_renditions.count).to eq 8
+            expect(video.created_at).to eq '2016-12-01T17:27:12.000Z'
+            expect(video.updated_at).to eq '2017-01-30T12:49:41.000Z'
           end
         end
       end
@@ -123,7 +130,7 @@ module VzaarApi
           it 'returns the new video' do
             VCR.use_cassette('videos/create/guid_201') do
               video = described_class.create(attrs)
-              expect(video.id).to eq 7574825
+              expect(video.id).to eq 7574982
             end
           end
         end

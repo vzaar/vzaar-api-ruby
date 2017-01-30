@@ -3,11 +3,12 @@ module VzaarApi
 
     ENDPOINT = 'videos'
 
-    ATTR_READERS = [:id, :user_id, :account_id, :renditions,
-                    :legacy_renditions, :url, :thumbnail_url,
-                    :state, :created_at, :updated_at].freeze
+    ATTR_READERS = [:id, :user_id, :account_id, :categories,
+                    :renditions, :legacy_renditions, :url,
+                    :thumbnail_url, :state,
+                    :created_at, :updated_at].freeze
 
-    ATTR_ACCESSORS = [:description, :private, :seo_url, :title].freeze
+    ATTR_ACCESSORS = [:category_ids, :description, :private, :seo_url, :title].freeze
 
     prepend Lib::HasAttributes
     include Lib::HasResourceUrl
@@ -27,6 +28,8 @@ module VzaarApi
     private
 
     def update_from_attributes(attrs)
+      @categories = Category.build(attrs[:categories])
+      @category_ids = @categories.map(&:id)
       @renditions = Rendition.build(attrs[:renditions])
       @legacy_renditions = LegacyRendition.build(attrs[:renditions])
     end

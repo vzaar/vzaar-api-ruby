@@ -24,10 +24,6 @@ module VzaarApi
       update_from_attributes(attrs)
     end
 
-    def encoding_presets
-      @encoding_presets = Array(@encoding_presets)
-    end
-
     private
 
     def update_from_attributes(attrs = {})

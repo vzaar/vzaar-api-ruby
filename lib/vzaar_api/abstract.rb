@@ -4,5 +4,6 @@ module VzaarApi
     def initialize(attrs = {}); end
 
     def update_from_attributes(attrs); end
+
   end
 end

@@ -12,6 +12,7 @@ module VzaarApi
     ATTR_ACCESSORS = [:name, :parent_id, :move_to_root].freeze
 
     prepend Lib::HasAttributes
+    include Lib::HasCollectionBuilder
     include Lib::HasResourceUrl
     include Lib::ActiveObject::Find
     include Lib::ActiveObject::Save
@@ -28,9 +29,10 @@ module VzaarApi
     end
 
     def subtree(query = {})
-      args = query.merge({
+      args = query.merge(
         resource_url: resource_url("#{id}/subtree"),
-        resource_class: self.class })
+        resource_class: self.class
+      )
       Lib::PagedResource.new(args)
     end
   end
