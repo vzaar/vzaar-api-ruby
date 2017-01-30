@@ -10,3 +10,4 @@ tmp
 test*.rb
 .ruby-gemset
 .ruby-version
+tags
