@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.vzaar.localhost/api/v2/feeds/playlists?per_page=3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
+      Accept:
+      - "*/*"
+      Date:
+      - Mon, 24 Apr 2017 13:30:59 GMT
+      X-Auth-Token:
+      - TUGXzNL17ypaougMYpR3
+      X-Client-Id:
+      - lair-tend72
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Date:
+      - Mon, 24 Apr 2017 13:30:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2089'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '63'
+      X-Ratelimit-Reset:
+      - '1493040719'
+      X-Ratelimit-Reset-In:
+      - 60 seconds
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - aefa8336-4ec4-4450-98b9-66de586ed1c1
+      X-Runtime:
+      - '0.059401'
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      X-Miniprofiler-Ids:
+      - '["z5j0a4mhv7y9hcu0mlbs","wzl1b1fwdjqhlnjm4ga","d5dabvoqee6xo1mn67f8","svgz63xoi04rxvfm1id0","3c28kcn8sfjs7qofyekl","vfe6xfara8cd9wulooqd","lk1eagtyt91mfdzagqc9","y1k3mdngfvkqnp0veqie","3hpfa686jddv0e7nv4no","k7xdv6aho24n1km8wyzf"]'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":12,"category_id":2253,"title":"Dan","sort_by":"created_at","sort_order":"asc","max_vids":50,"position":"top","private":true,"dimensions":"448x336","autoplay":true,"continuous_play":true,"embed_code":"<iframe
+        id=\"vzpl-12\" name=\"vzpl-12\" title=\"vzaar video player\" class=\"vzaar
+        video player\" type=\"text/html\" width=\"448\" height=\"466\" frameborder=\"0\"
+        allowFullScreen allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen
+        src=\"//view.vzaar.localhost/playlists/12\"></iframe>","created_at":"2012-04-04T17:16:56.000Z","updated_at":"2016-02-04T12:08:36.000Z"},{"id":12676,"category_id":2253,"title":"ok","sort_by":"created_at","sort_order":"desc","max_vids":43,"position":"right","private":true,"dimensions":"auto","autoplay":true,"continuous_play":true,"embed_code":"<iframe
+        id=\"vzpl-12676\" name=\"vzpl-12676\" title=\"vzaar video player\" class=\"vzaar
+        video player\" type=\"text/html\" width=\"927\" height=\"432\" frameborder=\"0\"
+        allowFullScreen allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen
+        src=\"//view.vzaar.localhost/playlists/12676\"></iframe>","created_at":"2017-03-20T10:05:10.000Z","updated_at":"2017-04-21T10:06:06.000Z"},{"id":12677,"category_id":2253,"title":"test","sort_by":"created_at","sort_order":"desc","max_vids":10,"position":"left","private":true,"dimensions":"auto","autoplay":false,"continuous_play":false,"embed_code":"<iframe
+        id=\"vzpl-12677\" name=\"vzpl-12677\" title=\"vzaar video player\" class=\"vzaar
+        video player\" type=\"text/html\" width=\"927\" height=\"432\" frameborder=\"0\"
+        allowFullScreen allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen
+        src=\"//view.vzaar.localhost/playlists/12677\"></iframe>","created_at":"2017-03-20T10:06:23.000Z","updated_at":"2017-03-20T10:06:23.000Z"}],"meta":{"total_count":18,"links":{"first":"http://app.vzaar.localhost/api/v2/feeds/playlists?page=1&per_page=3","next":"http://app.vzaar.localhost/api/v2/feeds/playlists?page=2&per_page=3","previous":null,"last":"http://app.vzaar.localhost/api/v2/feeds/playlists?page=6&per_page=3"}}}'
+    http_version: 
+  recorded_at: Mon, 24 Apr 2017 13:30:59 GMT
+recorded_with: VCR 3.0.3
