@@ -36,7 +36,7 @@ module VzaarApi
           "title=\"vzaar video player\" class=\"vzaar video player\" " \
           "type=\"text/html\" width=\"927\" height=\"432\" frameborder=\"0\" " \
           "allowFullScreen allowTransparency=\"true\" mozallowfullscreen " \
-          "webkitAllowFullScreen src=\"//view.vzaar.localhost/playlists/#{playlist.id}\">" \
+          "webkitAllowFullScreen src=\"//#{api_envs["vd_hostname"]}/playlists/#{playlist.id}\">" \
           "</iframe>"
         )
 
@@ -73,7 +73,7 @@ module VzaarApi
           "title=\"vzaar video player\" class=\"vzaar video player\" " \
           "type=\"text/html\" width=\"400\" height=\"330\" frameborder=\"0\" " \
           "allowFullScreen allowTransparency=\"true\" mozallowfullscreen " \
-          "webkitAllowFullScreen src=\"//view.vzaar.localhost/playlists/#{playlist.id}\">" \
+          "webkitAllowFullScreen src=\"//#{api_envs["vd_hostname"]}/playlists/#{playlist.id}\">" \
           "</iframe>"
         )
 

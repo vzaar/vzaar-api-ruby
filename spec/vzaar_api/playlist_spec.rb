@@ -24,7 +24,7 @@ module VzaarApi
               "title=\"vzaar video player\" class=\"vzaar video player\" " \
               "type=\"text/html\" width=\"927\" height=\"340\" frameborder=\"0\" " \
               "allowFullScreen allowTransparency=\"true\" mozallowfullscreen " \
-              "webkitAllowFullScreen src=\"//view.vzaar.localhost/playlists/12692\">" \
+              "webkitAllowFullScreen src=\"//#{api_envs["vd_hostname"]}/playlists/12692\">" \
               "</iframe>"
             )
             expect(playlist.created_at).to eq "2017-04-21T14:16:50.000Z"
