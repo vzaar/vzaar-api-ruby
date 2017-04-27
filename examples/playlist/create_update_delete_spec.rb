@@ -8,7 +8,7 @@ module VzaarApi
     context 'when user is authenticated' do
       before { setup_for :account_owner }
 
-      let(:attrs) { { title: 'new SDK playlist', category_id: 2253 } }
+      let(:attrs) { { title: 'new SDK playlist', category_id: api_envs['category_id'] } }
 
       context "missing required parameters" do
         it "errors out" do
