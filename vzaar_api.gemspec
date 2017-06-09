@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'growl', '~> 1.0'
   s.add_development_dependency 'guard-rspec', '~> 4.6'
   s.add_development_dependency 'pry-byebug', '~> 3.4'
-  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'rspec', '~> 3.1'
   s.add_development_dependency 'vcr', '~> 3.0'
   s.add_development_dependency 'webmock', '~> 2.1'
 end
