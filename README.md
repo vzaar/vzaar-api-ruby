@@ -15,7 +15,7 @@ Ruby 2.2+
 ## Installation
 
 ```
-gem install vzaar --version
+gem install vzaar_api
 ```
 
 
@@ -39,7 +39,7 @@ VzaarApi.auth_token = '<your-auth-token>'
 VzaarApi.client_id  = '<your-client-id>'
 ```
 
-Usage instructions and examples are available on [vzaar's documentation site](https://vzaar.readme.io).
+Usage instructions and examples are available on [vzaar's documentation site](https://developer.vzaar.com).
 
 
 ## Contributing
