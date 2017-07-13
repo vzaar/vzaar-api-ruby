@@ -1,0 +1,50 @@
+[2.0.0] 2017-07-13 Alan Oliver <alan@vzaar.com>
+
+  * Version 2.0.0 of the gem released, this gem version contains BREAKING
+  CHANGES.
+  * This gem uses version 2 of the vzaar API, providing a simpler, cleaner way
+  to interact with vzaar.
+  * The Gem has been fully rewritten to conform to the new API.
+  * You can see documentation of the new API at our new developer hub at
+  https://developer.vzaar.com/docs
+
+[1.6.2] 2016-05-19 EJ <ed@vzaar.com>
+
+  * add metadata to signature API call and S3 uploads
+
+[1.6.1] 2016-04-21 EJ <ed@vzaar.com>
+
+  * escape ampersands in filename when sending signature request
+
+[1.6.0] 2016-03-03 EJ <ed@vzaar.com>
+
+  * support for chunked uploads
+
+[1.5.3] 2015-07-07 Raz Itzhakian <raz.itzhakian@fiverr.com>
+
+  * timeout option added for API calls
+
+[1.5.2] 2015-03-30 JC <jozef@vzaar.com>
+
+  * call CGI.escape against link_upload/url and video/seo_url params
+
+[1.5.1] 2015-03-27 JC <jozef@vzaar.com>
+
+  * escaping special chars from xml added
+
+2015-02-19 JC <jozef@vzaar.com>
+
+  * renditions added to Vzaar::Resource::Video
+
+2015-02-16 JC <jozef@vzaar.com>
+
+  * private and seo_url params added to api#edit_video
+  * API specs improved for edit_video/json
+
+2015-01-21 JC <jozef@vzaar.com>
+
+  * API specs added for edit/delete http verbs
+
+2015-01-14 JC <jozef@vzaar.com>
+
+	* changelog added
