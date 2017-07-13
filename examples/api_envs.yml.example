@@ -1,5 +1,6 @@
 development:
   hostname: app.vzaar.localhost
+  vd_hostname: view.vzaar.localhost
   category_id:
   encoding_preset_id:
   ingest_recipe:
