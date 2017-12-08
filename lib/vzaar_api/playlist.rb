@@ -10,7 +10,7 @@ module VzaarApi
 
     ATTR_ACCESSORS = %i(
       category_id title sort_by sort_order private dimensions max_vids
-      position autoplay continuous_play max_vids
+      position autoplay continuous_play max_vids video_ids
     ).freeze
 
     prepend Lib::HasAttributes
