@@ -26,7 +26,7 @@ module VzaarApi
         private
 
         def create_from_guid
-          url = Lib::Api.resource_url video_class::ENDPOINT
+          binding.irb
           video_class.new Lib::Api.new.post(url, attrs).data
         end
 
@@ -40,6 +40,9 @@ module VzaarApi
           LinkUpload.create(attrs.merge({ uploader: UPLOADER }))
         end
 
+        def url
+          Lib::Api.resource_url video_class::ENDPOINT
+        end
       end
     end
   end

@@ -24,6 +24,7 @@ require 'vzaar_api/link_upload'
 require 'vzaar_api/playlist'
 require 'vzaar_api/rendition'
 require 'vzaar_api/strategy/video/create'
+require 'vzaar_api/strategy/video/replace'
 require 'vzaar_api/video'
 
 require 'vzaar_api/signature/abstract'

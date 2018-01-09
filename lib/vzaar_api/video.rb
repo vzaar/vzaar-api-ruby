@@ -8,7 +8,7 @@ module VzaarApi
                     :thumbnail_url, :state,
                     :created_at, :updated_at].freeze
 
-    ATTR_ACCESSORS = [:category_ids, :description, :private, :seo_url, :title].freeze
+    ATTR_ACCESSORS = [:category_ids, :description, :private, :seo_url, :title, :replace_id].freeze
 
     prepend Lib::HasAttributes
     include Lib::HasResourceUrl
@@ -23,6 +23,10 @@ module VzaarApi
 
     def self.create(attrs = {})
       Strategy::Video::Create.new(attrs, self).execute
+    end
+
+    def self.replace(attrs = {})
+      Strategy::Video::Replace.new(attrs, self).execute
     end
 
     private
