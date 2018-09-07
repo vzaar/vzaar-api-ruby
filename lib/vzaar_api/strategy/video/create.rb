@@ -26,7 +26,6 @@ module VzaarApi
         private
 
         def create_from_guid
-          binding.irb
           video_class.new Lib::Api.new.post(url, attrs).data
         end
 
