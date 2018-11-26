@@ -154,7 +154,7 @@ module VzaarApi
           it 'returns the new video' do
             VCR.use_cassette('videos/create/path_201') do
               video = described_class.create(attrs)
-              expect(video.id).to eq 7574827
+              expect(video.id).to eq 1293123212
             end
           end
         end
@@ -169,7 +169,7 @@ module VzaarApi
           it 'returns the new video' do
             VCR.use_cassette('videos/create/link_201') do
               video = described_class.create(attrs)
-              expect(video.id).to eq 7574826
+              expect(video.id).to eq 1293123213
             end
           end
         end

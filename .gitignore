@@ -11,3 +11,5 @@ test*.rb
 .ruby-gemset
 .ruby-version
 tags
+.#*
+*mp4

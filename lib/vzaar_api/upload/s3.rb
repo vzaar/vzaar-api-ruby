@@ -9,7 +9,7 @@ module VzaarApi
 
       def_delegators :@signature, :access_key_id, :acl, :bucket,
         :guid, :key, :multipart?, :part_size_in_bytes, :policy,
-        :success_action_status, :upload_hostname
+        :success_action_status, :upload_hostname, :x_amz_headers
 
       def initialize(attrs, signature)
         @attrs = attrs.dup
@@ -64,10 +64,8 @@ module VzaarApi
           'bucket' => bucket,
           'success_action_status' => success_action_status,
           'policy' => policy,
-          'AWSAccessKeyId' => access_key_id,
-          'signature' => signature.signature,
           'x-amz-meta-uploader' => UPLOADER
-        }
+        }.merge! x_amz_headers
       end
 
       def http_client

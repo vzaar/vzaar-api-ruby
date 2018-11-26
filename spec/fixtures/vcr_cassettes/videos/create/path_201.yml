@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.vzaar.localhost/api/v2/signature/single
+    uri: https://app.vzaar.localhost/api/v2/signature/single/2
     body:
       encoding: UTF-8
-      string: '{"filesize":1048576,"filename":"video-1.0MB.mp4","uploader":"Ruby-2.0.0-alpha"}'
+      string: '{"filesize":1048576,"filename":"video-1.0MB.mp4","uploader":"Ruby-2.0.0"}'
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
       Accept:
       - "*/*"
       Date:
-      - Tue, 08 Nov 2016 12:46:56 GMT
+      - Wed, 28 Nov 2018 14:37:51 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - pVrjGuKWP27U_kz4anfy
       X-Client-Id:
-      - lair-tend72
+      - glide-franca-raise
       Content-Type:
       - application/json
   response:
@@ -25,86 +25,92 @@ http_interactions:
       message: Created
     headers:
       Server:
-      - nginx/1.10.1
+      - nginx
       Date:
-      - Tue, 08 Nov 2016 12:46:56 GMT
+      - Wed, 28 Nov 2018 14:37:51 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '961'
+      - '1009'
       Connection:
       - keep-alive
-      X-RateLimit-Limit:
+      X-Ratelimit-Limit:
       - '200'
-      X-RateLimit-Remaining:
+      X-Ratelimit-Remaining:
       - '199'
-      X-RateLimit-Reset:
-      - '1478609276'
-      X-RateLimit-Reset-In:
-      - 60 seconds
+      X-Ratelimit-Reset:
+      - '1543415880'
+      X-Ratelimit-Reset-In:
+      - 9 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
       X-Request-Id:
-      - 38d1eecd-3520-45a2-a7f8-67db7191d5cf
+      - 51747277-09bf-4126-9d44-7f5cc4169816
       X-Runtime:
-      - '0.053293'
+      - '0.084127'
       Set-Cookie:
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       X-Miniprofiler-Ids:
-      - '["fgjcymgli3s5gi0gmbbs","99z7unp4sj262x1ahmb4","drg23k33n75ornw0g8jk","ct6buz9t9tpgkrkjxd1h","etmabalvgern0t1jdf4q","yibtuiqnohudk1d26xvg","va5kmg66r6zqh1d2iva8","dcys8yiff606brf8o8l1","aws88hhrbx21bue97h3t","luierjytxm3h89jync1y"]'
+      - '["6vrl4p8kpzafih5jdr2i","fr1v3v60t14pjh93e8om","h9psmg6qml4a44yzix82","m75qf12yw6yfw5nbcv3x","2mqklapoo3lgc4xonfty"]'
     body:
       encoding: UTF-8
-      string: '{"data":{"access_key_id":"access_key_id","key":"vzaar/tcc/964/source/tcc964bc232da438fbee8237e5a60a8e9y/${filename}","acl":"private","policy":"policy","signature":"signature","success_action_status":"201","content_type":"binary/octet-stream","guid":"tcc964bc232da438fbee8237e5a60a8e9y","bucket":"vzaar-upload-development","upload_hostname":"https://vzaar-upload-development.s3.amazonaws.com"}}'
+      string: '{"data":{"x-amz-credential":"AKIAI3J5QLNNFAL3BZ4Q/20181128/us-east-1/s3/aws4_request","x-amz-algorithm":"AWS4-HMAC-SHA256","x-amz-date":"20181128T143751Z","x-amz-signature":"9f53fbcb367e6c52f3fb3dcc1d63850cf9fa3810642db6110033ceedb2ce8957","key":"vzaar/tzc/iuM/source/tzciuMWYpPj8/${filename}","acl":"private","policy":"eyJleHBpcmF0aW9uIjoiMjAxOC0xMS0yOVQxNDozNzo1MVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJ2emFhci11cGxvYWQtZGV2ZWxvcG1lbnQifSxbInN0YXJ0cy13aXRoIiwiJGtleSIsInZ6YWFyL3R6Yy9pdU0vc291cmNlL3R6Y2l1TVdZcFBqOC8iXSx7ImFjbCI6InByaXZhdGUifSx7InN1Y2Nlc3NfYWN0aW9uX3N0YXR1cyI6IjIwMSJ9LFsic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS11cGxvYWRlciIsIiJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFLSUFJM0o1UUxOTkZBTDNCWjRRLzIwMTgxMTI4L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDE4MTEyOFQxNDM3NTFaIn1dfQ==","success_action_status":"201","guid":"tzciuMWYpPj8","bucket":"vzaar-upload-development","upload_hostname":"https://vzaar-upload-development.s3.amazonaws.com"}}'
     http_version:
-  recorded_at: Tue, 08 Nov 2016 12:46:56 GMT
+  recorded_at: Wed, 28 Nov 2018 14:37:51 GMT
 - request:
     method: post
     uri: https://vzaar-upload-development.s3.amazonaws.com/
     body:
       encoding: UTF-8
       string: !binary |-
-        LS01ZTY2ZDA4NmUyNzNiZTRmZWQ3YTYxNzM5YTliNTdiMjE5MmU0YjM3DQpD
+        LS1jNzZlZGUyZTBiYjY2NzAwOTY5NGE1NjQ2OWI2MmMxNmZlOWE4ZTMxDQpD
         b250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImFjbCINCg0K
-        cHJpdmF0ZQ0KLS01ZTY2ZDA4NmUyNzNiZTRmZWQ3YTYxNzM5YTliNTdiMjE5
-        MmU0YjM3DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9
-        ImJ1Y2tldCINCg0KdnphYXItdXBsb2FkLWRldmVsb3BtZW50DQotLTVlNjZk
-        MDg2ZTI3M2JlNGZlZDdhNjE3MzlhOWI1N2IyMTkyZTRiMzcNCkNvbnRlbnQt
+        cHJpdmF0ZQ0KLS1jNzZlZGUyZTBiYjY2NzAwOTY5NGE1NjQ2OWI2MmMxNmZl
+        OWE4ZTMxDQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9
+        ImJ1Y2tldCINCg0KdnphYXItdXBsb2FkLWRldmVsb3BtZW50DQotLWM3NmVk
+        ZTJlMGJiNjY3MDA5Njk0YTU2NDY5YjYyYzE2ZmU5YThlMzENCkNvbnRlbnQt
         RGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0ic3VjY2Vzc19hY3Rpb25f
-        c3RhdHVzIg0KDQoyMDENCi0tNWU2NmQwODZlMjczYmU0ZmVkN2E2MTczOWE5
-        YjU3YjIxOTJlNGIzNw0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRh
-        OyBuYW1lPSJwb2xpY3kiDQoNCmV3b2dJQ0FnSUNBZ0lDQWdJQ0FuWlhod2FY
-        SmhkR2x2YmljNklDY3lNREUyTFRFeExUQTVWREV5T2pRMk9qVTJMakF3TUZv
-        bkxBb2dJQ0FnSUNBZ0lDQWdJQ0FuWTI5dVpHbDBhVzl1Y3ljNklGc0tJQ0Fn
-        SUNBZ0lDQWdJQ0FnSUNCN0oySjFZMnRsZENjNklDZDJlbUZoY2kxMWNHeHZZ
-        V1F0WkdWMlpXeHZjRzFsYm5RbmZTd0tJQ0FnSUNBZ0lDQWdJQ0FnSUNCYkoz
-        TjBZWEowY3kxM2FYUm9KeXdnSnlSclpYa25MQ0FuZG5waFlYSXZkR05qTHpr
-        Mk5DOXpiM1Z5WTJVdmRHTmpPVFkwWW1NeU16SmtZVFF6T0daaVpXVTRNak0z
-        WlRWaE5qQmhPR1U1ZVM4blhTd0tJQ0FnSUNBZ0lDQWdJQ0FnSUNCN0oyRmpi
-        Q2M2SUNkd2NtbDJZWFJsSjMwc0NpQWdJQ0FnSUNBZ0lDQWdJQ0FnV3lkbGNT
-        Y3NJQ2NrYzNWalkyVnpjMTloWTNScGIyNWZjM1JoZEhWekp5d2dKekl3TVNk
-        ZExBb2dJQ0FnSUNBZ0lDQWdJQ0FnSUZzbmMzUmhjblJ6TFhkcGRHZ25MQ0Fu
-        SkhndFlXMTZMVzFsZEdFdGRYQnNiMkZrWlhJbkxDQW5KMTBLSUNBZ0lDQWdJ
-        Q0FnSUNBZ1hYMEtJQ0FnSUNBZ0lDQWdJQT09DQotLTVlNjZkMDg2ZTI3M2Jl
-        NGZlZDdhNjE3MzlhOWI1N2IyMTkyZTRiMzcNCkNvbnRlbnQtRGlzcG9zaXRp
-        b246IGZvcm0tZGF0YTsgbmFtZT0iQVdTQWNjZXNzS2V5SWQiDQoNCjFYRUM0
-        UTNSRlJCOEQ4QTlSNTgyDQotLTVlNjZkMDg2ZTI3M2JlNGZlZDdhNjE3Mzlh
-        OWI1N2IyMTkyZTRiMzcNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0
-        YTsgbmFtZT0ic2lnbmF0dXJlIg0KDQpxdXBhY3hEMHlpalpxdU0yT29LUTQ0
-        MW9EbkE9DQotLTVlNjZkMDg2ZTI3M2JlNGZlZDdhNjE3MzlhOWI1N2IyMTky
-        ZTRiMzcNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0i
-        eC1hbXotbWV0YS11cGxvYWRlciINCg0KUnVieS0yLjAuMC1hbHBoYQ0KLS01
-        ZTY2ZDA4NmUyNzNiZTRmZWQ3YTYxNzM5YTliNTdiMjE5MmU0YjM3DQpDb250
-        ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImtleSINCg0Kdnph
-        YXIvdGNjLzk2NC9zb3VyY2UvdGNjOTY0YmMyMzJkYTQzOGZiZWU4MjM3ZTVh
-        NjBhOGU5eS8ke2ZpbGVuYW1lfQ0KLS01ZTY2ZDA4NmUyNzNiZTRmZWQ3YTYx
-        NzM5YTliNTdiMjE5MmU0YjM3DQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3Jt
-        LWRhdGE7IG5hbWU9ImZpbGUiOyBmaWxlbmFtZT0idmlkZW8tMS4wTUIubXA0
-        IjsgbW9kaWZpY2F0aW9uLWRhdGU9IlR1ZSwgMDggTm92IDIwMTYgMTI6NDI6
-        MTggKzAwMDAiOyByZWFkLWRhdGU9IlR1ZSwgMDggTm92IDIwMTYgMTI6NDY6
-        MzcgKzAwMDAiDQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL29jdGV0LXN0
-        cmVhbQ0KDQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        c3RhdHVzIg0KDQoyMDENCi0tYzc2ZWRlMmUwYmI2NjcwMDk2OTRhNTY0Njli
+        NjJjMTZmZTlhOGUzMQ0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRh
+        OyBuYW1lPSJwb2xpY3kiDQoNCmV5SmxlSEJwY21GMGFXOXVJam9pTWpBeE9D
+        MHhNUzB5T1ZReE5Eb3pOem8xTVZvaUxDSmpiMjVrYVhScGIyNXpJanBiZXlK
+        aWRXTnJaWFFpT2lKMmVtRmhjaTExY0d4dllXUXRaR1YyWld4dmNHMWxiblFp
+        ZlN4YkluTjBZWEowY3kxM2FYUm9JaXdpSkd0bGVTSXNJblo2WVdGeUwzUjZZ
+        eTlwZFUwdmMyOTFjbU5sTDNSNlkybDFUVmRaY0ZCcU9DOGlYU3g3SW1GamJD
+        STZJbkJ5YVhaaGRHVWlmU3g3SW5OMVkyTmxjM05mWVdOMGFXOXVYM04wWVhS
+        MWN5STZJakl3TVNKOUxGc2ljM1JoY25SekxYZHBkR2dpTENJa2VDMWhiWG90
+        YldWMFlTMTFjR3h2WVdSbGNpSXNJaUpkTEhzaWVDMWhiWG90WTNKbFpHVnVk
+        R2xoYkNJNklrRkxTVUZKTTBvMVVVeE9Ua1pCVEROQ1dqUlJMekl3TVRneE1U
+        STRMM1Z6TFdWaGMzUXRNUzl6TXk5aGQzTTBYM0psY1hWbGMzUWlmU3g3SW5n
+        dFlXMTZMV0ZzWjI5eWFYUm9iU0k2SWtGWFV6UXRTRTFCUXkxVFNFRXlOVFlp
+        ZlN4N0luZ3RZVzE2TFdSaGRHVWlPaUl5TURFNE1URXlPRlF4TkRNM05URmFJ
+        bjFkZlE9PQ0KLS1jNzZlZGUyZTBiYjY2NzAwOTY5NGE1NjQ2OWI2MmMxNmZl
+        OWE4ZTMxDQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9
+        IngtYW16LW1ldGEtdXBsb2FkZXIiDQoNClJ1YnktMi4wLjANCi0tYzc2ZWRl
+        MmUwYmI2NjcwMDk2OTRhNTY0NjliNjJjMTZmZTlhOGUzMQ0KQ29udGVudC1E
+        aXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPSJ4LWFtei1jcmVkZW50aWFs
+        Ig0KDQpBS0lBSTNKNVFMTk5GQUwzQlo0US8yMDE4MTEyOC91cy1lYXN0LTEv
+        czMvYXdzNF9yZXF1ZXN0DQotLWM3NmVkZTJlMGJiNjY3MDA5Njk0YTU2NDY5
+        YjYyYzE2ZmU5YThlMzENCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0
+        YTsgbmFtZT0ieC1hbXotYWxnb3JpdGhtIg0KDQpBV1M0LUhNQUMtU0hBMjU2
+        DQotLWM3NmVkZTJlMGJiNjY3MDA5Njk0YTU2NDY5YjYyYzE2ZmU5YThlMzEN
+        CkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0ieC1hbXot
+        ZGF0ZSINCg0KMjAxODExMjhUMTQzNzUxWg0KLS1jNzZlZGUyZTBiYjY2NzAw
+        OTY5NGE1NjQ2OWI2MmMxNmZlOWE4ZTMxDQpDb250ZW50LURpc3Bvc2l0aW9u
+        OiBmb3JtLWRhdGE7IG5hbWU9IngtYW16LXNpZ25hdHVyZSINCg0KOWY1M2Zi
+        Y2IzNjdlNmM1MmYzZmIzZGNjMWQ2Mzg1MGNmOWZhMzgxMDY0MmRiNjExMDAz
+        M2NlZWRiMmNlODk1Nw0KLS1jNzZlZGUyZTBiYjY2NzAwOTY5NGE1NjQ2OWI2
+        MmMxNmZlOWE4ZTMxDQpDb250ZW50LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7
+        IG5hbWU9ImtleSINCg0KdnphYXIvdHpjL2l1TS9zb3VyY2UvdHpjaXVNV1lw
+        UGo4LyR7ZmlsZW5hbWV9DQotLWM3NmVkZTJlMGJiNjY3MDA5Njk0YTU2NDY5
+        YjYyYzE2ZmU5YThlMzENCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0
+        YTsgbmFtZT0iZmlsZSI7IGZpbGVuYW1lPSJ2aWRlby0xLjBNQi5tcDQiOyBt
+        b2RpZmljYXRpb24tZGF0ZT0iTW9uLCAyNiBOb3YgMjAxOCAxNjowMTo0MyAr
+        MDEwMCI7IHJlYWQtZGF0ZT0iTW9uLCAyNiBOb3YgMjAxOCAxNjowMTo0MyAr
+        MDEwMCINCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vb2N0ZXQtc3RyZWFt
+        DQoNCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -23405,62 +23411,62 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQotLTVl
-        NjZkMDg2ZTI3M2JlNGZlZDdhNjE3MzlhOWI1N2IyMTkyZTRiMzctLQ0KDQo=
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANCi0tYzc2ZWRl
+        MmUwYmI2NjcwMDk2OTRhNTY0NjliNjJjMTZmZTlhOGUzMS0tDQoNCg==
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
       Accept:
       - "*/*"
       Date:
-      - Tue, 08 Nov 2016 12:46:56 GMT
+      - Wed, 28 Nov 2018 14:37:51 GMT
       Content-Type:
-      - multipart/form-data; boundary=5e66d086e273be4fed7a61739a9b57b2192e4b37
+      - multipart/form-data; boundary=c76ede2e0bb667009694a56469b62c16fe9a8e31
   response:
     status:
       code: 201
       message: Created
     headers:
       X-Amz-Id-2:
-      - zpYbjknSKV5H5QaDn/NbDjArNroSw8QiKyJ17ar2XHRkI8dyk/4ZF/V2Y0N43YfzPbuCmjECTHM=
+      - qm/NY+7dpmPxCdENNGgbgHyafqy3dij9sJ+k3OilTVEvs7Rwj5pHiUu21dYtgPT1TgsXUL46zew=
       X-Amz-Request-Id:
-      - 28E2D5AB5C9FABA0
+      - B4AB96CA944475DE
       Date:
-      - Tue, 08 Nov 2016 12:46:58 GMT
+      - Wed, 28 Nov 2018 14:37:53 GMT
       Etag:
       - '"b6d81b360a5672d80c27430f39153e2c"'
       Location:
-      - https://vzaar-upload-development.s3.amazonaws.com/vzaar%2Ftcc%2F964%2Fsource%2Ftcc964bc232da438fbee8237e5a60a8e9y%2Fvideo-1.0MB.mp4
+      - https://vzaar-upload-development.s3.amazonaws.com/vzaar%2Ftzc%2FiuM%2Fsource%2FtzciuMWYpPj8%2Fvideo-1.0MB.mp4
       Content-Type:
       - application/xml
       Content-Length:
-      - '390'
+      - '346'
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
-        <PostResponse><Location>https://vzaar-upload-development.s3.amazonaws.com/vzaar%2Ftcc%2F964%2Fsource%2Ftcc964bc232da438fbee8237e5a60a8e9y%2Fvideo-1.0MB.mp4</Location><Bucket>vzaar-upload-development</Bucket><Key>vzaar/tcc/964/source/tcc964bc232da438fbee8237e5a60a8e9y/video-1.0MB.mp4</Key><ETag>"b6d81b360a5672d80c27430f39153e2c"</ETag></PostResponse>
+        <PostResponse><Location>https://vzaar-upload-development.s3.amazonaws.com/vzaar%2Ftzc%2FiuM%2Fsource%2FtzciuMWYpPj8%2Fvideo-1.0MB.mp4</Location><Bucket>vzaar-upload-development</Bucket><Key>vzaar/tzc/iuM/source/tzciuMWYpPj8/video-1.0MB.mp4</Key><ETag>"b6d81b360a5672d80c27430f39153e2c"</ETag></PostResponse>
     http_version:
-  recorded_at: Tue, 08 Nov 2016 12:46:58 GMT
+  recorded_at: Wed, 28 Nov 2018 14:38:02 GMT
 - request:
     method: post
     uri: https://app.vzaar.localhost/api/v2/videos
     body:
       encoding: UTF-8
-      string: '{"title":"video","guid":"tcc964bc232da438fbee8237e5a60a8e9y"}'
+      string: '{"title":"video","guid":"tzciuMWYpPj8"}'
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
       Accept:
       - "*/*"
       Date:
-      - Tue, 08 Nov 2016 12:46:58 GMT
+      - Wed, 28 Nov 2018 14:38:02 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - pVrjGuKWP27U_kz4anfy
       X-Client-Id:
-      - lair-tend72
+      - glide-franca-raise
       Content-Type:
       - application/json
   response:
@@ -23469,41 +23475,43 @@ http_interactions:
       message: Created
     headers:
       Server:
-      - nginx/1.10.1
+      - nginx
       Date:
-      - Tue, 08 Nov 2016 12:46:59 GMT
+      - Wed, 28 Nov 2018 14:38:02 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '580'
+      - '1080'
       Connection:
       - keep-alive
-      X-RateLimit-Limit:
+      X-Ratelimit-Limit:
       - '200'
-      X-RateLimit-Remaining:
+      X-Ratelimit-Remaining:
       - '199'
-      X-RateLimit-Reset:
-      - '1478609278'
-      X-RateLimit-Reset-In:
-      - 60 seconds
+      X-Ratelimit-Reset:
+      - '1543415940'
+      X-Ratelimit-Reset-In:
+      - 58 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
       X-Request-Id:
-      - 7d863cda-c674-4785-a67f-26e9f07f986b
+      - 3ee12d99-bba8-4266-94d7-01094fdcc84d
       X-Runtime:
-      - '0.583282'
+      - '0.272226'
       Set-Cookie:
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       X-Miniprofiler-Ids:
-      - '["3fykstaqps6ggbxarqa0","99z7unp4sj262x1ahmb4","drg23k33n75ornw0g8jk","ct6buz9t9tpgkrkjxd1h","etmabalvgern0t1jdf4q","yibtuiqnohudk1d26xvg","va5kmg66r6zqh1d2iva8","dcys8yiff606brf8o8l1","aws88hhrbx21bue97h3t","luierjytxm3h89jync1y"]'
+      - '["4v3bgvm31v77b1qxwqo8","fr1v3v60t14pjh93e8om","h9psmg6qml4a44yzix82","m75qf12yw6yfw5nbcv3x","2mqklapoo3lgc4xonfty","6vrl4p8kpzafih5jdr2i"]'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":7574827,"title":"video","user_id":79357,"account_id":79357,"description":null,"created_at":"2016-11-08T12:46:58.650Z","updated_at":"2016-11-08T12:46:58.650Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574827/thumb","embed_code":"<iframe
-        id=\"vzvd-7574827\" name=\"vzvd-7574827\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
-        mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574827/player\"></iframe>","renditions":[]}}'
+      string: '{"data":{"id":1293123212,"title":"video","description":null,"state":"processing","private":false,"user_id":103616,"user_login":"qloop1002","account_id":102649,"account_name":"qloop1002","duration":null,"created_at":"2018-11-28T14:38:02.589Z","updated_at":"2018-11-28T14:38:02.589Z","url":"https://vzaar.localhost/videos/1293123212","seo_url":null,"asset_url":"https://view.vzaar.localhost/1293123212/video","poster_url":"https://view.vzaar.localhost/1293123212/image","thumbnail_url":"https://view.vzaar.localhost/1293123212/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:56.25%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-1293123212\" name=\"vzvd-1293123212\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.localhost/1293123212/player\" allow=\"autoplay\"
+        class=\"video-player video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[],"renditions":[]}}'
     http_version:
-  recorded_at: Tue, 08 Nov 2016 12:46:59 GMT
+  recorded_at: Wed, 28 Nov 2018 14:38:02 GMT
 recorded_with: VCR 3.0.3

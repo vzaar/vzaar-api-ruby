@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.vzaar.localhost/api/v2/signature/single
+    uri: https://app.vzaar.localhost/api/v2/signature/single/2
     body:
       encoding: UTF-8
       string: '{"filename":"video.mp4"}'
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
       Accept:
       - "*/*"
       Date:
-      - Thu, 03 Nov 2016 17:43:51 GMT
+      - Wed, 28 Nov 2018 09:38:27 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - pVrjGuKWP27U_kz4anfy
       X-Client-Id:
-      - lair-tend72
+      - glide-franca-raise
       Content-Type:
       - application/json
   response:
@@ -25,9 +25,9 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Server:
-      - nginx/1.10.1
+      - nginx
       Date:
-      - Thu, 03 Nov 2016 17:43:51 GMT
+      - Wed, 28 Nov 2018 09:38:27 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -37,15 +37,15 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - d07ac4e8-0d80-47f1-b9bb-80696ddc42be
+      - 9390cb21-4c9d-4eae-8327-9ea0b5dc7e64
       X-Runtime:
-      - '0.050492'
+      - '0.032501'
       Set-Cookie:
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
     body:
       encoding: UTF-8
       string: '{"errors":[{"message":"Invalid parameters","detail":"uploader is missing"}]}'
-    http_version: 
-  recorded_at: Thu, 03 Nov 2016 17:43:51 GMT
+    http_version:
+  recorded_at: Wed, 28 Nov 2018 09:38:27 GMT
 recorded_with: VCR 3.0.3
