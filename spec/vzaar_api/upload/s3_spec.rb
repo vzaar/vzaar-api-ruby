@@ -1,8 +1,16 @@
 module VzaarApi
   module Upload
     describe S3 do
-
       subject { described_class.new attrs, signature }
+
+      shared_examples "handling AWS error" do |cassette_name|
+        it 'handles an AWS 403 error' do
+          VCR.use_cassette(cassette_name) do
+            err_msg = 'X-Amz-Date must be formated via ISO8601 Long format'
+            expect { subject.execute }.to raise_error(Error, err_msg)
+          end
+        end
+      end
 
       describe '#execute' do
         context 'when multipart' do
@@ -12,27 +20,29 @@ module VzaarApi
 
           let(:signature_attrs) do
             {
-              access_key_id: 'access_key_id',
-              key: 'vzaar/t22/063/source/t22063bd228834adc8b9c7d5fb320b2b3o/${filename}',
+              key: "vzaar/tEW/AYG/source/tEWAYGhS8O5M/${filename}",
               acl: 'private',
-              policy: 'policy',
-              signature: 'signature',
+              policy: "policy",
               success_action_status: '201',
-              content_type: 'binary/octet-stream',
-              guid: 't22063bd228834adc8b9c7d5fb320b2b3o',
+              guid: "tEWAYGhS8O5M",
               bucket: 'vzaar-upload-development',
               upload_hostname: 'https://vzaar-upload-development.s3.amazonaws.com',
               part_size: '5MB',
               part_size_in_bytes: 5242880,
-              parts: 3
-            }
+              parts: 3,
+             :"x-amz-credential"=>"xxx/us-east-1/s3/aws4_request",
+             :"x-amz-algorithm"=>"AWS4-HMAC-SHA256",
+             :"x-amz-date"=>"date",
+             :"x-amz-signature"=>"sig"}
           end
 
-          let(:signature) { Signature::Multipart.new signature_attrs.merge(signature_attrs) }
+          let(:signature) do
+            Signature::Multipart.new signature_attrs.merge(signature_attrs)
+          end
 
           context 'when successful' do
             let(:expected_result) do
-              { guid: 't22063bd228834adc8b9c7d5fb320b2b3o', title: 'video-title' }
+              { guid: "tEWAYGhS8O5M", title: 'video-title' }
             end
 
             it 'uploads the video file' do
@@ -43,15 +53,11 @@ module VzaarApi
           end
 
           context 'when unsuccessful' do
-            it 'handles an AWS 403 error' do
-              VCR.use_cassette('upload/multipart_403') do
-                expect { subject.execute }.to raise_error(
-                  Error, 'The AWS Access Key Id you provided does not exist in our records.')
-              end
-            end
+            it_behaves_like "handling AWS error", 'upload/multipart_403'
 
             it 'handles an unexpected error' do
-              allow(subject).to receive(:http_client).and_raise(SocketError, 'error message')
+              allow(subject)
+                .to receive(:http_client).and_raise(SocketError, 'error message')
               expect { subject.execute }.to raise_error(Error, 'error message')
             end
           end
@@ -61,19 +67,19 @@ module VzaarApi
           let(:attrs) do
             { path: 'spec/support/files/video-1.0MB.mp4', title: 'video-title' }
           end
-
           let(:signature_attrs) do
             {
-              access_key_id: 'access_key_id',
-              key: "vzaar/t20/d72/source/t20d722afb9294989bda5f7cf01b11346v/${filename}",
+              key: "vzaar/tDQ/Upo/source/tDQUpoW-63JI/${filename}",
               acl: 'private',
-              policy: 'policy',
-              signature: 'signature',
-              success_action_status: "201",
-              content_type: "binary/octet-stream",
-              guid: "t20d722afb9294989bda5f7cf01b11346v",
-              bucket: "vzaar-upload-development",
-              upload_hostname: "https://vzaar-upload-development.s3.amazonaws.com"
+              policy: "policy",
+              success_action_status: '201',
+              guid: "tDQUpoW-63JI",
+              bucket: 'vzaar-upload-development',
+              upload_hostname: 'https://vzaar-upload-development.s3.amazonaws.com',
+              :"x-amz-credential"=> "xxxxx/us-east-1/s3/aws4_request",
+              :"x-amz-algorithm"=>"AWS4-HMAC-SHA256",
+              :"x-amz-date"=>"date",
+              :"x-amz-signature"=>"signature"
             }
           end
 
@@ -81,7 +87,7 @@ module VzaarApi
 
           context 'when successful' do
             let(:expected_result) do
-              { guid: 't20d722afb9294989bda5f7cf01b11346v', title: 'video-title' }
+              { guid: "tDQUpoW-63JI", title: 'video-title' }
             end
 
             it 'uploads the video file' do
@@ -92,21 +98,18 @@ module VzaarApi
           end
 
           context 'when unsuccessful' do
-            it 'handles an AWS 403 error' do
-              VCR.use_cassette('upload/single_403') do
-                expect { subject.execute }.to raise_error(
-                  Error, 'The AWS Access Key Id you provided does not exist in our records.')
-              end
-            end
+            it_behaves_like "handling AWS error", 'upload/single_403'
 
             it 'handles an unexpected error' do
-              allow(subject).to receive(:http_client).and_raise(SocketError, 'error message')
+              allow(subject)
+                .to(receive(:http_client))
+                .and_raise(SocketError, 'error message')
+
               expect { subject.execute }.to raise_error(Error, 'error message')
             end
           end
         end
       end
-
     end
   end
 end

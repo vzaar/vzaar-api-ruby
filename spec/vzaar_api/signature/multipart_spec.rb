@@ -23,46 +23,59 @@ module VzaarApi
             upload_hostname: 'upload_hostname',
             part_size: 'part_size',
             part_size_in_bytes: 'part_size_in_bytes',
-            parts: 'parts'
+            parts: 'parts',
+            upload_hostname: 'upload_hostname',
+           :"x-amz-credential" => "abc",
+           :"x-amz-algorithm" => "alg",
+           :"x-amz-date" => "date",
+           :"x-amz-signature" => "sig"
           }
         end
 
-        specify { expect(subject.access_key_id).to eq 'access_key_id' }
         specify { expect(subject.acl).to eq 'acl' }
         specify { expect(subject.bucket).to eq 'bucket' }
-        specify { expect(subject.content_type).to eq 'content_type' }
         specify { expect(subject.guid).to eq 'guid' }
         specify { expect(subject.key).to eq 'key' }
         specify { expect(subject.policy).to eq 'policy' }
-        specify { expect(subject.signature).to eq 'signature' }
-        specify { expect(subject.success_action_status).to eq 'success_action_status' }
+        specify { expect(subject.success_action_status)
+                    .to eq 'success_action_status' }
         specify { expect(subject.upload_hostname).to eq 'upload_hostname' }
         specify { expect(subject.part_size).to eq 'part_size' }
-        specify { expect(subject.part_size_in_bytes).to eq 'part_size_in_bytes' }
+        specify { expect(subject.part_size_in_bytes)
+                    .to eq 'part_size_in_bytes' }
         specify { expect(subject.parts).to eq 'parts' }
+
+        it_behaves_like "includes x-amz headers hash"
       end
 
       describe '#create' do
+        let(:attrs) do
+          { filename: 'video.mp4',
+            filesize: 25165824,
+            uploader: UPLOADER }
+        end
+
+        subject { described_class.create attrs }
+
         context 'when successful' do
           it 'builds a signature' do
             VCR.use_cassette('signature/multipart_201') do
-              attrs = { filename: 'video.mp4', filesize: 25165824, uploader: UPLOADER }
-              signature = described_class.create attrs
-              expect(signature.access_key_id).to eq 'access_key_id'
-              expect(signature.acl).to eq 'private'
-              expect(signature.bucket).to eq 'vzaar-upload-development'
-              expect(signature.content_type).to eq 'binary/octet-stream'
-              expect(signature.guid).to eq 'guid'
-              expect(signature.key).to eq 'vzaar/t8d/ec9/source/t8dec9434bcc64622b68d1dc16f3ddffap/${filename}'
-              expect(signature.policy).to eq 'policy'
-              expect(signature.signature).to eq 'signature'
-              expect(signature.success_action_status).to eq '201'
-              expect(signature.upload_hostname).to eq 'https://vzaar-upload-development.s3.amazonaws.com'
-              expect(signature.part_size).to eq '5MB'
-              expect(signature.part_size_in_bytes).to eq 5242880
-              expect(signature.parts).to eq 5
+              expect(subject.acl).to eq 'private'
+              expect(subject.bucket).to eq 'vzaar-upload-development'
+              expect(subject.guid).to eq "tjYfV-j3o754"
+              expect(subject.key)
+                .to eq "vzaar/tjY/fV-/source/tjYfV-j3o754/${filename}"
+              expect(subject.policy).to eq 'policy'
+              expect(subject.success_action_status).to eq '201'
+              expect(subject.upload_hostname).to eq 'https://vzaar-upload-development.s3.amazonaws.com'
+              expect(subject.part_size).to eq '5MB'
+              expect(subject.part_size_in_bytes).to eq 5242880
+              expect(subject.parts).to eq 5
             end
           end
+
+          it_behaves_like "assigns x-amz headers from response",
+                          "signature/multipart_201"
         end
 
         context 'when unsuccessful' do

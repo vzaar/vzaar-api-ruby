@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.vzaar.localhost/api/v2/signature/single
+    uri: https://app.vzaar.localhost/api/v2/signature/single/2
     body:
       encoding: UTF-8
-      string: '{"filename":"video.mp4","filesize":25165824,"uploader":"Ruby-2.0.0-alpha"}'
+      string: '{"filename":"video.mp4","filesize":25165824,"uploader":"Ruby-2.0.0"}'
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.3.0 (2015-12-25))
       Accept:
       - "*/*"
       Date:
-      - Thu, 03 Nov 2016 17:41:18 GMT
+      - Wed, 28 Nov 2018 08:56:31 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - pVrjGuKWP27U_kz4anfy
       X-Client-Id:
-      - lair-tend72
+      - glide-franca-raise
       Content-Type:
       - application/json
   response:
@@ -25,38 +25,38 @@ http_interactions:
       message: Created
     headers:
       Server:
-      - nginx/1.10.1
+      - nginx
       Date:
-      - Thu, 03 Nov 2016 17:41:18 GMT
+      - Wed, 28 Nov 2018 08:56:31 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '961'
+      - '1009'
       Connection:
       - keep-alive
-      X-RateLimit-Limit:
+      X-Ratelimit-Limit:
       - '200'
-      X-RateLimit-Remaining:
+      X-Ratelimit-Remaining:
       - '199'
-      X-RateLimit-Reset:
-      - '1478194938'
-      X-RateLimit-Reset-In:
-      - 60 seconds
+      X-Ratelimit-Reset:
+      - '1543395420'
+      X-Ratelimit-Reset-In:
+      - 29 seconds
       Cache-Control:
       - no-store, must-revalidate, private, max-age=0
       X-Request-Id:
-      - c5be2375-35ce-4834-a000-656ea69b414d
+      - 95c768c5-f198-4737-ad12-1f39acdfd43d
       X-Runtime:
-      - '0.060239'
+      - '0.343110'
       Set-Cookie:
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       - __profilin=p%3Dt; path=/
       X-Miniprofiler-Ids:
-      - '["t6b82brzobr1bsjkl2kr","4cgrjuu9znv5flechaye","xnttqh4f6tb6mlow6fqp","51m8dv0qththvbewgq13","x64kuijqm7wvs2v4hn7w","huk6yekaaonvewr8gorm","vbeuauig2dkult7iwd88","20346z4sk0xdmgjxe013","ojqf7ud6fx3fp4ugy5qy","a3g9j8ng0wd0z95f8byp"]'
+      - '["xr2g8orikxxkzhefaeec","x6d0sryoaznh4tbj83i2","8fwa4v4jf9bmwd6vvqr","wng1g0lxjpf0d1m0xiff","t9k7dkc5tnuowk9auwey","smpx96fbyoyotkt4xebh"]'
     body:
       encoding: UTF-8
-      string: '{"data":{"access_key_id":"access_key_id","key":"vzaar/t8d/ec9/source/t8dec9434bcc64622b68d1dc16f3ddffap/${filename}","acl":"private","policy":"policy","signature":"signature","success_action_status":"201","content_type":"binary/octet-stream","guid":"guid","bucket":"vzaar-upload-development","upload_hostname":"https://vzaar-upload-development.s3.amazonaws.com"}}'
+      string: '{"data":{"x-amz-credential":"credential","x-amz-algorithm":"AWS4-HMAC-SHA256","x-amz-date":"date","x-amz-signature":"signature","key":"vzaar/twc/Kqm/source/twcKqmLoY-d4/${filename}","acl":"private","policy":"policy","success_action_status":"201","guid":"guid","bucket":"vzaar-upload-development","upload_hostname":"https://vzaar-upload-development.s3.amazonaws.com"}}'
     http_version:
-  recorded_at: Thu, 03 Nov 2016 17:41:18 GMT
+  recorded_at: Wed, 28 Nov 2018 08:56:31 GMT
 recorded_with: VCR 3.0.3

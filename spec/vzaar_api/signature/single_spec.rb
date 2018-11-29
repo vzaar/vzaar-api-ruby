@@ -20,40 +20,52 @@ module VzaarApi
             policy: 'policy',
             signature: 'signature',
             success_action_status: 'success_action_status',
-            upload_hostname: 'upload_hostname'
+            upload_hostname: 'upload_hostname',
+            :"x-amz-credential" => "abc",
+            :"x-amz-algorithm" => "alg",
+            :"x-amz-date" => "date",
+            :"x-amz-signature" => "sig"
           }
         end
 
         specify { expect(subject.access_key_id).to eq 'access_key_id' }
         specify { expect(subject.acl).to eq 'acl' }
         specify { expect(subject.bucket).to eq 'bucket' }
-        specify { expect(subject.content_type).to eq 'content_type' }
         specify { expect(subject.guid).to eq 'guid' }
         specify { expect(subject.key).to eq 'key' }
         specify { expect(subject.policy).to eq 'policy' }
-        specify { expect(subject.signature).to eq 'signature' }
         specify { expect(subject.success_action_status).to eq 'success_action_status' }
         specify { expect(subject.upload_hostname).to eq 'upload_hostname' }
+
+        it_behaves_like "includes x-amz headers hash"
       end
 
       describe '#create' do
         context 'when successful' do
+          let(:attrs) do
+            { filename: 'video.mp4',
+              filesize: 25165824,
+              uploader: UPLOADER }
+          end
+
+          subject { described_class.create attrs }
+
           it 'builds a signature' do
             VCR.use_cassette('signature/single_201') do
-              attrs = { filename: 'video.mp4', filesize: 25165824, uploader: UPLOADER }
-              signature = described_class.create attrs
-              expect(signature.access_key_id).to eq 'access_key_id'
-              expect(signature.acl).to eq 'private'
-              expect(signature.bucket).to eq 'vzaar-upload-development'
-              expect(signature.content_type).to eq 'binary/octet-stream'
-              expect(signature.guid).to eq 'guid'
-              expect(signature.key).to eq 'vzaar/t8d/ec9/source/t8dec9434bcc64622b68d1dc16f3ddffap/${filename}'
-              expect(signature.policy).to eq 'policy'
-              expect(signature.signature).to eq 'signature'
-              expect(signature.success_action_status).to eq '201'
-              expect(signature.upload_hostname).to eq 'https://vzaar-upload-development.s3.amazonaws.com'
+              expect(subject.acl).to eq 'private'
+              expect(subject.bucket).to eq 'vzaar-upload-development'
+              expect(subject.guid).to eq "guid"
+              expect(subject.key)
+                .to eq "vzaar/twc/Kqm/source/twcKqmLoY-d4/${filename}"
+              expect(subject.policy).to eq 'policy'
+              expect(subject.success_action_status).to eq '201'
+              expect(subject.upload_hostname)
+                .to eq 'https://vzaar-upload-development.s3.amazonaws.com'
             end
           end
+
+          it_behaves_like "assigns x-amz headers from response",
+                          "signature/single_201"
         end
 
         context 'when unsuccessful' do
@@ -66,7 +78,6 @@ module VzaarApi
           end
         end
       end
-
     end
   end
 end

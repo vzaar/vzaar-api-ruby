@@ -4,7 +4,7 @@ module VzaarApi
 
       include Lib::HasResourceUrl
 
-      ENDPOINT = 'signature/multipart'
+      ENDPOINT = 'signature/multipart/2'
 
       attr_reader :upload_hostname, :part_size, :part_size_in_bytes, :parts
 
