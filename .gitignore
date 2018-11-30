@@ -13,3 +13,4 @@ test*.rb
 tags
 .#*
 *mp4
+*.jpg

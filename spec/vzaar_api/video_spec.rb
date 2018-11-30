@@ -244,5 +244,24 @@ module VzaarApi
       end
     end
 
+    describe ".set_image_frame" do
+      let(:video_id) { 18322783 }
+
+      it 'returns the existing video' do
+        VCR.use_cassette('videos/image_frame_202') do
+          video = described_class.set_image_frame(video_id, time: 3)
+          expect(video.id).to eq video_id
+        end
+      end
+
+      context 'when invalid params are provided' do
+        it 'raises an error' do
+          VCR.use_cassette('videos/image_frame_422') do
+            expect { described_class.set_image_frame(video_id, {}) }
+              .to raise_error(Error, 'Invalid parameters: time is missing')
+          end
+        end
+      end
+    end
   end
 end
