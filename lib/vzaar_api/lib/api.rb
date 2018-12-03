@@ -23,7 +23,8 @@ module VzaarApi
       end
 
       def post(url, body = {})
-        handle_response http_client.post(url, body.to_json, headers)
+        args = block_given? ? yield(body, headers) : [body.to_json, headers]
+        handle_response http_client.post url, *args
       end
 
       def handle_response(response)

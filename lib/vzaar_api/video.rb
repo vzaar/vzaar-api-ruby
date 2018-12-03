@@ -25,6 +25,14 @@ module VzaarApi
       Strategy::Video::Create.new(attrs, self).execute
     end
 
+    def self.set_image_frame(video_id, attrs = {})
+      Strategy::Image::Update.new(video_id, attrs, self).execute
+    end
+
+    def self.upload_image_frame(video_id, attrs = {})
+      Strategy::Image::Create.new(video_id, attrs, self).execute
+    end
+
     private
 
     def update_from_attributes(attrs)
