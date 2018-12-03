@@ -247,10 +247,12 @@ module VzaarApi
     describe ".set_image_frame" do
       let(:video_id) { 18322783 }
 
-      it 'returns the existing video' do
-        VCR.use_cassette('videos/image_frame_202') do
-          video = described_class.set_image_frame(video_id, time: 3)
-          expect(video.id).to eq video_id
+      context "when params are valid" do
+        it 'returns the existing video' do
+          VCR.use_cassette('videos/image_frame_202') do
+            video = described_class.set_image_frame(video_id, time: 3)
+            expect(video.id).to eq video_id
+          end
         end
       end
 
@@ -259,6 +261,38 @@ module VzaarApi
           VCR.use_cassette('videos/image_frame_422') do
             expect { described_class.set_image_frame(video_id, {}) }
               .to raise_error(Error, 'Invalid parameters: time is missing')
+          end
+        end
+      end
+    end
+
+    describe ".upload_image_frame" do
+      let(:video_id) { 18322783 }
+      let(:path) { 'spec/support/files/drex.jpg' }
+
+      context "when params are valid" do
+        it 'returns the existing video' do
+          VCR.use_cassette('videos/image_upload_frame_202') do
+            video = described_class.upload_image_frame(video_id, path: path)
+            expect(video.id).to eq video_id
+          end
+        end
+      end
+
+      context 'when path param is missing' do
+        it 'raises an error' do
+          expect { described_class.upload_image_frame(video_id, {}) }
+            .to raise_error(Error, 'Invalid parameters: path is missing')
+        end
+      end
+
+      context 'when file is too big' do
+        let(:path) { 'spec/support/files/video-12.0MB.mp4' }
+
+        it 'raises an error' do
+          VCR.use_cassette('videos/image_upload_frame_422') do
+            expect { described_class.upload_image_frame(video_id, path: path) }
+              .to raise_error(Error, 'File size exceeded: Max 10MB allowed')
           end
         end
       end

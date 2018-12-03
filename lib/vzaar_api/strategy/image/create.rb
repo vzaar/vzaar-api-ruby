@@ -3,7 +3,10 @@ module VzaarApi
     module Image
       class Create < Abstract
         def execute
-          File.open(attrs[:path], "r") do |file|
+          path = attrs[:path]
+          raise Error.new('Invalid parameters: path is missing') unless path
+
+          File.open(path, "r") do |file|
             res = Lib::Api.new.post(url, image: file) do |body, headers|
               headers.delete('Content-Type')
               [body, headers]
