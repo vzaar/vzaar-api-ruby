@@ -2,12 +2,14 @@ module VzaarApi
   module Lib
     class PagedResource
 
-      attr_reader :query, :meta, :collection, :resource_class, :resource_url
+      attr_reader :query, :meta, :collection, :resource_class, :resource_url,
+                  :scope_id
 
       def initialize(query = {})
         @query = query.dup
         @resource_class = @query.delete(:resource_class)
         @resource_url = @query.delete(:resource_url)
+        @scope_id = @query.delete(:scope_id)
         @loaded = false
       end
 
@@ -72,7 +74,10 @@ module VzaarApi
       end
 
       def build_collection(items)
-        items.map { |attrs| resource_class.new attrs }
+        items.map do |attrs|
+          attrs = scope_id ? attrs.merge(scope_id: scope_id) : attrs
+          resource_class.new attrs
+        end
       end
 
     end
