@@ -22,8 +22,9 @@ module VzaarApi
 
         module ClassMethods
           def create(attrs)
-            response = Lib::Api.new.post(resource_url, attrs)
-            new response.data
+            scope_id = attrs.delete :scope_id
+            response = Lib::Api.new.post(resource_url(nil, scope_id), attrs)
+            new response.data.merge(scope_id: scope_id)
           end
         end
       end
@@ -36,7 +37,11 @@ module VzaarApi
         module InstanceMethods
           def save
             if changed?
-              response = Lib::Api.new.patch(resource_url(id), changed_attributes)
+              response = Lib::Api.new.patch(
+                resource_url(id, scope_id),
+                changed_attributes
+              )
+
               update_from_attributes response.data
               saved!
             end
@@ -81,7 +86,7 @@ module VzaarApi
 
         module InstanceMethods
           def delete
-            Lib::Api.new.delete(resource_url(id))
+            Lib::Api.new.delete(resource_url(id, scope_id))
             true
           end
         end

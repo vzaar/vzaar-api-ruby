@@ -1,6 +1,5 @@
 module VzaarApi
   class Video < Abstract
-
     ENDPOINT = 'videos'
 
     ATTR_READERS = [:id, :user_id, :account_id, :categories,

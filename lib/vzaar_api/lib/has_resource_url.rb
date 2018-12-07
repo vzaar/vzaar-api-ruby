@@ -8,14 +8,17 @@ module VzaarApi
       end
 
       module InstanceMethods
-        def resource_url(path = nil)
-          self.class.resource_url(path)
+        def resource_url(path = nil, scope_id = nil)
+          self.class.resource_url(path, scope_id)
         end
       end
 
       module ClassMethods
-        def resource_url(path = nil)
-          Api.resource_url self::ENDPOINT, path
+        def resource_url(path=nil, scope_id=nil)
+          ep = self::ENDPOINT
+          args = ep.is_a?(Proc) ? [ep.call(scope_id, path), nil] : [ep, path]
+
+          Api.resource_url *args
         end
       end
 
