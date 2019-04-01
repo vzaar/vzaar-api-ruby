@@ -20,6 +20,7 @@ module VzaarApi
           url: 'url',
           thumbnail_url: 'thumbnail_url',
           state: 'state',
+          duration: 'duration',
           categories: categories,
           renditions: renditions,
           created_at: 'created_at',
@@ -45,6 +46,7 @@ module VzaarApi
       specify { expect(subject.url).to eq 'url' }
       specify { expect(subject.thumbnail_url).to eq 'thumbnail_url' }
       specify { expect(subject.state).to eq 'state' }
+      specify { expect(subject.duration).to eq 'duration' }
       specify { expect(subject.categories.first.id).to eq 'category-id' }
       specify { expect(subject.renditions.first.id).to eq 'rendition-id' }
       specify { expect(subject.created_at).to eq 'created_at' }
@@ -101,6 +103,7 @@ module VzaarApi
             expect(video.url).to eq 'video-url'
             expect(video.thumbnail_url).to eq 'https://view.vzaar.localhost/7574982/thumb'
             expect(video.state).to eq 'ready'
+            expect(video.duration).to eq 66.7
             expect(video.categories.count).to eq 2
             expect(video.renditions.count).to eq 8
             expect(video.legacy_renditions.count).to eq 8
