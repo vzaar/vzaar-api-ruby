@@ -4,7 +4,7 @@ module VzaarApi
 
     ATTR_READERS = [:id, :user_id, :account_id, :categories,
                     :renditions, :legacy_renditions, :url,
-                    :thumbnail_url, :state,
+                    :thumbnail_url, :state, :duration,
                     :created_at, :updated_at].freeze
 
     ATTR_ACCESSORS = [:category_ids, :description, :private, :seo_url, :title].freeze
