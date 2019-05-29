@@ -26,6 +26,8 @@ module Vzaar
         error("Forbidden")
       when 404
         error("Not Found")
+      when 410
+        error("Gone")
       when 502
         error("Bad Gateway")
       else
