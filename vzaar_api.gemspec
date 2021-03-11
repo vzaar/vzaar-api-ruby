@@ -15,9 +15,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0'
   s.rubygems_version      = ">= 2.5"
 
-  s.files         = `git ls-files`.split($/)
+  s.files         = `git ls-files lib README.md`.split($/)
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  s.test_files    = s.files.grep(%r{^(spec)/})
   s.require_paths = ['lib']
 
   s.add_dependency 'httpclient', '~> 2.8'
