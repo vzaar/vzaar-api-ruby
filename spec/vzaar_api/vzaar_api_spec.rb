@@ -6,9 +6,9 @@ describe VzaarApi do
     VzaarApi.hostname = hostname
   end
 
-  let(:auth_token) { 'auth-token' }
-  let(:client_id) { 'client-id' }
-  let(:hostname) { 'app.vzaar.localhost' }
+  let(:auth_token) { 'xdyzFwz8DV5pq1MDGE7e' }
+  let(:client_id) { 'capo-sixth-gale' }
+  let(:hostname) { 'app.vzaar.com' }
 
   specify { expect(VzaarApi.auth_token).to eq auth_token }
   specify { expect(VzaarApi.client_id).to eq client_id }

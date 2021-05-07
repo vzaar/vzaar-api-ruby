@@ -10,7 +10,7 @@ module VzaarApi
 
       let(:auth_token) { 'auth-token' }
       let(:client_id) { 'client-id' }
-      let(:hostname) { 'app.vzaar.localhost' }
+      let(:hostname) { 'app.vzaar.com' }
 
       describe '#headers' do
         let(:expected_result) do

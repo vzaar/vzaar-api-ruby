@@ -61,16 +61,16 @@ module VzaarApi
           it 'builds a signature' do
             VCR.use_cassette('signature/multipart_201') do
               expect(subject.acl).to eq 'private'
-              expect(subject.bucket).to eq 'vzaar-upload-development'
-              expect(subject.guid).to eq "tjYfV-j3o754"
+              expect(subject.bucket).to eq 'vzaar-upload'
+              expect(subject.guid.length).to eq 12
               expect(subject.key)
-                .to eq "vzaar/tjY/fV-/source/tjYfV-j3o754/${filename}"
-              expect(subject.policy).to eq 'policy'
+                .to eq "vzaar/#{subject.guid[0..2]}/#{subject.guid[3..5]}/source/#{subject.guid}/${filename}"
+              expect(subject.policy.length).to eq 512
               expect(subject.success_action_status).to eq '201'
-              expect(subject.upload_hostname).to eq 'https://vzaar-upload-development.s3.amazonaws.com'
-              expect(subject.part_size).to eq '5MB'
-              expect(subject.part_size_in_bytes).to eq 5242880
-              expect(subject.parts).to eq 5
+              expect(subject.upload_hostname).to eq 'https://vzaar-upload.s3.amazonaws.com'
+              expect(subject.part_size).to eq '8MB'
+              expect(subject.part_size_in_bytes).to eq 8388608
+              expect(subject.parts).to eq 3
             end
           end
 

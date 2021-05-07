@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app.vzaar.localhost/api/v2/videos?page=4&per_page=3
+    uri: https://app.vzaar.com/api/v2/videos?page=4&per_page=3
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.5.8 (2020-03-31))
       Accept:
       - "*/*"
       Date:
-      - Fri, 18 Nov 2016 16:12:48 GMT
+      - Wed, 05 May 2021 14:55:52 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - xdyzFwz8DV5pq1MDGE7e
       X-Client-Id:
-      - lair-tend72
+      - capo-sixth-gale
       Content-Type:
       - application/json
   response:
@@ -24,67 +24,70 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.10.1
-      Date:
-      - Fri, 18 Nov 2016 16:12:48 GMT
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
+      Date:
+      - Wed, 05 May 2021 14:55:53 GMT
+      Etag:
+      - W/"c04cc0c58107b8ef68d59d6cd4db3d98"
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '185'
+      X-Ratelimit-Reset:
+      - '1620226560'
+      X-Ratelimit-Reset-In:
+      - 8 seconds
+      X-Request-Id:
+      - c5f3fb0e-d947-4612-8710-e543bdaeddb8
+      X-Runtime:
+      - '0.352325'
       Content-Length:
-      - '3371'
+      - '5984'
       Connection:
       - keep-alive
-      X-RateLimit-Limit:
-      - '200'
-      X-RateLimit-Remaining:
-      - '195'
-      X-RateLimit-Reset:
-      - '1479485628'
-      X-RateLimit-Reset-In:
-      - 60 seconds
-      Cache-Control:
-      - no-store, must-revalidate, private, max-age=0
-      X-Request-Id:
-      - 8e5fad16-084b-48a1-ae07-a336e5553078
-      X-Runtime:
-      - '0.087682'
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      - __profilin=p%3Dt; path=/
-      - __profilin=p%3Dt; path=/
-      X-Miniprofiler-Ids:
-      - '["a2y8w25dibn5drdudcnr","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":7574843,"title":"multipart","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T14:00:16.000Z","updated_at":"2016-11-09T14:00:25.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574843/thumb","embed_code":"<iframe
-        id=\"vzvd-7574843\" name=\"vzvd-7574843\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"448\" height=\"278\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574843/player\"></iframe>","categories":[],"renditions":[{"id":21,"width":416,"height":258,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":22,"width":480,"height":297,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":23,"width":448,"height":278,"bitrate":900,"framerate":"25.0","status":"finished"},{"id":24,"width":1920,"height":1191,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":25,"width":640,"height":397,"bitrate":800,"framerate":"29.97","status":"finished"}]},{"id":7574842,"title":"single-part","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T14:00:11.000Z","updated_at":"2016-11-09T14:00:59.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574842/thumb","embed_code":"<iframe
-        id=\"vzvd-7574842\" name=\"vzvd-7574842\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"640\" height=\"480\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574842/player\"></iframe>","categories":[],"renditions":[{"id":16,"width":480,"height":360,"bitrate":400,"framerate":"29.97","status":"skipped"},{"id":17,"width":640,"height":480,"bitrate":800,"framerate":"29.97","status":"skipped"},{"id":18,"width":1920,"height":1440,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":19,"width":416,"height":312,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":20,"width":640,"height":480,"bitrate":307,"framerate":"10.0","status":"finished"}]},{"id":7574840,"title":"ej-big.mp4","user_id":79357,"account_id":79357,"description":null,"duration":66.73,"created_at":"2016-11-09T11:51:38.000Z","updated_at":"2016-11-09T11:53:46.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574840/thumb","embed_code":"<iframe
-        id=\"vzvd-7574840\" name=\"vzvd-7574840\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"448\" height=\"276\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574840/player\"></iframe>","categories":[],"renditions":[],"legacy_renditions":[{"id":10567124,"type":"standard","width":448,"height":278,"bitrate":512,"status":"Finished"},{"id":10567125,"type":"hd","width":null,"height":null,"bitrate":768,"status":"Error"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=5&per_page=3&state=ready","previous":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=3&per_page=3&state=ready","last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
-    http_version:
-  recorded_at: Fri, 18 Nov 2016 16:12:48 GMT
+      string: '{"data":[{"id":15362340,"title":"vzb9e43b87c7a54c3b8d0a8cbb4f0a525f.mp3","description":"","state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":26.9,"created_at":"2018-07-17T08:18:01.000Z","updated_at":"2020-03-16T00:01:47.000Z","url":"https://vzaar.com/videos/15362340","seo_url":null,"asset_url":"https://view.vzaar.com/15362340/video","poster_url":"https://view.vzaar.com/15362340/image","thumbnail_url":"https://view.vzaar.com/15362340/thumb","embed_code":"<iframe
+        id=\"vzvd-15362340\" name=\"vzvd-15362340\" title=\"video player\" type=\"text/html\"
+        width=\"320\" height=\"72\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362340/player?ao=1\" allow=\"autoplay\" class=\"video-player\"></iframe>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787345,"code":"audio","width":320,"height":72,"bitrate":128,"framerate":null,"status":"finished","size_in_bytes":431515,"url":"https://view.vzaar.com/15362340/download/audio"}]},{"id":15362339,"title":"tG6mdXRXMYNA_1280_720_2487.mp4","description":"","state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":46.4,"created_at":"2018-07-17T08:18:00.000Z","updated_at":"2020-03-16T00:01:45.000Z","url":"https://vzaar.com/videos/15362339","seo_url":null,"asset_url":"https://view.vzaar.com/15362339/video","poster_url":"https://view.vzaar.com/15362339/image","thumbnail_url":"https://view.vzaar.com/15362339/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:56.25%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-15362339\" name=\"vzvd-15362339\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362339/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787346,"code":"sd_lower","width":640,"height":360,"bitrate":730,"framerate":"60.0","status":"finished","size_in_bytes":4289967,"url":"https://view.vzaar.com/15362339/download/sd_lower"},{"id":787347,"code":"magic","width":1280,"height":720,"bitrate":2332,"framerate":"29.97","status":"finished","size_in_bytes":13561763,"url":"https://view.vzaar.com/15362339/download/magic"},{"id":787348,"code":"hd_720","width":1280,"height":720,"bitrate":2500,"framerate":"60.0","status":"skipped","size_in_bytes":0,"url":null},{"id":787349,"code":"hd_720","width":1280,"height":720,"bitrate":2500,"framerate":"60.0","status":"skipped","size_in_bytes":0,"url":null}]},{"id":15362338,"title":"e415e54028e64852b09a0d78bdb4430b.mov","description":"","state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":7.5,"created_at":"2018-07-17T08:17:51.000Z","updated_at":"2020-03-16T00:01:44.000Z","url":"https://vzaar.com/videos/15362338","seo_url":null,"asset_url":"https://view.vzaar.com/15362338/video","poster_url":"https://view.vzaar.com/15362338/image","thumbnail_url":"https://view.vzaar.com/15362338/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:56.25%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-15362338\" name=\"vzvd-15362338\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362338/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787342,"code":"magic","width":960,"height":540,"bitrate":1749,"framerate":"29.97","status":"finished","size_in_bytes":1984871,"url":"https://view.vzaar.com/15362338/download/magic"},{"id":787343,"code":"hd_720","width":1280,"height":720,"bitrate":2500,"framerate":"60.0","status":"finished","size_in_bytes":2686075,"url":"https://view.vzaar.com/15362338/download/hd_720"},{"id":787344,"code":"sd_lower","width":640,"height":360,"bitrate":730,"framerate":"60.0","status":"finished","size_in_bytes":933380,"url":"https://view.vzaar.com/15362338/download/sd_lower"}]}],"meta":{"total_count":1075,"links":{"first":"https://app.vzaar.com/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.com/api/v2/videos?order=asc&page=5&per_page=3&state=ready","previous":"https://app.vzaar.com/api/v2/videos?order=asc&page=3&per_page=3&state=ready","last":"https://app.vzaar.com/api/v2/videos?order=asc&page=359&per_page=3&state=ready"}}}'
+    http_version: 
+  recorded_at: Wed, 05 May 2021 14:55:53 GMT
 - request:
     method: get
-    uri: https://app.vzaar.localhost/api/v2/videos
+    uri: https://app.vzaar.com/api/v2/videos
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.5.8 (2020-03-31))
       Accept:
       - "*/*"
       Date:
-      - Fri, 18 Nov 2016 16:12:48 GMT
+      - Wed, 05 May 2021 14:55:53 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - xdyzFwz8DV5pq1MDGE7e
       X-Client-Id:
-      - lair-tend72
+      - capo-sixth-gale
       Content-Type:
       - application/json
   response:
@@ -92,48 +95,53 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.10.1
-      Date:
-      - Fri, 18 Nov 2016 16:12:48 GMT
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
+      Date:
+      - Wed, 05 May 2021 14:55:53 GMT
+      Etag:
+      - W/"c9ffd2d049fd6057b0b40cef4b73b9c9"
+      Server:
+      - nginx
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '184'
+      X-Ratelimit-Reset:
+      - '1620226560'
+      X-Ratelimit-Reset-In:
+      - 7 seconds
+      X-Request-Id:
+      - 9887e161-8aae-4786-9bd9-b287d145c106
+      X-Runtime:
+      - '0.148477'
       Content-Length:
-      - '3610'
+      - '6212'
       Connection:
       - keep-alive
-      X-RateLimit-Limit:
-      - '200'
-      X-RateLimit-Remaining:
-      - '194'
-      X-RateLimit-Reset:
-      - '1479485628'
-      X-RateLimit-Reset-In:
-      - 60 seconds
-      Cache-Control:
-      - no-store, must-revalidate, private, max-age=0
-      X-Request-Id:
-      - abbd0759-c6d5-4af0-9478-32d9acae7593
-      X-Runtime:
-      - '0.090951'
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      - __profilin=p%3Dt; path=/
-      - __profilin=p%3Dt; path=/
-      X-Miniprofiler-Ids:
-      - '["gf7yytzhwecdjse4smr8","yibtuiqnohudk1d26xvg","cpo3oiqmi683pkcaj816","dtxr2heeicch5rud7pjt","b4scoosnvmo0xvyqw8fy","58r4vfxumrhgue7kbsai","5dfv6js4ggxyc9qp8qwk","luelw09036g1c3l24a6i","racr2kqe0uft8glynfol","yfqme9j3k1haf6v4sm35"]'
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":7574847,"title":"single-part","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T16:13:44.000Z","updated_at":"2016-11-09T16:18:23.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574847/thumb","embed_code":"<iframe
-        id=\"vzvd-7574847\" name=\"vzvd-7574847\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"640\" height=\"480\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574847/player\"></iframe>","renditions":[{"id":36,"width":640,"height":480,"bitrate":800,"framerate":"29.97","status":"skipped"},{"id":37,"width":416,"height":312,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":38,"width":1920,"height":1440,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":39,"width":480,"height":360,"bitrate":400,"framerate":"29.97","status":"skipped"},{"id":40,"width":640,"height":480,"bitrate":307,"framerate":"10.0","status":"finished"}]},{"id":7574845,"title":"multipart","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T14:11:23.000Z","updated_at":"2016-11-09T14:16:27.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574845/thumb","embed_code":"<iframe
-        id=\"vzvd-7574845\" name=\"vzvd-7574845\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"448\" height=\"278\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574845/player\"></iframe>","renditions":[{"id":31,"width":480,"height":297,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":32,"width":640,"height":397,"bitrate":800,"framerate":"29.97","status":"finished"},{"id":33,"width":416,"height":258,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":34,"width":1920,"height":1191,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":35,"width":448,"height":278,"bitrate":900,"framerate":"25.0","status":"finished"}]},{"id":7574844,"title":"link","user_id":79357,"account_id":79357,"description":null,"duration":null,"created_at":"2016-11-09T14:00:16.000Z","updated_at":"2016-11-09T14:01:22.000Z","private":false,"seo_url":null,"url":null,"thumbnail_url":"https://view.vzaar.localhost/7574844/thumb","embed_code":"<iframe
-        id=\"vzvd-7574844\" name=\"vzvd-7574844\" title=\"video player\" class=\"video-player\"
-        type=\"text/html\" width=\"1280\" height=\"720\" frameborder=\"0\" allowfullscreen
-        allowTransparency=\"true\" mozallowfullscreen webkitAllowFullScreen src=\"//view.vzaar.localhost/7574844/player\"></iframe>","renditions":[{"id":26,"width":1920,"height":1080,"bitrate":5442,"framerate":"29.97","status":"skipped"},{"id":27,"width":480,"height":270,"bitrate":400,"framerate":"29.97","status":"finished"},{"id":28,"width":416,"height":234,"bitrate":200,"framerate":"12.0","status":"finished"},{"id":29,"width":640,"height":360,"bitrate":800,"framerate":"29.97","status":"finished"},{"id":30,"width":1280,"height":720,"bitrate":1709,"framerate":"30.0","status":"finished"}]}],"meta":{"total_count":212,"links":{"first":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=4&per_page=3&state=ready","previous":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=2&per_page=3&state=ready","last":"https://app.vzaar.localhost/api/v2/videos?order=asc&page=71&per_page=3&state=ready"}}}'
-    http_version:
-  recorded_at: Fri, 18 Nov 2016 16:12:48 GMT
+      string: '{"data":[{"id":15362840,"title":null,"description":null,"state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":0.8,"created_at":"2018-07-17T09:11:01.000Z","updated_at":"2020-03-16T00:01:31.000Z","url":"https://vzaar.com/videos/15362840","seo_url":null,"asset_url":"https://view.vzaar.com/15362840/video","poster_url":"https://view.vzaar.com/15362840/image","thumbnail_url":"https://view.vzaar.com/15362840/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:75.0%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-15362840\" name=\"vzvd-15362840\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362840/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787435,"code":"sd_lower","width":640,"height":480,"bitrate":730,"framerate":"60.0","status":"finished","size_in_bytes":99947,"url":"https://view.vzaar.com/15362840/download/sd_lower"},{"id":787436,"code":"magic","width":640,"height":480,"bitrate":1041,"framerate":"29.97","status":"finished","size_in_bytes":114909,"url":"https://view.vzaar.com/15362840/download/magic"},{"id":787437,"code":"hd_720","width":1280,"height":960,"bitrate":2500,"framerate":"60.0","status":"skipped","size_in_bytes":0,"url":null}]},{"id":15362834,"title":null,"description":null,"state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":0.8,"created_at":"2018-07-17T09:10:32.000Z","updated_at":"2020-03-16T00:01:24.000Z","url":"https://vzaar.com/videos/15362834","seo_url":null,"asset_url":"https://view.vzaar.com/15362834/video","poster_url":"https://view.vzaar.com/15362834/image","thumbnail_url":"https://view.vzaar.com/15362834/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:75.0%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-15362834\" name=\"vzvd-15362834\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362834/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787432,"code":"sd_lower","width":640,"height":480,"bitrate":730,"framerate":"60.0","status":"finished","size_in_bytes":99947,"url":"https://view.vzaar.com/15362834/download/sd_lower"},{"id":787433,"code":"hd_720","width":1280,"height":960,"bitrate":2500,"framerate":"60.0","status":"skipped","size_in_bytes":0,"url":null},{"id":787434,"code":"magic","width":640,"height":480,"bitrate":1041,"framerate":"29.97","status":"finished","size_in_bytes":114909,"url":"https://view.vzaar.com/15362834/download/magic"}]},{"id":15362385,"title":null,"description":null,"state":"ready","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":0.8,"created_at":"2018-07-17T08:23:51.000Z","updated_at":"2020-03-14T21:03:08.000Z","url":"https://vzaar.com/videos/15362385","seo_url":null,"asset_url":"https://view.vzaar.com/15362385/video","poster_url":"https://view.vzaar.com/15362385/image","thumbnail_url":"https://view.vzaar.com/15362385/thumb","embed_code":"<div
+        class=\"vz-container\" style=\"position:relative;padding-bottom:75.0%;overflow:hidden;height:0;max-width:100%;\"><iframe
+        id=\"vzvd-15362385\" name=\"vzvd-15362385\" title=\"video player\" type=\"text/html\"
+        width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
+        src=\"https://view.vzaar.com/15362385/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
+        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[{"id":787350,"code":"magic","width":640,"height":480,"bitrate":1041,"framerate":"29.97","status":"finished","size_in_bytes":114909,"url":"https://view.vzaar.com/15362385/download/magic"},{"id":787351,"code":"hd_720","width":1280,"height":960,"bitrate":2500,"framerate":"60.0","status":"skipped","size_in_bytes":0,"url":null},{"id":787352,"code":"sd_lower","width":640,"height":480,"bitrate":730,"framerate":"60.0","status":"finished","size_in_bytes":99947,"url":"https://view.vzaar.com/15362385/download/sd_lower"}]}],"meta":{"total_count":1075,"links":{"first":"https://app.vzaar.com/api/v2/videos?order=asc&page=1&per_page=3&state=ready","next":"https://app.vzaar.com/api/v2/videos?order=asc&page=4&per_page=3&state=ready","previous":"https://app.vzaar.com/api/v2/videos?order=asc&page=2&per_page=3&state=ready","last":"https://app.vzaar.com/api/v2/videos?order=asc&page=359&per_page=3&state=ready"}}}'
+    http_version: 
+  recorded_at: Wed, 05 May 2021 14:55:53 GMT
 recorded_with: VCR 3.0.3

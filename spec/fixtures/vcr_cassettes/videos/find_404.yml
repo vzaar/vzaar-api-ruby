@@ -2,21 +2,21 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app.vzaar.localhost/api/v2/videos/-1
+    uri: https://app.vzaar.com/api/v2/videos/-1
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - HTTPClient/1.0 (2.8.2.4, ruby 2.3.1 (2016-04-26))
+      - HTTPClient/1.0 (2.8.3, ruby 2.5.8 (2020-03-31))
       Accept:
       - "*/*"
       Date:
-      - Fri, 18 Nov 2016 14:04:38 GMT
+      - Wed, 05 May 2021 14:55:45 GMT
       X-Auth-Token:
-      - TUGXzNL17ypaougMYpR3
+      - xdyzFwz8DV5pq1MDGE7e
       X-Client-Id:
-      - lair-tend72
+      - capo-sixth-gale
       Content-Type:
       - application/json
   response:
@@ -24,28 +24,25 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Server:
-      - nginx/1.10.1
-      Date:
-      - Fri, 18 Nov 2016 14:04:38 GMT
+      Cache-Control:
+      - no-cache
       Content-Type:
       - application/json
+      Date:
+      - Wed, 05 May 2021 14:55:45 GMT
+      Server:
+      - nginx
+      X-Request-Id:
+      - 99093825-5a88-44dd-8bab-6532dd685dbe
+      X-Runtime:
+      - '0.027056'
       Content-Length:
       - '72'
       Connection:
       - keep-alive
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - a500016a-f656-4fb2-acd9-c1ec1831f1d3
-      X-Runtime:
-      - '0.071982'
-      Set-Cookie:
-      - __profilin=p%3Dt; path=/
-      - __profilin=p%3Dt; path=/
     body:
       encoding: UTF-8
       string: '{"errors":[{"message":"Not found","detail":"Resource cannot be found"}]}'
     http_version: 
-  recorded_at: Fri, 18 Nov 2016 14:04:38 GMT
+  recorded_at: Wed, 05 May 2021 14:55:45 GMT
 recorded_with: VCR 3.0.3
