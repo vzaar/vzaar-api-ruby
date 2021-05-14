@@ -12,11 +12,11 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Wed, 05 May 2021 14:55:45 GMT
+      - Fri, 14 May 2021 09:29:58 GMT
       X-Auth-Token:
-      - xdyzFwz8DV5pq1MDGE7e
+      - LHuEum7qhBwmBdSsq2o4
       X-Client-Id:
-      - capo-sixth-gale
+      - cccc-dod-dine
       Content-Type:
       - application/json
   response:
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 05 May 2021 14:55:45 GMT
+      - Fri, 14 May 2021 09:29:58 GMT
       Server:
       - nginx
       X-Request-Id:
-      - 99093825-5a88-44dd-8bab-6532dd685dbe
+      - 1c84da21-8052-4142-9920-4bac17ded7d0
       X-Runtime:
-      - '0.027056'
+      - '0.132551'
       Content-Length:
       - '72'
       Connection:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":[{"message":"Not found","detail":"Resource cannot be found"}]}'
     http_version: 
-  recorded_at: Wed, 05 May 2021 14:55:45 GMT
+  recorded_at: Fri, 14 May 2021 09:29:59 GMT
 recorded_with: VCR 3.0.3

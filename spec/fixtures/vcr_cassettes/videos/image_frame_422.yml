@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://app.vzaar.com/api/v2/videos/14650273/image
+    uri: https://app.vzaar.com/api/v2/videos/22985067/image
     body:
       encoding: UTF-8
       string: "{}"
@@ -12,11 +12,11 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Wed, 05 May 2021 14:55:54 GMT
+      - Fri, 14 May 2021 09:30:15 GMT
       X-Auth-Token:
-      - xdyzFwz8DV5pq1MDGE7e
+      - LHuEum7qhBwmBdSsq2o4
       X-Client-Id:
-      - capo-sixth-gale
+      - cccc-dod-dine
       Content-Type:
       - application/json
   response:
@@ -29,13 +29,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 05 May 2021 14:55:54 GMT
+      - Fri, 14 May 2021 09:30:15 GMT
       Server:
       - nginx
       X-Request-Id:
-      - 376fad2e-51a8-427b-986c-f72ae4357368
+      - 13d9643d-f178-46cf-ab0c-373455ba4d64
       X-Runtime:
-      - '0.026608'
+      - '0.015692'
       Content-Length:
       - '72'
       Connection:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"errors":[{"message":"Invalid parameters","detail":"time is missing"}]}'
     http_version: 
-  recorded_at: Wed, 05 May 2021 14:55:54 GMT
+  recorded_at: Fri, 14 May 2021 09:30:15 GMT
 recorded_with: VCR 3.0.3

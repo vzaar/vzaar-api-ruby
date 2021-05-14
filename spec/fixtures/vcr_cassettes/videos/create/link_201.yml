@@ -12,11 +12,11 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Wed, 05 May 2021 14:55:48 GMT
+      - Fri, 14 May 2021 09:30:04 GMT
       X-Auth-Token:
-      - xdyzFwz8DV5pq1MDGE7e
+      - LHuEum7qhBwmBdSsq2o4
       X-Client-Id:
-      - capo-sixth-gale
+      - cccc-dod-dine
       Content-Type:
       - application/json
   response:
@@ -29,36 +29,35 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 05 May 2021 14:55:49 GMT
+      - Fri, 14 May 2021 09:30:04 GMT
       Etag:
-      - W/"7b51652eeced8914a5816eaf5886fb12"
+      - W/"e8edad51fcf598f01487f75d64372421"
       Server:
       - nginx
       X-Ratelimit-Limit:
       - '200'
       X-Ratelimit-Remaining:
-      - '191'
+      - '198'
       X-Ratelimit-Reset:
-      - '1620226560'
+      - '1620984660'
       X-Ratelimit-Reset-In:
-      - 12 seconds
+      - 56 seconds
       X-Request-Id:
-      - 750b9c0d-27cd-413e-bfa0-2aca4ff858cf
+      - fdb5729a-89cb-4937-a25a-4bac649ff51b
       X-Runtime:
-      - '0.334828'
+      - '0.288506'
       Content-Length:
-      - '1440'
+      - '1040'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data":{"id":22953599,"title":null,"description":null,"state":"processing","private":false,"user_id":93388,"user_login":"lawrencesears","account_id":93367,"account_name":"lawrencesears","duration":null,"created_at":"2021-05-05T14:55:49.008Z","updated_at":"2021-05-05T14:55:49.008Z","url":"https://vzaar.com/videos/22953599","seo_url":null,"asset_url":"https://view.vzaar.com/22953599/video","poster_url":"https://view.vzaar.com/22953599/image","thumbnail_url":"https://view.vzaar.com/22953599/thumb","embed_code":"<div
+      string: '{"data":{"id":22987647,"title":null,"description":null,"state":"processing","private":false,"user_id":148269,"user_login":"lawrence-sdks","account_id":142646,"account_name":"lawrence-sdks","duration":null,"created_at":"2021-05-14T09:30:04.605Z","updated_at":"2021-05-14T09:30:04.605Z","url":"https://vzaar.com/videos/22987647","seo_url":null,"asset_url":"https://view.vzaar.com/22987647/video","poster_url":"https://view.vzaar.com/22987647/image","thumbnail_url":"https://view.vzaar.com/22987647/thumb","embed_code":"<div
         class=\"vz-container\" style=\"position:relative;padding-bottom:56.25%;overflow:hidden;height:0;max-width:100%;\"><iframe
-        id=\"vzvd-22953599\" name=\"vzvd-22953599\" title=\"video player\" type=\"text/html\"
+        id=\"vzvd-22987647\" name=\"vzvd-22987647\" title=\"video player\" type=\"text/html\"
         width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen allowTransparency=\"true\"
-        src=\"https://view.vzaar.com/22953599/player\" allow=\"autoplay\" class=\"video-player
-        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[{"advert_id":64,"name":"IAB
-        1","tag":"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=","position":"pre","placement_scope":"user","created_at":"2020-12-17T10:45:45.000Z","updated_at":"2020-12-17T10:45:45.000Z"}],"renditions":[]}}'
+        src=\"https://view.vzaar.com/22987647/player\" allow=\"autoplay\" class=\"video-player
+        video-player-responsive\" style=\"position:absolute;top:0;left:0;\"></iframe></div>","categories":[],"adverts":[],"renditions":[]}}'
     http_version: 
-  recorded_at: Wed, 05 May 2021 14:55:49 GMT
+  recorded_at: Fri, 14 May 2021 09:30:04 GMT
 recorded_with: VCR 3.0.3

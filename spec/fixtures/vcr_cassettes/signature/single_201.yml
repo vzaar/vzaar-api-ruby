@@ -12,11 +12,11 @@ http_interactions:
       Accept:
       - "*/*"
       Date:
-      - Wed, 05 May 2021 14:55:44 GMT
+      - Fri, 14 May 2021 09:29:56 GMT
       X-Auth-Token:
-      - xdyzFwz8DV5pq1MDGE7e
+      - LHuEum7qhBwmBdSsq2o4
       X-Client-Id:
-      - capo-sixth-gale
+      - cccc-dod-dine
       Content-Type:
       - application/json
   response:
@@ -29,30 +29,30 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 05 May 2021 14:55:44 GMT
+      - Fri, 14 May 2021 09:29:56 GMT
       Etag:
-      - W/"ef31c38db3c657ce1826ff9342b38241"
+      - W/"6e27c9a1e486617b489e999db53591f7"
       Server:
       - nginx
       X-Ratelimit-Limit:
       - '200'
       X-Ratelimit-Remaining:
-      - '197'
+      - '159'
       X-Ratelimit-Reset:
-      - '1620226560'
+      - '1620984600'
       X-Ratelimit-Reset-In:
-      - 16 seconds
+      - 4 seconds
       X-Request-Id:
-      - 160a20d1-f3e9-4031-a7fb-4b8075789d2e
+      - 42101e5c-4a6c-48b8-8368-0860da6a3a72
       X-Runtime:
-      - '0.064827'
+      - '0.330800'
       Content-Length:
       - '969'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data":{"x-amz-credential":"AKIAJ74MFWNVAFH6P7FQ/20210505/us-east-1/s3/aws4_request","x-amz-algorithm":"AWS4-HMAC-SHA256","x-amz-date":"20210505T145544Z","x-amz-signature":"e76bcbf240f70f4a6b4f0e1cd16ed33edc2191698d6324de89beeff4a1a57514","key":"vzaar/tHB/ent/source/tHBent1bSupU/${filename}","acl":"private","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNS0wNlQxNDo1NTo0NFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJ2emFhci11cGxvYWQifSxbInN0YXJ0cy13aXRoIiwiJGtleSIsInZ6YWFyL3RIQi9lbnQvc291cmNlL3RIQmVudDFiU3VwVS8iXSx7ImFjbCI6InByaXZhdGUifSx7InN1Y2Nlc3NfYWN0aW9uX3N0YXR1cyI6IjIwMSJ9LFsic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS11cGxvYWRlciIsIiJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFLSUFKNzRNRldOVkFGSDZQN0ZRLzIwMjEwNTA1L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDIxMDUwNVQxNDU1NDRaIn1dfQ==","success_action_status":"201","guid":"tHBent1bSupU","bucket":"vzaar-upload","upload_hostname":"https://vzaar-upload.s3.amazonaws.com"}}'
+      string: '{"data":{"x-amz-credential":"AKIAJ74MFWNVAFH6P7FQ/20210514/us-east-1/s3/aws4_request","x-amz-algorithm":"AWS4-HMAC-SHA256","x-amz-date":"20210514T092956Z","x-amz-signature":"c816af3dbd8a4b20e927f3e89248c90d5302cfc7fb171618ef75c65d76a715bc","key":"vzaar/t7o/Tfv/source/t7oTfv7y6-Tw/${filename}","acl":"private","policy":"eyJleHBpcmF0aW9uIjoiMjAyMS0wNS0xNVQwOToyOTo1NloiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJ2emFhci11cGxvYWQifSxbInN0YXJ0cy13aXRoIiwiJGtleSIsInZ6YWFyL3Q3by9UZnYvc291cmNlL3Q3b1Rmdjd5Ni1Udy8iXSx7ImFjbCI6InByaXZhdGUifSx7InN1Y2Nlc3NfYWN0aW9uX3N0YXR1cyI6IjIwMSJ9LFsic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS11cGxvYWRlciIsIiJdLHsieC1hbXotY3JlZGVudGlhbCI6IkFLSUFKNzRNRldOVkFGSDZQN0ZRLzIwMjEwNTE0L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7IngtYW16LWFsZ29yaXRobSI6IkFXUzQtSE1BQy1TSEEyNTYifSx7IngtYW16LWRhdGUiOiIyMDIxMDUxNFQwOTI5NTZaIn1dfQ==","success_action_status":"201","guid":"t7oTfv7y6-Tw","bucket":"vzaar-upload","upload_hostname":"https://vzaar-upload.s3.amazonaws.com"}}'
     http_version: 
-  recorded_at: Wed, 05 May 2021 14:55:44 GMT
+  recorded_at: Fri, 14 May 2021 09:29:57 GMT
 recorded_with: VCR 3.0.3

@@ -68,9 +68,9 @@ module VzaarApi
               expect(subject.policy.length).to eq 512
               expect(subject.success_action_status).to eq '201'
               expect(subject.upload_hostname).to eq 'https://vzaar-upload.s3.amazonaws.com'
-              expect(subject.part_size).to eq '8MB'
-              expect(subject.part_size_in_bytes).to eq 8388608
-              expect(subject.parts).to eq 3
+              expect(subject.part_size).to eq '16MB'
+              expect(subject.part_size_in_bytes).to eq 16777216
+              expect(subject.parts).to eq 2
             end
           end
 
