@@ -53,14 +53,14 @@ module VzaarApi
           it 'builds a signature' do
             VCR.use_cassette('signature/single_201') do
               expect(subject.acl).to eq 'private'
-              expect(subject.bucket).to eq 'vzaar-upload'
+              expect(subject.bucket).to eq 'vzaar-upload-staging'
               expect(subject.guid.length).to eq 12
               expect(subject.key)
                 .to eq "vzaar/#{subject.guid[0..2]}/#{subject.guid[3..5]}/source/#{subject.guid}/${filename}"
-              expect(subject.policy.length).to eq 512
+              expect(subject.policy.length).to eq 520
               expect(subject.success_action_status).to eq '201'
               expect(subject.upload_hostname)
-                .to eq 'https://vzaar-upload.s3.amazonaws.com'
+                .to eq 'https://vzaar-upload-staging.s3.amazonaws.com'
             end
           end
 

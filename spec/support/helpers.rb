@@ -8,8 +8,8 @@ module Helpers
   end
 
   def setup_auth!
-    VzaarApi.auth_token = 'pVrjGuKWP27U_kz4anfy'
-    VzaarApi.client_id  = 'glide-franca-raise'
-    VzaarApi.hostname   = 'app.vzaar.localhost'
+    VzaarApi.auth_token = 'E_TbHDr5X_Js1woNTnmR'
+    VzaarApi.client_id  = 'colin-moche-test'
+    VzaarApi.hostname   = 'app.raazv.com'
   end
 end

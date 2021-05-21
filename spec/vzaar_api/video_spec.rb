@@ -56,7 +56,7 @@ module VzaarApi
     describe 'description' do
       let(:video) do
         VCR.use_cassette('videos/find') do
-          described_class.find(22985067)
+          described_class.find(11060746)
         end
       end
 
@@ -92,23 +92,23 @@ module VzaarApi
       context 'when the video can be found' do
         it 'finds the video' do
           VCR.use_cassette('videos/find_alt') do
-            video = described_class.find(22984857)
-            expect(video.id).to eq 22984857
+            video = described_class.find(11060741)
+            expect(video.id).to eq 11060741
             expect(video.title).to eq 'LS TEST VIDEO'
-            expect(video.user_id).to eq 148269
-            expect(video.account_id).to eq 142646
+            expect(video.user_id).to eq 139477
+            expect(video.account_id).to eq 1970313
             expect(video.description).to eq ''
             expect(video.private).to eq false
             expect(video.seo_url).to eq nil
-            expect(video.url).to eq 'https://vzaar.com/videos/22984857'
-            expect(video.thumbnail_url).to eq 'https://view.vzaar.com/22984857/thumb'
+            expect(video.url).to eq 'https://raazv.com/videos/11060741'
+            expect(video.thumbnail_url).to eq 'https://view.raazv.com/11060741/thumb'
             expect(video.state).to eq 'ready'
             expect(video.duration).to eq 634.6
             expect(video.categories.count).to eq 0
             expect(video.renditions.count).to eq 4
             expect(video.legacy_renditions.count).to eq 4
-            expect(video.created_at).to eq '2021-05-13T16:11:23.000Z'
-            expect(video.updated_at).to eq '2021-05-14T09:28:52.000Z'
+            expect(video.created_at).to eq '2021-05-21T11:37:35.000Z'
+            expect(video.updated_at).to eq '2021-05-21T12:29:46.000Z'
           end
         end
       end
@@ -126,7 +126,7 @@ module VzaarApi
     describe '.create' do
       context 'when we already have the guid' do
         let(:attrs) do
-          { guid: 'tnFoyZg4LoOY' }
+          { guid: 'tkHzDBRpgWp8' }
         end
 
         # TODO: Make some test GUIDS for final run
@@ -134,7 +134,7 @@ module VzaarApi
         #   it 'returns the new video' do
         #     VCR.use_cassette('videos/create/guid_201') do
         #       video = described_class.create(attrs)
-        #       expect(video.id).to eq 22984857
+        #       expect(video.id).to eq 11060741, 11060742, 11060743
         #     end
         #   end
         # end
@@ -158,7 +158,7 @@ module VzaarApi
           it 'returns the new video' do
             VCR.use_cassette('videos/create/path_201') do
               video = described_class.create(attrs)
-              expect(video.id.between?(20000000, 30000000)).to eq true
+              expect(video.id.between?(10000000, 20000000)).to eq true
             end
           end
         end
@@ -173,7 +173,7 @@ module VzaarApi
           it 'returns the new video' do
             VCR.use_cassette('videos/create/link_201') do
               video = described_class.create(attrs)
-              expect(video.id.between?(20000000, 30000000)).to eq true
+              expect(video.id.between?(10000000, 20000000)).to eq true
             end
           end
         end
@@ -217,7 +217,7 @@ module VzaarApi
           pager = described_class.paginate(per_page: 3)
           pager.first
           ids = pager.collection.map { |video| video.id }
-          expect(ids).to match_array [22985067, 22985102, 22985103]
+          expect(ids).to match_array [11060747, 11060748, 11060749]
         end
       end
 
@@ -226,7 +226,7 @@ module VzaarApi
           pager = described_class.paginate(per_page: 3)
           pager.next
           ids = pager.collection.map { |video| video.id }
-          expect(ids).to match_array [22984961, 22985004, 22985034]
+          expect(ids).to match_array [11060744, 11060745, 11060746]
         end
       end
 
@@ -235,7 +235,7 @@ module VzaarApi
           pager = described_class.paginate(per_page: 3)
           pager.last
           ids = pager.collection.map { |video| video.id }
-          expect(ids).to match_array [22984857]
+          expect(ids).to match_array [11060741, 11060742, 11060743]
         end
       end
 
@@ -244,13 +244,13 @@ module VzaarApi
           pager = described_class.paginate(page: 4, per_page: 3)
           pager.previous
           ids = pager.collection.map { |video| video.id }
-          expect(ids).to match_array [22984857]
+          expect(ids).to match_array [11060741, 11060742, 11060743]
         end
       end
     end
 
     describe ".set_image_frame" do
-      let(:video_id) { 22985067 }
+      let(:video_id) { 11060746 }
 
       context "when params are valid" do
         it 'returns the existing video' do
@@ -272,7 +272,7 @@ module VzaarApi
     end
 
     describe ".upload_image_frame" do
-      let(:video_id) { 22985067 }
+      let(:video_id) { 11060746 }
       let(:path) { 'spec/support/files/drex.jpg' }
 
       context "when params are valid" do
